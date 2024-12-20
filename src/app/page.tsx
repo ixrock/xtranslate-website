@@ -1,95 +1,116 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import PhotoPreview from "@/app/components/photo-preview";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <h1>XTranslate - your AI translator agent (browser extension)</h1>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <p>It will help you understand and translate foreign languages and even whole pages in your browser (chromium-based)</p>
+      <p>
+        Translate from 100+ foreign languages to your native directly on web-site you're reading or
+        put text in the extension's drop-down window.
+      </p>
+
+      <div className={styles.images}>
+        <PhotoPreview src="/sshot1.jpg" alt="Get translation Popup in web page context"/>
+        <PhotoPreview src="/sshot2.jpg" alt="Configure different themes and customize popup internal UI"/>
+        <PhotoPreview src="/sshot3.jpg" alt="Get translation via different way, e.g. via browser context menu"/>
+        <PhotoPreview src="/sshot4.png" alt="Adjust setting with multiple translation vendors just for yourself"/>
+      </div>
+
+      <h3>Install extension:</h3>
+      <hr/>
+      <ul>
+        <li><a href="https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">Chrome's Web Store</a></li>
+        <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">Microsoft Edge Add-ons</a></li>
+        <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">Firefox addons</a> <em>(old version with limited support)</em></li>
+        <li><a href="https://github.com/ixrock/XTranslate" target="_blank">Github</a> <em>(from source code)</em></li>
+      </ul>
+
+      <h3>Features:</h3>
+      <hr/>
+      <p>Many ways to get translation of text from the page:</p>
+      <ul>
+        <li>double-click on the word</li>
+      </ul>
+      <p>select text and get immediate translation after one of:</p>
+      <ol>
+        <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
+        <li>Click on the translate icon appeared near selected text</li>
+        <li>Click on selected text (turned off by default)</li>
+        <li>Just release mouse button (turned off by default)</li>
+        <li>Write text in input fields, mouse over it and press hotkey</li>
+        <li>Press context menu on the page and select item to get translation in place or translate whole page in new tab with specific translation vendor</li>
+      </ol>
+
+      <p>
+        You can get even some information from images by putting mouse cursor over the image element and
+        press hotkey (title or alt attributes will be used, if applicable).
+        This trick actually works with any element under mouse cursor. Just put mouse over item and press hotkey!
+      </p>
+
+      <h3>Translate texts in PDF-files (<small>this will replace default PDF-viewer with pdf.js (mozilla's custom viewer)</small>)</h3>
+
+      <h4>In order to work with local files (HTML or PDF) allow access for the extension:</h4>
+      <ol>
+        <li>open extensions URL system page <code>chrome://extensions</code>, find <b>XTranslate</b>™ and click <em>[Details]</em> button</li>
+        <li>enable checkbox <b>Allow access to file URLs</b></li>
+      </ol>
+      <br/>
+
+      <h3>Other free-to-use features of text translator extension are includes:</h3>
+
+      <ol>
+        <li>Listen text-to-speech for all supported translation vendors</li>
+        <li>Adjust your unique design of the popup with translated text</li>
+        <li>Customize the ways of getting translations and other options in the settings</li>
+        <li>Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support</li>
+        <li>Save your favourite translations as quick bookmarks in history</li>
+        <li>View and edit history of translations</li>
+      </ol>
+
+      <h3>Pro-version features (paid subscription monthly/yearly, mostly in 2025/by request)</h3>
+      <ol>
+        <li>Translate unlimited full-pages using AI technologies, e.g. OpenAI</li>
+        <li>Use voice input/speech recognition for getting text translation</li>
+        <li>Provide multiple translation results from all translation vendors at the same time</li>
+        <li>More interactions with translation popup-element at webpages (e.g. drag&drop, pin, resize, etc.)</li>
+      </ol>
+
+      <h3>Available translation vendors:</h3>
+      <hr/>
+      <ul>
+        <li><a href="http://translate.google.com/" target="_blank">Google</a> (free)</li>
+        <li><a href="http://translate.yandex.com/" target="_blank">Yandex</a> (free)</li>
+        <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> (free)</li>
+        <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> (free: API key limited to 500,000 chars/month)</li>
+        <li><a href="https://platform.openai.com" target="_blank">OpenAI (ChatGPT authors)</a> (paid: register and top-up balance)</li>
+      </ul>
+
+      <h3>Steps for access OpenAI translations:</h3>
+      <hr/>
+      <ol>
+        <li>Sign up at OpenAI platform https://platform.openai.com</li>
+        <li>Create api access key to get access for OpenAI translation service results</li>
+        <li>Top-up your balance <em>(5$+)</em> and disable credit card's auto-top-up balance at billing page <em>(recommended)</em></li>
+        <li>Don't forget to adjust limits settings <em>(recommended)</em></li>
+      </ol>
+
+      <h3>Security considerations:</h3>
+      <hr/>
+      <ul>
+        <li>
+          OpenAI api key handled via extension-scoped chrome.storage.local apis and used only within "Authorization" header to sign OpenAI API requests (which is not exposed or tracked, even if
+          "webRequest" API enabled in some other malicious extension)
+        </li>
+        <li>
+          OpenAI requests goes through official OpenAI NPM-package and running only within background service-worker which helps with XSS-kind of attacks.
+        </li>
+        <li>
+          Don't enter or share your OpenAI key anywhere else except extension's settings page (options page)
+        </li>
+      </ul>
     </div>
   );
 }

@@ -1,13 +1,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --borderRadius: 5px;
+  --spacing: 12px;
+  --spacingHalf: calc(var(--spacing) / 2);
+  --spacingDouble: calc(var(--spacing) * 2);
 }
 
 html,
@@ -31,12 +28,13 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #942486aa;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h3, p {
+  margin: var(--spacingDouble) 0;
 }

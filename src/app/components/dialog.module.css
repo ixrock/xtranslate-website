@@ -1,0 +1,60 @@
+body:has(.Dialog) {
+  overflow: hidden; /* don't allow to scroll page when dialog is visible */
+}
+
+.Dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000cc;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--borderRadius);
+  overflow: auto;
+}
+
+.DialogContent {
+  position: relative;
+  flex: 1;
+  padding: var(--spacingDouble);
+
+  &:has(img) {
+    height: 100%;
+  }
+}
+
+.DialogContent img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--borderRadius);
+}
+
+.closeBtn {
+  --size: 40px;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: var(--spacing);
+  font-size: var(--size);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  opacity: .5;
+  color: black;
+  line-height: 110%;
+  background: white;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+}
