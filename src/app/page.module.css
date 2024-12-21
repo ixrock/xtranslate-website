@@ -2,6 +2,18 @@
   padding: 5rem;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  --iconSize: 40px;
+  width: var(--iconSize);
+  height: var(--iconSize);
+}
+
 .images {
   --grid-size: 250px;
 

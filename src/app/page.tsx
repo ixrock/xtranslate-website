@@ -1,10 +1,14 @@
 import styles from "./page.module.css";
 import PhotoPreview from "@/app/components/photo-preview";
 
+// TODO: add testimonials with 4.5 stars rate block
 export default function Home() {
   return (
     <div className={styles.page}>
-      <h1>XTranslate - your AI translator agent (browser extension)</h1>
+      <header className={styles.header}>
+        <img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate Logo"/>
+        <h1>XTranslate - your AI translator agent (browser extension)</h1>
+      </header>
 
       <p>It will help you understand and translate foreign languages and even whole pages in your browser (chromium-based)</p>
       <p>

@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --linkColor: #942486aa;
   --borderRadius: 5px;
   --spacing: 12px;
   --spacingHalf: calc(var(--spacing) / 2);
@@ -28,7 +29,7 @@ body {
 }
 
 a {
-  color: #942486aa;
+  color: var(--linkColor);
 
   &:hover {
     text-decoration: none;
