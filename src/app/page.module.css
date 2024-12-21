@@ -39,7 +39,7 @@
 .images img {
   object-fit: cover;
   width: auto;
-  height: var(--grid-size);
+  height: calc(var(--grid-size) * 1.5);
   transition: transform .5s ease-in-out;
 }
 

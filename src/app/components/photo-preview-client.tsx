@@ -19,12 +19,10 @@ export interface PhotoPreviewClientProps {
 }
 
 // TODO: support images rotation via keyboard (Arrow-[left]|[right])
-// TODO: show texts in photo-preview from <img alt>
 export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
-  const { src, className, width, height, metadata, alt } = props;
+  const { src, className, width, height, metadata, alt: title } = props;
   const [showPreview, showPreviewActivate] = useState(false);
   const [imageReady, setImageReady] = useState(false);
-  const altText = alt ?? src.substring(src.lastIndexOf("/") + 1);
 
   const onClick = async (evt: React.MouseEvent) => {
     evt.preventDefault();
@@ -45,13 +43,14 @@ export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
           className={`${styles.PhotoPreviewClientImage} ${className}`}
           width={width}
           height={height}
-          alt={altText}
+          alt={String(title)}
         />
       </Link>
       {showPreview && (
         <Dialog onClose={() => showPreviewActivate(false)}>
           {!imageReady && <LoadingIndicator/>}
           {imageReady && <Image src={src} width={metadata.width} height={metadata.height} alt=""/>}
+          {title && <p className={styles.PhotoPreviewClientTitle}>{title}</p>}
         </Dialog>
       )}
     </>

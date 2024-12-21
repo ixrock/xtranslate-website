@@ -20,7 +20,7 @@ export default function Home() {
         <PhotoPreview src="/sshot1.jpg" alt="Get translation Popup in web page context"/>
         <PhotoPreview src="/sshot2-popup-theme.jpg" alt="Configure different themes and customize popup internal UI"/>
         <PhotoPreview src="/sshot3-context-menu.jpg" alt="Get translation via different way, e.g. via browser context menu"/>
-        <PhotoPreview src="/sshot5-popup-linuxmint.png" alt="Various popup theming and custom action icons (e.g. tts)"/>
+        <PhotoPreview src="/sshot5-popup-linuxmint.png" alt="Various popup theming and custom action icons (e.g. tts, (un)save to favorites, copy translation, get next translation)"/>
         <PhotoPreview src="/sshot4-settings.png" alt="Adjust setting with multiple translation vendors just for yourself"/>
         <PhotoPreview src="/sshot6-settings-dark-theme.png" alt="Dark theme app settings window"/>
         <PhotoPreview src="/sshot7-pdf-translation.png" alt="PDF-files translations support"/>
