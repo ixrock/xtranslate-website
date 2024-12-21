@@ -4,3 +4,8 @@
 .PhotoPreviewClient {
 
 }
+
+.PhotoPreviewClientImage {
+  border-radius: 10px;
+  border: 5px solid currentColor;
+}

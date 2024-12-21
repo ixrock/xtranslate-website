@@ -19,6 +19,7 @@ export interface PhotoPreviewClientProps {
 }
 
 // TODO: support images rotation via keyboard (Arrow-[left]|[right])
+// TODO: show texts in photo-preview from <img alt>
 export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
   const { src, className, width, height, metadata, alt } = props;
   const [showPreview, showPreviewActivate] = useState(false);
@@ -41,7 +42,7 @@ export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
       >
         <Image
           src={src}
-          className={className}
+          className={`${styles.PhotoPreviewClientImage} ${className}`}
           width={width}
           height={height}
           alt={altText}

@@ -14,9 +14,14 @@ export default function Home() {
 
       <div className={styles.images}>
         <PhotoPreview src="/sshot1.jpg" alt="Get translation Popup in web page context"/>
-        <PhotoPreview src="/sshot2.jpg" alt="Configure different themes and customize popup internal UI"/>
-        <PhotoPreview src="/sshot3.jpg" alt="Get translation via different way, e.g. via browser context menu"/>
-        <PhotoPreview src="/sshot4.png" alt="Adjust setting with multiple translation vendors just for yourself"/>
+        <PhotoPreview src="/sshot2-popup-theme.jpg" alt="Configure different themes and customize popup internal UI"/>
+        <PhotoPreview src="/sshot3-context-menu.jpg" alt="Get translation via different way, e.g. via browser context menu"/>
+        <PhotoPreview src="/sshot5-popup-linuxmint.png" alt="Various popup theming and custom action icons (e.g. tts)"/>
+        <PhotoPreview src="/sshot4-settings.png" alt="Adjust setting with multiple translation vendors just for yourself"/>
+        <PhotoPreview src="/sshot6-settings-dark-theme.png" alt="Dark theme app settings window"/>
+        <PhotoPreview src="/sshot7-pdf-translation.png" alt="PDF-files translations support"/>
+        <PhotoPreview src="/sshot8-settings-localization.png" alt="UI localization support in app window"/>
+        <PhotoPreview src="/sshot9-history.png" alt="History of translation with import/export support in JSON"/>
       </div>
 
       <h3>Install extension:</h3>
@@ -70,7 +75,7 @@ export default function Home() {
         <li>View and edit history of translations</li>
       </ol>
 
-      <h3>Pro-version features (paid subscription monthly/yearly, mostly in 2025/by request)</h3>
+      <h3>Pro-version release features (paid subscription: monthly/yearly, wait in 2025)</h3>
       <ol>
         <li>Translate unlimited full-pages using AI technologies, e.g. OpenAI</li>
         <li>Use voice input/speech recognition for getting text translation</li>
@@ -91,7 +96,7 @@ export default function Home() {
       <h3>Steps for access OpenAI translations:</h3>
       <hr/>
       <ol>
-        <li>Sign up at OpenAI platform https://platform.openai.com</li>
+        <li>Sign up at OpenAI platform <a href="https://platform.openai.com">platform.openai.com</a></li>
         <li>Create api access key to get access for OpenAI translation service results</li>
         <li>Top-up your balance <em>(5$+)</em> and disable credit card's auto-top-up balance at billing page <em>(recommended)</em></li>
         <li>Don't forget to adjust limits settings <em>(recommended)</em></li>
@@ -101,8 +106,8 @@ export default function Home() {
       <hr/>
       <ul>
         <li>
-          OpenAI api key handled via extension-scoped chrome.storage.local apis and used only within "Authorization" header to sign OpenAI API requests (which is not exposed or tracked, even if
-          "webRequest" API enabled in some other malicious extension)
+          OpenAI api key handled via extension-scoped chrome.storage.local apis and used only within "Authorization" header to sign OpenAI API requests
+          (which is not exposed or tracked, even if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest">webRequest</a> API enabled in some other malicious extension)
         </li>
         <li>
           OpenAI requests goes through official OpenAI NPM-package and running only within background service-worker which helps with XSS-kind of attacks.
@@ -111,6 +116,11 @@ export default function Home() {
           Don't enter or share your OpenAI key anywhere else except extension's settings page (options page)
         </li>
       </ul>
+      <hr/>
+      <br/>
+      <footer>
+        Made with ♥ and open-source projects. Donate via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
+      </footer>
     </div>
   );
 }
