@@ -1,12 +1,12 @@
 .PhotoPreview {
   position: relative;
+}
 
-  img {
-    border-radius: var(--borderRadius);
-    border: 3px solid var(--linkColor);
+.PhotoPreview img {
+  border-radius: var(--borderRadius);
+  border: 3px solid var(--linkColor);
 
-    &:hover {
-      z-index: 10;
-    }
+  &:hover {
+    z-index: 10;
   }
 }
