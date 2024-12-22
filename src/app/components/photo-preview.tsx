@@ -1,38 +1,65 @@
-import styles from "./photo-preview.module.css"
-import React from "react";
-import sharp from "sharp";
-import { getImageMetadata } from "../utils/server-actions";
-import { resizeByWidth } from "../utils/resizeBy";
-import PhotoPreviewClient from "./photo-preview-client";
+"use client";
 
-export interface PhotoPreviewProps {
+import styles from "./photo-preview.module.css"
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { LoadingIndicator } from "@/app/components/loading-indicator";
+import { Dialog } from "@/app/components/dialog";
+
+export interface PhotoPreviewClientProps {
   src: string;
   className?: string;
-  previewWidth?: number; /* default: 250 */
-  metadata?: sharp.Metadata;
   alt?: string;
 }
 
-export default async function PhotoPreview(props: PhotoPreviewProps) {
-  const { src, className, previewWidth = 250, metadata, alt } = props;
+// TODO: add rotation with Arrow-keys + single Dialog for handing all photos
+export default function PhotoPreview(props: PhotoPreviewClientProps) {
+  const { src, className, alt: title } = props;
+  const [showPreview, showPreviewActivate] = useState(false);
+  const [imageReady, setImageReady] = useState(false);
 
-  const { width, height } = metadata ?? await getImageMetadata(src);
-  const [newWidth, newHeight] = resizeByWidth({
-    width: width!,
-    height: height!,
-    newSize: previewWidth
-  });
+  const onClick = async (evt: React.MouseEvent) => {
+    evt.preventDefault();
+    showPreviewActivate(true);
+    await preloadImage(src);
+    setImageReady(true);
+  };
 
   return (
-    <div className={styles.PhotoPreview}>
-      <PhotoPreviewClient
-        src={src}
-        width={newWidth}
-        height={newHeight}
-        className={className}
-        metadata={{ width, height }}
-        alt={alt}
-      />
-    </div>
+    <>
+      <Link
+        href={src}
+        className={styles.PhotoPreviewClient}
+        onClick={onClick}
+      >
+        <Image
+          src={src}
+          fill={true}
+          className={className}
+          alt={String(title)}
+        />
+      </Link>
+      {showPreview && (
+        <Dialog onClose={() => showPreviewActivate(false)}>
+          {!imageReady && <LoadingIndicator/>}
+          {imageReady && (
+            <div className={styles.PhotoPreviewClientImage}>
+              <Image src={src} fill alt={title as string}/>
+            </div>
+          )}
+          {title && <p className={styles.PhotoPreviewClientTitle}>{title}</p>}
+        </Dialog>
+      )}
+    </>
   )
+}
+
+export async function preloadImage(src: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const img = new window.Image();
+    img.src = src;
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+  });
 }

@@ -1,11 +1,19 @@
-.PhotoPreview {
-}
-
 .PhotoPreviewClient {
+  position: relative;
 
+  img {
+    border-radius: var(--borderRadius);
+    border: 3px solid var(--linkColor);
+
+    &:hover {
+      z-index: 10;
+    }
+  }
 }
 
 .PhotoPreviewClientImage {
+  position: relative;
+  flex: 1 0;
 }
 
 .PhotoPreviewClientTitle {
@@ -15,7 +23,6 @@
   font-style: italic;
   text-align: center;
   background: white;
-  border-radius: var(--borderRadius);
 }
 
 

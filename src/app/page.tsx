@@ -79,7 +79,7 @@ export default function Home() {
         <li>View and edit history of translations</li>
       </ol>
 
-      <h3>Pro-version release features (paid subscription: monthly/yearly, wait in 2025)</h3>
+      <h3>Pro features (paid subscription, awaiting in 2025)</h3>
       <ol>
         <li>Translate unlimited full-pages using AI technologies, e.g. OpenAI</li>
         <li>Use voice input/speech recognition for getting text translation</li>
