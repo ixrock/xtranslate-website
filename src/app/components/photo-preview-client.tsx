@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { LoadingIndicator } from "@/app/components/loading-indicator";
 import { Dialog } from "@/app/components/dialog";
-import { delay } from "@/app/utils/delay";
 
 export interface PhotoPreviewClientProps {
   src: string;
@@ -18,7 +17,6 @@ export interface PhotoPreviewClientProps {
   alt?: string;
 }
 
-// TODO: support images rotation via keyboard (Arrow-[left]|[right])
 export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
   const { src, className, width, height, metadata, alt: title } = props;
   const [showPreview, showPreviewActivate] = useState(false);
@@ -27,8 +25,8 @@ export default function PhotoPreviewClient(props: PhotoPreviewClientProps) {
   const onClick = async (evt: React.MouseEvent) => {
     evt.preventDefault();
     showPreviewActivate(true);
-    await delay(100); // NB: for some reason, without delay <LoadingIndicator/> doesn't show up
-    preloadImage(src).then(() => setImageReady(true));
+    await preloadImage(src);
+    setImageReady(true);
   };
 
   return (

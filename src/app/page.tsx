@@ -123,7 +123,7 @@ export default function Home() {
       <hr/>
       <br/>
       <footer>
-        Made with ♥ and open-source projects. Donate via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
+        Made with ♥ and open-source projects. Donate for free-version app support via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
       </footer>
     </div>
   );
