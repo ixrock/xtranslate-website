@@ -7,16 +7,20 @@ import { createPortal } from 'react-dom';
 export interface DialogProps extends React.PropsWithChildren<{}> {
   showCloseBtn?: boolean;
   onClose?: () => void;
+  onLeft?: () => void;
+  onRight?: () => void;
 }
 
-export function Dialog({ children, onClose, showCloseBtn = true }: DialogProps) {
+export function Dialog({ children, onClose, onLeft, onRight, showCloseBtn = true }: DialogProps) {
   const [domReady, setReady] = useState(false);
 
   useEffect(() => setReady(true), []);
 
   useEffect(() => {
-    const onEscapeKey = ({ code }: KeyboardEvent) => {
+    const onKeyUp = ({ code }: KeyboardEvent) => {
       if (code === "Escape") onClose?.();
+      if (code === "ArrowLeft") onLeft?.();
+      if (code === "ArrowRight") onRight?.();
     };
 
     const onClickOutside = ({ target }: MouseEvent) => {
@@ -26,11 +30,11 @@ export function Dialog({ children, onClose, showCloseBtn = true }: DialogProps) 
       }
     };
 
-    document.addEventListener("keyup", onEscapeKey);
+    document.addEventListener("keyup", onKeyUp);
     document.addEventListener("click", onClickOutside);
 
     return () => {
-      document.removeEventListener("keyup", onEscapeKey);
+      document.removeEventListener("keyup", onKeyUp);
       document.removeEventListener("click", onClickOutside);
     };
   }, []);

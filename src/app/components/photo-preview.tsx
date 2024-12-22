@@ -1,65 +1,31 @@
 "use client";
 
 import styles from "./photo-preview.module.css"
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { LoadingIndicator } from "@/app/components/loading-indicator";
-import { Dialog } from "@/app/components/dialog";
 
-export interface PhotoPreviewClientProps {
+export interface PhotoPreviewProps {
   src: string;
+  alt: string;
   className?: string;
-  alt?: string;
+  onClick?: (evt: React.MouseEvent) => void;
 }
 
-// TODO: add rotation with Arrow-keys + single Dialog for handing all photos
-export default function PhotoPreview(props: PhotoPreviewClientProps) {
-  const { src, className, alt: title } = props;
-  const [showPreview, showPreviewActivate] = useState(false);
-  const [imageReady, setImageReady] = useState(false);
-
-  const onClick = async (evt: React.MouseEvent) => {
-    evt.preventDefault();
-    showPreviewActivate(true);
-    await preloadImage(src);
-    setImageReady(true);
-  };
+export default function PhotoPreview(props: PhotoPreviewProps) {
+  const { src, className, alt, onClick } = props;
 
   return (
     <>
-      <Link
-        href={src}
-        className={styles.PhotoPreviewClient}
-        onClick={onClick}
-      >
+      <Link className={styles.PhotoPreview} href={src} onClick={onClick}>
         <Image
           src={src}
           fill={true}
           className={className}
-          alt={String(title)}
+          sizes="1280px,800px"
+          alt={alt}
         />
       </Link>
-      {showPreview && (
-        <Dialog onClose={() => showPreviewActivate(false)}>
-          {!imageReady && <LoadingIndicator/>}
-          {imageReady && (
-            <div className={styles.PhotoPreviewClientImage}>
-              <Image src={src} fill alt={title as string}/>
-            </div>
-          )}
-          {title && <p className={styles.PhotoPreviewClientTitle}>{title}</p>}
-        </Dialog>
-      )}
     </>
   )
-}
-
-export async function preloadImage(src: string): Promise<HTMLImageElement> {
-  return new Promise((resolve, reject) => {
-    const img = new window.Image();
-    img.src = src;
-    img.onload = () => resolve(img);
-    img.onerror = reject;
-  });
 }

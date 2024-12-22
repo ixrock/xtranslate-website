@@ -1,4 +1,4 @@
-.PhotoPreviewClient {
+.PhotoPreview {
   position: relative;
 
   img {
@@ -10,19 +10,3 @@
     }
   }
 }
-
-.PhotoPreviewClientImage {
-  position: relative;
-  flex: 1 0;
-}
-
-.PhotoPreviewClientTitle {
-  display: block;
-  padding: 10px 0;
-  font-size: 18px;
-  font-style: italic;
-  text-align: center;
-  background: white;
-}
-
-
