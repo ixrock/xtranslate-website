@@ -1,5 +1,6 @@
 .PhotoPreview {
   position: relative;
+  overflow: hidden;
 }
 
 .PhotoPreview img {

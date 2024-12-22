@@ -20,9 +20,9 @@ export default function PhotoPreview(props: PhotoPreviewProps) {
       <Link className={styles.PhotoPreview} href={src} onClick={onClick}>
         <Image
           src={src}
-          fill={true}
           className={className}
-          sizes="1280px,800px"
+          width={1280}
+          height={800}
           alt={alt}
         />
       </Link>

@@ -21,7 +21,7 @@ export default function Home() {
         { src: "/sshot2-popup-theme.jpg", alt: "Configure different themes and customize popup internal UI" },
         { src: "/sshot3-context-menu.jpg", alt: "Get translation via different way, e.g. via browser context menu" },
         { src: "/sshot5-popup-linuxmint.png", alt: "Various popup theming and custom action icons (e.g. tts, (un)save to favorites, copy translation, get next translation)" },
-        { src: "/sshot4-settings.png", alt: "Adjust setting with multiple translation vendors just for yourself" },
+        { src: "/sshot4-settings.png", alt: "Adjust settings with multiple translation vendors and other configurations" },
         { src: "/sshot6-settings-dark-theme.png", alt: "Dark theme app settings window" },
         { src: "/sshot7-pdf-translation.png", alt: "PDF-files translations support" },
         { src: "/sshot8-settings-localization.png", alt: "UI localization support in app window" },
