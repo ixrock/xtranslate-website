@@ -8,12 +8,13 @@ import Image from "next/image";
 export interface PhotoPreviewProps {
   src: string;
   alt: string;
+  title?: string;
   className?: string;
   onClick?: (evt: React.MouseEvent) => void;
 }
 
 export default function PhotoPreview(props: PhotoPreviewProps) {
-  const { src, className, alt, onClick } = props;
+  const { src, className, alt, title = alt, onClick } = props;
 
   return (
     <>
@@ -23,6 +24,7 @@ export default function PhotoPreview(props: PhotoPreviewProps) {
           className={className}
           width={1280}
           height={800}
+          title={title}
           alt={alt}
         />
       </Link>
