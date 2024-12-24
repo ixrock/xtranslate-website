@@ -14,14 +14,13 @@ export interface PhotoPreviewProps {
 }
 
 export default function PhotoPreview(props: PhotoPreviewProps) {
-  const { src, className, alt, title = alt, onClick } = props;
+  const { src, className = "", alt, title = alt, onClick } = props;
 
   return (
     <>
-      <Link className={styles.PhotoPreview} href={src} onClick={onClick}>
+      <Link className={`${styles.PhotoPreview} ${className}`} href={src} onClick={onClick}>
         <Image
           src={src}
-          className={className}
           width={1280}
           height={800}
           title={title}

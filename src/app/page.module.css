@@ -6,10 +6,41 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-align: center;
 }
 
 .logo {
   --iconSize: 40px;
   width: var(--iconSize);
   height: var(--iconSize);
+}
+
+.installIcons {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+  z-index: 100;
+  background: rgba(255, 255, 255, .5);
+  border-radius: var(--borderRadius);
+}
+
+.installIcons a {
+  --iconSize: 30px;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  opacity: .55;
+  transition: opacity 250ms;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.installIcons img {
+  width: inherit;
+  height: inherit;
 }

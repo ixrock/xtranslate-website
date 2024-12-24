@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import PhotoPreviews from "@/app/components/photo-previews";
 
-// TODO: add testimonials with 4.5 stars rate block
+// TODO: add testimonials block
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -10,22 +10,33 @@ export default function Home() {
         <h1>XTranslate - your AI translator agent (browser extension)</h1>
       </header>
 
+      <section className={styles.installIcons}>
+        <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">
+          <img src="/chrome.svg" alt="Install from Chrome Extensions store"/>
+        </a>
+        <a href="https://microsoftedge.microsoft.com/addons/detail/xtranslate/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">
+          <img src="/edge.svg" alt="Install from Microsoft Edge Extensions store"/>
+        </a>
+        <a href="https://github.com/ixrock/XTranslate" target="_blank">
+          <img src="/github.svg" alt="Install from source code"/>
+        </a>
+      </section>
+
       <p>It will help you understand and translate foreign languages and even whole pages in your browser (chromium-based)</p>
       <p>
-        Translate from 100+ foreign languages to your native directly on web-site you're reading or
-        put text in the extension's drop-down window.
+        Translate from 100+ foreign languages to your native language directly at web-site you're reading or
+        type some text in the extension's drop-down window.
       </p>
 
       <PhotoPreviews images={[
-        { src: "/sshot1.jpg", alt: "Get translation Popup in web page context" },
-        { src: "/sshot2-popup-theme.jpg", alt: "Configure different themes and customize popup internal UI" },
-        { src: "/sshot3-context-menu.jpg", alt: "Get translation via different way, e.g. via browser context menu" },
-        { src: "/sshot5-popup-linuxmint.png", alt: "Various popup theming and custom action icons (e.g. tts, (un)save to favorites, copy translation, get next translation)" },
-        { src: "/sshot4-settings.png", alt: "Adjust settings with multiple translation vendors and other configurations" },
-        { src: "/sshot6-settings-dark-theme.png", alt: "Dark theme app settings window" },
-        { src: "/sshot7-pdf-translation.png", alt: "PDF-files translations support" },
-        { src: "/sshot8-settings-localization.png", alt: "UI localization support in app window" },
-        { src: "/sshot9-history.png", alt: "History of translation with import/export support in JSON" }
+        { src: "/sshots/website_popup.jpg", alt: "Get translation in web page context, default popup theme" },
+        { src: "/sshots/website_translation_results.png", alt: "Popup custom theme with action icons (LTR: Text-to-speech, Save to favorites, Copy translation, Next translation)" },
+        { src: "/sshots/website_select_text.png", alt: "Different ways to get translation from selected page text, e.g. clicking by near-by [X]-icon" },
+        { src: "/sshots/app_settings.png", alt: "Configure extension app settings" },
+        { src: "/sshots/app_popup_customization.png", alt: "Configure theme and customize translation popup" },
+        { src: "/sshots/app_translate_tab.png", alt: "Input text and get translation from main app window" },
+        { src: "/sshots/app_history_tab.png", alt: "History of translations with import/export in JSON-format" },
+        { src: "/sshots/pdf_translation.png", alt: "Translate foreign texts in PDF files" },
       ]}
       />
 
@@ -62,14 +73,15 @@ export default function Home() {
 
       <h3>Translate texts in PDF-files (<small>this will replace default PDF-viewer with pdf.js (mozilla's custom viewer)</small>)</h3>
 
-      <h4>In order to work with local files (HTML or PDF) allow access for the extension:</h4>
+      <p>
+        <em>In order to work with local files (HTML or PDF) allow access for the extension:</em>
+      </p>
       <ol>
         <li>open extensions URL system page <code>chrome://extensions</code>, find <b>XTranslate</b>™ and click <em>[Details]</em> button</li>
         <li>enable checkbox <b>Allow access to file URLs</b></li>
       </ol>
-      <br/>
 
-      <h3>Other free-to-use features of text translator extension are includes:</h3>
+      <h3>Free features of <em>XTranslate</em> extension are includes:</h3>
 
       <ol>
         <li>Listen text-to-speech for all supported translation vendors</li>
@@ -80,9 +92,9 @@ export default function Home() {
         <li>View and edit history of translations</li>
       </ol>
 
-      <h3>Pro features (paid subscription, awaiting in 2025)</h3>
+      <h3>Pro features (paid subscription, awaited in 2025)</h3>
       <ol>
-        <li>Translate unlimited full-pages using AI technologies, e.g. OpenAI</li>
+        <li>Get full-page translations using AI technologies, e.g. OpenAI <em>(pay as you go)</em></li>
         <li>Use voice input/speech recognition for getting text translation</li>
         <li>Provide multiple translation results from all translation vendors at the same time</li>
         <li>More interactions with translation popup-element at webpages (e.g. drag&drop, pin, resize, etc.)</li>

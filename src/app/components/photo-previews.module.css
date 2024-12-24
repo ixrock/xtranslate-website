@@ -7,13 +7,12 @@
   grid-gap: var(--spacingDouble);
 }
 
-.PhotoPreviews a:hover img {
+.PhotoPreview:hover img {
   transform: scale(1.3) rotate(1deg);
   animation: shake .75s ease-in;
-  z-index: 10;
 }
 
-.PhotoPreviews img {
+.PhotoPreview img {
   position: absolute;
   object-fit: cover;
   width: 100%;
@@ -26,13 +25,20 @@
   flex: 1 0;
 }
 
+.PhotoPreviewContent {
+  display: flex;
+  gap: 10px;
+}
+
 .PhotoPreviewTitle {
   display: block;
-  padding: 10px 0;
+  padding: 20px 0;
   font-size: 20px;
   font-style: italic;
   text-align: center;
   color: white;
+  background: #00000055;
+  border-radius: var(--borderRadius);
 }
 
 

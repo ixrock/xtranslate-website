@@ -61,12 +61,18 @@ export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
           <PhotoPreview
             {...props}
             key={props.src}
+            className={styles.PhotoPreview}
             onClick={evt => onImageClick(evt, props.src)}
           />
         )
       })}
       {imageSrc && (
-        <Dialog onLeft={() => nextImage(-1)} onRight={() => nextImage(+1)} onClose={closeDialog}>
+        <Dialog
+          contentClassName={styles.PhotoPreviewContent}
+          onLeft={() => nextImage(-1)}
+          onRight={() => nextImage(+1)}
+          onClose={closeDialog}
+        >
           {!store.imageReady && <LoadingIndicator/>}
           {store.imageReady && (
             <>

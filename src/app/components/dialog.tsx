@@ -5,13 +5,21 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface DialogProps extends React.PropsWithChildren<{}> {
+  className?: string;
+  contentClassName?: string;
   showCloseBtn?: boolean;
   onClose?: () => void;
   onLeft?: () => void;
   onRight?: () => void;
 }
 
-export function Dialog({ children, onClose, onLeft, onRight, showCloseBtn = true }: DialogProps) {
+export function Dialog(props: DialogProps) {
+  const {
+    children, onClose, onLeft, onRight,
+    showCloseBtn = true,
+    className = "",
+    contentClassName = ""
+  } = props;
   const [domReady, setReady] = useState(false);
 
   useEffect(() => setReady(true), []);
@@ -40,8 +48,8 @@ export function Dialog({ children, onClose, onLeft, onRight, showCloseBtn = true
   }, []);
 
   const dialog = (
-    <div className={styles.Dialog}>
-      <div className={styles.DialogContent}>
+    <div className={`${styles.Dialog} ${className}`}>
+      <div className={`${styles.DialogContent} ${contentClassName}`}>
         {showCloseBtn && (
           <span className={styles.closeBtn} onClick={onClose}>&times;</span>
         )}
