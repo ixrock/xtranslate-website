@@ -5,11 +5,6 @@ import PhotoPreviews from "@/app/components/photo-previews";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate Logo"/>
-        <h1>XTranslate - your AI translator agent (browser extension)</h1>
-      </header>
-
       <section className={styles.installIcons}>
         <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">
           <img src="/chrome.svg" alt="Install from Chrome Extensions store"/>
@@ -22,7 +17,12 @@ export default function Home() {
         </a>
       </section>
 
-      <p>It will help you understand and translate foreign languages and even whole pages in your browser (chromium-based)</p>
+      <header className={styles.header}>
+        <img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate Logo"/>
+        <h1>XTranslate - your AI translator agent (browser translation extension)</h1>
+      </header>
+
+      <p>It will help you understand and get <b>real-time text translation</b> of foreign languages or get <b>full-page text translation</b> in your browser (chromium-based)</p>
       <p>
         Translate from 100+ foreign languages to your native language directly at web-site you're reading or
         type some text in the extension's drop-down window.
