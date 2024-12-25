@@ -1,0 +1,34 @@
+.rating {
+  --starSize: 24px;
+  --spaceBetween: 3px;
+  --boxSize: calc(var(--starSize) + var(--spaceBetween));
+  --colorActive: black;
+  --colorInactive: lightgray;
+
+  position: relative;
+  font-size: var(--starSize);
+  height: var(--starSize);
+  display: inline-block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stars {
+  position: absolute;
+  height: inherit;
+  overflow: hidden;
+  width: calc(var(--boxSize) * var(--rate, 5));
+
+  &::before {
+    --color: var(--colorInactive);
+    --shadow: drop-shadow(var(--boxSize) 0 var(--color));
+
+    content: "★";
+    color: var(--color);
+    filter: var(--shadow) var(--shadow) var(--shadow) var(--shadow);
+  }
+
+  &.active::before {
+    --color: var(--colorActive)
+  }
+}
