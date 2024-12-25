@@ -1,5 +1,7 @@
 .page {
+  max-width: 1200px;
   padding: 5rem;
+  margin: auto;
 }
 
 .header {
