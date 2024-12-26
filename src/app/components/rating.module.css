@@ -1,34 +1,41 @@
 .rating {
-  --starSize: 24px;
-  --spaceBetween: 3px;
-  --boxSize: calc(var(--starSize) + var(--spaceBetween));
-  --colorActive: black;
+  --starSize: 23px;
+  --colorActive: var(--linkColor);
   --colorInactive: lightgray;
 
   position: relative;
+  display: flex;
+  gap: 5px;
   font-size: var(--starSize);
-  height: var(--starSize);
-  display: inline-block;
-  pointer-events: none;
-  user-select: none;
 }
 
-.stars {
-  position: absolute;
-  height: inherit;
+.rateValue {
+  font-size: x-large;
+}
+
+.totalReviews {
+  font-size: medium;
+}
+
+.starsWrapper {
+  position: relative;
+  min-width: calc(var(--starSize) * 5);
+  min-height: var(--starSize);
+}
+
+.star {
+  --color: var(--colorInactive);
+
+  width: calc(var(--starSize) * var(--rate, 5));
+  color: var(--color);
   overflow: hidden;
-  width: calc(var(--boxSize) * var(--rate, 5));
+  user-select: none;
 
-  &::before {
-    --color: var(--colorInactive);
-    --shadow: drop-shadow(var(--boxSize) 0 var(--color));
+  &.active {
+    --color: var(--colorActive);
 
-    content: "★";
-    color: var(--color);
-    filter: var(--shadow) var(--shadow) var(--shadow) var(--shadow);
-  }
-
-  &.active::before {
-    --color: var(--colorActive)
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }

@@ -13,7 +13,7 @@ export interface PhotoPreviewProps {
   onClick?: (evt: React.MouseEvent) => void;
 }
 
-export default function PhotoPreview(props: PhotoPreviewProps) {
+export function PhotoPreview(props: PhotoPreviewProps) {
   const { src, className = "", alt, title = alt, onClick } = props;
 
   return (
@@ -30,3 +30,5 @@ export default function PhotoPreview(props: PhotoPreviewProps) {
     </>
   )
 }
+
+export default PhotoPreview;

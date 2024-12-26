@@ -5,14 +5,13 @@ import React from "react";
 import { action, runInAction } from "mobx";
 import { observer, useLocalObservable } from "mobx-react";
 import Image from "next/image";
-import { LoadingIndicator } from "@/app/components/loading-indicator";
-import { Dialog } from "@/app/components/dialog";
-import PhotoPreview, { PhotoPreviewProps } from "@/app/components/photo-preview";
+import { LoadingIndicator, Dialog, PhotoPreview, PhotoPreviewProps } from "@/app/components";
 
 export interface PhotoPreviewsProps {
   images: PhotoPreviewProps[];
 }
 
+// TODO: add [<][>] navigation in full-screen mode
 export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
   const store = useLocalObservable(() => ({
     imageReady: false,

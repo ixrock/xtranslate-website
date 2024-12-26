@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
-import PhotoPreviews from "@/app/components/photo-previews";
+import { Rating, PhotoPreviews } from "@/app/components";
 
-// TODO: add testimonials block
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -28,6 +27,8 @@ export default function Home() {
         <h1>XTranslate - your AI translator agent (browser extension)</h1>
       </header>
 
+      <Rating rateValue={4.5} totalRatingsCount="1.6K"/>
+
       <p>It will help you understand and get <b>real-time text translation</b> of foreign languages or get <b>full-page text translation</b> in your browser (chromium-based)</p>
       <p>
         Translate from 100+ foreign languages to your native language directly at web-site you're reading or
@@ -41,8 +42,8 @@ export default function Home() {
         { src: "/sshots/app_settings.png", alt: "Configure extension app settings" },
         { src: "/sshots/app_history_tab.png", alt: "History of translations with import/export in JSON-format" },
         { src: "/sshots/pdf_translation.png", alt: "Translate foreign texts in PDF files" },
-        { src: "/sshots/app_popup_customization.png", alt: "Configure theme and customize translation popup" },
-        { src: "/sshots/app_translate_tab.png", alt: "Input text and get translation from main app window" },
+        { src: "/sshots/app_popup_customization.png", alt: "Configure theme, customize translation popup + dark theme app window" },
+        { src: "/sshots/app_translate_tab.png", alt: "Input text and get translation from main app window + choose your UI localization" },
       ]}
       />
 
