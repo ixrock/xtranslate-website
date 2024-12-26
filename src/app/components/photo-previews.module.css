@@ -20,7 +20,49 @@
   transition: transform .5s ease-in-out;
 }
 
-.PhotoPreviewImage {
+.PhotoRotateArrow {
+  --iconSize: 40px;
+
+  position: absolute;
+  font-size: 30px;
+  background: #000000aa;
+  color: white;
+  font-style: normal;
+  border-radius: 50%;
+  border: 1px solid;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  line-height: var(--iconSize);
+  text-align: center;
+  font-weight: 300;
+  z-index: 10;
+  top: 50%;
+  margin: 0 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &:hover {
+    background: black;
+  }
+
+  &.left {
+    left: 0;
+
+    &:after {
+      content: "<";
+    }
+  }
+
+  &.right {
+    right: 0;
+
+    &:after {
+      content: ">";
+    }
+  }
+}
+
+.PhotoPreviewImageBig {
   position: relative;
   flex: 1 0;
 }

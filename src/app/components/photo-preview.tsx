@@ -20,6 +20,7 @@ export function PhotoPreview(props: PhotoPreviewProps) {
     <>
       <Link className={`${styles.PhotoPreview} ${className}`} href={src} onClick={onClick}>
         <Image
+          priority
           src={src}
           width={1280}
           height={800}

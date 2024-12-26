@@ -11,7 +11,6 @@ export interface PhotoPreviewsProps {
   images: PhotoPreviewProps[];
 }
 
-// TODO: add [<][>] navigation in full-screen mode
 export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
   const store = useLocalObservable(() => ({
     imageReady: false,
@@ -53,6 +52,9 @@ export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
     store.photoIndex = newIndex;
   });
 
+  const showPrevImage = () => nextImage(-1);
+  const showNextImage = () => nextImage(+1);
+
   return (
     <div className={styles.PhotoPreviews}>
       {images.map((props, index) => {
@@ -68,15 +70,17 @@ export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
       {imageSrc && (
         <Dialog
           contentClassName={styles.PhotoPreviewContent}
-          onLeft={() => nextImage(-1)}
-          onRight={() => nextImage(+1)}
+          onLeft={showPrevImage}
+          onRight={showNextImage}
           onClose={closeDialog}
         >
           {!store.imageReady && <LoadingIndicator/>}
           {store.imageReady && (
             <>
-              <div className={styles.PhotoPreviewImage}>
-                <Image src={imageSrc} fill alt={imageTitle}/>
+              <div className={styles.PhotoPreviewImageBig}>
+                <i className={`${styles.PhotoRotateArrow} ${styles.left}`} onClick={showPrevImage}/>
+                <Image fill src={imageSrc} alt={imageTitle}/>
+                <i className={`${styles.PhotoRotateArrow} ${styles.right}`} onClick={showNextImage}/>
               </div>
               <div className={styles.PhotoPreviewTitle}>
                 {imageTitle}

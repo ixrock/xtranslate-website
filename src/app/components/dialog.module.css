@@ -37,20 +37,21 @@ body:has(.Dialog) {
 }
 
 .closeBtn {
-  --size: 40px;
+  --iconSize: 40px;
 
   position: fixed;
   right: 0;
   top: 0;
   margin: var(--spacing);
-  font-size: var(--size);
-  width: var(--size);
-  height: var(--size);
+  font-size: var(--iconSize);
+  width: var(--iconSize);
+  height: var(--iconSize);
+  line-height: var(--iconSize);
   border-radius: 50%;
-  opacity: .5;
-  color: black;
-  line-height: 110%;
-  background: white;
+  border: 1px solid;
+  opacity: .75;
+  color: white;
+  background: black;
   text-align: center;
   user-select: none;
   cursor: pointer;
