@@ -28,18 +28,18 @@ body {
   margin: 0;
 }
 
-a {
-  color: var(--linkColor);
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 h1 {
   line-height: 100%;
 }
 
 h3, p {
   margin: var(--spacingDouble) 0;
+}
+
+a[href] {
+  color: var(--linkColor);
+
+  &:hover {
+    text-decoration: none;
+  }
 }

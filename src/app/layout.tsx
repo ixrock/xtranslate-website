@@ -1,6 +1,7 @@
-import "./globals.css";
+import "./layout.css";
 import type React from "react";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Open_Sans, Roboto_Flex } from "next/font/google";
 
 const openSans = Open_Sans({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     <body className={`${openSans.variable} ${robotoFlex.variable}`}>
     {children}
     </body>
+    <Analytics/>
     </html>
   );
 }

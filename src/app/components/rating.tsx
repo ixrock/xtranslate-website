@@ -5,14 +5,15 @@ export interface RatingProps {
   className?: string;
   rateValue: number; /* rating from 1 to 5 */
   totalRatingsCount: number | string; /* e.g. 1.5K */
+  ratingsLink?: string;
 }
 
 export function Rating(props: RatingProps) {
-  const { rateValue, totalRatingsCount, className = "" } = props;
+  const { rateValue, totalRatingsCount, ratingsLink, className = "" } = props;
   const starsContent = "★".repeat(5);
 
   const cssVars = {
-    "--rate": rateValue,
+    "--rateValue": rateValue,
   } as React.CSSProperties;
 
   return (
@@ -23,8 +24,7 @@ export function Rating(props: RatingProps) {
         <div className={`${styles.star} ${styles.active}`} style={cssVars}>{starsContent}</div>
       </div>
       <div className={styles.totalReviews}>
-        (from <b>{totalRatingsCount}</b>{" "}
-        <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews" target="_blank">ratings</a>)
+        (from <b>{totalRatingsCount}</b> <a href={ratingsLink} target="_blank">ratings</a>)
       </div>
     </div>
   );

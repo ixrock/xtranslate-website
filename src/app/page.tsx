@@ -27,7 +27,11 @@ export default function Home() {
         <h1>XTranslate - your AI translator agent (browser extension)</h1>
       </header>
 
-      <Rating rateValue={4.5} totalRatingsCount="1.6K"/>
+      <Rating
+        rateValue={4.5}
+        totalRatingsCount="1.6K"
+        ratingsLink="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews"
+      />
 
       <p>It will help you understand and get <b>real-time text translation</b> of foreign languages or get <b>full-page text translation</b> in your browser (chromium-based)</p>
       <p>
