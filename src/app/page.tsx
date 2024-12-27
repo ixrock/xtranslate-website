@@ -44,10 +44,11 @@ export default function Home() {
         { src: "/sshots/website_select_text.png", alt: "Different ways to get translation from selected page text, e.g. clicking by near-by [X]-icon" },
         { src: "/sshots/website_translation_results.png", alt: "Popup custom theme with action icons (LTR: Text-to-speech, Save to favorites, Copy translation, Next translation)" },
         { src: "/sshots/app_settings.png", alt: "Configure extension app settings" },
+        { src: "/sshots/app_popup_customization.png", alt: "Configure theme, customize translation popup, choose your localization" },
+        { src: "/sshots/app_translate_tab.png", alt: "Input text and get translation from main app window + choose your UI localization" },
         { src: "/sshots/app_history_tab.png", alt: "History of translations with import/export in JSON-format" },
         { src: "/sshots/pdf_translation.png", alt: "Translate foreign texts in PDF files" },
-        { src: "/sshots/app_popup_customization.png", alt: "Configure theme, customize translation popup + dark theme app window" },
-        { src: "/sshots/app_translate_tab.png", alt: "Input text and get translation from main app window + choose your UI localization" },
+        { src: "/sshots/app_theme_dark.png", alt: "Dark theme for app window" },
       ]}
       />
 
@@ -144,7 +145,10 @@ export default function Home() {
         </li>
       </ul>
       <hr/>
-      <br/>
+      <h3>Supported localizations</h3>
+      <p>
+        العربية, বাংলা, 简体中文, 繁體中文, English, Français, Deutsch, हिंदी, Italiano, 日本語, 한국어, Português, Русский, Српски, Srpski, Slovenčina, Español, Türkçe, Tiếng Việt
+      </p>
       <footer>
         Made with ♥ and open-source projects. Donate for free app version support via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
       </footer>
