@@ -32,8 +32,12 @@ h1 {
   line-height: 100%;
 }
 
-h3, p {
+h3, p:not(:first-child) {
   margin: var(--spacingDouble) 0;
+}
+
+h3:first-child {
+  margin-top: 0;
 }
 
 a[href] {

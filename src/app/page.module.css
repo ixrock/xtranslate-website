@@ -12,6 +12,21 @@
   margin-bottom: 10px;
 }
 
+.columns {
+  font-size: 16px;
+  padding: 10px;
+  columns: 2;
+  column-gap: 50px;
+}
+
+.columns > * {
+  break-inside: avoid;
+}
+
+.photos {
+  margin: 20px 0;
+}
+
 .logo {
   --iconSize: 50px;
   width: var(--iconSize);

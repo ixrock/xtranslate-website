@@ -8,10 +8,11 @@ import Image from "next/image";
 import { LoadingIndicator, Dialog, PhotoPreview, PhotoPreviewProps } from "@/app/components";
 
 export interface PhotoPreviewsProps {
+  className?: string;
   images: PhotoPreviewProps[];
 }
 
-export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
+export const PhotoPreviews = observer(({ images, className }: PhotoPreviewsProps) => {
   const store = useLocalObservable(() => ({
     imageReady: false,
     photoIndex: -1,
@@ -56,7 +57,7 @@ export const PhotoPreviews = observer(({ images }: PhotoPreviewsProps) => {
   const showNextImage = () => nextImage(+1);
 
   return (
-    <div className={styles.PhotoPreviews}>
+    <div className={`${styles.PhotoPreviews} ${className ?? ""}`}>
       {images.map((props, index) => {
         return (
           <PhotoPreview

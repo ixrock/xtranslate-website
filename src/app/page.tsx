@@ -41,7 +41,7 @@ export default function Home() {
         type some text in the extension's drop-down window.
       </p>
 
-      <PhotoPreviews images={[
+      <PhotoPreviews className={styles.photos} images={[
         { src: "/sshots/website_popup.jpg", alt: "Get translation in web page context, default popup theme" },
         { src: "/sshots/website_select_text.png", alt: "Different ways to get translation from selected page text, e.g. clicking by near-by [X]-icon" },
         { src: "/sshots/website_translation_results.png", alt: "Popup custom theme with action icons (LTR: Text-to-speech, Save to favorites, Copy translation, Next translation)" },
@@ -54,73 +54,76 @@ export default function Home() {
       ]}
       />
 
-      <h3>Install extension:</h3>
+      <div className={styles.columns}>
+        <h3>Install extension:</h3>
+        <ul>
+          <li><a href="https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">Chrome Extensions Web Store</a></li>
+          <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">Microsoft Edge Add-ons</a></li>
+          <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">Firefox addons</a> <em>(old version with limited support)</em></li>
+          <li><a href="https://github.com/ixrock/XTranslate" target="_blank">Github</a> <em>(from source code)</em></li>
+        </ul>
+
+        <h3>Available translation vendors:</h3>
+        <ul>
+          <li><a href="https://translate.google.com/" target="_blank">Google</a> (free)</li>
+          <li><a href="https://translate.yandex.com/" target="_blank">Yandex</a> (free)</li>
+          <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> (free)</li>
+          <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> (free: API key limited to 500,000 chars/month)</li>
+          <li><a href="https://platform.openai.com" target="_blank">OpenAI (ChatGPT authors)</a> (paid: register and top-up balance)</li>
+        </ul>
+      </div>
+
       <hr/>
-      <ul>
-        <li><a href="https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">Chrome Extensions Web Store</a></li>
-        <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">Microsoft Edge Add-ons</a></li>
-        <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">Firefox addons</a> <em>(old version with limited support)</em></li>
-        <li><a href="https://github.com/ixrock/XTranslate" target="_blank">Github</a> <em>(from source code)</em></li>
-      </ul>
 
       <h3>Features:</h3>
-      <hr/>
-      <p>Many ways to <em>get text translation</em> from web page or PDF files:</p>
-      <ul>
-        <li>Double-click on the word</li>
-        <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
-        <li>Click on the translate icon appeared near selected text</li>
-        <li>Click on selected text <em>(turned off by default)</em></li>
-        <li>Just release mouse button <em>(turned off by default)</em></li>
-        <li>Write text in input fields, mouse over it and press hotkey</li>
-        <li>Get translation of selected text from via <em>XTranslate</em> context menu item</li>
-        <li>
-          You can translate whole pages with <a href="https://translate.google.com/" target="_blank">Google</a>
-          <span> or </span>
-          <a href="https://translate.yandex.com" target="_blank">Yandex</a> services for free <em>(via context menu)</em>
-        </li>
-      </ul>
+      <div className={styles.columns}>
+        <p>Many ways to get <b>text translation</b> from all <b>webpages</b> and <b>PDF files</b>:</p>
+        <ul>
+          <li>Double-click on the word</li>
+          <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
+          <li>Click on the translate icon appeared near selected text</li>
+          <li>Click on selected text <em>(turned off by default)</em></li>
+          <li>Just release mouse button <em>(turned off by default)</em></li>
+          <li>Write text in input fields, mouse over it and press hotkey</li>
+          <li>Get translation of selected text from via <em>XTranslate</em> context menu item</li>
+          <li>
+            You can translate whole pages with <a href="https://translate.google.com/" target="_blank">Google</a>
+            <span> or </span>
+            <a href="https://translate.yandex.com" target="_blank">Yandex</a> services for free <em>(via context menu)</em>
+          </li>
+        </ul>
 
-      <p>
-        You can get even some information from images by putting mouse cursor over the image element and
-        press hotkey (title or alt attributes will be used, if applicable).
-        This trick actually works with any element under mouse cursor. Just put mouse over item and press hotkey!
-      </p>
+        <p>
+          You can get even some information from images by putting mouse cursor over the image element and
+          press hotkey (title or alt attributes will be used, if applicable).
+          This trick actually works with any element under mouse cursor. Just put mouse over item and press hotkey!
+        </p>
 
-      <h3>In order to work with local files (HTML or PDF) allow access for the extension:</h3>
-      <ol>
-        <li>open extensions URL system page <code>chrome://extensions</code>, find <b>XTranslate</b>™ and click <em>[Details]</em> button</li>
-        <li>enable checkbox <em>Allow access to file URLs</em></li>
-      </ol>
+        <h3>In order to work with local files (HTML or PDF) allow access for the extension:</h3>
+        <ol>
+          <li>open extensions URL system page <code>chrome://extensions</code>, find <b>XTranslate</b>™ and click <em>[Details]</em> button</li>
+          <li>enable checkbox <em>Allow access to file URLs</em></li>
+        </ol>
 
-      <h3>Free features of <em>XTranslate</em> extension are includes:</h3>
+        <h3><b>Free features</b> of <em>XTranslate</em> extension are includes:</h3>
 
-      <ol>
-        <li>Listen text-to-speech for all supported translation vendors</li>
-        <li>Adjust your unique design of the popup with translated text</li>
-        <li>Customize the ways of getting translations and other options in the settings</li>
-        <li>Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support</li>
-        <li>Save your favourite translations as quick bookmarks in history</li>
-        <li>View and edit history of translations</li>
-      </ol>
+        <ol>
+          <li>Listen text-to-speech for all supported translation vendors</li>
+          <li>Adjust your unique design of the popup with translated text</li>
+          <li>Customize the ways of getting translations and other options in the settings</li>
+          <li>Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support</li>
+          <li>Save your favourite translations as quick bookmarks in history</li>
+          <li>View and edit history of translations</li>
+        </ol>
 
-      <h3>Pro features (paid subscription, awaited in 2025)</h3>
-      <ol>
-        <li>Get full-page translations using AI technologies, e.g. OpenAI <em>(pay as you go)</em></li>
-        <li>Use voice input/speech recognition for getting text translation</li>
-        <li>Provide multiple translation results from all translation vendors at the same time</li>
-        <li>More interactions with translation popup-element at webpages (e.g. drag&drop, pin, resize, etc.)</li>
-      </ol>
-
-      <h3>Available translation vendors:</h3>
-      <hr/>
-      <ul>
-        <li><a href="https://translate.google.com/" target="_blank">Google</a> (free)</li>
-        <li><a href="https://translate.yandex.com/" target="_blank">Yandex</a> (free)</li>
-        <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> (free)</li>
-        <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> (free: API key limited to 500,000 chars/month)</li>
-        <li><a href="https://platform.openai.com" target="_blank">OpenAI (ChatGPT authors)</a> (paid: register and top-up balance)</li>
-      </ul>
+        <h3>Pro features (paid subscription, awaited in 2025)</h3>
+        <ol>
+          <li>Get full-page translations using AI technologies, e.g. OpenAI <em>(pay as you go)</em></li>
+          <li>Use voice input/speech recognition for getting text translation</li>
+          <li>Provide multiple translation results from all translation vendors at the same time</li>
+          <li>More interactions with translation popup-element at webpages (e.g. drag&drop, pin, resize, etc.)</li>
+        </ol>
+      </div>
 
       <h3>Steps for access OpenAI translations:</h3>
       <hr/>
@@ -151,6 +154,8 @@ export default function Home() {
       <p>
         العربية, বাংলা, 简体中文, 繁體中文, English, Français, Deutsch, हिंदी, Italiano, 日本語, 한국어, Português, Русский, Српски, Srpski, Slovenčina, Español, Türkçe, Tiếng Việt
       </p>
+
+      <hr/>
       <footer>
         Made with ♥ and open-source projects. Donate for free app version support via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
       </footer>
