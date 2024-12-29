@@ -1,6 +1,8 @@
 import styles from "./page.module.css";
 import { Rating, PhotoPreviews } from "@/app/components";
 
+// TODO: add translations of contents to all supported locales within app, e.g `www.xtranslate.dev/zh-CN` (default: "en")
+// TODO: make demo-show cases (.MOV => upload to youtube => make available here)
 export default function Home() {
   return (
     <div className={styles.page}>

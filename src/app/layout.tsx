@@ -2,6 +2,7 @@ import "./layout.css";
 import type React from "react";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { Open_Sans, Roboto_Flex } from "next/font/google";
 
 const openSans = Open_Sans({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     {children}
     </body>
     <Analytics/>
+    <GoogleAnalytics gaId="G-HKWWGL29S8"/>
     </html>
   );
 }
