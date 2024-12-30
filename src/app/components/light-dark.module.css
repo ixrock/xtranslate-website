@@ -1,0 +1,17 @@
+.iconDarkLight {
+  --iconSize: 35px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin: 10px;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  cursor: pointer;
+  opacity: .75;
+  filter: var(--iconDarkInverseFilter);
+
+  &:hover {
+    opacity: 1;
+  }
+}

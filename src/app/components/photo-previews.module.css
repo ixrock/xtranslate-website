@@ -78,8 +78,8 @@
   font-size: 20px;
   font-style: italic;
   text-align: center;
-  color: white;
-  background: #00000055;
+  color: light-dark(white, black);
+  background: light-dark(#00000055, #ffffffee);
   border-radius: var(--borderRadius);
 }
 

@@ -34,6 +34,8 @@
 }
 
 .installIcons {
+  --iconSize: 30px;
+
   position: fixed;
   right: 0;
   top: 0;
@@ -42,12 +44,11 @@
   padding: 5px;
   gap: 10px;
   z-index: 100;
-  background: rgba(255, 255, 255, .5);
+  background: var(--iconBackground);
   border-radius: var(--borderRadius);
 }
 
 .installIcons a {
-  --iconSize: 30px;
   width: var(--iconSize);
   height: var(--iconSize);
   opacity: .55;
@@ -59,6 +60,7 @@
 }
 
 .installIcons img {
+  filter: var(--iconDarkInverseFilter);
   width: inherit;
   height: inherit;
 }
