@@ -8,6 +8,7 @@ export interface RatingProps {
   ratingsLink?: string;
 }
 
+// TODO: extract localization part
 export function Rating(props: RatingProps) {
   const { rateValue, totalRatingsCount, ratingsLink, className = "" } = props;
   const starsContent = "★".repeat(5);

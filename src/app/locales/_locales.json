@@ -1,0 +1,20 @@
+{
+  "ar": {"english": "Arabic", "native": "العربية"},
+  "bn": {"english": "Bengali", "native": "বাংলা"},
+  "zh-CN": {"english": "Chinese - Mandarin", "native": "简体中文"},
+  "zh-TW": {"english": "Chinese - Taiwan", "native": "繁體中文"},
+  "en": {"english": "English", "native": "English"},
+  "fr": {"english": "French", "native": "Français"},
+  "de": {"english": "German", "native": "Deutsch"},
+  "hi": {"english": "Hindi", "native": "हिंदी"},
+  "it": {"english": "Italian", "native": "Italiano"},
+  "ja": {"english": "Japanese", "native": "日本語"},
+  "ko": {"english": "Korean", "native": "한국어"},
+  "pt-PT": {"english": "Portuguese", "native": "Português"},
+  "ru": {"english": "Russian", "native": "Русский"},
+  "sr": {"english": "Serbian - Latin", "native": "Srpski"},
+  "sk": {"english": "Slovak", "native": "Slovenčina"},
+  "es": {"english": "Spanish", "native": "Español"},
+  "tr": {"english": "Turkish", "native": "Türkçe"},
+  "vi": {"english": "Vietnamese", "native": "Tiếng Việt"}
+}

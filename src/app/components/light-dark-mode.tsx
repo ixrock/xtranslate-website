@@ -10,18 +10,23 @@ export enum Mode {
 
 export const defaultMode = Mode.LIGHT;
 
-export function LightDarkModeSwitcher() {
-  const [mode, setMode] = React.useState(defaultMode);
+export interface LightDarkModeProps {
+  storageId?: string;
+  mode?: Mode;
+}
+
+export function LightDarkModeSwitcher({ mode: initialModel = defaultMode, storageId }: LightDarkModeProps) {
+  const [mode, setMode] = React.useState(initialModel);
   const title = `Mode: ${mode}`
 
   async function toggleMode(mode: Mode) {
     const newMode = mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT;
-    await saveToPersistentStorage(newMode);
+    await saveToPersistentStorage(newMode, storageId);
     setMode(newMode);
   }
 
   useEffect(() => {
-    getFromPersistentStorage().then(setMode);
+    getFromPersistentStorage(storageId).then(setMode);
   }, []);
 
   useEffect(() => {
@@ -41,17 +46,17 @@ export function LightDarkModeSwitcher() {
   )
 }
 
-export async function saveToPersistentStorage(mode: Mode) {
+export async function saveToPersistentStorage(mode: Mode, id = "theme") {
   try {
-    localStorage.setItem("theme", mode);
+    localStorage.setItem(id, mode);
     return mode;
   } catch (err) {
-    console.error(`Failed to save new mode="${mode}" to persistent storage`);
-    return getFromPersistentStorage();
+    console.error(`Failed to save new mode="${mode}" to persistent storage with ID=${id}`);
+    return getFromPersistentStorage(id);
   }
 }
 
-export async function getFromPersistentStorage(): Promise<Mode> {
-  return localStorage.getItem("theme") as Mode ?? defaultMode;
+export async function getFromPersistentStorage(id = "theme"): Promise<Mode> {
+  return localStorage.getItem(id) as Mode ?? defaultMode;
 }
 
