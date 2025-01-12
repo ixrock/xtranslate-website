@@ -14,11 +14,12 @@ install_from_github = Install from source code (Github)
 # Main info
 #
 info_top1 =
-    It will help you understand and get <b>real-time text translation</b> of foreign languages or get <b>full-page text translation</b>
+    It will help you to learn and understand foreign languages and get <b>real-time text translation</b> of selected text
+    from HTML or PDF documents and even get <b>full web-page text translation</b>.
 
 info_top2 =
     Translate from 100+ foreign languages to your native language directly at web-site you're reading or
-    type some text in the extension's drop-down window.
+    type some text at extension main window to get <b>instant text translation</b>.
 
 gallery_website_popup = Get translation in web page context, default popup theme
 gallery_website_select_text = Different ways to get translation from selected page text, e.g. clicking by near-by [X]-icon
