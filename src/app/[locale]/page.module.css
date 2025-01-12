@@ -19,6 +19,14 @@
   column-gap: 50px;
 }
 
+.rating {
+  margin: var(--spacing) 0;
+}
+
+.break {
+  break-before: column;
+}
+
 .columns > * {
   break-inside: avoid;
 }
@@ -63,4 +71,10 @@
   filter: var(--iconDarkInverseFilter);
   width: inherit;
   height: inherit;
+}
+
+.supportedLocalizations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }

@@ -1,7 +1,9 @@
 app-brand-name = XTranslate
 header = {app-brand-name} - your AI translator agent (browser extension)
 
+#
 # Installation info (titles & image alt(s))
+#
 install_from_chrome_store = Install from Chrome Extensions store
 chrome_store_short = Chrome Extensions Store
 install_from_ms_edge_store = Install from Microsoft Edge Extensions Store
@@ -12,9 +14,7 @@ install_from_github = Install from source code (Github)
 # Main info
 #
 info_top1 =
-    It will help you understand and get
-    <b>real-time text translation</b> of foreign languages or get
-    <b>full-page text translation</b> in your browser (chromium-based)
+    It will help you understand and get <b>real-time text translation</b> of foreign languages or get <b>full-page text translation</b>
 
 info_top2 =
     Translate from 100+ foreign languages to your native language directly at web-site you're reading or
@@ -25,7 +25,7 @@ gallery_website_select_text = Different ways to get translation from selected pa
 gallery_website_translation_results = Popup custom theme with action icons (LTR: Text-to-speech, Save to favorites, Copy translation, Next translation)
 gallery_app_settings = Configure extension app settings
 gallery_app_popup_customization = Configure theme, customize translation popup, choose your localization
-gallery_app_translate_tab = Input text and get translation from main app window + choose your UI localization
+gallery_app_translate_tab = Input text and get translation from main app window
 gallery_app_history_tab = History of translations with import/export in JSON-format
 gallery_pdf_translation = Translate foreign texts in PDF files
 gallery_app_theme_dark = Dark theme for app window

@@ -43,12 +43,16 @@ body {
   margin: 0;
 }
 
+hr {
+  margin: var(--spacing) 0;
+}
+
 h1 {
   line-height: 100%;
 }
 
-h3, p:not(:first-child) {
-  margin: var(--spacingDouble) 0;
+h3 {
+  margin-bottom: var(--spacingDouble);
 }
 
 h3:first-child {

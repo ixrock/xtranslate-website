@@ -36,7 +36,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
 
       <section className={styles.installIcons}>
         <a
-          href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo"
+          href={`https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`}
           title={__("install_from_chrome_store")}
           target="_blank">
           <img src="/chrome.svg" alt={__("chrome_store_short")}/>
@@ -58,13 +58,14 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       </header>
 
       <Rating
+        className={styles.rating}
         rateValue={4.5}
         totalRatingsCount="1.6K"
         ratingsLink="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews"
       />
 
       <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
-      <p>{__("info_top2")}</p>
+      <p dangerouslySetInnerHTML={{ __html: __("info_top2") }}></p>
 
       <PhotoPreviews className={styles.photos} images={[
         { src: "/sshots/website_popup.jpg", alt: __("gallery_website_popup") },
@@ -82,13 +83,13 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       <div className={styles.columns}>
         <h3>{__("install_extension_header")}:</h3>
         <ul>
-          <li><a href="https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo" target="_blank">{__("install_chrome_store")}</a></li>
-          <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">{__("Microsoft Edge Add-ons")}</a></li>
+          <li><a href={`https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`} target="_blank">{__("install_chrome_store")}</a></li>
+          <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">{__("install_ms_addons")}</a></li>
           <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">{__("install_firefox")}</a> <em>({__("install_old_version")})</em></li>
           <li><a href="https://github.com/ixrock/XTranslate" target="_blank">Github</a> <em>({__("install_from_sources")})</em></li>
         </ul>
 
-        <h3>{__("vendors_available_header")}:</h3>
+        <h3 className={styles.break}>{__("vendors_available_header")}:</h3>
         <ul>
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://translate.yandex.com/" target="_blank">Yandex</a> ({__("vendor_apis_is_free")})</li>
@@ -114,24 +115,29 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           <li dangerouslySetInnerHTML={{ __html: __("feature_way_full_page_translate") }}/>
         </ul>
 
-        <p>{__("feature_mouse_over_html_element_with_hotkey")}</p>
+        <p dangerouslySetInnerHTML={{ __html: __("feature_mouse_over_html_element_with_hotkey") }}/>
 
+        <br/>
         <h3>{__("pdf_feature_header")}</h3>
         <ol>
           <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step1") }}/>
           <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step2") }}/>
         </ol>
 
-        <h3 dangerouslySetInnerHTML={{ __html: __("features_free_header") }}/>
+        <h3
+          className={styles.break}
+          dangerouslySetInnerHTML={{ __html: __("features_free_header") }}
+        />
         <ol>
           <li>{__("features_free_tts")}</li>
           <li>{__("features_free_adjust_popup")}</li>
           <li>{__("features_free_custom_actions")}</li>
           <li dangerouslySetInnerHTML={{ __html: __("features_free_insert_text") }}/>
-          <li>{__("features_free_save_words")}</li>
+          <li dangerouslySetInnerHTML={{ __html: __("features_free_save_words") }}/>
           <li>{__("features_free_history")}</li>
         </ol>
 
+        <br/>
         <h3>{__("features_paid_header")}</h3>
         <ol>
           <li dangerouslySetInnerHTML={{ __html: __("features_paid_full_pro_page_ai") }}/>
@@ -140,9 +146,9 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
           <li>{__("features_paid_more_interactivity")}</li>
         </ol>
       </div>
+      <hr/>
 
       <h3>{__("openai_access_header")}:</h3>
-      <hr/>
       <ol>
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_sign_up") }}/>
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_create_api_key") }}/>
@@ -150,6 +156,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_adjust_limits") }}/>
       </ol>
 
+      <hr/>
       <h3>{__("security_info_header")}:</h3>
       <ul>
         <li dangerouslySetInnerHTML={{ __html: __("security_info1") }}/>
@@ -157,9 +164,14 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         <li dangerouslySetInnerHTML={{ __html: __("security_info3") }}/>
       </ul>
       <hr/>
+
       <h3>Supported localizations</h3>
-      <p>
-        العربية, বাংলা, 简体中文, 繁體中文, English, Français, Deutsch, हिंदी, Italiano, 日本語, 한국어, Português, Русский, Српски, Srpski, Slovenčina, Español, Türkçe, Tiếng Việt
+      <p className={styles.supportedLocalizations}>
+        {Object.entries(AvailableLocales).map(([availableLocale, { native, english }]) => {
+          if (locale === availableLocale) return native;
+          const englishVersion = native !== english ? `(${english})` : "";
+          return <a key={availableLocale} href={`/${availableLocale}`}>{native} {englishVersion}</a>;
+        })}
       </p>
 
       <hr/>
