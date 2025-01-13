@@ -1,4 +1,5 @@
-// lib/fluent.js
+// Fluent.js localization
+// Docs: https://projectfluent.org/fluent/guide/index.html
 import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
 import fs from 'fs';
 import path from 'path';
@@ -28,11 +29,11 @@ export interface MessageParams {
   params?: Record<string, FluentVariable>
 }
 
-export function getMessage({ bundle, params, msgId, locale }: MessageParams) {
+export function getMessage({ bundle, params, msgId, locale }: MessageParams): string {
   const msgKey = bundle.getMessage(msgId)?.value;
 
   if (msgKey) {
-    return bundle.formatPattern(msgKey, params)
+    return bundle.formatPattern(msgKey, params);
   }
 
   return `[[I18N-404 msgId="${msgId}", locale="${locale}"]]`;

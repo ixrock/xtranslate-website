@@ -4,13 +4,10 @@ import React from 'react';
 export interface RatingProps {
   className?: string;
   rateValue: number; /* rating from 1 to 5 */
-  totalRatingsCount: number | string; /* e.g. 1.5K */
-  ratingsLink?: string;
 }
 
-// TODO: extract localization part
 export function Rating(props: RatingProps) {
-  const { rateValue, totalRatingsCount, ratingsLink, className = "" } = props;
+  const { rateValue, className = "" } = props;
   const starsContent = "★".repeat(5);
 
   const cssVars = {
@@ -23,9 +20,6 @@ export function Rating(props: RatingProps) {
       <div className={styles.starsWrapper}>
         <div className={styles.star}>{starsContent}</div>
         <div className={`${styles.star} ${styles.active}`} style={cssVars}>{starsContent}</div>
-      </div>
-      <div className={styles.totalReviews}>
-        (from <b>{totalRatingsCount}</b> <a href={ratingsLink} target="_blank">ratings</a>)
       </div>
     </div>
   );

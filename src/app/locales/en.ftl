@@ -1,5 +1,5 @@
-app-brand-name = XTranslate
-header = {app-brand-name} - your AI translator agent (browser extension)
+-app-brand-name = XTranslate
+header = {-app-brand-name} - your AI translator agent (browser extension)
 
 #
 # Installation info (titles & image alt(s))
@@ -56,7 +56,7 @@ feature_way3 = Click on the translate icon appeared near selected text
 feature_way4 = Click on selected text <em>(turned off by default)</em>
 feature_way5 = Just release mouse button <em>(turned off by default)</em>
 feature_way6 = Write text in input fields, mouse over it and press hotkey
-feature_way7 = Get translation of selected text from via <em>{app-brand-name}</em> context menu item
+feature_way7 = Get translation of selected text from via <em>{-app-brand-name}</em> context menu item
 
 feature_way_full_page_translate =
     You can translate whole pages with <a href="https://translate.google.com/" target="_blank">Google</a>
@@ -78,7 +78,7 @@ pdf_local_step2 = enable checkbox <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Free features</b> of <em>{app-brand-name}</em> extension are includes
+features_free_header = <b>Free features</b> of <em>{-app-brand-name}</em> extension are includes
 features_free_tts = Listen text-to-speech for all supported translation vendors
 features_free_adjust_popup = Adjust your unique design of the popup with translated text
 features_free_custom_actions = Customize the ways of getting translations and other options in the settings
@@ -123,4 +123,12 @@ security_info3 = Don't enter or share your OpenAI key anywhere else except exten
 #
 footer_info = Made with ♥ and open-source projects. Donate for free app version support via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
 
+
+#
+# Ratings component
+#
+total_ratings =
+    (from <b>{$count}</b>
+    <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">
+        ratings</a>)
 

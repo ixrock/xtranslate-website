@@ -57,12 +57,14 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         <h1>{__("header")}</h1>
       </header>
 
-      <Rating
-        className={styles.rating}
-        rateValue={4.5}
-        totalRatingsCount="1.6K"
-        ratingsLink="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews"
-      />
+      <div className={styles.ratings}>
+        <Rating rateValue={4.5}/>
+        <div className={styles.ratingAmountFrom}>
+          <span dangerouslySetInnerHTML={{
+            __html: __("total_ratings", { count: "1.6K" })
+          }}/>
+        </div>
+      </div>
 
       <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
       <p dangerouslySetInnerHTML={{ __html: __("info_top2") }}></p>
@@ -168,9 +170,8 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       <h3>Supported localizations</h3>
       <p className={styles.supportedLocalizations}>
         {Object.entries(AvailableLocales).map(([availableLocale, { native, english }]) => {
-          if (locale === availableLocale) return native;
-          const englishVersion = native !== english ? `(${english})` : "";
-          return <a key={availableLocale} href={`/${availableLocale}`}>{native} {englishVersion}</a>;
+          if (locale === availableLocale) return <b>{native}</b>;
+          return <a key={availableLocale} href={`/${availableLocale}`}>{native}</a>
         })}
       </p>
 

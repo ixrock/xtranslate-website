@@ -13,10 +13,6 @@
   font-size: x-large;
 }
 
-.totalReviews {
-  font-size: medium;
-}
-
 .starsWrapper {
   position: relative;
   min-width: calc(var(--starSize) * 5);
