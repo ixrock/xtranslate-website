@@ -38,3 +38,12 @@ export function getMessage({ bundle, params, msgId, locale }: MessageParams): st
 
   return `[[I18N-404 msgId="${msgId}", locale="${locale}"]]`;
 }
+
+export function isRTL(locale: string): boolean {
+  return [
+    "ar", // arabic
+    "he", // hebrew
+    "fa", // persian
+    "ur", // urdu
+  ].includes(locale);
+}

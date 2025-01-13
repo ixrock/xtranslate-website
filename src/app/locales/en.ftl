@@ -125,8 +125,10 @@ footer_info = Made with ♥ and open-source projects. Donate for free app versio
 
 
 #
-# Ratings component
+# Other
 #
+supported_localization_header = Supported localization
+
 total_ratings =
     (from <b>{$count}</b>
     <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">

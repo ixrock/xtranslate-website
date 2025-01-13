@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
-import { fallbackLocale, getFluentBundle, getMessage, Locale } from "@/app/i18n";
+import { fallbackLocale, getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/app/locales/_locales.json"
 import { redirect } from "next/navigation";
 import { FluentVariable } from "@fluent/bundle";
@@ -31,7 +31,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
   };
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} dir={isRTL(locale) ? "rtl" : "ltr"}>
       <LightDarkModeSwitcher/>
 
       <section className={styles.installIcons}>
@@ -167,7 +167,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       </ul>
       <hr/>
 
-      <h3>Supported localizations</h3>
+      <h3>{__("supported_localization_header")}</h3>
       <p className={styles.supportedLocalizations}>
         {Object.entries(AvailableLocales).map(([availableLocale, { native, english }]) => {
           if (locale === availableLocale) return <b>{native}</b>;

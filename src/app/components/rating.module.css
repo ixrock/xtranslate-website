@@ -17,6 +17,7 @@
   position: relative;
   min-width: calc(var(--starSize) * 5);
   min-height: var(--starSize);
+  direction: ltr;
 }
 
 .star {

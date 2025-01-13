@@ -122,11 +122,13 @@ security_info3 =
 #
 # Footer
 #
-footer_info = Сделано с ♥ и при поддержке проектов с открытым исходным кодом. Поддержите бесплатную версию проекта, сделав донат через <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
+footer_info = Сделано с ♥ и при помощи проектов с открытым исходным кодом. Поддержите бесплатную версию приложения, сделав пожертвования через <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
 
 #
-# Ratings component
+# Other
 #
+supported_localization_header = Поддерживаемая локализация
+
 total_ratings =
     (из <b>{$count}</b>
     <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=ru" target="_blank">
