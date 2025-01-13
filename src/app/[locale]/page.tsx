@@ -53,7 +53,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       </section>
 
       <header className={styles.header}>
-        <img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate Logo"/>
+        <a href="/"><img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate"/></a>
         <h1>{__("header")}</h1>
       </header>
 
