@@ -1,6 +1,7 @@
 .page {
   max-width: 1200px;
-  padding: 5rem;
+  padding: var(--spacingDouble) clamp(20px, 10vw, 100px);
+  padding-top: 70px;
   margin: auto;
 }
 
