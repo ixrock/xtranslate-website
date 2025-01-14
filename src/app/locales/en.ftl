@@ -15,7 +15,7 @@ install_from_github = Install from source code (Github)
 #
 info_top1 =
     It will help you to learn and understand foreign languages and get <b>real-time text translation</b> of selected text
-    from HTML or PDF documents and even get <b>full web-page text translation</b>.
+    from <b>HTML</b> or <b>PDF documents</b> and even get <b>full web-page text translation</b>.
 
 info_top2 =
     Translate from 100+ foreign languages to your native language directly at web-site you're reading or
@@ -49,7 +49,7 @@ vendor_open_ai_limitation = register and top-up balance
 # Features
 #
 features_header = Features
-features_intro = Many ways to get <b>text translation</b> from all <b>webpages</b> and <b>PDF files</b>
+features_intro = Many ways to get <b>text translation</b> from all <b>HTML</b> (webpages), <b>TXT</b> or <b>translate text in PDF</b> files:
 feature_way1 = Double-click on the word
 feature_way2 = Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)
 feature_way3 = Click on the translate icon appeared near selected text

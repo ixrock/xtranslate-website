@@ -106,6 +106,7 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
       <h3>{__("features_header")}:</h3>
       <div className={styles.columns}>
         <p dangerouslySetInnerHTML={{ __html: __("features_intro") }}/>
+        <br/>
         <ul>
           <li dangerouslySetInnerHTML={{ __html: __("feature_way1") }}/>
           <li dangerouslySetInnerHTML={{ __html: __("feature_way2") }}/>
