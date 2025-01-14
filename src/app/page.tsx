@@ -6,7 +6,7 @@ export default function Home() {
   const navLang = navigator.language as any as Locale;
   const userLocale = navLang.split("-")[0] as Locale;
 
-  if (AvailableLocales[navLang]) redirect(`/${AvailableLocales[navLang]}`)
-  if (AvailableLocales[userLocale]) redirect(`/${AvailableLocales[userLocale]}`);
+  if (AvailableLocales[navLang]) redirect(`/${navLang}`)
+  if (AvailableLocales[userLocale]) redirect(`/${userLocale}`);
   redirect(`/${fallbackLocale}`);
 }
