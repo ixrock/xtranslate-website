@@ -1,4 +1,6 @@
 .page {
+  --iconSize: 30px;
+
   max-width: 1200px;
   padding: 70px clamp(20px, 10vw, 100px);
   margin: auto;
@@ -46,24 +48,24 @@
   height: var(--iconSize);
 }
 
-.installIcons {
-  --iconSize: 30px;
-
+.topIcons {
   position: fixed;
-  right: 0;
   top: 0;
-  margin: 10px;
   display: flex;
-  padding: 5px;
-  gap: 10px;
+  align-items: center;
+  gap: var(--spacing);
+  margin: var(--spacing);
+  padding: var(--spacingHalf);
   z-index: 100;
   background: var(--iconBackground);
   border-radius: var(--borderRadius);
 }
 
-.installIcons a {
+.topIcons > * {
+  filter: var(--iconDarkInverseFilter);
   width: var(--iconSize);
   height: var(--iconSize);
+  cursor: pointer;
   opacity: .55;
   transition: opacity 250ms;
 
@@ -72,8 +74,7 @@
   }
 }
 
-.installIcons img {
-  filter: var(--iconDarkInverseFilter);
+.topIcons a > img {
   width: inherit;
   height: inherit;
 }

@@ -55,8 +55,9 @@ h3:first-child {
   margin-top: 0;
 }
 
-a[href] {
+:any-link[href] {
   color: var(--linkColor);
+  text-decoration-color: var(--textColor);
 
   &:hover {
     text-decoration: none;

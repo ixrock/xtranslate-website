@@ -2,6 +2,7 @@
 
 import styles from './light-dark.module.css';
 import React, { useEffect } from 'react';
+import LightDarkIcon from "./light-dark-mode.svg"
 
 export enum Mode {
   LIGHT = "light",
@@ -35,13 +36,12 @@ export function LightDarkModeSwitcher({ mode: initialModel = defaultMode, storag
   }, [mode]);
 
   return (
-    <a onClick={() => toggleMode(mode)}>
-      <img
-        className={styles.iconDarkLight}
-        src="/light-dark-mode.svg"
-        title={title}
-        alt={title}
-      />
+    <a
+      className={styles.iconDarkLight}
+      onClick={() => toggleMode(mode)}
+      title={title}
+    >
+      <LightDarkIcon/>
     </a>
   )
 }

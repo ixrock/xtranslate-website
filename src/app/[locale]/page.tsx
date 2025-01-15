@@ -1,11 +1,13 @@
 // TODO: add page with videos of features/use-cases/settings-changes/etc.
 
 import styles from "./page.module.css";
+import React from "react";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { fallbackLocale, getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/app/locales/_locales.json"
 import { redirect } from "next/navigation";
 import { FluentVariable } from "@fluent/bundle";
+import { SelectLanguage } from "@/app/components/select-lang";
 
 interface LocalizedPageProps {
   params: Promise<{ locale: Locale }>
@@ -32,9 +34,12 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
 
   return (
     <div className={styles.page} dir={isRTL(locale) ? "rtl" : "ltr"}>
-      <LightDarkModeSwitcher/>
+      <div className={styles.topIcons} style={{ left: 0 }}>
+        <LightDarkModeSwitcher/>
+        <SelectLanguage locale={locale}/>
+      </div>
 
-      <section className={styles.installIcons}>
+      <section className={styles.topIcons} style={{ right: 0 }}>
         <a
           href={`https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`}
           title={__("install_from_chrome_store")}

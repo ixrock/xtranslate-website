@@ -1,0 +1,22 @@
+.selectLang {
+  position: relative;
+}
+
+.selectLang select {
+  appearance: none;
+  font-size: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.selectLang svg {
+  width: var(--iconSize);
+  height: var(--iconSize);
+  vertical-align: middle;
+  color: inherit;
+}
