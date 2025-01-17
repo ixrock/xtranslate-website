@@ -62,11 +62,19 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         <h1>{__("header")}</h1>
       </header>
 
-      <div className={styles.ratings}>
-        <Rating rateValue={4.5}/>
-        <div className={styles.ratingAmountFrom}>
+      <div className={styles.ratingsWrapper}>
+        <div className={styles.ratings}>
+          <Rating rateValue={4.5}/>
+          <div className={styles.ratingAmountFrom}>
           <span dangerouslySetInnerHTML={{
             __html: __("total_ratings", { count: "1.6K" })
+          }}/>
+          </div>
+        </div>
+        <div className={styles.ratingTotalUsers}>
+          <img src="/users.svg" alt="Active users"/>
+          <span dangerouslySetInnerHTML={{
+            __html: __("total_rating_users_globe", { usersCount: "100K" })
           }}/>
         </div>
       </div>

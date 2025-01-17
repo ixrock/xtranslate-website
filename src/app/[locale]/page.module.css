@@ -1,9 +1,13 @@
 .page {
   --iconSize: 30px;
-
   max-width: 1200px;
   padding: 70px clamp(20px, 10vw, 100px);
   margin: auto;
+}
+
+.page img {
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 
 .header {
@@ -19,11 +23,27 @@
   column-gap: 50px;
 }
 
+.ratingsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+  margin: var(--spacing) 0;
+}
+
 .ratings {
+  display: flex;
+  flex-direction: column;
+}
+
+.ratingTotalUsers {
   display: flex;
   align-items: center;
   gap: var(--spacing);
-  margin: var(--spacing) 0;
+}
+
+.ratingTotalUsers img {
+  filter: var(--iconDarkInverseFilter);
 }
 
 .ratingAmountFrom {
@@ -72,11 +92,6 @@
   &:hover {
     opacity: 1;
   }
-}
-
-.topIcons a > img {
-  width: inherit;
-  height: inherit;
 }
 
 .supportedLocalizations {

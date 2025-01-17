@@ -135,3 +135,5 @@ total_ratings =
     (aus <b>{$count}</b>
         <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">
             Bewertungen</a>)
+
+total_rating_users_globe = <b>{$usersCount}</b> Nutzer <em>(aus beiden Chrome- und Edge-Stores)</em>

@@ -135,3 +135,5 @@ total_ratings =
         건의
         <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">
             평가</a> 중)
+
+total_rating_users_globe = <b>{$usersCount}</b> 사용자 <em>(Chrome 및 Edge 스토어에서)</em>

@@ -134,3 +134,5 @@ total_ratings =
         条
         <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=zh-CN" target="_blank">
             评分</a>）
+
+total_rating_users_globe = <b>{$usersCount}</b> 用户 <em>（来自 Chrome 和 Edge 商店）</em>

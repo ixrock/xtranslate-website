@@ -129,4 +129,6 @@ footer_info = Sevgiyle ve açık kaynak projeler yardımıyla oluşturulmuştur.
 # Other
 #
 supported_localization_header = Desteklenen yerelleştirmeler
+
 total_ratings = (<b>{$count}</b> <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=tr" target="_blank">değerlendirmeden</a>)
+total_rating_users_globe = <b>{$usersCount}</b> kullanıcı <em>(hem Chrome hem de Edge mağazalarından)</em>
