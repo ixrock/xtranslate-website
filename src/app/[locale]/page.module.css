@@ -18,6 +18,11 @@
   margin-bottom: 10px;
 }
 
+.mainInfo {
+  text-align: justify;
+  margin: var(--spacingDouble) 0;
+}
+
 .columns {
   columns: 2;
   column-gap: 50px;
@@ -33,7 +38,11 @@
 
 .ratings {
   display: flex;
-  flex-direction: column;
+  gap: var(--spacingHalf);
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .ratingTotalUsers {

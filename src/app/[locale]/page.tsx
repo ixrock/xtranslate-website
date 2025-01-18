@@ -79,8 +79,10 @@ export default async function LocalizedPage({ params }: LocalizedPageProps) {
         </div>
       </div>
 
-      <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
-      <p dangerouslySetInnerHTML={{ __html: __("info_top2") }}></p>
+      <div className={styles.mainInfo}>
+        <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
+        <p dangerouslySetInnerHTML={{ __html: __("info_top2") }}></p>
+      </div>
 
       <PhotoPreviews className={styles.photos} images={[
         { src: "/sshots/website_popup.jpg", alt: __("gallery_website_popup") },
