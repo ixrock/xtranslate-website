@@ -1,15 +1,14 @@
-import AvailableLocales from "@/app/locales/_locales.json";
-import { fallbackLocale, Locale } from "@/app/i18n";
-import { permanentRedirect } from "next/navigation";
+import { LocalizedPage } from "@/app/[locale]/localized-page";
+import { fallbackLocale, isAvailableLocale, Locale } from "@/app/i18n";
 
 export default function Home() {
   const navLang = navigator.language as any as Locale;
   const userLocale = navLang.split("-")[0] as Locale;
 
   const landingLocale =
-    AvailableLocales[navLang] ? navLang :
-      AvailableLocales[userLocale] ? userLocale :
+    isAvailableLocale(navLang) ? navLang :
+      isAvailableLocale(userLocale) ? userLocale :
         fallbackLocale;
 
-  permanentRedirect(landingLocale);
+  return <LocalizedPage locale={landingLocale}/>;
 }

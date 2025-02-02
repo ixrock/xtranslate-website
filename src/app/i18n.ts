@@ -9,6 +9,10 @@ export type Locale = keyof typeof AvailableLocales;
 
 export const fallbackLocale: Locale = "en";
 
+export function isAvailableLocale(locale: Locale | string): boolean {
+  return !!AvailableLocales[locale as Locale];
+}
+
 function loadFluentResource(locale: Locale = fallbackLocale) {
   const filePath = path.join(process.cwd(), `src/app/locales/${locale}.ftl`);
   const ftlContents = fs.readFileSync(filePath, 'utf8');
