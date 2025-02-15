@@ -50,7 +50,7 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
       </section>
 
       <header className={styles.header}>
-        <a href="/"><img src="/xtranslate-icon.png" className={styles.logo} alt="XTranslate"/></a>
+        <a href="/"><img src="/xtranslate-logo.svg" className={styles.logo} alt="XTranslate"/></a>
         <h1>{__("header")}</h1>
       </header>
 
