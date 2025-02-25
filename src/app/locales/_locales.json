@@ -12,6 +12,7 @@
   "ko": {"english": "Korean", "native": "한국어"},
   "pt": {"english": "Portuguese", "native": "Português"},
   "ru": {"english": "Russian", "native": "Русский"},
+  "sr-CY": {"english": "Serbian - Cyrillic", "native": "Српски"},
   "sr": {"english": "Serbian - Latin", "native": "Srpski"},
   "sk": {"english": "Slovak", "native": "Slovenčina"},
   "es": {"english": "Spanish", "native": "Español"},
