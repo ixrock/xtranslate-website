@@ -21,7 +21,7 @@ info_top1 =
 
 info_top2 =
     Prevodite preko 100 stranih jezika na vaš maternji jezik direktno na veb-sajtu koji čitate ili
-	unesite tekst u glavni prozor proširenja da biste dobili <b>trenutni prevod</b>.
+    unesite tekst u glavni prozor proširenja da biste dobili <b>trenutni prevod</b>.
 
 gallery_website_popup = Dobijate prevod u kontekstu veb-stranice, podrazumevani iskačući prozor
 gallery_website_select_text = Različiti načini za prevođenje izabranog teksta, npr. klikom na ikonicu [X] u blizini
@@ -62,13 +62,13 @@ feature_way7 = Dobijanje prevoda izabranog teksta pomoću stavke u <em>{-app-bra
 
 feature_way_full_page_translate =
     Možete prevesti cele stranice besplatno koristeći <a href="https://translate.google.com/" target="_blank">Google</a>
-	<span> ili </span>
-	<a href="https://translate.yandex.com" target="_blank">Yandex</a> <em>(upotrebom kontekst menija)</em>
+    <span> ili </span>
+    <a href="https://translate.yandex.com" target="_blank">Yandex</a> <em>(upotrebom kontekst menija)</em>
 
 feature_mouse_over_html_element_with_hotkey =
     Možete čak i da dobijete neke informacije sa slika tako što ćete postaviti kursor miša na element slike
-	i pritisnuti prečicu (koriste se atributi title ili alt, ako su dostupni).
-	Ovaj trik zapravo radi sa bilo kojim elementom ispod kursora miša. Samo postavite miša i pritisnite prečicu!
+    i pritisnuti prečicu (koriste se atributi title ili alt, ako su dostupni).
+    Ovaj trik zapravo radi sa bilo kojim elementom ispod kursora miša. Samo postavite miša i pritisnite prečicu!
 
 #
 # PDF
@@ -112,11 +112,11 @@ openai_access_adjust_limits = Ne zaboravite da podesite ograničenja u podešava
 security_info_header = Bezbednosna razmatranja
 security_info1 =
     OpenAI API ključem se upravlja putem <code>chrome.storage.local</code> API-ja samo u opsegu proširenja i koristi se samo u <code>Authorization</code> zaglavlju za potpisivanje zahteva prema OpenAI API-ju
-	(nije otkriven niti praćen, čak i ako neko zlonamerno proširenje omogući <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest">webRequest</a> API)
+    (nije otkriven niti praćen, čak i ako neko zlonamerno proširenje omogući <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest">webRequest</a> API)
 
 security_info2 =
     OpenAI zahtevi se šalju preko zvaničnog <a href="https://github.com/openai/openai-node" target="_blank">OpenAI NPM paketa</a> i pokreću se samo u pozadinskom service worker-u, što pomaže
-	u odbrani od XSS napada.
+    u odbrani od XSS napada.
 
 security_info3 = Ne unosite niti delite svoj OpenAI ključ nigde osim na stranici za podešavanja proširenja (<em>options page</em>)
 
@@ -133,7 +133,7 @@ supported_localization_header = Podržane lokalizacije
 
 total_ratings =
     (od <b>{$count}</b>
-	<a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=sr" target="_blank">
+    <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=sr" target="_blank">
         ocena</a>)
 
 total_rating_users_globe = <b>{$usersCount}</b> korisnika <em>(iz obe prodavnice, Chrome i Edge)</em>
