@@ -9,23 +9,23 @@ header = {-app-brand-name} - vaš AI prevodilac (proširenje za pregledač)
 install_from_chrome_store = Instalirajte iz Chrome prodavnice proširenja
 chrome_store_short = Chrome prodavnica proširenja
 install_from_ms_edge_store = Instalirajte iz Microsoft Edge prodavnice proširenja
-ms_edge_store_short = MS Edge proširenja
+ms_edge_store_short = MS Edge prodavnica
 install_from_github = Instalirajte iz izvornog koda (GitHub)
 
 #
 # Main info
 #
 info_top1 =
-    Pomaže vam u učenju i razumevanju stranih jezika i pruža <b>prevod u realnom vremenu</b> izabranog teksta
+    Pomoći će vam u učenju i razumevanju stranih jezika i pružiće prevod izabranog teksta <b>u realnom vremenu</b>
     iz <b>HTML-a</b> ili <b>PDF dokumenata</b>, pa čak omogućava <b>prevod celokupnog teksta na veb-stranici</b>.
 
 info_top2 =
-    Prevodite preko 100 stranih jezika na vaš maternji jezik direktno na veb-sajtu koji čitate ili unesite tekst
-	u glavni prozor proširenja da biste dobili <b>trenutni prevod</b>.
+    Prevodite preko 100 stranih jezika na vaš maternji jezik direktno na veb-sajtu koji čitate ili
+	unesite tekst u glavni prozor proširenja da biste dobili <b>trenutni prevod</b>.
 
 gallery_website_popup = Dobijate prevod u kontekstu veb-stranice, podrazumevani iskačući prozor
 gallery_website_select_text = Različiti načini za prevođenje izabranog teksta, npr. klikom na ikonicu [X] u blizini
-gallery_website_translation_results = Prilagođena tema iskačućeg prozora sa ikonicama za akcije (S leva na desno: Tekst u govor, Sačuvaj u omiljeno, Kopiraj prevod, Sledeći prevod)
+gallery_website_translation_results = Prilagođen iskačući prozor sa ikonicama za akcije (S leva na desno: Tekst u govor, Sačuvaj u omiljeno, Kopiraj prevod, Sledeći prevod)
 gallery_app_settings = Podesite proširenje
 gallery_app_popup_customization = Podesite temu, prilagodite iskačući prozor za prevod, izaberite lokalizaciju
 gallery_app_translate_tab = Unesite tekst i dobijate prevod u glavnom prozoru aplikacije
@@ -45,7 +45,7 @@ vendor_apis_is_free = besplatno
 vendor_apis_is_paid = plaćeno
 vendor_deepl_limitatiion = API ključ je ograničen na 500.000 karaktera mesečno
 vendor_open_ai_authors = Autori ChatGPT-a
-vendor_open_ai_limitation = registrujte se i dopunite sredstva
+vendor_open_ai_limitation = registrujte se i dopunite novčana sredstva
 
 #
 # Features
@@ -73,7 +73,7 @@ feature_mouse_over_html_element_with_hotkey =
 #
 # PDF
 #
-pdf_feature_header = Da biste radili sa lokalnim fajlovima (HTML ili PDF), trebate dozvoliti pristup proširenju
+pdf_feature_header = Da biste radili sa lokalnim fajlovima (HTML ili PDF), trebate proširenju dozvoliti pristup
 pdf_local_step1 = otvorite stranicu za proširenja <code>chrome://extensions</code>, pronađite <b>XTranslate</b>™ i kliknite na dugme <em>[Details]</em>
 pdf_local_step2 = štiklirajte checkbox <em>Allow access to file URLs</em>
 
@@ -85,17 +85,17 @@ features_free_tts = Slušanje teksta u govor za sve podržane prevodioce
 features_free_adjust_popup = Prilagođavanje iskačućeg prozora sa prevedenim tekstom
 features_free_custom_actions = Podešavanje načina za dobijanje prevoda i ostalih opcija u podešavanjima
 features_free_insert_text = Unos bilo kog teksta u prozor aplikacije (<em>podrazumevana prečica Alt+X</em>) i dobijanje prevoda rečenica ili reči uz podršku rečnika
-features_free_save_words = Čuvanje omiljenih prevode u svoju listu favorita
+features_free_save_words = Čuvanje omiljenih prevoda u svoju listu favorita
 features_free_history = Pregled i izmena istorije prevoda
 
 #
 # Paid-features info:
 #
-features_paid_header = Pro karakteristike (plaćena pretplata, očekuje se 2025.):
-features_paid_full_pro_page_ai = Dobijanje prevod cele stranice koristeći AI tehnologije, npr. OpenAI <em>(plaćanje po korišćenju)</em>
-features_paid_voice_over = Upotreba glasovog input-a/prepoznavanja govora za dobijanje prevoda teksta
+features_paid_header = Pro funkcionalnosti (plaćena pretplata, očekuje se 2025.):
+features_paid_full_pro_page_ai = Dobijanje prevoda cele stranice koristeći AI tehnologije, npr. OpenAI <em>(plaćanje po korišćenju)</em>
+features_paid_voice_over = Upotreba glasovog input-a ili prepoznavanja govora za dobijanje prevoda teksta
 features_paid_multi_popup_results = Istovremeno dobijanje prevoda od svih prevodioca
-features_paid_more_interactivity = Više interakcija sa iskačućim prozorom za prevod na veb-stranicama (npr. prevlačenje, fiksiranje, promena veličine, itd.)
+features_paid_more_interactivity = Više interakcija sa iskačućim prozorom za prevod na veb-stranicama (npr. prevlačenje, pin-ovanje, promena veličine, itd.)
 
 #
 # OpenAI how-to connect api-key
