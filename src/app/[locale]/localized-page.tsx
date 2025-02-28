@@ -179,7 +179,9 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
       <h3>{__("supported_localization_header")}</h3>
       <p className={styles.supportedLocalizations}>
         {Object.entries(AvailableLocales).map(([availableLocale, { native, english }]) => {
-          if (locale === availableLocale) return <b>{native}</b>;
+          if (locale === availableLocale) {
+            return <b key={availableLocale}>{native}</b>;
+          }
           return <a key={availableLocale} href={`/${availableLocale}`}>{native}</a>
         })}
       </p>
