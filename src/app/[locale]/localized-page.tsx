@@ -106,6 +106,7 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
           <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({__("vendor_apis_is_free")}: {__("vendor_deepl_limitatiion")})</li>
           <li><a href="https://platform.openai.com" target="_blank">OpenAI ({__("vendor_open_ai_authors")})</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
           <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
+          <li><a href="https://console.x.ai" target="_blank">Grok</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
         </ul>
       </div>
 
