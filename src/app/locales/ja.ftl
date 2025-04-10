@@ -103,7 +103,6 @@ openai_access_header = OpenAI 翻訳を利用するための手順
 openai_access_sign_up = OpenAI プラットフォームでサインアップ <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = OpenAI 翻訳サービスの結果を取得するための API キーを作成
 openai_access_top_up_balance = 残高をチャージ <em>(5 ドル以上)</em> し、請求ページでクレジットカードの自動チャージをオフにする <em>(推奨)</em>
-openai_access_adjust_limits = 設定で利用上限を調整することをお忘れなく <em>(推奨)</em>
 
 #
 # Security considerations

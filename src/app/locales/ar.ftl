@@ -104,7 +104,6 @@ openai_access_header = خطوات الوصول إلى ترجمات OpenAI
 openai_access_sign_up = سجّل في منصة OpenAI عبر <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = أنشئ مفتاح API للوصول إلى خدمة ترجمة OpenAI
 openai_access_top_up_balance = أضِف رصيدًا <em>(5$+)</em> وأوقف إعادة الشحن التلقائية لبطاقة الائتمان من صفحة الدفع <em>(موصى به)</em>
-openai_access_adjust_limits = لا تنسَ ضبط الإعدادات الخاصة بالحدود <em>(موصى به)</em>
 
 #
 # Security considerations

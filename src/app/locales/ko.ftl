@@ -103,7 +103,6 @@ openai_access_header = OpenAI 번역 사용을 위한 단계
 openai_access_sign_up = OpenAI 플랫폼 가입 <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = OpenAI 번역 서비스 결과를 얻기 위해 API 키 생성
 openai_access_top_up_balance = 잔액 충전 <em>(5달러 이상)</em> 후, 결제 페이지에서 신용카드 자동 충전을 비활성화 <em>(권장)</em>
-openai_access_adjust_limits = 설정에서 사용 제한을 조정하는 것 잊지 말기 <em>(권장)</em>
 
 #
 # Security considerations

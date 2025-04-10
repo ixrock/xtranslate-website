@@ -103,7 +103,6 @@ openai_access_header = Etapas para acessar traduções da OpenAI
 openai_access_sign_up = Cadastre-se na plataforma OpenAI <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Crie uma chave de API para obter resultados do serviço de tradução da OpenAI
 openai_access_top_up_balance = Recarregue seu saldo <em>(5+ dólares)</em> e desative a recarga automática do cartão de crédito na página de cobrança <em>(recomendado)</em>
-openai_access_adjust_limits = Não se esqueça de ajustar as configurações de limites <em>(recomendado)</em>
 
 #
 # Security considerations

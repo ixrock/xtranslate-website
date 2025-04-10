@@ -103,7 +103,6 @@ openai_access_header = Các bước để truy cập bản dịch OpenAI
 openai_access_sign_up = Đăng ký tài khoản trên nền tảng OpenAI <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Tạo khóa API để nhận kết quả từ dịch vụ dịch thuật OpenAI
 openai_access_top_up_balance = Nạp tiền vào tài khoản <em>(5 đô trở lên)</em> và tắt tính năng tự động nạp lại thẻ tín dụng trên trang thanh toán <em>(khuyên dùng)</em>
-openai_access_adjust_limits = Đừng quên điều chỉnh giới hạn sử dụng trong cài đặt <em>(khuyên dùng)</em>
 
 #
 # Security considerations

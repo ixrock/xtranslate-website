@@ -104,7 +104,6 @@ openai_access_header = Schritte zum Zugriff auf OpenAI-Übersetzungen
 openai_access_sign_up = Registrieren Sie sich auf der OpenAI-Plattform <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Erstellen Sie einen API-Schlüssel, um Ergebnisse des OpenAI-Übersetzungsdienstes zu erhalten
 openai_access_top_up_balance = Laden Sie Ihr Guthaben auf <em>(5 $+)</em> und deaktivieren Sie das automatische Aufladen der Kreditkarte in den Abrechnungseinstellungen <em>(empfohlen)</em>
-openai_access_adjust_limits = Vergessen Sie nicht, in den Einstellungen die Limits anzupassen <em>(empfohlen)</em>
 
 #
 # Security considerations

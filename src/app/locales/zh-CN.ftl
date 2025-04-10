@@ -102,7 +102,6 @@ openai_access_header = 获取 OpenAI 翻译服务的步骤
 openai_access_sign_up = 在 OpenAI 平台注册账号 <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = 创建 API 密钥以使用 OpenAI 翻译服务
 openai_access_top_up_balance = 充值余额 <em>（5 美元+）</em>，并在账单页面关闭信用卡自动充值功能 <em>（推荐）</em>
-openai_access_adjust_limits = 别忘了在设置中调整使用上限 <em>（推荐）</em>
 
 #
 # Security considerations

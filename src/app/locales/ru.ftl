@@ -103,7 +103,6 @@ openai_access_header = Шаги для получения доступа к пе
 openai_access_sign_up = Зарегистрируйтесь на платформе OpenAI <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Создайте ключ API, чтобы получить доступ к результатам перевода OpenAI
 openai_access_top_up_balance = Пополните свой баланс <em>(5$+)</em> и отключите автоматическое пополнение кредитной карты на странице биллинга <em>(рекомендуется)</em>
-openai_access_adjust_limits = Не забудьте настроить лимиты <em>(рекомендуется)</em>
 
 #
 # Security considerations

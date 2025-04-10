@@ -103,7 +103,6 @@ openai_access_header = Kroky na prístup k prekladom OpenAI
 openai_access_sign_up = Zaregistrujte sa na platforme OpenAI <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Vytvorte si API kľúč na získanie výsledkov z prekladovej služby OpenAI
 openai_access_top_up_balance = Navýšte si zostatok <em>(od 5 USD+)</em> a vypnite automatické dobíjanie kreditnej karty na stránke fakturácie <em>(odporúčané)</em>
-openai_access_adjust_limits = Nezabudnite upraviť nastavenia limitov <em>(odporúčané)</em>
 
 #
 # Security considerations

@@ -102,7 +102,6 @@ openai_access_header = Steps for access OpenAI translations
 openai_access_sign_up = Sign up at OpenAI platform <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = Create api access key to get access for OpenAI translation service results
 openai_access_top_up_balance = Top-up your balance <em>(5$+)</em> and disable credit card's auto-top-up balance at billing page <em>(recommended)</em>
-openai_access_adjust_limits = Don't forget to adjust limits settings <em>(recommended)</em>
 
 #
 # Security considerations

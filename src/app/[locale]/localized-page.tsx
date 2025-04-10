@@ -165,7 +165,6 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_sign_up") }}/>
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_create_api_key") }}/>
         <li dangerouslySetInnerHTML={{ __html: __("openai_access_top_up_balance") }}/>
-        <li dangerouslySetInnerHTML={{ __html: __("openai_access_adjust_limits") }}/>
       </ol>
 
       <hr/>

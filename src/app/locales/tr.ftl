@@ -103,7 +103,6 @@ openai_access_header = OpenAI çevirilerine erişim adımları
 openai_access_sign_up = OpenAI platformuna kaydolun <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = OpenAI çeviri hizmetinden sonuç almak için API anahtarı oluşturun
 openai_access_top_up_balance = Bakiye yükleyin <em>(5 $+)</em> ve fatura sayfasında kredi kartının otomatik yüklemeyi kapatın <em>(önerilir)</em>
-openai_access_adjust_limits = Ayarlarda limit ayarlarını düzenlemeyi unutmayın <em>(önerilir)</em>
 
 #
 # Security considerations

@@ -102,7 +102,6 @@ openai_access_header = OpenAI অনুবাদে অ্যাক্সেস 
 openai_access_sign_up = OpenAI প্ল্যাটফর্মে সাইন আপ করুন <a href="https://platform.openai.com">platform.openai.com</a>
 openai_access_create_api_key = OpenAI অনুবাদ পরিষেবার ফলাফল পেতে API অ্যাক্সেস কী তৈরি করুন
 openai_access_top_up_balance = আপনার ব্যালেন্স রিচার্জ করুন <em>(৫$+)</em> এবং বিলিং পেজে ক্রেডিট কার্ডের স্বয়ংক্রিয় রিচার্জ বন্ধ করে দিন <em>(প্রস্তাবিত)</em>
-openai_access_adjust_limits = লিমিট সেটিংস সমন্বয় করতে ভুলবেন না <em>(প্রস্তাবিত)</em>
 
 #
 # Security considerations
