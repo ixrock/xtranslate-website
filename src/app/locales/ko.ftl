@@ -79,7 +79,7 @@ pdf_local_step2 = <em>Allow access to file URLs</em> 체크박스를 활성화
 #
 # Free-features info:
 #
-features_free_header = <b>무료 기능</b> (<em>{-app-brand-name}</em> 확장 프로그램에 포함)
+features_free_header = 무료 기능 (<em>{-app-brand-name}</em> 확장 프로그램에 포함)
 features_free_tts = 지원되는 모든 번역 공급업체에서 텍스트 음성 변환(TTS) 사용 가능
 features_free_adjust_popup = 번역된 텍스트 팝업 디자인을 원하는 대로 조정
 features_free_custom_actions = 번역을 얻는 방법 및 기타 옵션을 설정에서 사용자 지정

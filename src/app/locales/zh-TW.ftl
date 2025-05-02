@@ -78,7 +78,7 @@ pdf_local_step2 = 啟用 <em>Allow access to file URLs</em> 核取方塊
 #
 # Free-features info:
 #
-features_free_header = <b>免費功能</b>（<em>{-app-brand-name}</em> 擴充功能內含）
+features_free_header = 免費功能（<em>{-app-brand-name}</em> 擴充功能內含）
 features_free_tts = 所有支援的翻譯服務皆可使用文字轉語音
 features_free_adjust_popup = 可自行調整翻譯文字的彈出視窗設計
 features_free_custom_actions = 在設定中自訂翻譯取得方式及其他選項

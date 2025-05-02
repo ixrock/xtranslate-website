@@ -79,7 +79,7 @@ pdf_local_step2 = Ative a caixa de seleção <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Recursos gratuitos</b> incluídos na extensão <em>{-app-brand-name}</em>
+features_free_header = Recursos gratuitos incluídos na extensão <em>{-app-brand-name}</em>
 features_free_tts = Ouvir texto em voz (text-to-speech) para todos os provedores de tradução suportados
 features_free_adjust_popup = Personalizar o design do pop-up com o texto traduzido
 features_free_custom_actions = Personalizar os métodos de obtenção de traduções e outras opções nas configurações

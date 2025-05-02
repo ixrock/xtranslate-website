@@ -78,7 +78,7 @@ pdf_local_step2 = enable checkbox <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Free features</b> of <em>{-app-brand-name}</em> extension are includes
+features_free_header = Free features of <em>{-app-brand-name}</em> extension are includes
 features_free_tts = Listen text-to-speech for all supported translation vendors
 features_free_adjust_popup = Adjust your unique design of the popup with translated text
 features_free_custom_actions = Customize the ways of getting translations and other options in the settings

@@ -3,12 +3,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google"
-import { Open_Sans, Roboto_Flex } from "next/font/google";
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
-});
+import { Roboto_Flex } from "next/font/google";
 
 const robotoFlex = Roboto_Flex({
   variable: "--font-roboto",
@@ -25,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en">
-    <body className={`${openSans.variable} ${robotoFlex.variable}`}>
+    <body className={`${robotoFlex.variable}`}>
     {children}
     </body>
     <Analytics/>

@@ -79,7 +79,7 @@ pdf_local_step2 = <em>Allow access to file URLs</em> のチェックボックス
 #
 # Free-features info:
 #
-features_free_header = <b>無料機能</b>（<em>{-app-brand-name}</em> 拡張機能に含まれています）
+features_free_header = 無料機能（<em>{-app-brand-name}</em> 拡張機能に含まれています）
 features_free_tts = サポートされているすべての翻訳ベンダーでテキスト読み上げを利用可能
 features_free_adjust_popup = 翻訳されたテキストが表示されるポップアップのデザインをお好みに合わせて調整
 features_free_custom_actions = 翻訳の取得方法やその他のオプションを設定でカスタマイズ可能

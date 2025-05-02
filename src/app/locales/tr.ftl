@@ -79,7 +79,7 @@ pdf_local_step2 = <em>Allow access to file URLs</em> onay kutusunu etkinleştiri
 #
 # Free-features info:
 #
-features_free_header = <b>Ücretsiz Özellikler</b> (<em>{-app-brand-name}</em> eklentisi içerir)
+features_free_header = Ücretsiz Özellikler (<em>{-app-brand-name}</em> eklentisi içerir)
 features_free_tts = Tüm desteklenen çeviri sağlayıcıları için metni sese dönüştürme (TTS) özelliğini kullanın
 features_free_adjust_popup = Çevrilmiş metnin açılır penceresinin tasarımını isteğinize göre ayarlayın
 features_free_custom_actions = Çeviri alma yöntemlerini ve diğer seçenekleri ayarlarda özelleştirin

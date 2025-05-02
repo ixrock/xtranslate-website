@@ -79,7 +79,7 @@ pdf_local_step2 = Abilita la casella di controllo <em>Allow access to file URLs<
 #
 # Free-features info:
 #
-features_free_header = <b>Funzionalità gratuite</b> incluse nell’estensione <em>{-app-brand-name}</em>
+features_free_header = Funzionalità gratuite incluse nell’estensione <em>{-app-brand-name}</em>
 features_free_tts = Ascolta il testo convertito in voce per tutti i fornitori di traduzione supportati
 features_free_adjust_popup = Personalizza il design del popup con il testo tradotto a tuo piacimento
 features_free_custom_actions = Personalizza i metodi per ottenere le traduzioni e altre opzioni nelle impostazioni

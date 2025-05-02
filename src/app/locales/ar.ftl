@@ -80,7 +80,7 @@ pdf_local_step2 = فعِّل مربع الاختيار <em>السماح بالو
 #
 # Free-features info:
 #
-features_free_header = <b>الميزات المجانية</b> لإضافة <em>{-app-brand-name}</em> تشمل
+features_free_header = الميزات المجانية لإضافة <em>{-app-brand-name}</em> تشمل
 features_free_tts = الاستماع إلى النص بصوت عالٍ (text-to-speech) لجميع موفري الترجمة المدعومين
 features_free_adjust_popup = خصّص تصميم النافذة المنبثقة للنص المترجم حسب رغبتك
 features_free_custom_actions = خصّص طرق الحصول على الترجمات وغير ذلك من الخيارات في الإعدادات

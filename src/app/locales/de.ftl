@@ -80,7 +80,7 @@ pdf_local_step2 = Aktivieren Sie das Kontrollkästchen <em>Allow access to file 
 #
 # Free-features info:
 #
-features_free_header = <b>Kostenlose Funktionen</b> der Erweiterung <em>{-app-brand-name}</em>
+features_free_header = Kostenlose Funktionen der Erweiterung <em>{-app-brand-name}</em>
 features_free_tts = Hörbares Text-to-Speech für alle unterstützten Übersetzungsanbieter
 features_free_adjust_popup = Passen Sie das Design des Übersetzungspopups nach Ihren Wünschen an
 features_free_custom_actions = Passen Sie in den Einstellungen die Methoden zur Übersetzungsabfrage und weitere Optionen an

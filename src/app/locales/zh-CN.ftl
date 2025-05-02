@@ -78,7 +78,7 @@ pdf_local_step2 = 启用 <em>Allow access to file URLs</em> 复选框
 #
 # Free-features info:
 #
-features_free_header = <b>免费功能</b>（<em>{-app-brand-name}</em> 扩展包含）
+features_free_header = 免费功能（<em>{-app-brand-name}</em> 扩展包含）
 features_free_tts = 所有支持的翻译服务均可进行文本朗读
 features_free_adjust_popup = 您可自定义带有翻译文本的弹窗设计
 features_free_custom_actions = 在设置中自定义翻译方式及其他选项

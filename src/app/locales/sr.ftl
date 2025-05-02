@@ -80,7 +80,7 @@ pdf_local_step2 = štiklirajte checkbox <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Besplatne funkcionalnosti</b> uključene u <em>{-app-brand-name}</em> proširenje:
+features_free_header = Besplatne funkcionalnosti uključene u <em>{-app-brand-name}</em> proširenje:
 features_free_tts = Slušanje teksta u govor za sve podržane prevodioce
 features_free_adjust_popup = Prilagođavanje iskačućeg prozora sa prevedenim tekstom
 features_free_custom_actions = Podešavanje načina za dobijanje prevoda i ostalih opcija u podešavanjima

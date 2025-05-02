@@ -79,7 +79,7 @@ pdf_local_step2 = Povoliť možnosť <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Bezplatné funkcie</b> zahrnuté v rozšírení <em>{-app-brand-name}</em>
+features_free_header = Bezplatné funkcie zahrnuté v rozšírení <em>{-app-brand-name}</em>
 features_free_tts = Prehrávať text-to-speech pre všetkých podporovaných poskytovateľov prekladu
 features_free_adjust_popup = Prispôsobiť dizajn vyskakovacieho okna s preloženým textom
 features_free_custom_actions = V nastaveniach si prispôsobte spôsoby získavania prekladov a ďalšie možnosti

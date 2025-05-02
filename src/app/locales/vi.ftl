@@ -79,7 +79,7 @@ pdf_local_step2 = Kích hoạt tùy chọn <em>Allow access to file URLs</em>
 #
 # Free-features info:
 #
-features_free_header = <b>Tính năng miễn phí</b> (có trong tiện ích <em>{-app-brand-name}</em>)
+features_free_header = Tính năng miễn phí (có trong tiện ích <em>{-app-brand-name}</em>)
 features_free_tts = Nghe đọc văn bản (text-to-speech) cho tất cả nhà cung cấp dịch được hỗ trợ
 features_free_adjust_popup = Tùy chỉnh giao diện cửa sổ bật lên chứa văn bản được dịch
 features_free_custom_actions = Tùy chỉnh phương thức lấy bản dịch và các tùy chọn khác trong cài đặt
