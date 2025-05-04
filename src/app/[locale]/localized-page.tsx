@@ -5,7 +5,7 @@ import React from "react";
 import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
-import AvailableLocales from "@/app/locales/_locales.json"
+import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
 
 interface LocalizedPageProps {

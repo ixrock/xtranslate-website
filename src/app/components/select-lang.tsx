@@ -2,7 +2,7 @@
 
 import styles from './select-lang.module.css';
 import React from 'react';
-import AvailableLocales from "@/app/locales/_locales.json";
+import AvailableLocales from "@/locales/_locales.json";
 import SelectLanguageIcon from "./select-lang.svg"
 
 export interface SelectLanguageProps {

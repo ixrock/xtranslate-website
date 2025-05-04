@@ -3,7 +3,7 @@
 import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
 import fs from 'fs';
 import path from 'path';
-import AvailableLocales from "@/app/locales/_locales.json";
+import AvailableLocales from "@/locales/_locales.json";
 
 export type Locale = keyof typeof AvailableLocales;
 
@@ -13,8 +13,8 @@ export function isAvailableLocale(locale: Locale | string): boolean {
   return !!AvailableLocales[locale as Locale];
 }
 
-function loadFluentResource(locale: Locale = fallbackLocale) {
-  const filePath = path.join(process.cwd(), `src/app/locales/${locale}.ftl`);
+export function loadFluentResource(locale: Locale = fallbackLocale) {
+  const filePath = path.join(process.cwd(), `src/locales/${locale}.ftl`);
   const ftlContents = fs.readFileSync(filePath, 'utf8');
   return new FluentResource(ftlContents);
 }
