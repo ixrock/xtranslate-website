@@ -89,15 +89,6 @@ features_free_save_words = احفظ ترجماتك المفضلة كعلامات
 features_free_history = اعرض وعدّل سجل الترجمات
 
 #
-# Paid-features info:
-#
-features_paid_header = ميزات Pro (اشتراك مدفوع، متوقع في 2025)
-features_paid_full_pro_page_ai = احصل على ترجمة كاملة للصفحات باستخدام تقنيات الذكاء الاصطناعي مثل OpenAI <em>(ادفع عند الاستخدام)</em>
-features_paid_voice_over = استخدم الإدخال الصوتي/التعرف على الكلام للحصول على ترجمة النص
-features_paid_multi_popup_results = وفّر نتائج ترجمة متعددة من مختلف مزوّدي الترجمة في الوقت نفسه
-features_paid_more_interactivity = مزيد من التفاعلات مع نافذة الترجمة المنبثقة على صفحات الويب (مثل السحب والإفلات والتثبيت وتغيير الحجم وغيرها)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = خطوات الوصول إلى ترجمات OpenAI

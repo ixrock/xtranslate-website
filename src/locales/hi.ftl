@@ -88,15 +88,6 @@ features_free_save_words = अपनी पसंदीदा अनुवाद
 features_free_history = अनुवादों का इतिहास देखें और संपादित करें
 
 #
-# Paid-features info:
-#
-features_paid_header = प्रो फीचर्स (भुगतान आधारित सदस्यता, 2025 में अपेक्षित)
-features_paid_full_pro_page_ai = AI तकनीकों (उदा. OpenAI) का उपयोग करके पूरे पेज का अनुवाद करें <em>(उपयोग आधारित भुगतान)</em>
-features_paid_voice_over = वॉइस इनपुट/स्पीच रिकग्निशन के माध्यम से टेक्स्ट अनुवाद प्राप्त करें
-features_paid_multi_popup_results = एक ही समय में सभी अनुवाद प्रदाताओं के अनुवाद परिणाम देखें
-features_paid_more_interactivity = वेबपेज पर अनुवाद पॉपअप के साथ और अधिक इंटरएक्शन (जैसे ड्रैग-एंड-ड्रॉप, पिन, रीसाइज़ इत्यादि)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = OpenAI अनुवाद तक पहुँचने के चरण

@@ -87,15 +87,6 @@ features_free_save_words = আপনার প্রিয় অনুবাদ
 features_free_history = অনুবাদের ইতিহাস দেখুন এবং এডিট করুন
 
 #
-# Paid-features info:
-#
-features_paid_header = প্রো ফিচার (পেইড সাবস্ক্রিপশন, ২০২৫ সালে প্রত্যাশিত)
-features_paid_full_pro_page_ai = পূর্ণ পৃষ্ঠা অনুবাদ নিন AI প্রযুক্তি ব্যবহার করে, যেমন OpenAI <em>(ব্যবহার অনুযায়ী খরচ)</em>
-features_paid_voice_over = ভয়েস ইনপুট/স্বর চিন্তার মাধ্যমে পাঠ্য অনুবাদ করুন
-features_paid_multi_popup_results = একই সাথে সব অনুবাদ পরিষেবা থেকে একাধিক অনুবাদ ফলাফল দেখুন
-features_paid_more_interactivity = ওয়েবপেজে অনুবাদ পপআপের সাথে আরও বেশি ইন্টারঅ্যাকশন (যেমন ড্র্যাগ অ্যান্ড ড্রপ, পিন, রিসাইজ ইত্যাদি)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = OpenAI অনুবাদে অ্যাক্সেস পেতে যা করতে হবে

@@ -89,15 +89,6 @@ features_free_save_words = Čuvanje omiljenih prevoda u svoju listu favorita
 features_free_history = Pregled i izmena istorije prevoda
 
 #
-# Paid-features info:
-#
-features_paid_header = Pro funkcionalnosti (plaćena pretplata, očekuje se 2025.):
-features_paid_full_pro_page_ai = Dobijanje prevoda cele stranice koristeći AI tehnologije, npr. OpenAI <em>(plaćanje po korišćenju)</em>
-features_paid_voice_over = Upotreba glasovog input-a ili prepoznavanja govora za dobijanje prevoda teksta
-features_paid_multi_popup_results = Istovremeno dobijanje prevoda od svih prevodioca
-features_paid_more_interactivity = Više interakcija sa iskačućim prozorom za prevod na veb-stranicama (npr. prevlačenje, pin-ovanje, promena veličine, itd.)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = Koraci za pristup OpenAI prevodima
