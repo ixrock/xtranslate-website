@@ -129,17 +129,14 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
 
         <p dangerouslySetInnerHTML={{ __html: __("feature_mouse_over_html_element_with_hotkey") }}/>
 
-        <br/>
-        <h3>{__("pdf_feature_header")}</h3>
+        <h3 className={styles.break}>{__("pdf_feature_header")}</h3>
         <ol>
           <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step1") }}/>
           <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step2") }}/>
         </ol>
 
-        <h3
-          className={styles.break}
-          dangerouslySetInnerHTML={{ __html: __("features_free_header") }}
-        />
+        <br/>
+        <h3 dangerouslySetInnerHTML={{ __html: __("features_free_header") }}/>
         <ol>
           <li>{__("features_free_tts")}</li>
           <li>{__("features_free_adjust_popup")}</li>
@@ -147,15 +144,6 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
           <li dangerouslySetInnerHTML={{ __html: __("features_free_insert_text") }}/>
           <li dangerouslySetInnerHTML={{ __html: __("features_free_save_words") }}/>
           <li>{__("features_free_history")}</li>
-        </ol>
-
-        <br/>
-        <h3>{__("features_paid_header")}</h3>
-        <ol>
-          <li dangerouslySetInnerHTML={{ __html: __("features_paid_full_pro_page_ai") }}/>
-          <li>{__("features_paid_voice_over")}</li>
-          <li>{__("features_paid_multi_popup_results")}</li>
-          <li>{__("features_paid_more_interactivity")}</li>
         </ol>
       </div>
       <hr/>

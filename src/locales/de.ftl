@@ -89,15 +89,6 @@ features_free_save_words = Speichern Sie Ihre bevorzugten Übersetzungen als Fav
 features_free_history = Anzeigen und Bearbeiten des Übersetzungsverlaufs
 
 #
-# Paid-features info:
-#
-features_paid_header = Pro-Funktionen (kostenpflichtiges Abonnement, erwartet in 2025)
-features_paid_full_pro_page_ai = Ganze Seitenübersetzungen mithilfe von KI-Technologien wie OpenAI <em>(Nutzung basierte Abrechnung)</em>
-features_paid_voice_over = Sprachsteuerung/Spracherkennung zur Übersetzung von Text verwenden
-features_paid_multi_popup_results = Gleichzeitiges Anzeigen mehrerer Übersetzungsergebnisse aller Anbieter
-features_paid_more_interactivity = Mehr Interaktionen mit dem Übersetzungspopup auf Webseiten (z. B. Drag & Drop, Anheften, Größenänderung usw.)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = Schritte zum Zugriff auf OpenAI-Übersetzungen

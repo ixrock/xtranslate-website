@@ -88,15 +88,6 @@ features_free_save_words = Lưu những bản dịch yêu thích vào danh sách
 features_free_history = Xem và chỉnh sửa lịch sử bản dịch
 
 #
-# Paid-features info:
-#
-features_paid_header = Tính năng Pro (dựa trên gói thuê bao trả phí, dự kiến vào năm 2025)
-features_paid_full_pro_page_ai = Nhận bản dịch đầy đủ trang bằng công nghệ AI, ví dụ OpenAI <em>(trả phí theo mức sử dụng)</em>
-features_paid_voice_over = Sử dụng nhập liệu bằng giọng nói/nhận dạng giọng nói để lấy bản dịch văn bản
-features_paid_multi_popup_results = Cung cấp nhiều kết quả dịch cùng lúc từ tất cả các nhà cung cấp
-features_paid_more_interactivity = Tăng tính tương tác với cửa sổ bật lên dịch trên trang web (ví dụ: kéo-thả, ghim, thay đổi kích thước, v.v.)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = Các bước để truy cập bản dịch OpenAI

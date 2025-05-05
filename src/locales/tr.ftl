@@ -87,14 +87,6 @@ features_free_insert_text = Uygulama penceresine (varsayılan kısayol <em>Alt+X
 features_free_save_words = Sevdiğiniz çevirileri favorilere kaydedin
 features_free_history = Çeviri geçmişini görüntüleyin ve düzenleyin
 
-#
-# Paid-features info:
-#
-features_paid_header = Pro Özellikler (ücretli abonelik, 2025’te bekleniyor)
-features_paid_full_pro_page_ai = OpenAI gibi yapay zekâ teknolojileriyle tüm sayfa çevirisi yapın <em>(kullandıkça öde)</em>
-features_paid_voice_over = Sesli giriş / konuşma tanıma kullanarak metin çevirisini edinin
-features_paid_multi_popup_results = Tüm çeviri sağlayıcılarının birden fazla çeviri sonucunu aynı anda sunar
-features_paid_more_interactivity = Web sayfalarında çeviri açılır penceresiyle daha fazla etkileşim (ör. sürükle-bırak, sabitleme, yeniden boyutlandırma vb.)
 
 #
 # OpenAI how-to connect api-key

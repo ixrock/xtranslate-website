@@ -88,15 +88,6 @@ features_free_save_words = 즐겨찾기처럼 좋아하는 번역을 저장
 features_free_history = 번역 이력을 보고 수정
 
 #
-# Paid-features info:
-#
-features_paid_header = 프로 기능(유료 구독, 2025년 예정)
-features_paid_full_pro_page_ai = OpenAI 등 AI 기술을 활용한 전체 페이지 번역 <em>(사용량 기반 과금)</em>
-features_paid_voice_over = 음성 입력/음성 인식을 통해 텍스트 번역 얻기
-features_paid_multi_popup_results = 모든 번역 공급업체의 여러 번역 결과를 동시에 표시
-features_paid_more_interactivity = 웹페이지에서 번역 팝업과의 상호작용 확대(드래그 앤 드롭, 고정, 크기 조절 등)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = OpenAI 번역 사용을 위한 단계

@@ -87,15 +87,6 @@ features_free_save_words = Save your favourite translations as quick bookmarks i
 features_free_history = View and edit history of translations
 
 #
-# Paid-features info:
-#
-features_paid_header = Pro features (paid subscription, awaited in 2025)
-features_paid_full_pro_page_ai = Get full-page translations using AI technologies, e.g. OpenAI <em>(pay as you go)</em>
-features_paid_voice_over = Use voice input/speech recognition for getting text translation
-features_paid_multi_popup_results = Provide multiple translation results from all translation vendors at the same time
-features_paid_more_interactivity = More interactions with translation popup-element at webpages (e.g. drag&drop, pin, resize, etc.)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = Steps for access OpenAI translations

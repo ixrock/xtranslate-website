@@ -87,15 +87,6 @@ features_free_save_words = 將喜愛的翻譯儲存到最愛
 features_free_history = 檢視並編輯翻譯歷史
 
 #
-# Paid-features info:
-#
-features_paid_header = 專業版功能（付費訂閱，預計 2025 年推出）
-features_paid_full_pro_page_ai = 使用 AI 技術（例如 OpenAI）翻譯整頁 <em>（依使用量付費）</em>
-features_paid_voice_over = 使用語音輸入 / 語音辨識來獲取文字翻譯
-features_paid_multi_popup_results = 同時顯示所有翻譯服務的多重翻譯結果
-features_paid_more_interactivity = 在網頁上可與翻譯彈出視窗進行更多互動（例如拖曳、固定、調整大小等）
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = 取得 OpenAI 翻譯服務的步驟

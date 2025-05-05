@@ -87,15 +87,6 @@ features_free_save_words = 将喜欢的翻译保存在收藏夹中
 features_free_history = 查看并编辑翻译历史
 
 #
-# Paid-features info:
-#
-features_paid_header = 专业版功能（付费订阅，预期 2025 年推出）
-features_paid_full_pro_page_ai = 使用 AI 技术（如 OpenAI）进行整页翻译 <em>（按使用付费）</em>
-features_paid_voice_over = 使用语音输入/语音识别来获取文本翻译
-features_paid_multi_popup_results = 同时显示来自所有翻译服务的多项翻译结果
-features_paid_more_interactivity = 在网页上与翻译弹窗进行更多交互（如拖拽、固定、调整大小等）
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = 获取 OpenAI 翻译服务的步骤

@@ -88,15 +88,6 @@ features_free_save_words = Uložte svoje obľúbené preklady do zoznamu obľúb
 features_free_history = Zobraziť a upraviť históriu prekladov
 
 #
-# Paid-features info:
-#
-features_paid_header = Pro funkcie (platené predplatné, očakávané v roku 2025)
-features_paid_full_pro_page_ai = Získajte úplný preklad stránky s využitím AI technológií, napr. OpenAI <em>(platba podľa využitia)</em>
-features_paid_voice_over = Využite hlasový vstup/rozpoznávanie reči na získanie prekladu textu
-features_paid_multi_popup_results = Naraz poskytuje viacero prekladových výsledkov od všetkých poskytovateľov
-features_paid_more_interactivity = Viac možností interakcie s vyskakovacím oknom pre preklad na webových stránkach (napr. ťahanie a pustenie, pripnutie, zmena veľkosti atď.)
-
-#
 # OpenAI how-to connect api-key
 #
 openai_access_header = Kroky na prístup k prekladom OpenAI
