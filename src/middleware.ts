@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { auth } from "@/auth-edge"
+import { auth } from "@/auth"
 
 export const config = {
   matcher: ["/api/:path*"]
@@ -17,6 +17,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next(); // skip middleware
   }
 
+  // TODO: verify if the user has valid stripe subscription
   const session = await auth();
   if (!session) {
     return NextResponse.json({ message: 'Unauthorized', }, { status: 401 });

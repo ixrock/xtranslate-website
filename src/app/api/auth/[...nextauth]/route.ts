@@ -1,13 +1,3 @@
-import NextAuth, { NextAuthConfig } from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import { authConfig } from "@/auth-config";
-import { prisma } from "@/prisma";
+import { handlers } from "@/auth";
 
-const config: NextAuthConfig = {
-  ...authConfig,
-  adapter: PrismaAdapter(prisma),
-};
-
-export const {
-  handlers: { GET, POST }
-} = NextAuth(config);
+export const { GET, POST } = handlers;
