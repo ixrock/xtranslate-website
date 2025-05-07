@@ -62,6 +62,7 @@ h3:first-child {
   color: var(--linkColor);
   text-decoration-color: var(--textColor);
   text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 
   &:hover {
     text-decoration: none;

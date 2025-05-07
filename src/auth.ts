@@ -1,7 +1,6 @@
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google";
 import Facebook from "next-auth/providers/facebook";
-import Instagram from "next-auth/providers/instagram";
 import Yandex from "next-auth/providers/yandex";
 import VK from "next-auth/providers/vk";
 import Github from "next-auth/providers/github";
@@ -23,9 +22,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
     providers: [
       Google,
-      Facebook, // TODO: use `ngrok` to support https at `localhost`
-      Instagram, // TODO: use `ngrok` to support https at `localhost`
       Yandex,
+      Facebook, // TODO: use `ngrok` to support https at `localhost`
       VK,
       Github,
     ],
