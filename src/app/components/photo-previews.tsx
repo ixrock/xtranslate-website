@@ -5,7 +5,7 @@ import React from "react";
 import { action, runInAction } from "mobx";
 import { observer, useLocalObservable } from "mobx-react";
 import Image from "next/image";
-import { LoadingIndicator, Dialog, PhotoPreview, PhotoPreviewProps } from "@/app/components";
+import { Dialog, LoadingIndicator, PhotoPreview, PhotoPreviewProps } from "@/app/components";
 
 export interface PhotoPreviewsProps {
   className?: string;

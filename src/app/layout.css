@@ -5,13 +5,16 @@
   --spacing: 12px;
   --spacingHalf: calc(var(--spacing) / 2);
   --spacingDouble: calc(var(--spacing) * 2);
+  --iconSize: 30px;
+  --iconSizeBig: 50px;
 
   /* theme setup with light-dark() or custom variables */
   color-scheme: light dark;
+
   --textColor: light-dark(var(--foreground), var(--background));
   --bgcColor: light-dark(var(--background), var(--foreground));
-  --iconBackground: light-dark(#ffffff55, #00000055);
   --linkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
+  --transparentBgc: light-dark(#ffffff55, #00000055);
 
   &.light {
     color-scheme: light;
@@ -19,7 +22,7 @@
 
   &.dark {
     color-scheme: dark;
-    --iconDarkInverseFilter: invert(1);
+    --themeDarkInverseFilter: invert(1);
   }
 }
 
@@ -58,8 +61,56 @@ h3:first-child {
 :any-link[href] {
   color: var(--linkColor);
   text-decoration-color: var(--textColor);
+  text-underline-offset: 4px;
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+.icon {
+  width: var(--iconSize);
+  height: var(--iconSize);
+}
+
+.flex {
+  display: flex;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.gaps {
+    gap: var(--spacing);
+  }
+
+  &.auto > * {
+    flex: 1 1 0;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.center {
+    margin: auto;
+  }
+
+  > .box {
+    &.grow {
+      flex: 1 0;
+    }
+
+    &.noshrink {
+      flex-shrink: 0;
+    }
+
+    &.center {
+      margin: auto;
+    }
   }
 }

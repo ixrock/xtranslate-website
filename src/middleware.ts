@@ -19,7 +19,7 @@ export async function middleware(req: NextRequest) {
 
   // TODO: verify if the user has valid stripe subscription
   const session = await auth();
-  if (!session) {
+  if (!session?.user) {
     return NextResponse.json({ message: 'Unauthorized', }, { status: 401 });
   }
 

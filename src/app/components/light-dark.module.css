@@ -1,5 +1,5 @@
 .iconDarkLight {
-  filter: var(--iconDarkInverseFilter);
+  filter: var(--themeDarkInverseFilter);
   opacity: .75;
 
   &:hover {

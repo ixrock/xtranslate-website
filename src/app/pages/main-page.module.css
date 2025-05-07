@@ -1,13 +1,7 @@
-.page {
-  --iconSize: 30px;
+.mainPage {
   max-width: 1200px;
   padding: 70px clamp(20px, 10vw, 100px);
   margin: auto;
-}
-
-.page img {
-  width: var(--iconSize);
-  height: var(--iconSize);
 }
 
 .header {
@@ -52,7 +46,7 @@
 }
 
 .ratingTotalUsers img {
-  filter: var(--iconDarkInverseFilter);
+  filter: var(--themeDarkInverseFilter);
 }
 
 .ratingAmountFrom {
@@ -72,9 +66,7 @@
 }
 
 .logo {
-  --iconSize: 50px;
-  width: var(--iconSize);
-  height: var(--iconSize);
+  --iconSize: var(--iconSizeBig);
 }
 
 .topIcons {
@@ -86,12 +78,12 @@
   margin: var(--spacing);
   padding: var(--spacingHalf);
   z-index: 100;
-  background: var(--iconBackground);
+  background: var(--transparentBgc);
   border-radius: var(--borderRadius);
 }
 
 .topIcons > * {
-  filter: var(--iconDarkInverseFilter);
+  filter: var(--themeDarkInverseFilter);
   width: var(--iconSize);
   height: var(--iconSize);
   cursor: pointer;
@@ -100,6 +92,11 @@
 
   &:hover {
     opacity: 1;
+  }
+
+  > img {
+    width: inherit;
+    height: inherit;
   }
 }
 

@@ -1,5 +1,5 @@
-import { LocalizedPage } from "@/app/[locale]/localized-page";
 import { fallbackLocale, isAvailableLocale, Locale } from "@/app/i18n";
+import AppEntry from "@/app/app-entry";
 
 export default function Home() {
   const navLang = navigator.language as any as Locale;
@@ -10,5 +10,5 @@ export default function Home() {
       isAvailableLocale(userLocale) ? userLocale :
         fallbackLocale;
 
-  return <LocalizedPage locale={landingLocale}/>;
+  return <AppEntry locale={landingLocale}/>;
 }

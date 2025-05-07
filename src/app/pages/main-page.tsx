@@ -1,18 +1,17 @@
-// TODO: add videos page with various features/use-cases/how to add api-keys/etc.
-
-import styles from "./localized-page.module.css";
+import styles from "./main-page.module.css";
 import React from "react";
 import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
+import { LoginButton } from "@/app/components/login-button";
 
-interface LocalizedPageProps {
+export interface LocalizedPageProps {
   locale: Locale;
 }
 
-export function LocalizedPage({ locale }: LocalizedPageProps) {
+export function MainPage({ locale }: LocalizedPageProps) {
   const localizationBundle = getFluentBundle(locale);
 
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
@@ -25,13 +24,17 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
   };
 
   return (
-    <div className={styles.page} dir={isRTL(locale) ? "rtl" : "ltr"}>
+    <div className={styles.mainPage} dir={isRTL(locale) ? "rtl" : "ltr"}>
       <div className={styles.topIcons} style={{ left: 0 }}>
         <LightDarkModeSwitcher/>
         <SelectLanguage locale={locale}/>
+        <LoginButton/>
       </div>
 
       <section className={styles.topIcons} style={{ right: 0 }}>
+        <a href="https://github.com/ixrock/XTranslate" title="Github" target="_blank">
+          <img src="/github.svg" alt={__("install_from_github")}/>
+        </a>
         <a
           href={`https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`}
           title={__("install_from_chrome_store")}
@@ -44,13 +47,10 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
           target="_blank">
           <img src="/edge.svg" alt={__("ms_edge_store_short")}/>
         </a>
-        <a href="https://github.com/ixrock/XTranslate" title="Github" target="_blank">
-          <img src="/github.svg" alt={__("install_from_github")}/>
-        </a>
       </section>
 
       <header className={styles.header}>
-        <a href="/"><img src="/xtranslate-logo.svg" className={styles.logo} alt="XTranslate"/></a>
+        <a href="/"><img src="/xtranslate-logo.svg" className={`${styles.logo} icon`} alt="XTranslate"/></a>
         <h1>{__("header")}</h1>
       </header>
 
@@ -64,7 +64,7 @@ export function LocalizedPage({ locale }: LocalizedPageProps) {
           </div>
         </div>
         <div className={styles.ratingTotalUsers}>
-          <img src="/users.svg" alt="Active users"/>
+          <img src="/users.svg" className="icon" alt="Total users"/>
           <span dangerouslySetInnerHTML={{
             __html: __("total_rating_users_globe", { usersCount: "100K" })
           }}/>
