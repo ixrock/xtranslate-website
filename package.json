@@ -10,7 +10,7 @@
     "prisma:studio": "prisma studio",
     "prisma:update": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
-    "prisma:reset": "prisma migrate reset --force",
+    "prisma:wipe": "prisma migrate reset --skip-generate --skip-seed --force --apply-seeds false",
     "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then npm run prisma:deploy; fi"
   },
   "dependencies": {

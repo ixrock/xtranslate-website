@@ -1,26 +1,30 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { auth } from "@/auth"
+import { getToken } from "next-auth/jwt";
 
 export const config = {
   matcher: ["/api/:path*"]
 };
 
-const skipAuthPaths = [
+const SKIP_LIST_PATHS = [
   "/api/auth/",
-  "/api/webhooks/",
-]
+  "/api/webhooks/"
+];
 
 export async function middleware(req: NextRequest) {
-  const path = req.nextUrl.pathname;
+  const { pathname } = req.nextUrl;
 
-  if (skipAuthPaths.some(prefix => path.startsWith(prefix))) {
-    return NextResponse.next(); // skip middleware
+  if (SKIP_LIST_PATHS.some((skippingPath) => pathname.startsWith(skippingPath))) {
+    return NextResponse.next();
   }
 
-  // TODO: verify if the user has valid stripe subscription
-  const session = await auth();
-  if (!session?.user) {
-    return NextResponse.json({ message: 'Unauthorized', }, { status: 401 });
+  const token = await getToken({ req, secret: process.env.AUTH_SECRET });
+  if (!token) {
+    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  }
+
+  // TODO: Stripe check — кладите stripeActive в token в jwt‑callback
+  if (!token.stripeActive) {
+    return NextResponse.json({ message: "Payment required" }, { status: 402 });
   }
 
   return NextResponse.next();
