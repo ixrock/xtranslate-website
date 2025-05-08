@@ -1,4 +1,7 @@
 -- CreateEnum
+CREATE TYPE "PlanType" AS ENUM ('MONTHLY');
+
+-- CreateEnum
 CREATE TYPE "SubscriptionStatus" AS ENUM ('ACTIVE', 'PAST_DUE', 'CANCELED');
 
 -- CreateTable
@@ -44,12 +47,26 @@ CREATE TABLE "VerificationToken" (
 );
 
 -- CreateTable
+CREATE TABLE "Plan" (
+    "id" TEXT NOT NULL,
+    "name" "PlanType" NOT NULL DEFAULT 'MONTHLY',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "priceCentsUSD" INTEGER NOT NULL DEFAULT 500,
+    "textTokensIncluded" INTEGER NOT NULL DEFAULT 1000000,
+    "ttsSecondsIncluded" INTEGER NOT NULL DEFAULT 3600,
+
+    CONSTRAINT "Plan_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Subscription" (
     "id" TEXT NOT NULL,
-    "status" "SubscriptionStatus" NOT NULL DEFAULT 'ACTIVE',
+    "userId" TEXT NOT NULL,
+    "planId" TEXT NOT NULL,
     "currentPeriodEnd" TIMESTAMP(3) NOT NULL,
     "tokensUsedThisCycle" INTEGER NOT NULL DEFAULT 0,
-    "userId" TEXT NOT NULL,
+    "ttsSecondsUsedCycle" INTEGER NOT NULL DEFAULT 0,
+    "status" "SubscriptionStatus" NOT NULL DEFAULT 'ACTIVE',
 
     CONSTRAINT "Subscription_pkey" PRIMARY KEY ("id")
 );
@@ -61,6 +78,9 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 CREATE UNIQUE INDEX "User_stripeCustomerId_key" ON "User"("stripeCustomerId");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Plan_name_key" ON "Plan"("name");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Subscription_userId_key" ON "Subscription"("userId");
 
 -- AddForeignKey
@@ -68,3 +88,6 @@ ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId"
 
 -- AddForeignKey
 ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "Subscription" ADD CONSTRAINT "Subscription_planId_fkey" FOREIGN KEY ("planId") REFERENCES "Plan"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
