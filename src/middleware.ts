@@ -22,7 +22,6 @@ export async function middleware(req: NextRequest) {
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
   }
 
-  // TODO: Stripe check — кладите stripeActive в token в jwt‑callback
   if (!token.stripeActive) {
     return NextResponse.json({ message: "Payment required" }, { status: 402 });
   }

@@ -7,7 +7,7 @@ export function LoginButton() {
 
   return (
     <>
-      {!session && <button onClick={() => signIn()}>Sign In</button>}
+      <button onClick={() => signIn()}>Sign In</button>
       {session && <button onClick={() => signOut()}>Sign Out</button>}
     </>
   )
