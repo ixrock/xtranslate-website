@@ -1,10 +1,12 @@
-import { PrismaClient } from "@prisma/client";
+import { PlanType, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 async function main() {
   await prisma.plan.upsert({
-    where: { name: "MONTHLY" },
+    where: {
+      name: PlanType.MONTHLY,
+    },
     update: {}, // do nothing if it exists
     create: {
       priceCentsUSD: 500,            // $5

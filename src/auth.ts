@@ -6,7 +6,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma";
 
 export const { handlers, auth: auth, signIn, signOut } = NextAuth({
-    adapter: PrismaAdapter(prisma), // [!] this is *not* supported in "edge" runtime (e.g. within `middleware`)
+    adapter: PrismaAdapter(prisma), // not supported in "edge" runtime (e.g. within `middleware`)
 
     theme: {
       logo: "/xtranslate-logo.svg",
@@ -15,7 +15,6 @@ export const { handlers, auth: auth, signIn, signOut } = NextAuth({
     session: {
       strategy: "jwt", // keeps session in the cookies (edge-compatible)
       maxAge: 30 * 24 * 60 * 60, // 30 days
-      updateAge: 24 * 60 * 60, // 24 hours
     },
 
     providers: [
@@ -29,14 +28,10 @@ export const { handlers, auth: auth, signIn, signOut } = NextAuth({
     ],
 
     callbacks: {
-      async jwt({ token }) {
-        if (token.sub) {
-          const subscription = await prisma.subscription.findUnique({
-            where: { userId: token.sub }
-          });
-          token.stripeActive = subscription?.status === "ACTIVE" && subscription.currentPeriodEnd > new Date();
-        }
-        return token;
+      // expose extra data to auth() and useSession()
+      session({ session, token }) {
+        session.user.id = token.sub as string; // e.g. required to check subscription by `user.id`
+        return session;
       },
     },
   }

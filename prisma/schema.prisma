@@ -18,8 +18,8 @@ model User {
   updatedAt     DateTime  @updatedAt
 
   // custom fields
-  stripeCustomerId String?       @unique
-  subscription     Subscription?
+  stripeCustomerId String?             @unique
+  subscriptions    SubscriptionCycle[]
 }
 
 model Account {
@@ -42,44 +42,65 @@ model Account {
   @@id([provider, providerAccountId])
 }
 
+model Plan {
+  id                 String   @id @default(cuid())
+  name               PlanType @unique @default(MONTHLY)
+  priceCentsUSD      Int
+  textTokensIncluded Int
+  ttsSecondsIncluded Int
+  createdAt          DateTime @default(now())
+
+  cycles SubscriptionCycle[]
+}
+
+enum PlanType {
+  MONTHLY
+  YEARLY
+}
+
+model SubscriptionCycle {
+  id     String @id @default(cuid())
+  userId String
+  planId String
+
+  // copy if the plan changes in future
+  priceCentsUSD Int
+  textLimit     Int
+  ttsSecLimit   Int
+
+  amountPaidCents   Int
+  periodStart       DateTime
+  periodEnd         DateTime
+  cancelAtPeriodEnd Boolean     @default(false)
+  status            CycleStatus @default(PAID)
+
+  tokensUsed     Int @default(0)
+  ttsSecondsUsed Int @default(0)
+
+  // stripe metadata
+  stripeInvoiceId String?  @unique
+  stripeSubId     String?
+  createdAt       DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  plan Plan @relation(fields: [planId], references: [id])
+
+  @@index([userId, periodEnd]) // fast access to active subscriptions
+  @@index([stripeSubId])
+  @@index([status])
+}
+
+enum CycleStatus {
+  PAID
+  FAILED
+  REFUNDED
+  CANCELED
+}
+
 model VerificationToken {
   identifier String
   token      String
   expires    DateTime
 
   @@id([identifier, token])
-}
-
-model Plan {
-  id                 String   @id @default(cuid())
-  name               PlanType @unique @default(MONTHLY)
-  createdAt          DateTime @default(now())
-  priceCentsUSD      Int      @default(500) // 5$
-  textTokensIncluded Int      @default(1000000) // 1M
-  ttsSecondsIncluded Int      @default(3600) // 1h
-
-  subscriptions Subscription[]
-}
-
-model Subscription {
-  id                  String             @id @default(cuid())
-  userId              String             @unique
-  planId              String
-  currentPeriodEnd    DateTime
-  tokensUsedThisCycle Int                @default(0)
-  ttsSecondsUsedCycle Int                @default(0)
-  status              SubscriptionStatus @default(ACTIVE)
-
-  user User @relation(fields: [userId], references: [id])
-  plan Plan @relation(fields: [planId], references: [id])
-}
-
-enum PlanType {
-  MONTHLY
-}
-
-enum SubscriptionStatus {
-  ACTIVE
-  PAST_DUE
-  CANCELED
 }

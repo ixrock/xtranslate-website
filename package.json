@@ -11,8 +11,7 @@
     "start": "next start",
     "prisma:studio": "prisma studio",
     "prisma:seed": "prisma db seed",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
+    "prisma:scheme-updated": "prisma migrate dev && prisma db seed",
     "prisma:deploy": "prisma generate && prisma migrate deploy && prisma db seed",
     "prisma:wipe": "prisma migrate reset --skip-generate --skip-seed --force",
     "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then npm run prisma:deploy; fi"
@@ -28,7 +27,8 @@
     "next": "^15.3.1",
     "next-auth": "^5.0.0-beta.27",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "stripe": "^18.1.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
