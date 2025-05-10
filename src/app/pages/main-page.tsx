@@ -6,12 +6,14 @@ import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
 import { LoginButton } from "@/app/components/login-button";
+import { auth } from "@/auth";
 
 export interface LocalizedPageProps {
   locale: Locale;
 }
 
-export function MainPage({ locale }: LocalizedPageProps) {
+export async function MainPage({ locale }: LocalizedPageProps) {
+  const session = await auth();
   const localizationBundle = getFluentBundle(locale);
 
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
@@ -70,6 +72,8 @@ export function MainPage({ locale }: LocalizedPageProps) {
           }}/>
         </div>
       </div>
+
+      <pre>{JSON.stringify(session, null, 2)}</pre>
 
       <div className={styles.mainInfo}>
         <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
