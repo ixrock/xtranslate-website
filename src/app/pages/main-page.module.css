@@ -97,8 +97,8 @@
 }
 
 .installButtons {
-  padding: var(--spacing);
   font-size: 110%;
+  padding: var(--spacing) 0;
 
   > :any-link {
     border: 2px solid currentColor;
@@ -106,8 +106,11 @@
     padding: var(--spacingHalf);
     text-decoration: none;
     font-weight: 500;
+    transition: box-shadow 250ms ease-out, color 250ms;
 
-    &:hover {
+    &:focus, &:hover {
+      outline: none;
+      box-shadow: 0 0 0 1px inset;
       color: inherit;
     }
   }
