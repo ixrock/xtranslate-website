@@ -7,14 +7,14 @@ import Image from "next/image";
 
 export interface PhotoPreviewProps {
   src: string;
-  alt: string;
-  title?: string;
+  title: string;
+  alt?: string;
   className?: string;
   onClick?: (evt: React.MouseEvent) => void;
 }
 
 export function PhotoPreview(props: PhotoPreviewProps) {
-  const { src, className = "", alt, title = alt, onClick } = props;
+  const { src, className = "", title, alt = title, onClick } = props;
 
   return (
     <>

@@ -4,9 +4,9 @@ header = {-app-brand-name} - your AI translator agent (browser extension)
 #
 # Installation info (titles & image alt(s))
 #
-install_from_chrome_store = Install from Chrome Extensions store
+install_from_chrome_store = Install from Chrome Extensions Store
 chrome_store_short = Chrome Extensions Store
-install_from_ms_edge_store = Install from Microsoft Edge Extensions Store
+install_from_ms_edge_store = Install from Edge Add-ons Store
 ms_edge_store_short = MS Edge Store
 install_from_github = Install from source code (Github)
 

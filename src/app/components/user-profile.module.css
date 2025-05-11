@@ -1,0 +1,60 @@
+.UserProfile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: var(--spacing);
+  z-index: 100;
+}
+
+.avatar, .userPhoto {
+  position: relative;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar {
+  filter: var(--themeDarkInverseFilter);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    width: 35%;
+    translate: -50% -50%;
+    aspect-ratio: 1;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    translate: -50% 0;
+    width: 55%;
+    height: 26%;
+    background: #fff;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
+}
+
+.user {
+  .userPhoto {
+    border: 2px solid;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .userName {
+    border-radius: var(--borderRadius);
+    background: var(--transparentBgc);
+    padding: var(--spacingHalf);
+  }
+}
+

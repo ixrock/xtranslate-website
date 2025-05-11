@@ -1,12 +1,12 @@
 import styles from "./main-page.module.css";
 import React from "react";
+import { auth } from "@/auth";
 import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
-import { LoginButton } from "@/app/components/login-button";
-import { auth } from "@/auth";
+import { UserProfile } from "@/app/components/user-profile";
 
 export interface LocalizedPageProps {
   locale: Locale;
@@ -26,30 +26,13 @@ export async function MainPage({ locale }: LocalizedPageProps) {
   };
 
   return (
-    <div className={styles.mainPage} dir={isRTL(locale) ? "rtl" : "ltr"}>
-      <div className={styles.topIcons} style={{ left: 0 }}>
+    <div className={`${styles.mainPage} flex column gaps`} dir={isRTL(locale) ? "rtl" : "ltr"}>
+      <div className={`${styles.topIcons} flex gaps`}>
         <LightDarkModeSwitcher/>
         <SelectLanguage locale={locale}/>
-        <LoginButton/>
       </div>
 
-      <section className={styles.topIcons} style={{ right: 0 }}>
-        <a href="https://github.com/ixrock/XTranslate" title="Github" target="_blank">
-          <img src="/github.svg" alt={__("install_from_github")}/>
-        </a>
-        <a
-          href={`https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`}
-          title={__("install_from_chrome_store")}
-          target="_blank">
-          <img src="/chrome.svg" alt={__("chrome_store_short")}/>
-        </a>
-        <a
-          href="https://microsoftedge.microsoft.com/addons/detail/xtranslate/cinfaflgbaachkaamaeglolofeahelkd"
-          title={__("install_from_ms_edge_store")}
-          target="_blank">
-          <img src="/edge.svg" alt={__("ms_edge_store_short")}/>
-        </a>
-      </section>
+      <UserProfile user={session?.user}/>
 
       <header className={styles.header}>
         <a href="/"><img src="/xtranslate-logo.svg" className={`${styles.logo} icon`} alt="XTranslate"/></a>
@@ -73,7 +56,26 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         </div>
       </div>
 
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+      <section className={`${styles.installButtons} flex gaps justify-center`}>
+        <a
+          className="flex inline gaps align-center"
+          href={`https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`}
+          title={__("install_from_chrome_store")}
+          target="_blank"
+        >
+          <img src="/chrome.svg" alt={__("chrome_store_short")}/>
+          <span>{__("install_from_chrome_store")}</span>
+        </a>
+        <a
+          className="flex inline gaps align-center"
+          href="https://microsoftedge.microsoft.com/addons/detail/xtranslate/cinfaflgbaachkaamaeglolofeahelkd"
+          title={__("install_from_ms_edge_store")}
+          target="_blank"
+        >
+          <img src="/edge.svg" alt={__("ms_edge_store_short")}/>
+          <span>{__("install_from_ms_edge_store")}</span>
+        </a>
+      </section>
 
       <div className={styles.mainInfo}>
         <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
@@ -81,15 +83,15 @@ export async function MainPage({ locale }: LocalizedPageProps) {
       </div>
 
       <PhotoPreviews className={styles.photos} images={[
-        { src: "/sshots/website_popup.jpg", alt: __("gallery_website_popup") },
-        { src: "/sshots/website_select_text.png", alt: __("gallery_website_select_text") },
-        { src: "/sshots/website_translation_results.png", alt: __("gallery_website_translation_results") },
-        { src: "/sshots/app_settings.png", alt: __("gallery_app_settings") },
-        { src: "/sshots/app_popup_customization.png", alt: __("gallery_app_popup_customization") },
-        { src: "/sshots/app_translate_tab.png", alt: __("gallery_app_translate_tab") },
-        { src: "/sshots/app_history_tab.png", alt: __("gallery_app_history_tab") },
-        { src: "/sshots/pdf_translation.png", alt: __("gallery_pdf_translation") },
-        { src: "/sshots/app_theme_dark.png", alt: __("gallery_app_theme_dark") },
+        { src: "/sshots/website_popup.jpg", title: __("gallery_website_popup") },
+        { src: "/sshots/website_select_text.png", title: __("gallery_website_select_text") },
+        { src: "/sshots/website_translation_results.png", title: __("gallery_website_translation_results") },
+        { src: "/sshots/app_settings.png", title: __("gallery_app_settings") },
+        { src: "/sshots/app_popup_customization.png", title: __("gallery_app_popup_customization") },
+        { src: "/sshots/app_translate_tab.png", title: __("gallery_app_translate_tab") },
+        { src: "/sshots/app_history_tab.png", title: __("gallery_app_history_tab") },
+        { src: "/sshots/pdf_translation.png", title: __("gallery_pdf_translation") },
+        { src: "/sshots/app_theme_dark.png", title: __("gallery_app_theme_dark") },
       ]}
       />
 

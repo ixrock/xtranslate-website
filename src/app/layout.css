@@ -5,7 +5,8 @@
   --spacing: 12px;
   --spacingHalf: calc(var(--spacing) / 2);
   --spacingDouble: calc(var(--spacing) * 2);
-  --iconSize: 30px;
+  --iconSizeSmall: 25px;
+  --iconSize: 35px;
   --iconSizeBig: 50px;
 
   /* theme setup with light-dark() or custom variables */
@@ -51,7 +52,7 @@ h1 {
 }
 
 h3 {
-  margin-bottom: var(--spacingDouble);
+  margin-bottom: var(--spacing);
 }
 
 h3:first-child {
@@ -71,12 +72,17 @@ h3:first-child {
 }
 
 .icon {
+  --iconSize: var(--iconSizeSmall);
   width: var(--iconSize);
   height: var(--iconSize);
 }
 
 .flex {
   display: flex;
+
+  &.inline {
+    display: inline-flex;
+  }
 
   &.column {
     flex-direction: column;

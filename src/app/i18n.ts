@@ -1,5 +1,6 @@
 // Fluent.js localization
 // Docs: https://projectfluent.org/fluent/guide/index.html
+// TODO: maybe switch to https://next-intl.dev/
 import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
 import fs from 'fs';
 import path from 'path';

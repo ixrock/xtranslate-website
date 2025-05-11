@@ -1,9 +1,7 @@
 "use client";
 
 import styles from "./photo-previews.module.css"
-import React from "react";
-import { action, runInAction } from "mobx";
-import { observer, useLocalObservable } from "mobx-react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Dialog, LoadingIndicator, PhotoPreview, PhotoPreviewProps } from "@/app/components";
 
@@ -12,49 +10,40 @@ export interface PhotoPreviewsProps {
   images: PhotoPreviewProps[];
 }
 
-export const PhotoPreviews = observer(({ images, className }: PhotoPreviewsProps) => {
-  const store = useLocalObservable(() => ({
-    imageReady: false,
-    photoIndex: -1,
-  }));
+// TODO: maybe use parallel routes, see: https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
+export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
+  const [imageReady, setReady] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(-1);
+  const photo = images[photoIndex];
 
-  const { src: imageSrc, alt: imageTitle } = images[store.photoIndex] ?? {};
+  const showPrevImage = () => rotateImages(-1);
+  const showNextImage = () => rotateImages(+1);
+  const closeDialog = () => setPhotoIndex(-1);
 
-  async function preloadImageAndSetActiveIndex(src: string) {
-    const index = images.findIndex(item => item.src === src);
-    runInAction(() => {
-      store.imageReady = false;
-      store.photoIndex = index;
-    })
-    await preloadImage(src);
-    runInAction(() => {
-      store.imageReady = true;
-    })
+  function rotateImages(step: number) {
+    setPhotoIndex(prevIndex => {
+      let newIndex = prevIndex + step;
+
+      if (newIndex > images.length - 1) {
+        newIndex = 0; // first
+      } else if (newIndex < 0) {
+        newIndex = images.length - 1; // last
+      }
+
+      return newIndex;
+    });
   }
 
-  function onImageClick(evt: React.MouseEvent, imageSrc: string) {
+  async function onImagePreview(evt: React.MouseEvent, imageSrc: string) {
     evt.preventDefault(); // prevent link clicking
-    void preloadImageAndSetActiveIndex(imageSrc);
+
+    const imageIndex = images.findIndex(item => item.src === imageSrc);
+    setPhotoIndex(imageIndex);
+    setReady(false);
+
+    await preloadImage(imageSrc);
+    setReady(true);
   }
-
-  function closeDialog() {
-    runInAction(() => store.photoIndex = -1);
-  }
-
-  const nextImage = action((direction: number) => {
-    let newIndex = store.photoIndex + Math.sign(direction);
-
-    if (newIndex > images.length - 1) {
-      newIndex = 0; // go to first image
-    } else if (newIndex <= -1) {
-      newIndex = images.length - 1; // go to last image in rotation
-    }
-
-    store.photoIndex = newIndex;
-  });
-
-  const showPrevImage = () => nextImage(-1);
-  const showNextImage = () => nextImage(+1);
 
   return (
     <div className={`${styles.PhotoPreviews} ${className ?? ""}`}>
@@ -64,27 +53,27 @@ export const PhotoPreviews = observer(({ images, className }: PhotoPreviewsProps
             {...props}
             key={props.src}
             className={styles.PhotoPreview}
-            onClick={evt => onImageClick(evt, props.src)}
+            onClick={evt => onImagePreview(evt, props.src)}
           />
         )
       })}
-      {imageSrc && (
+      {photo && (
         <Dialog
           contentClassName={styles.PhotoPreviewContent}
           onLeft={showPrevImage}
           onRight={showNextImage}
           onClose={closeDialog}
         >
-          {!store.imageReady && <LoadingIndicator/>}
-          {store.imageReady && (
+          {!imageReady && <LoadingIndicator/>}
+          {imageReady && (
             <>
               <div className={styles.PhotoPreviewImageBig}>
                 <i className={`${styles.PhotoRotateArrow} ${styles.left}`} onClick={showPrevImage}/>
-                <Image fill src={imageSrc} alt={imageTitle}/>
+                <Image fill src={photo.src} alt={photo.title ?? ""}/>
                 <i className={`${styles.PhotoRotateArrow} ${styles.right}`} onClick={showNextImage}/>
               </div>
               <div className={styles.PhotoPreviewTitle}>
-                {imageTitle}
+                {photo.title}
               </div>
             </>
           )}
@@ -92,7 +81,7 @@ export const PhotoPreviews = observer(({ images, className }: PhotoPreviewsProps
       )}
     </div>
   )
-});
+}
 
 export async function preloadImage(src: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {

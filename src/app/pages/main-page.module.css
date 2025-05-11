@@ -9,12 +9,10 @@
   align-items: center;
   gap: 1rem;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .mainInfo {
   text-align: justify;
-  margin: var(--spacingDouble) 0;
 }
 
 .columns {
@@ -27,7 +25,6 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing);
-  margin: var(--spacing) 0;
 }
 
 .ratings {
@@ -62,7 +59,7 @@
 }
 
 .photos {
-  margin: 20px 0;
+  margin: var(--spacingDouble) 0;
 }
 
 .logo {
@@ -70,33 +67,26 @@
 }
 
 .topIcons {
+  --iconSize: 28px;
+
   position: fixed;
   top: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing);
-  margin: var(--spacing);
-  padding: var(--spacingHalf);
-  z-index: 100;
-  background: var(--transparentBgc);
+  left: 0;
+  padding: var(--spacing);
   border-radius: var(--borderRadius);
-}
+  z-index: 100;
 
-.topIcons > * {
-  filter: var(--themeDarkInverseFilter);
-  width: var(--iconSize);
-  height: var(--iconSize);
-  cursor: pointer;
-  opacity: .55;
-  transition: opacity 250ms;
+  > * {
+    width: var(--iconSize);
+    height: var(--iconSize);
+    filter: var(--themeDarkInverseFilter);
+    cursor: pointer;
+    opacity: .55;
+    transition: opacity 250ms;
 
-  &:hover {
-    opacity: 1;
-  }
-
-  > img {
-    width: inherit;
-    height: inherit;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -104,4 +94,26 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.installButtons {
+  padding: var(--spacing);
+  font-size: 110%;
+
+  > :any-link {
+    border: 2px solid currentColor;
+    border-radius: var(--borderRadius);
+    padding: var(--spacingHalf);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  img {
+    height: var(--iconSize);
+    filter: var(--themeDarkInverseFilter);
+  }
 }

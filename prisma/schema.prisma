@@ -54,6 +54,7 @@ model Plan {
 }
 
 enum PlanType {
+  FREE_TRIAL
   MONTHLY
   YEARLY
 }
