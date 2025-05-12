@@ -3,6 +3,7 @@
 import type { User } from "next-auth";
 import styles from './user-profile.module.css';
 import { signIn } from "next-auth/react";
+import { Icon } from "@/app/components/icon";
 
 export interface UserProfileProps {
   className?: string;
@@ -15,11 +16,13 @@ export function UserProfile({ className, user }: UserProfileProps) {
       {user && (
         <div className={`${styles.user} flex gaps align-center`}>
           <span className={styles.userName}>{user?.name}</span>
-          {user?.image && <div className={styles.userPhoto} style={{ backgroundImage: `url(${user?.image})` }}/>}
-          {!user?.image && <div className={styles.avatar}/>}
+          {user?.image && <span className={styles.userPhoto} style={{ backgroundImage: `url(${user?.image})` }}/>}
+          {!user?.image && <Icon className={styles.avatar}/>}
         </div>
       )}
-      {!user && <div className={styles.avatar} onClick={() => signIn()}/>}
+      {!user && (
+        <Icon className={styles.avatar} onClick={() => signIn()}/>
+      )}
     </div>
   )
 }

@@ -1,4 +1,6 @@
 .mainPage {
+  --flexGap: 20px;
+
   max-width: 1200px;
   padding: 70px clamp(20px, 10vw, 100px);
   margin: auto;
@@ -40,10 +42,10 @@
   display: flex;
   align-items: center;
   gap: var(--spacing);
-}
 
-.ratingTotalUsers img {
-  filter: var(--themeDarkInverseFilter);
+  img {
+    filter: var(--themeDarkInverseFilter);
+  }
 }
 
 .ratingAmountFrom {
@@ -58,28 +60,23 @@
   break-inside: avoid;
 }
 
-.photos {
-  margin: var(--spacingDouble) 0;
-}
-
 .logo {
-  --iconSize: var(--iconSizeBig);
+  width: var(--iconSizeBig);
+  height: var(--iconSizeBig);
 }
 
 .topIcons {
   --iconSize: 28px;
+  --flexGap:  var(--spacing);
 
   position: fixed;
   top: 0;
   left: 0;
-  padding: var(--spacing);
+  padding: var(--flexGap);
   border-radius: var(--borderRadius);
   z-index: 100;
 
   > * {
-    width: var(--iconSize);
-    height: var(--iconSize);
-    filter: var(--themeDarkInverseFilter);
     cursor: pointer;
     opacity: .55;
     transition: opacity 250ms;
@@ -98,7 +95,6 @@
 
 .installButtons {
   font-size: 110%;
-  padding: var(--spacing) 0;
 
   > :any-link {
     border: 2px solid currentColor;

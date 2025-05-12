@@ -1,8 +1,8 @@
 "use client";
 
-import styles from './light-dark.module.css';
 import React, { useEffect } from 'react';
-import LightDarkIcon from "./light-dark-mode.svg"
+import { Icon } from "@/app/components/icon";
+import LightDarkSvg from "@/app/components/light-dark-mode.svg"
 
 export enum Mode {
   LIGHT = "light",
@@ -36,12 +36,10 @@ export function LightDarkModeSwitcher({ mode: initialModel = defaultMode, storag
   }, [mode]);
 
   return (
-    <a
-      className={styles.iconDarkLight}
-      onClick={() => toggleMode(mode)}
-      title={title}
-    >
-      <LightDarkIcon/>
+    <a onClick={() => toggleMode(mode)} title={title}>
+      <Icon>
+        <LightDarkSvg/>
+      </Icon>
     </a>
   )
 }

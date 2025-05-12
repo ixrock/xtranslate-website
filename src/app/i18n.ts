@@ -41,7 +41,7 @@ export function getMessage({ bundle, params, msgId, locale }: MessageParams): st
     return bundle.formatPattern(msgKey, params);
   }
 
-  return `[[I18N-404 msgId="${msgId}", locale="${locale}"]]`;
+  return `[404]:${msgId}(${locale})`;
 }
 
 export function isRTL(locale: string): boolean {

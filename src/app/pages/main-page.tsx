@@ -7,6 +7,7 @@ import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
 import { UserProfile } from "@/app/components/user-profile";
+import { Icon } from "@/app/components/icon";
 
 export interface LocalizedPageProps {
   locale: Locale;
@@ -35,7 +36,9 @@ export async function MainPage({ locale }: LocalizedPageProps) {
       <UserProfile user={session?.user}/>
 
       <header className={styles.header}>
-        <a href="/"><img src="/xtranslate-logo.svg" className={`${styles.logo} icon`} alt="XTranslate"/></a>
+        <a href="/">
+          <img src="/xtranslate-logo.svg" className={styles.logo} alt="XTranslate"/>
+        </a>
         <h1>{__("header")}</h1>
       </header>
 
@@ -49,7 +52,9 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           </div>
         </div>
         <div className={styles.ratingTotalUsers}>
-          <img src="/users.svg" className="icon" alt="Total users"/>
+          <Icon>
+            <img src="/users.svg" alt="Total users"/>
+          </Icon>
           <span dangerouslySetInnerHTML={{
             __html: __("total_rating_users_globe", { usersCount: "100K" })
           }}/>
@@ -78,11 +83,17 @@ export async function MainPage({ locale }: LocalizedPageProps) {
       </section>
 
       <div className={styles.mainInfo}>
-        <p dangerouslySetInnerHTML={{ __html: __("info_top1") }}></p>
-        <p dangerouslySetInnerHTML={{ __html: __("info_top2") }}></p>
+        <p>
+          It will help you to learn and understand foreign languages and get <b>real-time text translation</b> of selected text
+          from <b>HTML</b> or <b>PDF documents</b> and even get <b>full web-page text translation</b>.
+        </p>
+        <p>
+          Translate from 100+ foreign languages to your native language directly at web-site you're reading or
+          type some text at extension main window to get <b>instant text translation</b>.
+        </p>
       </div>
 
-      <PhotoPreviews className={styles.photos} images={[
+      <PhotoPreviews images={[
         { src: "/sshots/website_popup.jpg", title: __("gallery_website_popup") },
         { src: "/sshots/website_select_text.png", title: __("gallery_website_select_text") },
         { src: "/sshots/website_translation_results.png", title: __("gallery_website_translation_results") },
@@ -109,66 +120,51 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://translate.yandex.com/" target="_blank">Yandex</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({__("vendor_apis_is_free")})</li>
-          <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({__("vendor_apis_is_free")}: {__("vendor_deepl_limitatiion")})</li>
-          <li><a href="https://platform.openai.com" target="_blank">OpenAI ({__("vendor_open_ai_authors")})</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
-          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
-          <li><a href="https://console.x.ai" target="_blank">Grok</a> ({__("vendor_apis_is_paid")}: {__("vendor_open_ai_limitation")})</li>
+          <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({__("vendor_apis_is_free")}: {__("vendor_deepl_limitatiion")} + {__("vendor_ai_bring_your_key")})</li>
+          <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
+          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
+          <li><a href="https://console.x.ai" target="_blank">Grok</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
         </ul>
       </div>
-
-      <hr/>
 
       <h3>{__("features_header")}:</h3>
-      <div className={styles.columns}>
-        <p dangerouslySetInnerHTML={{ __html: __("features_intro") }}/>
-        <br/>
-        <ul>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way1") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way2") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way3") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way4") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way5") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way6") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way7") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("feature_way_full_page_translate") }}/>
-        </ul>
+      <p>
+        Many ways to get <b>text translation</b> from all <b>HTML</b> (webpages), <b>TXT</b> or <b>translate text in PDF</b> files:
+      </p>
+      <ul className={styles.columns}>
+        <li>Double-click on the word</li>
+        <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
+        <li>Select a text at webpage and click on the translation icon appeared near the text</li>
+        <li>Just click on the selected text <em>(turned off by default)</em></li>
+        <li>Get translation immediately after text selection/release mouse button <em>(turned off by default)</em></li>
+        <li>Write text in input fields, put mouse over the element and press defined hotkey in the settings</li>
+        <li>Get full-page text translation from browser context-menu <em>(free version limit: 10 pages/day)</em></li>
 
-        <p dangerouslySetInnerHTML={{ __html: __("feature_mouse_over_html_element_with_hotkey") }}/>
-
-        <h3 className={styles.break}>{__("pdf_feature_header")}</h3>
-        <ol>
-          <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step1") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("pdf_local_step2") }}/>
-        </ol>
-
-        <br/>
-        <h3 dangerouslySetInnerHTML={{ __html: __("features_free_header") }}/>
-        <ol>
-          <li>{__("features_free_tts")}</li>
-          <li>{__("features_free_adjust_popup")}</li>
-          <li>{__("features_free_custom_actions")}</li>
-          <li dangerouslySetInnerHTML={{ __html: __("features_free_insert_text") }}/>
-          <li dangerouslySetInnerHTML={{ __html: __("features_free_save_words") }}/>
-          <li>{__("features_free_history")}</li>
-        </ol>
-      </div>
-      <hr/>
-
-      <h3>{__("openai_access_header")}:</h3>
-      <ol>
-        <li dangerouslySetInnerHTML={{ __html: __("openai_access_sign_up") }}/>
-        <li dangerouslySetInnerHTML={{ __html: __("openai_access_create_api_key") }}/>
-        <li dangerouslySetInnerHTML={{ __html: __("openai_access_top_up_balance") }}/>
-      </ol>
-
-      <hr/>
-      <h3>{__("security_info_header")}:</h3>
-      <ul>
-        <li dangerouslySetInnerHTML={{ __html: __("security_info1") }}/>
-        <li dangerouslySetInnerHTML={{ __html: __("security_info2") }}/>
-        <li dangerouslySetInnerHTML={{ __html: __("security_info3") }}/>
+        <li>Listen text-to-speech for all supported translation vendors</li>
+        <li>Adjust your unique design of the popup with translated text</li>
+        <li>Customize the ways of getting translations and other options in the settings</li>
+        <li>Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support</li>
+        <li>Save your favourite translations as quick bookmarks in history</li>
+        <li>View and edit history of translations</li>
       </ul>
-      <hr/>
+
+      <h3>Security considerations when using your own API-key</h3>
+      <ul>
+        <li>
+          API-key (e.g. <code>OpenAI</code>, <code>DeepL</code>) handled
+          via <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a> browser apis and
+          used only within <code>Authorization</code> header to sign API requests (which is not exposed or tracked,
+          even if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a> enabled
+          in some other malicious extension).
+        </li>
+        <li>
+          AI-translation requests processed via official <a href="https://github.com/openai/openai-node" target="_blank">OpenAI NPM-package</a> and
+          running only within background service-worker which helps with XSS-kind of attacks.
+        </li>
+        <li>
+          Don't enter or share your OpenAI key anywhere else except extension's settings page <em>(options page)</em>
+        </li>
+      </ul>
 
       <h3>{__("supported_localization_header")}</h3>
       <p className={styles.supportedLocalizations}>

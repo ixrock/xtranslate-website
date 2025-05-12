@@ -42,8 +42,7 @@ vendors_available_header = Available translation vendors
 vendor_apis_is_free = free
 vendor_apis_is_paid = paid
 vendor_deepl_limitatiion = API key limited to 500,000 chars/month
-vendor_open_ai_authors = ChatGPT authors
-vendor_open_ai_limitation = register and top-up balance
+vendor_ai_bring_your_key = bring your own API key
 
 #
 # Features

@@ -12,12 +12,11 @@
   height: var(--iconSize);
   background: #000;
   border-radius: 50%;
+  border: 2px solid;
   cursor: pointer;
 }
 
 .avatar {
-  filter: var(--themeDarkInverseFilter);
-
   &::before {
     content: '';
     position: absolute;
@@ -45,15 +44,15 @@
 }
 
 .user {
+  --flexGap: var(--spacingHalf);
+
   .userPhoto {
-    border: 2px solid;
     background-position: center;
     background-size: cover;
   }
 
   .userName {
     border-radius: var(--borderRadius);
-    background: var(--transparentBgc);
     padding: var(--spacingHalf);
   }
 }

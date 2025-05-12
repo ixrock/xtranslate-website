@@ -44,7 +44,7 @@ model Account {
 
 model Plan {
   id                 String   @id @default(cuid())
-  name               PlanType @unique @default(MONTHLY)
+  name               PlanType @unique
   priceCentsUSD      Int
   textTokensIncluded Int
   ttsSecondsIncluded Int

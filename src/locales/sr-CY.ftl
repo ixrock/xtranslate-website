@@ -1,5 +1,3 @@
-# Author: Radoš Milićev (https://github.com/rammba)
-
 -app-brand-name = XTranslate
 header = {-app-brand-name} - ваш AI преводилац (проширење за прегледач)
 
@@ -44,71 +42,6 @@ vendors_available_header = Доступни преводиоци
 vendor_apis_is_free = бесплатно
 vendor_apis_is_paid = плаћено
 vendor_deepl_limitatiion = API кључ је ограничен на 500.000 карактера месечно
-vendor_open_ai_authors = Аутори ChatGPT-а
-vendor_open_ai_limitation = региструјте се и допуните новчана средства
-
-#
-# Features
-#
-features_header = Функционалности
-features_intro = Много начина за добијање <b>превода текста</b> са свих <b>HTML</b> (веб-страница), <b>TXT</b> или <b>PDF</b> фајлова:
-feature_way1 = Двоклик на реч
-feature_way2 = Употреба пречице дефинисане у подешавањима проширења (подразумевано <em>Alt+Shift+X</em>)
-feature_way3 = Клик на иконицу за превод која се појављује поред изабраног текста
-feature_way4 = Клик на изабрани текст <em>(подразумевано искључено)</em>
-feature_way5 = Отпуштањем тастера миша <em>(подразумевано искључено)</em>
-feature_way6 = Упис текста у поље за унос, задржавање курсора миша изнад и употреба пречице
-feature_way7 = Добијање превода изабраног текста помоћу ставке у <em>{-app-brand-name}</em> контекст менију
-
-feature_way_full_page_translate =
-    Можете превести целе странице бесплатно користећи <a href="https://translate.google.com/" target="_blank">Google</a>
-    <span> или </span>
-    <a href="https://translate.yandex.com" target="_blank">Yandex</a> <em>(употребом контекст менија)</em>
-
-feature_mouse_over_html_element_with_hotkey =
-    Можете чак и да добијете неке информације са слика тако што ћете поставити курсор миша на елемент слике
-    и притиснути пречицу (користе се атрибути title или alt, ако су доступни).
-    Овај трик заправо ради са било којим елементом испод курсора миша. Само поставите миша и притисните пречицу!
-
-#
-# PDF
-#
-pdf_feature_header = Да бисте радили са локалним фајловима (HTML или PDF), требате проширењу дозволити приступ
-pdf_local_step1 = отворите страницу за проширења <code>chrome://extensions</code>, пронађите <b>XTranslate</b>™ и кликните на дугме <em>[Details]</em>
-pdf_local_step2 = штиклирајте checkbox <em>Allow access to file URLs</em>
-
-#
-# Free-features info:
-#
-features_free_header = Бесплатне функционалности укључене у <em>{-app-brand-name}</em> проширење:
-features_free_tts = Слушање текста у говор за све подржане преводиоце
-features_free_adjust_popup = Прилагођавање искачућег прозора са преведеним текстом
-features_free_custom_actions = Подешавање начина за добијање превода и осталих опција у подешавањима
-features_free_insert_text = Унос било ког текста у прозор апликације (<em>подразумевана пречица Alt+X</em>) и добијање превода реченица или речи уз подршку речника
-features_free_save_words = Чување омиљених превода у своју листу фаворита
-features_free_history = Преглед и измена историје превода
-
-#
-# OpenAI how-to connect api-key
-#
-openai_access_header = Кораци за приступ OpenAI преводима
-openai_access_sign_up = Региструјте се на OpenAI платформи <a href="https://platform.openai.com">platform.openai.com</a>
-openai_access_create_api_key = Направите API кључ за приступ резултатима OpenAI сервиса за превод
-openai_access_top_up_balance = Допуните своја новчана средства <em>(5 $+)</em> и онемогућите аутоматску допуну средстава на кредитној картици на страници за наплату <em>(препоручено)</em>
-
-#
-# Security considerations
-#
-security_info_header = Безбедносна разматрања
-security_info1 =
-    OpenAI API кључем се управља путем <code>chrome.storage.local</code> API-ја само у опсегу проширења и користи се само у <code>Authorization</code> заглављу за потписивање захтева према OpenAI API-ју
-    (није откривен нити праћен, чак и ако неко злонамерно проширење омогући <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest">webRequest</a> API)
-
-security_info2 =
-    OpenAI захтеви се шаљу преко званичног <a href="https://github.com/openai/openai-node" target="_blank">OpenAI NPM пакета</a> и покрећу се само у позадинском service worker-у, што помаже
-    у одбрани од XSS напада.
-
-security_info3 = Не уносите нити делите свој OpenAI кључ нигде осим на страници за подешавања проширења (<em>options page</em>)
 
 #
 # Footer

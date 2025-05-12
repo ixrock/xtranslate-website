@@ -8,12 +8,18 @@ const nextConfig: NextConfig = {
   },
 
   webpack(config) {
-    // import files as inline SVG-components (XML)
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-
+    config.module.rules.push(
+      {
+        test: /\.svg$/i,
+        resourceQuery: /url/, // *.svg?url (client-components only)
+        type: 'asset/resource', // import files as base64 URIs
+      },
+      {
+        test: /\.svg$/i,
+        resourceQuery: { not: [/url/] }, // import files as SVG-components (XML)
+        use: ['@svgr/webpack'],
+      },
+    );
     return config;
   },
 };

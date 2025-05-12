@@ -3,7 +3,8 @@
 import styles from './select-lang.module.css';
 import React from 'react';
 import AvailableLocales from "@/locales/_locales.json";
-import SelectLanguageIcon from "./select-lang.svg"
+import { Icon } from "@/app/components/icon";
+import SelectLangSvg from "@/app/components/select-lang.svg"
 
 export interface SelectLanguageProps {
   locale: string;
@@ -15,8 +16,10 @@ export function SelectLanguage({ locale: currentLocale }: SelectLanguageProps) {
   }
 
   return (
-    <div className={styles.selectLang}>
-      <SelectLanguageIcon/>
+    <div className={styles.SelectLang}>
+      <Icon>
+        <SelectLangSvg/>
+      </Icon>
       <select value={currentLocale} onChange={onChange}>
         {Object.entries(AvailableLocales).map(([locale, { native, english }]) => {
           return (

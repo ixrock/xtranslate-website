@@ -1,0 +1,16 @@
+.Icon {
+  --iconSize: var(--iconSizeSmall);
+
+  display: inline-block;
+  width: var(--iconSize);
+  height: var(--iconSize);
+
+  > *, img, svg {
+    display: inherit;
+    color: inherit;
+    width: inherit;
+    height: inherit;
+    filter: var(--themeDarkInverseFilter);
+    vertical-align: middle;
+  }
+}

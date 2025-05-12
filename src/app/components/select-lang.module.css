@@ -1,8 +1,8 @@
-.selectLang {
+.SelectLang {
   position: relative;
 }
 
-.selectLang select {
+.SelectLang select {
   appearance: none;
   font-size: inherit;
   position: absolute;
@@ -12,11 +12,4 @@
   bottom: 0;
   opacity: 0;
   cursor: pointer;
-}
-
-.selectLang svg {
-  width: var(--iconSize);
-  height: var(--iconSize);
-  vertical-align: middle;
-  color: inherit;
 }
