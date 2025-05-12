@@ -33,7 +33,7 @@
   display: flex;
   gap: var(--spacingHalf);
 
-  @media (max-width: 800px) {
+  @media (width <= 800px) {
     flex-direction: column;
   }
 }
@@ -44,7 +44,7 @@
   gap: var(--spacing);
 
   img {
-    filter: var(--themeDarkInverseFilter);
+    filter: var(--themeInverseFilter);
   }
 }
 
@@ -67,12 +67,11 @@
 
 .topIcons {
   --iconSize: 28px;
-  --flexGap:  var(--spacing);
 
   position: fixed;
   top: 0;
   left: 0;
-  padding: var(--flexGap);
+  padding: var(--spacing);
   border-radius: var(--borderRadius);
   z-index: 100;
 
@@ -96,7 +95,7 @@
 .installButtons {
   font-size: 110%;
 
-  > :any-link {
+  > :link {
     border: 2px solid currentColor;
     border-radius: var(--borderRadius);
     padding: var(--spacingHalf);
@@ -109,10 +108,5 @@
       box-shadow: 0 0 0 1px inset;
       color: inherit;
     }
-  }
-
-  img {
-    height: var(--iconSize);
-    filter: var(--themeDarkInverseFilter);
   }
 }

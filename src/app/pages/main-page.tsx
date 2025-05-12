@@ -6,7 +6,7 @@ import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
-import { UserProfile } from "@/app/components/user-profile";
+import { UserMenu } from "@/app/components/user-menu";
 import { Icon } from "@/app/components/icon";
 
 export interface LocalizedPageProps {
@@ -33,7 +33,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <SelectLanguage locale={locale}/>
       </div>
 
-      <UserProfile user={session?.user}/>
+      <UserMenu user={session?.user}/>
 
       <header className={styles.header}>
         <a href="/">
@@ -52,7 +52,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           </div>
         </div>
         <div className={styles.ratingTotalUsers}>
-          <Icon>
+          <Icon small>
             <img src="/users.svg" alt="Total users"/>
           </Icon>
           <span dangerouslySetInnerHTML={{
@@ -68,7 +68,9 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           title={__("install_from_chrome_store")}
           target="_blank"
         >
-          <img src="/chrome.svg" alt={__("chrome_store_short")}/>
+          <Icon>
+            <img src="/chrome.svg" alt={__("chrome_store_short")}/>
+          </Icon>
           <span>{__("install_from_chrome_store")}</span>
         </a>
         <a
@@ -77,7 +79,9 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           title={__("install_from_ms_edge_store")}
           target="_blank"
         >
-          <img src="/edge.svg" alt={__("ms_edge_store_short")}/>
+          <Icon>
+            <img src="/edge.svg" alt={__("ms_edge_store_short")}/>
+          </Icon>
           <span>{__("install_from_ms_edge_store")}</span>
         </a>
       </section>
@@ -132,13 +136,13 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         Many ways to get <b>text translation</b> from all <b>HTML</b> (webpages), <b>TXT</b> or <b>translate text in PDF</b> files:
       </p>
       <ul className={styles.columns}>
-        <li>Double-click on the word</li>
+        <li>Get translation by double-clicking the word</li>
         <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
         <li>Select a text at webpage and click on the translation icon appeared near the text</li>
         <li>Just click on the selected text <em>(turned off by default)</em></li>
         <li>Get translation immediately after text selection/release mouse button <em>(turned off by default)</em></li>
         <li>Write text in input fields, put mouse over the element and press defined hotkey in the settings</li>
-        <li>Get full-page text translation from browser context-menu <em>(free version limit: 10 pages/day)</em></li>
+        <li>Get full-page text translation from context-menu <em>(free version limited to 10 pages/day)</em></li>
 
         <li>Listen text-to-speech for all supported translation vendors</li>
         <li>Adjust your unique design of the popup with translated text</li>
@@ -169,9 +173,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
       <h3>{__("supported_localization_header")}</h3>
       <p className={styles.supportedLocalizations}>
         {Object.entries(AvailableLocales).map(([availableLocale, { native, english }]) => {
-          if (locale === availableLocale) {
-            return <b key={availableLocale}>{native}</b>;
-          }
+          if (locale === availableLocale) return <b key={availableLocale}>{native}</b>;
           return <a key={availableLocale} href={`/${availableLocale}`}>{native}</a>
         })}
       </p>

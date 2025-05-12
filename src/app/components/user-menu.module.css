@@ -1,0 +1,98 @@
+.UserMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: var(--spacing);
+  z-index: 100;
+
+  &:hover {
+    .userDropdown {
+      display: flex;
+    }
+  }
+}
+
+.avatar, .userPhoto {
+  position: relative;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  background: #000;
+  border-radius: 50%;
+  border: 2px solid;
+}
+
+.avatar {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    width: 35%;
+    translate: -50% -50%;
+    aspect-ratio: 1;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    translate: -50% 0;
+    width: 55%;
+    height: 26%;
+    background: #fff;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+  }
+}
+
+.user {
+  --flexGap: var(--spacingHalf) !important;
+
+  padding: var(--spacingHalf) var(--spacing);
+  background-color: var(--transparentBgc);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+
+  .userName {
+    font-weight: 500;
+  }
+
+  .userPhoto {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.userDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  flex-direction: column;
+  text-align: right;
+  border: 2px solid;
+  background: #000000cc;
+  border-radius: var(--borderRadius);
+  padding: var(--spacingHalf);
+  list-style: none;
+  display: none;
+
+  > li {
+    padding: 2px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: white;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid
+    }
+
+    &:hover {
+      color: var(--textColorInverse);
+      background: var(--linkColor);
+    }
+  }
+}

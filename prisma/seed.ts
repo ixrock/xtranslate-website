@@ -1,4 +1,5 @@
 import { PlanType, PrismaClient } from "@prisma/client";
+import { AppConfig } from "@/app/app-config";
 
 const prisma = new PrismaClient();
 
@@ -13,8 +14,8 @@ async function seedPlans() {
     create: {
       name: PlanType.FREE_TRIAL,
       priceCentsUSD: 0,
-      textTokensIncluded: 10_000, // 10k
-      ttsSecondsIncluded: 300, // 5m
+      textTokensIncluded: AppConfig.FREE_PLAN_TEXT_TOKENS,
+      ttsSecondsIncluded: AppConfig.FREE_PLAN_TTS_SECONDS,
     },
   });
   await prisma.plan.upsert({
@@ -22,9 +23,9 @@ async function seedPlans() {
     update: {},
     create: {
       name: PlanType.MONTHLY,
-      priceCentsUSD: 500,            // $5
-      textTokensIncluded: 1_000_000, // 1M
-      ttsSecondsIncluded: 3_600,     // 1h
+      priceCentsUSD: AppConfig.MONTHLY_PRICE_USD_CENTS,
+      textTokensIncluded: AppConfig.MONTHLY_PLAN_TEXT_TOKENS,
+      ttsSecondsIncluded: AppConfig.MONTHLY_PLAN_TTS_SECONDS,
     },
   });
   console.log("✅ Plan table seeded");

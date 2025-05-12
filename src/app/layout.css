@@ -15,6 +15,7 @@
   color-scheme: light dark;
 
   --textColor: light-dark(var(--foreground), var(--background));
+  --textColorInverse: light-dark(var(--background), var(--foreground));
   --bgcColor: light-dark(var(--background), var(--foreground));
   --linkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
   --transparentBgc: light-dark(#ffffff55, #00000055);
@@ -25,7 +26,7 @@
 
   &.dark {
     color-scheme: dark;
-    --themeDarkInverseFilter: invert(1);
+    --themeInverseFilter: invert(1);
   }
 }
 

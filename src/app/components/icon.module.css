@@ -1,16 +1,24 @@
 .Icon {
-  --iconSize: var(--iconSizeSmall);
+  --size: var(--iconSize);
 
   display: inline-block;
-  width: var(--iconSize);
-  height: var(--iconSize);
+  width: var(--size);
+  height: var(--size);
 
-  > *, img, svg {
+  &.small {
+    --size: var(--iconSizeSmall);
+  }
+
+  &.big {
+    --size: var(--iconSizeBig);
+  }
+
+  img, svg {
     display: inherit;
     color: inherit;
     width: inherit;
     height: inherit;
-    filter: var(--themeDarkInverseFilter);
+    filter: var(--themeInverseFilter);
     vertical-align: middle;
   }
 }
