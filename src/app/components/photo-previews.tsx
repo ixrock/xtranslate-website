@@ -10,39 +10,31 @@ export interface PhotoPreviewsProps {
   images: PhotoPreviewProps[];
 }
 
-// TODO: maybe use parallel routes, see: https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
+// TODO: maybe use parallel routes
+//  see: https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
 export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
   const [imageReady, setReady] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(-1);
   const photo = images[photoIndex];
 
-  const showPrevImage = () => rotateImages(-1);
-  const showNextImage = () => rotateImages(+1);
+  const showPrevImage = () => showImage(photoIndex - 1);
+  const showNextImage = () => showImage(photoIndex + 1);
   const closeDialog = () => setPhotoIndex(-1);
 
-  function rotateImages(step: number) {
-    setPhotoIndex(prevIndex => {
-      let newIndex = prevIndex + step;
+  async function showImage(index: number) {
+    let newIndex = index;
+    if (newIndex < 0) newIndex = images.length - 1; // last
+    if (newIndex > images.length - 1) newIndex = 0; // first
 
-      if (newIndex > images.length - 1) {
-        newIndex = 0; // first
-      } else if (newIndex < 0) {
-        newIndex = images.length - 1; // last
-      }
-
-      return newIndex;
-    });
+    setReady(false);
+    await preloadImage(images[newIndex].src);
+    setReady(true);
+    setPhotoIndex(newIndex)
   }
 
-  async function onImagePreview(evt: React.MouseEvent, imageSrc: string) {
+  function onImageClick(evt: React.MouseEvent, index: number) {
     evt.preventDefault(); // prevent link clicking
-
-    const imageIndex = images.findIndex(item => item.src === imageSrc);
-    setPhotoIndex(imageIndex);
-    setReady(false);
-
-    await preloadImage(imageSrc);
-    setReady(true);
+    void showImage(index);
   }
 
   return (
@@ -53,7 +45,7 @@ export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
             {...props}
             key={props.src}
             className={styles.PhotoPreview}
-            onClick={evt => onImagePreview(evt, props.src)}
+            onClick={evt => onImageClick(evt, index)}
           />
         )
       })}

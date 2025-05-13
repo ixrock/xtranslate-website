@@ -15,10 +15,11 @@ export interface DialogProps extends React.PropsWithChildren<{}> {
 
 export function Dialog(props: DialogProps) {
   const {
-    children, onClose, onLeft, onRight,
+    children,
     showCloseBtn = true,
     className = "",
-    contentClassName = ""
+    contentClassName = "",
+    onClose, onLeft, onRight,
   } = props;
   const [domReady, setReady] = useState(false);
 
@@ -45,7 +46,7 @@ export function Dialog(props: DialogProps) {
       document.removeEventListener("keyup", onKeyUp);
       document.removeEventListener("click", onClickOutside);
     };
-  }, []);
+  }, [onLeft, onRight, onClose]);
 
   const dialog = (
     <div className={`${styles.Dialog} ${className}`}>
