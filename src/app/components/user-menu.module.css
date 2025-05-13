@@ -5,10 +5,9 @@
   margin: var(--spacing);
   z-index: 100;
 
-  &:hover {
-    .userDropdown {
-      display: flex;
-    }
+  &:hover .userDropdown,
+  .user:has(:checked) + .userDropdown {
+    display: flex;
   }
 }
 
@@ -56,8 +55,18 @@
   border-radius: var(--borderRadius);
   cursor: pointer;
 
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  &:has(:checked) .userName {
+    border-bottom-color: currentColor;
+  }
+
   .userName {
     font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: border 250ms ease-in-out;
   }
 
   .userPhoto {

@@ -73,6 +73,7 @@
   left: 0;
   padding: var(--spacing);
   border-radius: var(--borderRadius);
+  background-color: var(--transparentBgc);
   z-index: 100;
 
   > * {

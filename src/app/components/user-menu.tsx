@@ -1,7 +1,7 @@
 "use client";
 
-import type { User } from "next-auth";
 import styles from './user-menu.module.css';
+import type { User } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import { Icon } from "@/app/components/icon";
 
@@ -13,7 +13,8 @@ export interface UserMenuProps {
 export function UserMenu({ className, user }: UserMenuProps) {
   return (
     <div className={`${styles.UserMenu} ${className}`}>
-      <div className={`${styles.user} flex gaps align-center`}>
+      <label className={`${styles.user} flex gaps align-center`}>
+        <input type="checkbox"/>
         {user && (
           <>
             <span className={`${styles.userName}`}>{user.name}</span>
@@ -27,7 +28,7 @@ export function UserMenu({ className, user }: UserMenuProps) {
             <Icon className={styles.avatar}/>
           </div>
         )}
-      </div>
+      </label>
       {user && (
         <ul className={styles.userDropdown}>
           <li>Billing</li>
