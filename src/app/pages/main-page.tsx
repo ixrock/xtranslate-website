@@ -133,7 +133,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
 
       <h3>{__("features_header")}:</h3>
       <p>
-        Many ways to get <b>text translation</b> from all <b>HTML</b> (webpages), <b>TXT</b> or <b>translate text in PDF</b> files:
+        Many ways to get <b>text translation</b> from web-pages and even <b>translate texts in PDF</b> files:
       </p>
       <ul className={styles.columns}>
         <li>Get translation by double-clicking the word</li>
@@ -142,6 +142,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <li>Just click on the selected text <em>(turned off by default)</em></li>
         <li>Get translation immediately after text selection/release mouse button <em>(turned off by default)</em></li>
         <li>Write text in input fields, put mouse over the element and press defined hotkey in the settings</li>
+        <li>Translate texts from PDF-files (requires to enable custom PDF-viewer in the app settings)</li>
         <li>Get full-page text translation from context-menu <em>(free version limited to 10 pages/day)</em></li>
 
         <li>Listen text-to-speech for all supported translation vendors</li>
@@ -152,13 +153,13 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <li>View and edit history of translations</li>
       </ul>
 
-      <h3>Security considerations when using your own API-key</h3>
+      <h3>Security considerations when bring your own API-keys</h3>
       <ul>
         <li>
-          API-key (e.g. <code>OpenAI</code>, <code>DeepL</code>) handled
-          via <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a> browser apis and
-          used only within <code>Authorization</code> header to sign API requests (which is not exposed or tracked,
-          even if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a> enabled
+          Your access API-key (e.g. from <code>OpenAI</code>, <code>DeepL</code>, etc.) stored in <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">
+          chrome.storage.local
+        </a> and used only within <code>Authorization</code> header to sign API requests (which is not exposed or tracked, even
+          if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a> enabled
           in some other malicious extension).
         </li>
         <li>
