@@ -9,6 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "type-check": "tsc --noEmit --watch",
     "prisma:studio": "prisma studio",
     "prisma:seed": "prisma db seed",
     "prisma:scheme-updated": "prisma migrate dev && prisma db seed",

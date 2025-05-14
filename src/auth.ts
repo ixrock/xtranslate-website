@@ -42,7 +42,7 @@ export const { handlers, auth: auth, signIn, signOut } = NextAuth({
       async signIn({ user, profile, account }) {
         if (!profile) return true;
 
-        let profileUser: User = {};
+        let profileUser: User | undefined;
 
         switch (account?.provider) {
         case "google":
@@ -56,15 +56,15 @@ export const { handlers, auth: auth, signIn, signOut } = NextAuth({
           break;
         }
 
-        const freshName = profileUser.name ?? user.name;
-        const freshImage = profileUser.image ?? user.image;
+        const freshName = profileUser?.name ?? user.name;
+        const freshImage = profileUser?.image ?? user.image;
 
         const freshEmail = (!user.email && profile.email_verified && profile.email)
           ? profile.email
           : user.email as string;
 
         // update from last login (when linked multiple accounts/auth-providers)
-        if (freshName !== user.name || freshImage !== user.image) {
+        if (freshName !== user.name || freshImage !== user.image || freshEmail !== user.email) {
           await prisma.user.update({
             where: { id: user.id },
             data: {
@@ -90,7 +90,7 @@ export const { handlers, auth: auth, signIn, signOut } = NextAuth({
   }
 );
 
-export function getGoogleUser(profile: GoogleProfile): Required<User> {
+export function getGoogleUser(profile: GoogleProfile): User {
   return {
     id: profile.sub,
     name: profile.name,
@@ -99,7 +99,7 @@ export function getGoogleUser(profile: GoogleProfile): Required<User> {
   }
 }
 
-export function getGithubUser(profile: GitHubProfile): Required<User> {
+export function getGithubUser(profile: GitHubProfile): User {
   return {
     id: String(profile.id),
     name: profile.name ?? profile.login,
@@ -108,7 +108,7 @@ export function getGithubUser(profile: GitHubProfile): Required<User> {
   }
 }
 
-export function getYandexUser(profile: YandexProfile): Required<User> {
+export function getYandexUser(profile: YandexProfile): User {
   return {
     id: profile.id,
     name: (
