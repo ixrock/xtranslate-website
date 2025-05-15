@@ -29,11 +29,19 @@
     align-items: center;
   }
 
-  &.center {
-    margin: auto;
-  }
-
   > .box {
+    &.left {
+      margin-right: auto;
+    }
+
+    &.right {
+      margin-left: auto;
+    }
+
+    &.center {
+      margin: auto;
+    }
+
     &.grow {
       flex: 1 0;
     }

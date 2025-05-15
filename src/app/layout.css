@@ -66,3 +66,7 @@ h3 {
   padding-bottom: var(--spacing);
   margin-bottom: var(--spacingHalf);
 }
+
+b {
+  font-weight: 600;
+}

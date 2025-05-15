@@ -136,19 +136,18 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         Many ways to get <b>text translation</b> from web-pages and even <b>translate texts in PDF</b> files:
       </p>
       <ul className={styles.columns}>
+        <li>Get <b>full-page text translation</b> <em>(via browser's context-menu or from extension's action popup window)</em></li>
         <li>Get translation by double-clicking the word</li>
         <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
         <li>Select a text at webpage and click on the translation icon appeared near the text</li>
         <li>Just click on the selected text <em>(turned off by default)</em></li>
         <li>Get translation immediately after text selection/release mouse button <em>(turned off by default)</em></li>
         <li>Write text in input fields, put mouse over the element and press defined hotkey in the settings</li>
-        <li>Translate texts from PDF-files (requires to enable custom PDF-viewer in the app settings)</li>
-        <li>Get full-page text translation from context-menu <em>(free version limited to 10 pages/day)</em></li>
-
-        <li>Listen text-to-speech for all supported translation vendors</li>
+        <li><b>Translate texts in PDF</b>-files (requires to enable custom PDF-viewer in the app settings)</li>
+        <li><b>Listen text-to-speech</b> (TTS) by supported translation providers <em>(Google, OpenAI)</em></li>
         <li>Adjust your unique design of the popup with translated text</li>
         <li>Customize the ways of getting translations and other options in the settings</li>
-        <li>Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support</li>
+        <li>Insert any text in the extension action window (<em>Alt+X</em> hotkey by default) and get <b>instant translation</b> of sentences or dictionary words</li>
         <li>Save your favourite translations as quick bookmarks in history</li>
         <li>View and edit history of translations</li>
       </ul>
