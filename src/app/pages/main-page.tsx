@@ -122,7 +122,6 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <h3 className={styles.break}>{__("vendors_available_header")}:</h3>
         <ul>
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({__("vendor_apis_is_free")})</li>
-          <li><a href="https://translate.yandex.com/" target="_blank">Yandex</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({__("vendor_apis_is_free")}: {__("vendor_deepl_limitatiion")} + {__("vendor_ai_bring_your_key")})</li>
           <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>

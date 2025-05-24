@@ -13,7 +13,7 @@ export interface UserMenuProps {
 export function UserMenu({ className, user }: UserMenuProps) {
   return (
     <div className={`${styles.UserMenu} ${className}`}>
-      <label className={`${styles.user} flex gaps align-center`}>
+      <label className={`${styles.user} flex gaps align-center`} tabIndex={0}>
         <input type="checkbox"/>
         {user && (
           <>

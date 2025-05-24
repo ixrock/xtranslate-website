@@ -6,8 +6,14 @@
   z-index: 100;
 
   &:hover .userDropdown,
-  .user:has(:checked) + .userDropdown {
-    display: flex;
+  .user:has(:checked) + .userDropdown,
+  .user:focus + .userDropdown {
+    display: flex; /* show menu on :hover, :focus and click (via :checked) */
+  }
+
+  .user:focus .userName,
+  .user:has(:checked) .userName {
+    border-bottom-color: currentColor;
   }
 }
 
@@ -57,10 +63,6 @@
 
   input[type='checkbox'] {
     display: none;
-  }
-
-  &:has(:checked) .userName {
-    border-bottom-color: currentColor;
   }
 
   .userName {
