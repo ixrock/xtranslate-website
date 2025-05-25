@@ -30,6 +30,8 @@ gallery_app_translate_tab = Input text and get translation from main app window
 gallery_app_history_tab = History of translations with import/export in JSON-format
 gallery_pdf_translation = Translate foreign texts in PDF files
 gallery_app_theme_dark = Dark theme for app window
+gallery_context_menu_page_translate = Context menu-item for translating full-page with {-app-brand-name}
+gallery_context_menu_page_translated = Auto-translating page enabled (domain-specific)
 
 install_extension_header = Install extension
 install_chrome_store = Chrome Extensions Web Store

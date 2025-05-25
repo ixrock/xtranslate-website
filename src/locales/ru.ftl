@@ -31,6 +31,8 @@ gallery_app_translate_tab = Введите текст и получите мгн
 gallery_app_history_tab = История сохраненных переводов и возможность импорта/экспорта в JSON-формате
 gallery_pdf_translation = Перевод иностранных текстов в PDF-файлах
 gallery_app_theme_dark = Выбор темной темы основного окна приложения {-app-brand-name}
+gallery_context_menu_page_translate = Пункт в глобальном контекстном меню для перевода всей страницы с помощьью {-app-brand-name}
+gallery_context_menu_page_translated = Авто-перевод страницы включен
 
 install_extension_header = Установите расширение
 install_chrome_store = Магазин расширений Chrome

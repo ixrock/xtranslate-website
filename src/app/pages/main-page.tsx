@@ -107,6 +107,8 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         { src: "/sshots/app_history_tab.png", title: __("gallery_app_history_tab") },
         { src: "/sshots/pdf_translation.png", title: __("gallery_pdf_translation") },
         { src: "/sshots/app_theme_dark.png", title: __("gallery_app_theme_dark") },
+        { src: "/sshots/page_translation_context_menu_translate.png", title: __("gallery_context_menu_page_translate") },
+        { src: "/sshots/page_translation_context_menu_translated.png", title: __("gallery_context_menu_page_translated") },
       ]}
       />
 
