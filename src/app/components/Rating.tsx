@@ -1,4 +1,4 @@
-import styles from './rating.module.css';
+import styles from './Rating.module.css';
 import React from 'react';
 
 export interface RatingProps {

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from './dialog.module.css';
+import styles from './Dialog.module.css';
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 

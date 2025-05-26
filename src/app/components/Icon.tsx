@@ -1,4 +1,6 @@
-import styles from './icon.module.css';
+"use client";
+
+import styles from './Icon.module.css';
 import React from "react";
 import classNames from "classnames";
 

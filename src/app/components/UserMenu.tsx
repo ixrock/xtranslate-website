@@ -1,9 +1,9 @@
 "use client";
 
-import styles from './user-menu.module.css';
+import styles from './UserMenu.module.css';
 import type { User } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
-import { Icon } from "@/app/components/icon";
+import { Icon } from "@/app/components/Icon";
 
 export interface UserMenuProps {
   className?: string;

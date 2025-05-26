@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { Icon } from "@/app/components/icon";
-import LightDarkSvg from "@/app/components/light-dark-mode.svg"
+import { Icon } from "@/app/components/Icon";
+import LightDarkSvg from "@/app/components/LightDarkMode.svg"
 
 export enum Mode {
   LIGHT = "light",

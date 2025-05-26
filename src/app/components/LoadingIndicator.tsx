@@ -1,4 +1,4 @@
-import styles from './loading-indicator.module.css';
+import styles from './LoadingIndicator.module.css';
 import React from 'react';
 
 export function LoadingIndicator() {

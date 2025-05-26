@@ -1,10 +1,10 @@
 "use client";
 
-import styles from './select-lang.module.css';
+import styles from './SelectLang.module.css';
 import React from 'react';
 import AvailableLocales from "@/locales/_locales.json";
-import { Icon } from "@/app/components/icon";
-import SelectLangSvg from "@/app/components/select-lang.svg"
+import { Icon } from "@/app/components/Icon";
+import SelectLangSvg from "@/app/components/SelectLang.svg"
 
 export interface SelectLanguageProps {
   locale: string;

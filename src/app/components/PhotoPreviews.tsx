@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./photo-previews.module.css"
+import styles from "./PhotoPreviews.module.css"
 import React, { useState } from "react";
 import Image from "next/image";
 import { Dialog, LoadingIndicator, PhotoPreview, PhotoPreviewProps } from "@/app/components";
