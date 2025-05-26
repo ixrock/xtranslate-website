@@ -27,21 +27,24 @@ export function getFluentBundle(locale: Locale) {
   return bundle;
 }
 
-export interface MessageParams {
+export interface MessagePayload {
   msgId: string
   locale: Locale
-  bundle: FluentBundle
   params?: Record<string, FluentVariable>
 }
 
-export function getMessage({ bundle, params, msgId, locale }: MessageParams): string {
-  const msgKey = bundle.getMessage(msgId)?.value;
-
-  if (msgKey) {
-    return bundle.formatPattern(msgKey, params);
+export function getMessage(payload: MessagePayload): string {
+  const { params, msgId, locale } = payload;
+  const bundle = getFluentBundle(locale);
+  const msgKey = bundle.getMessage(msgId)?.value ?? "";
+  const msgValue = bundle.formatPattern(msgKey, params);
+  if (!msgValue) {
+    if (locale !== fallbackLocale) {
+      return getMessage({ ...payload, locale: fallbackLocale });
+    }
+    return `[${msgId}:${locale.toUpperCase()}:404]`; // happens when translation is not found even in fallback locale
   }
-
-  return `[404]:${msgId}(${locale})`;
+  return msgValue;
 }
 
 export function isRTL(locale: string): boolean {

@@ -3,7 +3,7 @@ import React from "react";
 import { auth } from "@/auth";
 import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
-import { getFluentBundle, getMessage, isRTL, Locale } from "@/app/i18n";
+import { getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
 import { SelectLanguage } from "@/app/components/select-lang";
 import { UserMenu } from "@/app/components/user-menu";
@@ -15,15 +15,9 @@ export interface LocalizedPageProps {
 
 export async function MainPage({ locale }: LocalizedPageProps) {
   const session = await auth();
-  const localizationBundle = getFluentBundle(locale);
 
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
-    return getMessage({
-      msgId: id,
-      bundle: localizationBundle,
-      locale,
-      params,
-    })
+    return getMessage({ msgId: id, locale, params }); // __("msgId") shortcut for getting localized message
   };
 
   return (
