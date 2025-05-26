@@ -14,7 +14,7 @@ export interface LocalizedPageProps {
 }
 
 export async function MainPage({ locale }: LocalizedPageProps) {
-  // const session = await auth();
+  const session = await auth();
 
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
     return getMessage({ msgId: id, locale, params }); // __("msgId") shortcut for getting localized message
@@ -27,7 +27,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <SelectLanguage locale={locale}/>
       </div>
 
-      {/*<UserMenu user={session?.user}/>*/}
+      <UserMenu user={session?.user}/>
 
       <header className={styles.header}>
         <a href="/">
