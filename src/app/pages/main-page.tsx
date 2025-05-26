@@ -5,16 +5,16 @@ import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
-import { SelectLanguage } from "@/app/components/select-lang";
-import { UserMenu } from "@/app/components/user-menu";
-import { Icon } from "@/app/components/icon";
+import { SelectLanguage } from "@/app/components/SelectLang";
+import { UserMenu } from "@/app/components/UserMenu";
+import { Icon } from "@/app/components/Icon";
 
 export interface LocalizedPageProps {
   locale: Locale;
 }
 
 export async function MainPage({ locale }: LocalizedPageProps) {
-  const session = await auth();
+  // const session = await auth();
 
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
     return getMessage({ msgId: id, locale, params }); // __("msgId") shortcut for getting localized message
@@ -27,7 +27,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <SelectLanguage locale={locale}/>
       </div>
 
-      <UserMenu user={session?.user}/>
+      {/*<UserMenu user={session?.user}/>*/}
 
       <header className={styles.header}>
         <a href="/">
@@ -121,8 +121,8 @@ export async function MainPage({ locale }: LocalizedPageProps) {
           <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({__("vendor_apis_is_free")}: {__("vendor_deepl_limitatiion")} + {__("vendor_ai_bring_your_key")})</li>
           <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
-          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
           <li><a href="https://console.x.ai" target="_blank">Grok</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
+          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({__("vendor_apis_is_paid")}: {__("vendor_ai_bring_your_key")})</li>
         </ul>
       </div>
 
