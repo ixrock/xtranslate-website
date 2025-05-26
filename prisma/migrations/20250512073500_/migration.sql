@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Plan" ALTER COLUMN "name" DROP DEFAULT;

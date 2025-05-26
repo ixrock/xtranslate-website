@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "PlanType" AS ENUM ('MONTHLY', 'YEARLY');
+CREATE TYPE "PlanType" AS ENUM ('FREE_TRIAL', 'MONTHLY', 'YEARLY');
 
 -- CreateEnum
 CREATE TYPE "CycleStatus" AS ENUM ('PAID', 'FAILED', 'REFUNDED', 'CANCELED');
@@ -40,7 +40,7 @@ CREATE TABLE "Account" (
 -- CreateTable
 CREATE TABLE "Plan" (
     "id" TEXT NOT NULL,
-    "name" "PlanType" NOT NULL DEFAULT 'MONTHLY',
+    "name" "PlanType" NOT NULL,
     "priceCentsUSD" INTEGER NOT NULL,
     "textTokensIncluded" INTEGER NOT NULL,
     "ttsSecondsIncluded" INTEGER NOT NULL,

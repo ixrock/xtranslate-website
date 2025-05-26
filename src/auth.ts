@@ -5,7 +5,7 @@ import Github, { GitHubProfile } from "next-auth/providers/github";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma";
 
-export const { handlers, auth: auth, signIn, signOut } = NextAuth({
+export const { handlers: handlers, auth: auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma), // not supported in "edge" runtime (e.g. within `middleware`)
 
     theme: {
