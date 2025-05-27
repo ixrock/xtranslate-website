@@ -132,19 +132,22 @@ export async function MainPage({ locale }: LocalizedPageProps) {
       </p>
       <ul className={styles.columns}>
         <li>Get <b>full-page text translation</b> <em>(via browser's context-menu or from extension's action popup window)</em></li>
-        <li>Get translation by double-clicking the word</li>
-        <li>Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)</li>
-        <li>Select a text at webpage and click on the translation icon appeared near the text</li>
-        <li>Just click on the selected text <em>(turned off by default)</em></li>
-        <li>Get translation immediately after text selection/release mouse button <em>(turned off by default)</em></li>
-        <li>Write text in input fields, put mouse over the element and press defined hotkey in the settings</li>
-        <li><b>Translate texts in PDF</b>-files (requires to enable custom PDF-viewer in the app settings)</li>
-        <li><b>Listen text-to-speech</b> (TTS) by supported translation providers <em>(Google, OpenAI)</em></li>
-        <li>Adjust your unique design of the popup with translated text</li>
-        <li>Customize the ways of getting translations and other options in the settings</li>
-        <li>Insert any text in the extension action window (<em>Alt+X</em> hotkey by default) and get <b>instant translation</b> of sentences or dictionary words</li>
+        <li>Get translation in the popup by double-clicking the word</li>
+        <li>Mouse over block of text and press predefined hotkey from the settings (<em>Alt+Shift+X</em> by default)</li>
+        <li>Select a text at webpage and click on the translation icon appeared near the text (X)</li>
+        <li>Just click on the selected text <em>(this option is turned off by default)</em></li>
+        <li>Get translation immediately after text selection/releasing mouse button <em>(turned off by default)</em></li>
+        <li>Or just write your texts in any input page element, mouse over it and press the</li>
+        <li><b>Translate texts in PDF</b> like from normal HTML-pages (require to enable custom PDF.js-viewer in the app settings)</li>
+        <li><b>Listen text-to-speech</b> (TTS) by supported translation providers (<em>Google</em>, <em>OpenAI</em> or browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank">SpeechSynthesis</a> APIs)</li>
         <li>Save your favourite translations as quick bookmarks in history</li>
+        <li>Adjust your unique design of the translation popup, font-size, colors, etc.</li>
         <li>View and edit history of translations</li>
+        <li>
+          In any browser context you can open app/options page window by hotkey (if adjusted at <code>chrome://extensions/shortcuts</code>) or
+          by <code>(X)</code> icon from browser's extensions toolbar <em>(usually located at right-top corner)</em>.
+          By default the tab <b>Translate</b> is active and you can quickly input/prototype your texts and get translation in place.
+        </li>
       </ul>
 
       <h3>Security considerations when bring your own API-keys</h3>
