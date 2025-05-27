@@ -32,17 +32,6 @@ export const { handlers: handlers, auth: auth, signIn, signOut } = NextAuth({
         }
       }),
       Yandex({
-        id: "yandex",
-        name: "Yandex",
-        authorization: {
-          url: "https://oauth.yandex.ru/authorize",
-          params: {
-            response_type: "code",
-            scope: "login:email login:info",
-          },
-        },
-        token: "https://oauth.yandex.ru/token",
-        userinfo: "https://login.yandex.ru/info",
         profile(profile) {
           return getYandexUser(profile);
         }
