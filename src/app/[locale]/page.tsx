@@ -1,7 +1,7 @@
 import React from "react";
 import { redirect } from "next/navigation";
+import { AppEntry } from "@/app/pages/AppEntry";
 import { fallbackLocale, isAvailableLocale, Locale } from "@/app/i18n";
-import AppEntry from "@/app/app-entry";
 
 interface LocalizedPageProps {
   params: Promise<{ locale: Locale }>

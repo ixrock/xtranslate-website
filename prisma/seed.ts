@@ -1,5 +1,5 @@
 import { PlanType, PrismaClient } from "@prisma/client";
-import { appConfig } from "@/app/app-config";
+import { appConfig } from "@/app/config";
 
 const prisma = new PrismaClient();
 

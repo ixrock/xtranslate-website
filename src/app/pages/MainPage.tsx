@@ -1,6 +1,5 @@
-import styles from "./main-page.module.css";
+import styles from "./MainPage.module.css";
 import React from "react";
-import { auth } from "@/auth";
 import { FluentVariable } from "@fluent/bundle";
 import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getMessage, isRTL, Locale } from "@/app/i18n";
@@ -13,9 +12,7 @@ export interface LocalizedPageProps {
   locale: Locale;
 }
 
-export async function MainPage({ locale }: LocalizedPageProps) {
-  const session = await auth();
-
+export function MainPage({ locale }: LocalizedPageProps) {
   const __ = (id: string, params?: Record<string, FluentVariable>) => {
     return getMessage({ msgId: id, locale, params }); // __("msgId") shortcut for getting localized message
   };
@@ -27,7 +24,7 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <SelectLanguage locale={locale}/>
       </div>
 
-      <UserMenu user={session?.user}/>
+      <UserMenu/>
 
       <header className={styles.header}>
         <a href="/">
@@ -139,7 +136,9 @@ export async function MainPage({ locale }: LocalizedPageProps) {
         <li>Get translation immediately after text selection/releasing mouse button <em>(turned off by default)</em></li>
         <li>Or just write your texts in any input page element, mouse over it and press the</li>
         <li><b>Translate texts in PDF</b> like from normal HTML-pages (require to enable custom PDF.js-viewer in the app settings)</li>
-        <li><b>Listen text-to-speech</b> (TTS) by supported translation providers (<em>Google</em>, <em>OpenAI</em> or browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank">SpeechSynthesis</a> APIs)</li>
+        <li><b>Listen text-to-speech</b> (TTS) by supported translation providers (<em>Google</em>, <em>OpenAI</em> or browser's <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank">SpeechSynthesis</a> APIs)
+        </li>
         <li>Save your favourite translations as quick bookmarks in history</li>
         <li>Adjust your unique design of the translation popup, font-size, colors, etc.</li>
         <li>View and edit history of translations</li>

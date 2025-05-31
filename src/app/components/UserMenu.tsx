@@ -2,17 +2,20 @@
 
 import styles from './UserMenu.module.css';
 import type { User } from "next-auth";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Icon } from "@/app/components/Icon";
 
 export interface UserMenuProps {
-  className?: string;
   user?: User;
 }
 
-export function UserMenu({ className, user }: UserMenuProps) {
+export function UserMenu({ user: initialUser }: UserMenuProps) {
+  const { data: session, status } = useSession();
+  const user = session?.user ?? initialUser;
+  const isLoading = status === "loading";
+
   return (
-    <div className={`${styles.UserMenu} ${className}`}>
+    <div className={styles.UserMenu}>
       <label className={`${styles.user} flex gaps align-center`} tabIndex={0}>
         <input type="checkbox"/>
         {user && (
