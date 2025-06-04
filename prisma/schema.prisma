@@ -1,10 +1,12 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  schemas  = ["private"]
 }
 
 model User {
@@ -20,6 +22,8 @@ model User {
   // custom fields
   stripeCustomerId String?             @unique
   subscriptions    SubscriptionCycle[]
+
+  @@schema("private")
 }
 
 model Account {
@@ -40,6 +44,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([provider, providerAccountId])
+  @@schema("private")
 }
 
 model Plan {
@@ -51,12 +56,16 @@ model Plan {
   createdAt          DateTime @default(now())
 
   cycles SubscriptionCycle[]
+
+  @@schema("private")
 }
 
 enum PlanType {
   FREE_TRIAL
   MONTHLY
   YEARLY
+
+  @@schema("private")
 }
 
 model SubscriptionCycle {
@@ -89,6 +98,7 @@ model SubscriptionCycle {
   @@index([userId, periodEnd]) // fast access to active subscriptions
   @@index([stripeSubId])
   @@index([status])
+  @@schema("private")
 }
 
 enum CycleStatus {
@@ -96,6 +106,8 @@ enum CycleStatus {
   FAILED
   REFUNDED
   CANCELED
+
+  @@schema("private")
 }
 
 model VerificationToken {
@@ -104,4 +116,5 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+  @@schema("private")
 }

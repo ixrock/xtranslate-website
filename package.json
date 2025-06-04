@@ -12,33 +12,35 @@
     "type-check": "tsc --noEmit --watch",
     "prisma:studio": "prisma studio",
     "prisma:seed": "prisma db seed",
-    "prisma:refresh-api-client": "prisma generate",
-    "prisma:migration-scheme-updated": "prisma migrate dev && prisma db seed",
+    "prisma:client": "prisma generate",
+    "prisma:migration": "prisma migrate dev && prisma db seed",
     "prisma:deploy": "prisma generate && prisma migrate deploy && prisma db seed",
     "prisma:wipe": "prisma migrate reset --force",
-    "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then npm run prisma:deploy; fi"
+    "postinstall": "if [ \"$VERCEL\" = \"1\" ]; then npm run prisma:deploy; fi",
+    "redis-dev": "redis-server",
+    "update-packages": "npx npm-check-updates -u"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^2.9.0",
-    "@fluent/bundle": "^0.18.0",
-    "@next/third-parties": "^15.1.3",
-    "@prisma/client": "^6.8.2",
-    "@vercel/analytics": "^1.4.1",
+    "@auth/prisma-adapter": "^2.9.1",
+    "@fluent/bundle": "^0.19.1",
+    "@next/third-parties": "^15.3.3",
+    "@prisma/client": "^6.9.0",
+    "@vercel/analytics": "^1.5.0",
     "classnames": "^2.5.1",
-    "marked": "^15.0.11",
-    "next": "^15.3.1",
+    "marked": "^15.0.12",
+    "next": "^15.3.3",
     "next-auth": "^5.0.0-beta.27",
-    "openai": "^4.98.0",
+    "openai": "^5.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "stripe": "^18.1.0"
+    "stripe": "^18.2.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "prisma": "^6.8.2",
+    "prisma": "^6.9.0",
     "tsx": "^4.19.4",
     "typescript": "^5"
   }

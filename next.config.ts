@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
+  experimental: {
+    useCache: true,
+  },
+
   images: {
     formats: ["image/webp"],
   },
