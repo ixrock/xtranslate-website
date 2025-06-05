@@ -2,7 +2,7 @@
   --flexGap: 3px !important;
 
   text-decoration: none;
-  border: 1px solid currentColor;
+  border: 2px solid;
   color: var(--themedTextColor);
   border-radius: var(--borderRadius);
   padding: var(--spacingHalf) var(--spacing);
