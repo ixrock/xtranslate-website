@@ -5,7 +5,7 @@
 
 .PhotoPreview img {
   border-radius: var(--borderRadius);
-  border: 3px solid var(--linkColor);
+  border: 3px solid var(--themedLinkColor);
 
   &:hover {
     z-index: 10;

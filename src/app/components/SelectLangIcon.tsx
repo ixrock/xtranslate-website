@@ -1,6 +1,6 @@
 "use client";
 
-import styles from './SelectLang.module.css';
+import styles from './SelectLangIcon.module.css';
 import React from 'react';
 import AvailableLocales from "@/locales/_locales.json";
 import { Icon } from "@/app/components/Icon";
@@ -17,7 +17,7 @@ export function SelectLanguage({ locale: currentLocale }: SelectLanguageProps) {
 
   return (
     <div className={styles.SelectLang}>
-      <Icon>
+      <Icon svgFill>
         <SelectLangSvg/>
       </Icon>
       <select value={currentLocale} onChange={onChange}>

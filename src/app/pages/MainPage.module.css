@@ -13,6 +13,13 @@
   text-align: center;
 }
 
+.githubTopButton {
+  position: absolute;
+  top: var(--spacing);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .mainInfo {
   text-align: justify;
 }
@@ -44,7 +51,7 @@
   gap: var(--spacing);
 
   img {
-    filter: var(--themeInverseFilter);
+    filter: var(--themedInverseFilter);
   }
 }
 
@@ -73,7 +80,7 @@
   left: 0;
   padding: var(--spacing);
   border-radius: var(--borderRadius);
-  background-color: var(--transparentBgc);
+  background-color: var(--themedTransparentBgc);
   z-index: 100;
 
   > * {
@@ -95,6 +102,10 @@
 
 .installButtons {
   font-size: 110%;
+
+  img {
+    filter: var(--themedInverseFilter);
+  }
 
   > :link {
     border: 2px solid currentColor;

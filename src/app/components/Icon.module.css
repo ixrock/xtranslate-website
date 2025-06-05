@@ -15,10 +15,17 @@
 
   img, svg {
     display: inherit;
-    color: inherit;
     width: inherit;
     height: inherit;
-    filter: var(--themeInverseFilter);
     vertical-align: middle;
+    color: currentColor;
+  }
+
+  &.svgStroke svg path {
+    stroke: currentColor;
+  }
+
+  &.svgFill svg path {
+    fill: currentColor;
   }
 }

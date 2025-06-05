@@ -1,6 +1,6 @@
 .rating {
   --starSize: 23px;
-  --colorActive: var(--linkColor);
+  --colorActive: var(--themedLinkColor);
   --colorInactive: lightgray;
 
   position: relative;

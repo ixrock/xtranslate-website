@@ -1,12 +1,14 @@
 import styles from "./MainPage.module.css";
 import React from "react";
 import { FluentVariable } from "@fluent/bundle";
-import { LightDarkModeSwitcher, PhotoPreviews, Rating } from "@/app/components";
+import { LightDarkIconSwitcher, PhotoPreviews, Rating } from "@/app/components";
 import { getMessage, isRTL, Locale } from "@/app/i18n";
 import AvailableLocales from "@/locales/_locales.json"
-import { SelectLanguage } from "@/app/components/SelectLang";
+import { SelectLanguage } from "@/app/components/SelectLangIcon";
 import { UserMenu } from "@/app/components/UserMenu";
 import { Icon } from "@/app/components/Icon";
+import { extensionGithubRepoUrl } from "@/app/config";
+import { GithubButton } from "@/app/components/GithubButton";
 
 export interface LocalizedPageProps {
   locale: Locale;
@@ -20,10 +22,11 @@ export function MainPage({ locale }: LocalizedPageProps) {
   return (
     <div className={`${styles.mainPage} flex column gaps`} dir={isRTL(locale) ? "rtl" : "ltr"}>
       <div className={`${styles.topIcons} flex gaps`}>
-        <LightDarkModeSwitcher/>
+        <LightDarkIconSwitcher/>
         <SelectLanguage locale={locale}/>
       </div>
 
+      <GithubButton className={styles.githubTopButton}/>
       <UserMenu/>
 
       <header className={styles.header}>
@@ -109,7 +112,7 @@ export function MainPage({ locale }: LocalizedPageProps) {
           <li><a href={`https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`} target="_blank">{__("install_chrome_store")}</a></li>
           <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">{__("install_ms_addons")}</a></li>
           <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">{__("install_firefox")}</a> <em>({__("install_old_version")})</em></li>
-          <li><a href="https://github.com/ixrock/XTranslate" target="_blank">Github</a> <em>({__("install_from_sources")})</em></li>
+          <li><a href={extensionGithubRepoUrl} target="_blank">Github</a> <em>({__("install_from_sources")})</em></li>
         </ul>
 
         <h3 className={styles.break}>{__("vendors_available_header")}:</h3>

@@ -1,0 +1,29 @@
+.GithubButton {
+  --flexGap: 3px !important;
+
+  text-decoration: none;
+  border: 1px solid currentColor;
+  color: var(--themedTextColor);
+  border-radius: var(--borderRadius);
+  padding: var(--spacingHalf) var(--spacing);
+  cursor: pointer;
+  transition: background-color 250ms ease-out;
+
+  &:hover {
+    background-color: var(--themedBgcInverse);
+    color: var(--themedTextColorInverse);
+  }
+}
+
+.star {
+  font-size: 120%;
+}
+
+.starCount {
+}
+
+.githubIcon {
+  --iconSize: 25px;
+  width: var(--iconSize);
+  height: var(--iconSize);
+}

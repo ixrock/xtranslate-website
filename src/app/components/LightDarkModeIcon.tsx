@@ -16,7 +16,7 @@ export interface LightDarkModeProps {
   mode?: Mode;
 }
 
-export function LightDarkModeSwitcher({ mode: initialModel = defaultMode, storageId }: LightDarkModeProps) {
+export function LightDarkIconSwitcher({ mode: initialModel = defaultMode, storageId }: LightDarkModeProps) {
   const [mode, setMode] = React.useState(initialModel);
   const title = `Mode: ${mode}`
 
@@ -37,7 +37,7 @@ export function LightDarkModeSwitcher({ mode: initialModel = defaultMode, storag
 
   return (
     <a onClick={() => toggleMode(mode)} title={title}>
-      <Icon>
+      <Icon svgStroke>
         <LightDarkSvg/>
       </Icon>
     </a>

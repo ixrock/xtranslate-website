@@ -1,38 +1,9 @@
 @import "./flexbox.css";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --borderRadius: 5px;
-  --spacing: 12px;
-  --spacingHalf: calc(var(--spacing) / 2);
-  --spacingDouble: calc(var(--spacing) * 2);
-  --iconSizeSmall: 25px;
-  --iconSize: 35px;
-  --iconSizeBig: 50px;
-
-  /* theme setup with light-dark() or custom variables */
-  color-scheme: light dark;
-
-  --textColor: light-dark(var(--foreground), var(--background));
-  --textColorInverse: light-dark(var(--background), var(--foreground));
-  --bgcColor: light-dark(var(--background), var(--foreground));
-  --linkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
-  --transparentBgc: light-dark(#ffffff55, #00000055);
-
-  &.light {
-    color-scheme: light;
-  }
-
-  &.dark {
-    color-scheme: dark;
-    --themeInverseFilter: invert(1);
-  }
-}
+@import "./variables.css";
 
 :any-link[href] {
-  color: var(--linkColor);
-  text-decoration-color: var(--textColor);
+  color: var(--themedLinkColor);
+  text-decoration-color: var(--themedTextColor);
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
 
@@ -48,8 +19,8 @@
 }
 
 body {
-  color: var(--textColor);
-  background: var(--bgcColor);
+  color: var(--themedTextColor);
+  background: var(--themedBgc);
   max-width: 100vw;
   height: 100%;
   font: 16px/150% var(--font-roboto);

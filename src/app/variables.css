@@ -1,0 +1,32 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --borderRadius: 5px;
+  --spacing: 12px;
+  --spacingHalf: calc(var(--spacing) / 2);
+  --spacingDouble: calc(var(--spacing) * 2);
+  --iconSizeSmall: 25px;
+  --iconSize: 35px;
+  --iconSizeBig: 50px;
+
+  /* theme setup with light-dark() or custom variables */
+  color-scheme: light dark;
+
+  --themedTextColor: light-dark(var(--foreground), var(--background));
+  --themedBgc: light-dark(var(--background), var(--foreground));
+  --themedLinkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
+  --themedTransparentBgc: light-dark(#ffffff55, #000000aa);
+
+  /* inversed colors/values s*/
+  --themedTextColorInverse: light-dark(var(--background), var(--foreground));
+  --themedBgcInverse: light-dark(var(--foreground), var(--background));
+
+  &.light {
+    color-scheme: light;
+  }
+
+  &.dark {
+    color-scheme: dark;
+    --themedInverseFilter: invert(1);
+  }
+}

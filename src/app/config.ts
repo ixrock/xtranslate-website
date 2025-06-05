@@ -1,5 +1,7 @@
 // Common config
 
+export const extensionGithubRepoUrl = "https://github.com/ixrock/XTranslate";
+
 export const appConfig = {
   MONTHLY_PRICE_USD_CENTS: 500, // $5
   MONTHLY_PLAN_TEXT_TOKENS: 1_000_000, // 1M

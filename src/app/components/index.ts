@@ -1,6 +1,6 @@
 export * from "./PhotoPreview"
 export * from "./PhotoPreviews"
 export * from "./LoadingIndicator"
-export * from "./LightDarkMode"
+export * from "./LightDarkModeIcon"
 export * from "./Dialog"
 export * from "./Rating"
