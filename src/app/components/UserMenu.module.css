@@ -34,7 +34,7 @@
     width: 35%;
     translate: -50% -50%;
     aspect-ratio: 1;
-    background: #fff;
+    background: var(--themedBgcInverse);
     border-radius: 50%;
   }
 
@@ -46,7 +46,7 @@
     translate: -50% 0;
     width: 55%;
     height: 26%;
-    background: #fff;
+    background: var(--themedBgcInverse);
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
   }
@@ -55,7 +55,7 @@
 .user {
   --flexGap: var(--spacingHalf) !important;
 
-  padding: var(--spacingHalf);
+  padding: var(--spacingHalf) var(--spacing);
   background-color: var(--themedTransparentBgc);
   border-radius: var(--borderRadius);
   cursor: pointer;
