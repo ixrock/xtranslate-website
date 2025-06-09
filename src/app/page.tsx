@@ -1,17 +1,17 @@
-import { AppEntry } from "@/app/pages/AppEntry";
 import { headers } from "next/headers";
+import { AppEntry } from "@/app/pages/AppEntry";
 import { fallbackLocale, isAvailableLocale, Locale } from "@/app/i18n";
 
 export default async function Home() {
-  const h = await headers();
-  const acceptLanguage = h.get("accept-language") ?? "";
-  const navLang = acceptLanguage.split(",")[0].trim() as Locale;
-  const userLocale = navLang.split("-")[0] as Locale;
+  const header = await headers();
 
-  const landingLocale =
-    isAvailableLocale(navLang) ? navLang :
-      isAvailableLocale(userLocale) ? userLocale :
-        fallbackLocale;
+  const acceptedLanguages = (header.get("accept-language") ?? "")
+    .split(/;q=\d+\.\d+,?\s?/)
+    .flatMap(lang => lang.split(","))
+    .map(lang => lang.trim())
+    .filter(Boolean) as Locale[];
 
-  return <AppEntry locale={landingLocale}/>;
+  const locale = acceptedLanguages.find(isAvailableLocale) ?? fallbackLocale;
+
+  return <AppEntry locale={locale}/>;
 }
