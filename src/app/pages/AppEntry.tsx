@@ -4,10 +4,10 @@ import { MainPage } from "@/app/pages/MainPage";
 import { Locale } from "@/app/i18n";
 
 export interface MainPageProps {
-  locale: Locale;
+  locale?: Locale;
 }
 
-export async function AppEntry({ locale }: MainPageProps) {
+export async function AppEntry({ locale = "en" }: MainPageProps) {
   return (
     <ClientProviders>
       <MainPage locale={locale}/>
