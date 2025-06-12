@@ -22,6 +22,7 @@ model User {
   // custom fields
   stripeCustomerId String?             @unique
   subscriptions    SubscriptionCycle[]
+  earlyAccess EarlyAccess?
 
   @@schema("private")
 }
@@ -116,5 +117,18 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+  @@schema("private")
+}
+
+model EarlyAccess {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  source       String // e.g. 'early-access-page', 'extension'
+  createdAt    DateTime @default(now())
+  notified     Boolean  @default(false)
+  discountCode String?
+  prefLang     String? // e.g. 'ru', 'en'
+
   @@schema("private")
 }

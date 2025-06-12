@@ -13,13 +13,12 @@ install_from_github = Install from source code (Github)
 #
 # Main info
 #
-info_top1 =
-    It will help you to learn and understand foreign languages and get <b>real-time text translation</b> of selected text
-    from <b>HTML</b> or <b>PDF documents</b> and even get <b>full web-page text translation</b>.
-
-info_top2 =
-    Translate from 100+ foreign languages to your native language directly at web-site you're reading or
-    type some text at extension main window to get <b>instant text translation</b>.
+main_info1 = It will help you to learn and understand foreign languages and get {$textTranslation} of selected text from {$htmlDocuments} or {$pdfDocuments} and even get {$fullPageTranslation}.
+main_info1_textTranslation = real-time in-place text translation
+main_info1_pdfDocuments = PDF documents
+main_info1_fullPageTranslation = full web-page text translation
+main_info2 = Translate from 100+ foreign languages to your native language directly at web-site you're reading or type some text at extension main window to get {$textTranslation}.
+main_info2_textTranslation = instant text translation
 
 gallery_website_popup = Get translation in web page context, default popup theme
 gallery_website_select_text = Different ways to get translation from selected page text, e.g. clicking by near-by [X]-icon
@@ -50,80 +49,29 @@ vendor_ai_bring_your_key = bring your own API key
 # Features
 #
 features_header = Features
-features_intro = Many ways to get <b>text translation</b> from all <b>HTML</b> (webpages), <b>TXT</b> or <b>translate text in PDF</b> files:
-feature_way1 = Double-click on the word
-feature_way2 = Press hotkey defined in extension settings (<em>Alt+Shift+X</em> by default)
-feature_way3 = Click on the translate icon appeared near selected text
-feature_way4 = Click on selected text <em>(turned off by default)</em>
-feature_way5 = Just release mouse button <em>(turned off by default)</em>
-feature_way6 = Write text in input fields, mouse over it and press hotkey
-feature_way7 = Get translation of selected text from via <em>{-app-brand-name}</em> context menu item
-
-feature_way_full_page_translate =
-    You can translate whole pages with <a href="https://translate.google.com/" target="_blank">Google</a>
-    <span> or </span>
-    <a href="https://translate.yandex.com" target="_blank">Yandex</a> services for free <em>(via context menu)</em>
-
-feature_mouse_over_html_element_with_hotkey =
-    You can get even some information from images by putting mouse cursor over the image element and
-    press hotkey (title or alt attributes will be used, if applicable).
-    This trick actually works with any element under mouse cursor. Just put mouse over item and press hotkey!
-
-#
-# PDF
-#
-pdf_feature_header = In order to work with local files (HTML or PDF) allow access for the extension
-pdf_local_step1 = open extensions URL system page <code>chrome://extensions</code>, find <b>XTranslate</b>™ and click <em>[Details]</em> button
-pdf_local_step2 = enable checkbox <em>Allow access to file URLs</em>
-
-#
-# Free-features info:
-#
-features_free_header = Free features of <em>{-app-brand-name}</em> extension are includes
-features_free_tts = Listen text-to-speech for all supported translation vendors
-features_free_adjust_popup = Adjust your unique design of the popup with translated text
-features_free_custom_actions = Customize the ways of getting translations and other options in the settings
-features_free_insert_text = Insert any text in app's window (<em>Alt+X</em> hotkey by default) and get translation of sentences or words with dictionary support
-features_free_save_words = Save your favourite translations as quick bookmarks in history
-features_free_history = View and edit history of translations
-
-#
-# OpenAI how-to connect api-key
-#
-openai_access_header = Steps for access OpenAI translations
-openai_access_sign_up = Sign up at OpenAI platform <a href="https://platform.openai.com">platform.openai.com</a>
-openai_access_create_api_key = Create api access key to get access for OpenAI translation service results
-openai_access_top_up_balance = Top-up your balance <em>(5$+)</em> and disable credit card's auto-top-up balance at billing page <em>(recommended)</em>
 
 #
 # Security considerations
 #
 security_info_header = Security considerations
-security_info1 =
-    OpenAI api key handled via extension-scoped <code>chrome.storage.local</code> apis and used only within <code>Authorization</code> header to sign OpenAI API requests
-    (which is not exposed or tracked, even if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest">webRequest</a> API enabled in some other malicious extension)
-
-security_info2 =
-    OpenAI requests goes through official <a href="https://github.com/openai/openai-node" target="_blank">OpenAI NPM-package</a> and running only within background service-worker which helps
-    with XSS-kind of attacks.
-
-security_info3 = Don't enter or share your OpenAI key anywhere else except extension's settings page <em>(options page)</em>
 
 #
 # Footer
 #
-footer_info = Made with ♥ and open-source projects. Donate for free app version support via <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>
+footer_info = Made with ♥ and open-source projects.
 
 
 #
 # Other
 #
 supported_localization_header = Supported localization
+total_ratings = (from {$count} {$ratingsLink})
+total_ratings_ratingsLink = ratings
+total_rating_users = {$usersCount} users {$fromStores}
+total_rating_users_fromStores = (from both Chrome & Edge stores)
 
-total_ratings =
-    (from <b>{$count}</b>
-    <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">
-        ratings</a>)
-
-total_rating_users_globe = <b>{$usersCount}</b> users <em>(from both Chrome & Edge stores)</em>
-
+#
+# Early access
+#
+early_access_button_label = Full-page AI translation
+early_access_button_label_extra = Early bird discount –20% off 🚀

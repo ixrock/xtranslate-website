@@ -13,13 +13,12 @@ install_from_github = Instalar desde el código fuente (GitHub)
 #
 # Main info
 #
-info_top1 =
-    Te ayudará a aprender y comprender idiomas extranjeros y proporciona <b>traducción en tiempo real</b>
-        del texto seleccionado (de documentos HTML o PDF), e incluso permite <b>traducir todo el texto de una página web</b>.
-
-info_top2 =
-    Traduce directamente en el sitio web que estás leyendo desde más de 100 idiomas extranjeros a tu idioma nativo,
-        o ingresa texto en la ventana principal de la extensión para obtener una <b>traducción instantánea</b>.
+main_info1 = Te ayuda a aprender y comprender idiomas extranjeros obteniendo {$textTranslation} de texto seleccionado en {$htmlDocuments} o {$pdfDocuments}, e incluso un {$fullPageTranslation}.
+main_info1_textTranslation = traducción instantánea de texto en el lugar
+main_info1_pdfDocuments = documentos PDF
+main_info1_fullPageTranslation = traducción completa de páginas web
+main_info2 = Traduce desde más de 100 idiomas directamente en el sitio web que estás leyendo o escribe en la ventana principal de la extensión para obtener {$textTranslation}.
+main_info2_textTranslation = traducción de texto al instante
 
 gallery_website_popup = Obtén traducciones en el contexto de la página web, tema emergente predeterminado
 gallery_website_select_text = Diferentes maneras de obtener traducción del texto seleccionado, por ejemplo, haciendo clic en el ícono [X] cercano
@@ -46,16 +45,20 @@ vendor_deepl_limitatiion = La clave de API está limitada a 500.000 caracteres a
 #
 # Footer
 #
-footer_info = Hecho con amor y con la ayuda de proyectos de código abierto. Apoya la versión gratuita a través de <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a>.
+footer_info = Hecho con amor y con la ayuda de proyectos de código abierto.
 
 #
 # Other
 #
 supported_localization_header = Localizaciones compatibles
 
-total_ratings =
-    (de <b>{$count}</b>
-        <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=en" target="_blank">
-            reseñas</a>)
+total_ratings = (de {$count} {$ratingsLink})
+total_ratings_ratingsLink = reseñas
+total_rating_users = {$usersCount} usuarios {$fromStores}
+total_rating_users_fromStores = (de las tiendas de Chrome y Edge)
 
-total_rating_users_globe = <b>{$usersCount}</b> usuarios <em>(de las tiendas de Chrome y Edge)</em>
+#
+# Early access
+#
+early_access_button_label = Traducción de páginas completas con AI
+early_access_button_label_extra = Descuento exclusivo — ¡apúrate! 🚀

@@ -1,44 +1,43 @@
 "use client";
 
 import styles from './UserMenu.module.css';
-import type { User } from "next-auth";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Icon } from "@/app/components/Icon";
 
-export interface UserMenuProps {
-  user?: User;
-}
-
-export function UserMenu({ user: initialUser }: UserMenuProps) {
-  const { data: session, status } = useSession();
-  const user = session?.user ?? initialUser;
-  const isLoading = status === "loading";
+export function UserMenu() {
+  const { data: session } = useSession();
+  const { name: userName, image: avatarUrl, email } = session?.user ?? {};
 
   return (
     <div className={styles.UserMenu}>
       <label className={`${styles.user} flex gaps align-center`} tabIndex={0}>
         <input type="checkbox"/>
-        {user && (
+        {userName && (
           <>
-            <span className={`${styles.userName}`}>{user.name}</span>
-            {user.image && <span className={styles.userPhoto} style={{ backgroundImage: `url(${user.image})` }}/>}
-            {!user.image && <Icon className={styles.avatar}/>}
+            <span className={`${styles.userName}`}>{userName}</span>
+            {avatarUrl && <span className={styles.userPhoto} style={{ backgroundImage: `url(${avatarUrl})` }}/>}
+            {!avatarUrl && <Icon className={styles.avatar}/>}
           </>
         )}
-        {!user && (
+        {!userName && (
           <div className="flex gaps align-center" onClick={() => signIn()}>
             <span>Login</span>
             <Icon className={styles.avatar}/>
           </div>
         )}
       </label>
-      {user && (
+      {email && (
         <ul className={styles.userDropdown}>
-          <li>Billing</li>
+          {/*<li>Billing</li>*/}
           <li onClick={() => signIn()}>Link Account</li>
-          <li onClick={() => signOut()}><small>({user.email})</small> Logout</li>
+          <li onClick={() => signOut()}><small>({obfuscateEmail(email)})</small> Logout</li>
         </ul>
       )}
     </div>
   )
+}
+
+export function obfuscateEmail(email: string, firstVisibleChars = 2, starsCount = 3): string {
+  const [user, domain] = email.split("@");
+  return user.substring(0, firstVisibleChars) + "*".repeat(starsCount) + "@" + domain;
 }

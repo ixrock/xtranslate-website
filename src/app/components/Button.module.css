@@ -1,0 +1,32 @@
+.Button {
+  font-size: 100%;
+  line-height: 150%;
+  text-decoration: none;
+  border: 2px solid;
+  color: var(--themedTextColor);
+  border-radius: var(--borderRadius);
+  padding: .5em 1em;
+  outline: none;
+  transition: background-color 250ms ease-out;
+  cursor: pointer;
+
+  &:focus, &:hover {
+    transform: scale(1.02);
+  }
+
+  &.flat {
+    transition: box-shadow 250ms ease-out, color 250ms;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 0 1px inset;
+      color: inherit;
+    }
+  }
+
+  &:not(.flat) {
+    &:hover, &:focus {
+      background-color: var(--themedBgcInverse);
+      color: var(--themedTextColorInverse);
+    }
+  }
+}

@@ -2,7 +2,7 @@
   --flexGap: 20px;
 
   max-width: 1200px;
-  padding: 100px clamp(20px, 10vw, 100px);
+  padding: 60px clamp(20px, 10vw, 100px);
   margin: auto;
 }
 
@@ -11,13 +11,26 @@
   align-items: center;
   gap: 1rem;
   text-align: center;
+  margin-top: var(--spacingDouble);
 }
 
-.githubTopButton {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+.earlyAccessBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 75%;
+
+  .label {
+    font-weight: 500;
+  }
+
+  .extraInfo {
+    color: #666;
+    font-size: small;
+    font-style: italic;
+  }
 }
 
 .mainInfo {
@@ -33,26 +46,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing);
+  gap: var(--spacingHalf);
 }
 
 .ratings {
   display: flex;
-  gap: var(--spacingHalf);
+  gap: 4px;
 
   @media (width <= 800px) {
     flex-direction: column;
   }
 }
 
-.ratingTotalUsers {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing);
-
-  img {
-    filter: var(--themedInverseFilter);
-  }
+.ratingTotalUsers img {
+  filter: var(--themedInverseFilter);
 }
 
 .ratingAmountFrom {
@@ -94,12 +101,6 @@
   }
 }
 
-.supportedLocalizations {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .installButtons {
   font-size: 110%;
 
@@ -107,18 +108,32 @@
     filter: var(--themedInverseFilter);
   }
 
-  > :link {
-    border: 2px solid currentColor;
-    border-radius: var(--borderRadius);
+  a {
     padding: var(--spacingHalf);
-    text-decoration: none;
-    font-weight: 500;
-    transition: box-shadow 250ms ease-out, color 250ms;
-
-    &:focus, &:hover {
-      outline: none;
-      box-shadow: 0 0 0 1px inset;
-      color: inherit;
-    }
   }
+}
+
+.comparePlans {
+  > * {
+    border: 2px solid;
+    border-radius: var(--borderRadius);
+  }
+
+  h4 {
+    border-bottom: inherit;
+    color: var(--themedTextColorInverse);
+    background: var(--themedBgcInverse);
+    padding: var(--spacingHalf);
+  }
+
+  ul {
+    padding: var(--spacing) var(--spacingDouble);
+    list-style-type: circle;
+  }
+}
+
+.proPlanFinalThought {
+  text-align: center;
+  font-size: small;
+  color: gray;
 }

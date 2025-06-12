@@ -13,13 +13,12 @@ install_from_github = 从源代码（Github）安装
 #
 # Main info
 #
-info_top1 =
-    它将帮助您学习并理解外语，并能对选定的文本进行<b>实时翻译</b>
-        （从 HTML 或 PDF 文档），甚至可以<b>翻译整个网页上的文本</b>。
-
-info_top2 =
-    可以直接在您正在阅读的网站上，从 100 多种外语翻译成您的母语，
-        或者在扩展主窗口中输入一些文本，以获取<b>即时文本翻译</b>。
+main_info1 = 它可以帮助你学习和理解外语，从{$htmlDocuments}或{$pdfDocuments}中选中的文本获取{$textTranslation}，甚至实现{$fullPageTranslation}。
+main_info1_textTranslation = 实时文本原位翻译
+main_info1_pdfDocuments = PDF文档
+main_info1_fullPageTranslation = 整个网页的文本翻译
+main_info2 = 在你阅读的网站上直接将100多种语言翻译为母语，或在扩展程序主窗口中输入文字以获得{$textTranslation}。
+main_info2_textTranslation = 即时文本翻译
 
 gallery_website_popup = 在网页上下文中获取翻译，默认弹窗主题
 gallery_website_select_text = 从选定文本中获取翻译的多种方式，例如点击附近的 [X] 图标
@@ -46,17 +45,20 @@ vendor_deepl_limitatiion = API 密钥每月限制 500,000 个字符
 #
 # Footer
 #
-footer_info = 由热爱与开源项目打造。如需支持免费版本的继续开发，可通过 <a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a> 捐赠。
+footer_info = 由热爱与开源项目打造。
 
 #
 # Other
 #
 supported_localization_header = 支持的本地化语言
 
-total_ratings =
-    （来自 <b>{$count}</b>
-        条
-        <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=zh-CN" target="_blank">
-            评分</a>）
+total_ratings = （来自 {$count} {$ratingsLink}）
+total_ratings_ratingsLink = 条评分
+total_rating_users = {$usersCount} 用户 {$fromStores}
+total_rating_users_fromStores = （来自 Chrome 和 Edge 商店）
 
-total_rating_users_globe = <b>{$usersCount}</b> 用户 <em>（来自 Chrome 和 Edge 商店）</em>
+#
+# Early access
+#
+early_access_button_label = 全页面 AI 翻译
+early_access_button_label_extra = 抢先注册享受折扣 🚀

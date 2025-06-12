@@ -13,13 +13,12 @@ install_from_github = ソースコード（Github）からインストール
 #
 # Main info
 #
-info_top1 =
-    外国語を学び理解するのに役立ち、選択したテキスト（HTML や PDF 文書から）の<b>リアルタイム翻訳</b>を行い、
-        さらには<b>Web ページ全体のテキスト</b>を翻訳することもできます。
-
-info_top2 =
-    あなたが読んでいるウェブサイト上で、100 以上の外国語から母国語へ直接翻訳することができ、
-        あるいは拡張機能のメインウィンドウにテキストを入力して<b>即時翻訳</b>を得ることもできます。
+main_info1 = {$htmlDocuments}や{$pdfDocuments}から選択したテキストの{$textTranslation}を通して、外国語の理解や学習をサポートします。{$fullPageTranslation}も可能です。
+main_info1_textTranslation = その場で即時にテキスト翻訳
+main_info1_pdfDocuments = PDFドキュメント
+main_info1_fullPageTranslation = Webページ全体のテキスト翻訳
+main_info2 = 100以上の外国語を、読んでいるウェブサイト上で直接翻訳できます。また、拡張機能のメインウィンドウにテキストを入力して{$textTranslation}を行うことも可能です。
+main_info2_textTranslation = 即時テキスト翻訳
 
 gallery_website_popup = ウェブページ内で翻訳を取得する、デフォルトのポップアップテーマ
 gallery_website_select_text = 選択したテキストから翻訳を取得するさまざまな方法（例：近くに表示される [X] アイコンをクリック）
@@ -45,16 +44,20 @@ vendor_deepl_limitatiion = 1 か月あたり 500,000 文字までの API キー�
 
 # Footer
 #
-footer_info = 情熱とオープンソースプロジェクトによって作られています。無料版の継続サポートにご協力いただける場合は、<a href="https://www.paypal.me/romanesca" target="_blank">PayPal</a> で寄付をお願いします。
+footer_info = 情熱とオープンソースプロジェクトによって作られています。
 
 #
 # Other
 #
 supported_localization_header = 対応しているローカライズ
 
-total_ratings =
-    (<b>{$count}</b> 件の
-        <a href="https://chromewebstore.google.com/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo/reviews?hl=ja" target="_blank">
-            評価</a>より)
+total_ratings = （{$count}件の{$ratingsLink}より）
+total_ratings_ratingsLink = 評価
+total_rating_users = {$usersCount} ユーザー {$fromStores}
+total_rating_users_fromStores = （Chrome と Edge ストアの両方から）
 
-total_rating_users_globe = <b>{$usersCount}</b> ユーザー <em>（Chrome と Edge ストアの両方から）</em>
+#
+# Early access
+#
+early_access_button_label = ページ全体をAIで翻訳
+early_access_button_label_extra = 今だけの割引チャンス 🚀
