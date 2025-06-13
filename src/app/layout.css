@@ -1,17 +1,6 @@
 @import "./flexbox.css";
 @import "./variables.css";
 
-:any-link[href] {
-  color: var(--themedLinkColor);
-  text-decoration-color: var(--themedTextColor);
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
-
-  &:hover {
-    text-decoration-color: currentColor;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -32,6 +21,13 @@ h1 {
   line-height: 100%;
 }
 
+h2 {
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--subHeaderColor);
+}
+
 h3 {
   border-bottom: 1px solid silver;
   padding-bottom: var(--spacing);
@@ -49,4 +45,15 @@ b {
 
 footer {
   text-align: center;
+}
+
+:any-link[href] {
+  color: var(--themedLinkColor);
+  text-decoration-color: var(--themedTextColor);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
 }

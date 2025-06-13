@@ -1,18 +1,10 @@
 -app-brand-name = XTranslate
 header = {-app-brand-name} - tu asistente de traducción con IA (extensión de navegador)
 
-#
-# Installation info (titles & image alt(s))
-#
 install_from_chrome_store = Instalar desde la tienda de extensiones de Chrome
 chrome_store_short = Tienda de extensiones de Chrome
 install_from_ms_edge_store = Instalar desde la tienda de extensiones de Microsoft Edge
 ms_edge_store_short = Tienda de MS Edge
-install_from_github = Instalar desde el código fuente (GitHub)
-
-#
-# Main info
-#
 main_info1 = Te ayuda a aprender y comprender idiomas extranjeros obteniendo {$textTranslation} de texto seleccionado en {$htmlDocuments} o {$pdfDocuments}, e incluso un {$fullPageTranslation}.
 main_info1_textTranslation = traducción instantánea de texto en el lugar
 main_info1_pdfDocuments = documentos PDF
@@ -42,23 +34,13 @@ vendor_apis_is_free = gratuito
 vendor_apis_is_paid = de pago
 vendor_deepl_limitatiion = La clave de API está limitada a 500.000 caracteres al mes
 
-#
-# Footer
-#
 footer_info = Hecho con amor y con la ayuda de proyectos de código abierto.
 
-#
-# Other
-#
-supported_localization_header = Localizaciones compatibles
 
 total_ratings = (de {$count} {$ratingsLink})
 total_ratings_ratingsLink = reseñas
 total_rating_users = {$usersCount} usuarios {$fromStores}
 total_rating_users_fromStores = (de las tiendas de Chrome y Edge)
 
-#
-# Early access
-#
 early_access_button_label = Traducción de páginas completas con AI
 early_access_button_label_extra = Descuento exclusivo — ¡apúrate! 🚀

@@ -1,18 +1,10 @@
 -app-brand-name = XTranslate
 header = {-app-brand-name} - あなたのAI翻訳アシスタント（ブラウザ拡張機能）
 
-#
-# Installation info (titles & image alt(s))
-#
 install_from_chrome_store = Chrome 拡張機能ストアからインストール
 chrome_store_short = Chrome 拡張機能ストア
 install_from_ms_edge_store = Microsoft Edge 拡張機能ストアからインストール
 ms_edge_store_short = MS Edge ストア
-install_from_github = ソースコード（Github）からインストール
-
-#
-# Main info
-#
 main_info1 = {$htmlDocuments}や{$pdfDocuments}から選択したテキストの{$textTranslation}を通して、外国語の理解や学習をサポートします。{$fullPageTranslation}も可能です。
 main_info1_textTranslation = その場で即時にテキスト翻訳
 main_info1_pdfDocuments = PDFドキュメント
@@ -42,22 +34,13 @@ vendor_apis_is_free = 無料
 vendor_apis_is_paid = 有料
 vendor_deepl_limitatiion = 1 か月あたり 500,000 文字までの API キー制限
 
-# Footer
-#
 footer_info = 情熱とオープンソースプロジェクトによって作られています。
 
-#
-# Other
-#
-supported_localization_header = 対応しているローカライズ
 
 total_ratings = （{$count}件の{$ratingsLink}より）
 total_ratings_ratingsLink = 評価
 total_rating_users = {$usersCount} ユーザー {$fromStores}
 total_rating_users_fromStores = （Chrome と Edge ストアの両方から）
 
-#
-# Early access
-#
 early_access_button_label = ページ全体をAIで翻訳
 early_access_button_label_extra = 今だけの割引チャンス 🚀

@@ -2,28 +2,33 @@
 
 import styles from './SelectLangIcon.module.css';
 import React from 'react';
-import AvailableLocales from "@/locales/_locales.json";
+import classNames from "classnames";
 import { Icon } from "@/app/components/Icon";
 import SelectLangSvg from "@/app/components/SelectLang.svg"
+import { Locale, Locales } from "@/app/config";
 
 export interface SelectLanguageProps {
-  locale: string;
+  className?: string;
+  locale: Locale;
 }
 
-export function SelectLanguage({ locale: currentLocale }: SelectLanguageProps) {
-  function onChange(evt: React.ChangeEvent<HTMLSelectElement>) {
-    document.location.href = `/${evt.target.value}`;
+export function SelectLanguage({ className, locale: userLocale }: SelectLanguageProps) {
+  function onLangChange(evt: React.ChangeEvent<HTMLSelectElement>) {
+    const locale = evt.target.value;
+    const queryParams = new URLSearchParams(location.search);
+    queryParams.set("lang", locale);
+    location.search = queryParams.toString();
   }
 
   return (
-    <div className={styles.SelectLang}>
+    <div className={classNames(styles.SelectLang, className)}>
       <Icon svgFill>
         <SelectLangSvg/>
       </Icon>
-      <select value={currentLocale} onChange={onChange}>
-        {Object.entries(AvailableLocales).map(([locale, { native, english }]) => {
+      <select value={userLocale} onChange={onLangChange}>
+        {Object.entries(Locales).map(([locale, { native, english }]) => {
           return (
-            <option key={locale} value={locale} disabled={currentLocale === locale}>
+            <option key={locale} value={locale} disabled={userLocale === locale}>
               {english} ({native})
             </option>
           )

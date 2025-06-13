@@ -1,53 +1,32 @@
 import styles from "./MainPage.module.css";
 import React from "react";
-import { chromeStoreUrl, edgeStoreUrl, githubRepoUrl } from "@/app/config";
-import { getMessage, Locale, MessagePlaceholders } from "@/app/i18n";
-import { LightDarkIconSwitcher, PhotoPreviews, Rating } from "@/app/components";
-import { SelectLanguage } from "@/app/components/SelectLangIcon";
-import { UserMenu } from "@/app/components/UserMenu";
+import { chromeStoreUrl, edgeStoreUrl, githubRepoUrl, Locale } from "@/app/config";
+import { formatNumber, getMessage, MessagePlaceholders } from "@/app/i18n";
+import { PhotoPreviews, Rating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
-import { GithubButton } from "@/app/components/GithubButton";
 import { Button } from "@/app/components/Button";
 
-export interface LocalizedPageProps {
-  locale?: Locale;
-}
-
-export function MainPage({ locale = "en" }: LocalizedPageProps) {
-  const __ = (id: string, placeholders: MessagePlaceholders = {}) => {
-    return getMessage({ msgId: id, locale, placeholders }); // __("msgId") shortcut for getting localized message
-  };
+export function MainPage({ locale }: { locale: Locale }) {
+  const __ = (id: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId: id, locale, placeholders });
 
   return (
-    <div className={`${styles.mainPage} flex column gaps`}>
-      <UserMenu/>
-
-      <div className={`${styles.topIcons} flex gaps`}>
-        <LightDarkIconSwitcher/>
-        <SelectLanguage locale={locale}/>
-      </div>
-
-      <div className="flex gaps align-center justify-center">
-        <GithubButton/>
-        <Button href="/early-access" className={styles.earlyAccessBtn}>
-          <b className={styles.label}>{__("early_access_button_label")}</b>
-          <span className={styles.extraInfo}>{__("early_access_button_label_extra")}</span>
-        </Button>
-      </div>
-
-      <header className={styles.header}>
+    <main className={`${styles.mainPage} flex column gaps`}>
+      <div className={`${styles.headline} flex gaps`}>
         <a href="/">
           <img src="/xtranslate-logo.svg" className={styles.logo} alt="XTranslate"/>
         </a>
-        <h1>{__("header")}</h1>
-      </header>
+        <div className={`flex column align-center`}>
+          <h1>{__("header")}</h1>
+          <h2>{__("subheader")}</h2>
+        </div>
+      </div>
 
       <div className={styles.ratingsWrapper}>
         <div className={styles.ratings}>
           <Rating rateValue={4.5}/>
           <div className={styles.ratingAmountFrom}>
             {__("total_ratings", {
-              count: <b key="count">1.6K</b>,
+              count: <b key="count">{formatNumber({ value: 1600 })}+</b>,
               ratingsLink: <a key="reviews" href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">
                 {__("total_ratings_ratingsLink")}
               </a>
@@ -125,7 +104,7 @@ export function MainPage({ locale = "en" }: LocalizedPageProps) {
       ]}
       />
 
-      <div className={styles.columns}>
+      <div className={styles.fluidColumns}>
         <h3>{__("install_extension_header")}</h3>
         <ul>
           <li><a href={`https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`} target="_blank">{__("install_chrome_store")}</a></li>
@@ -134,7 +113,7 @@ export function MainPage({ locale = "en" }: LocalizedPageProps) {
           <li><a href={githubRepoUrl} target="_blank">Github</a> <em>({__("install_from_sources")})</em></li>
         </ul>
 
-        <h3 className={styles.break}>{__("vendors_available_header")}</h3>
+        <h3 className={styles.breakCol}>{__("vendors_available_header")}</h3>
         <ul>
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({__("vendor_apis_is_free")})</li>
           <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({__("vendor_apis_is_free")})</li>
@@ -176,7 +155,7 @@ export function MainPage({ locale = "en" }: LocalizedPageProps) {
 
       <h3>{__("features_header")}</h3>
       <p>Many ways to get text translation from web-pages:</p>
-      <ul className={styles.columns}>
+      <ul className={styles.fluidColumns}>
         <li>Get <b>full-page text translation</b> <em>(via browser's context-menu, app's toolbar icon or popup action-window)</em></li>
         <li>Get translation at webpage in-place by double-clicking the word</li>
         <li>Select a text and click on the translation icon appeared near by (X-icon)</li>
@@ -199,7 +178,7 @@ export function MainPage({ locale = "en" }: LocalizedPageProps) {
       <h3>Security considerations when bring your own API-keys</h3>
       <ul>
         <li>
-          Your access API-key (e.g. from <code>OpenAI</code>, <code>DeepL</code>, etc.) stored in <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">
+          Your access API-key (e.g. <code>OpenAI</code>, <code>Grok</code>) stored in <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">
           chrome.storage.local
         </a> and used only within <code>Authorization</code> header to sign API requests (which is not exposed or tracked, even
           if <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a> enabled
@@ -217,6 +196,6 @@ export function MainPage({ locale = "en" }: LocalizedPageProps) {
       <footer>
         {__("footer_info")}
       </footer>
-    </div>
+    </main>
   );
 }

@@ -1,8 +1,5 @@
 .UserMenu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: var(--spacingHalf);
+  position: relative;
   z-index: 100;
 
   &:hover .userDropdown,
@@ -56,7 +53,6 @@
   --flexGap: var(--spacingHalf) !important;
 
   padding: var(--spacingHalf) var(--spacing);
-  background-color: var(--themedTransparentBgc);
   border-radius: var(--borderRadius);
   cursor: pointer;
 

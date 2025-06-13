@@ -120,3 +120,7 @@ export function getYandexUser(profile: YandexProfile): User {
     email: profile.default_email as string,
   }
 }
+
+export type {
+  User as AuthUser,
+};

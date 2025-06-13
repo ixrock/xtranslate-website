@@ -1,17 +1,31 @@
-import { MainPage } from "@/app/pages/MainPage";
 import { headers } from "next/headers";
-import { fallbackLocale, isAvailableLocale, Locale } from "@/app/i18n";
+import { MainPage } from "@/app/pages/MainPage";
+import { defaultLocale, Locale, Locales } from "@/app/config";
+import { Header } from "@/app/components/Header";
 
-export default async function Home() {
-  const header = await headers();
+interface Props {
+  searchParams: Promise<{ lang?: Locale }>
+}
 
-  const acceptedLanguages = (header.get("accept-language") ?? "")
-    .split(/;q=[0-9.]+/)
-    .flatMap(lang => lang.split(","))
-    .map(lang => lang.trim())
-    .filter(Boolean) as Locale[];
+export default async function Home({ searchParams }: Props) {
+  let { lang } = await searchParams;
 
-  const locale = acceptedLanguages.find(isAvailableLocale) ?? fallbackLocale;
+  if (!lang || (lang && !Locales[lang])) {
+    const header = await headers();
 
-  return <MainPage locale={locale}/>;
+    const acceptedLanguages = (header.get("accept-language") ?? "")
+      .split(/;q=[0-9.]+/)
+      .flatMap(lang => lang.split(","))
+      .map(lang => lang.trim())
+      .filter(Boolean) as Locale[];
+
+    lang = acceptedLanguages.find(lang => Locales[lang]) ?? defaultLocale;
+  }
+
+  return (
+    <>
+      <Header locale={lang}/>
+      <MainPage locale={lang}/>
+    </>
+  );
 }

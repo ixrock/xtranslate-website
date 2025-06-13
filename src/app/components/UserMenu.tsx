@@ -1,15 +1,21 @@
 "use client";
 
 import styles from './UserMenu.module.css';
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { Icon } from "@/app/components/Icon";
+import classNames from "classnames";
+import { AuthUser } from "@/auth";
 
-export function UserMenu() {
-  const { data: session } = useSession();
-  const { name: userName, image: avatarUrl, email } = session?.user ?? {};
+export interface UserMenuProps {
+  className?: string;
+  user: AuthUser | undefined;
+}
+
+export function UserMenu({ className, user }: UserMenuProps) {
+  const { name: userName, image: avatarUrl, email } = user ?? {};
 
   return (
-    <div className={styles.UserMenu}>
+    <div className={classNames(styles.UserMenu, className)}>
       <label className={`${styles.user} flex gaps align-center`} tabIndex={0}>
         <input type="checkbox"/>
         {userName && (

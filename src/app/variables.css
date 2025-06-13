@@ -1,6 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --subHeaderColor: #666;
+  --contentMaxWidth: 1200px;
   --borderRadius: 5px;
   --spacing: 12px;
   --spacingHalf: calc(var(--spacing) / 2);
@@ -16,6 +18,7 @@
   --themedBgc: light-dark(var(--background), var(--foreground));
   --themedLinkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
   --themedTransparentBgc: light-dark(#ffffff55, #000000aa);
+  --themedSemiTransparentBgc: light-dark(#ffffffee, #000000cc);
 
   /* inversed colors/values s*/
   --themedTextColorInverse: light-dark(var(--background), var(--foreground));

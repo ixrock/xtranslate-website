@@ -1,18 +1,10 @@
 -app-brand-name = XTranslate
 header = {-app-brand-name} - 您的 AI 翻译助手（浏览器扩展）
 
-#
-# Installation info (titles & image alt(s))
-#
 install_from_chrome_store = 从 Chrome 扩展商店安装
 chrome_store_short = Chrome 扩展商店
 install_from_ms_edge_store = 从 Microsoft Edge 扩展商店安装
 ms_edge_store_short = MS Edge 商店
-install_from_github = 从源代码（Github）安装
-
-#
-# Main info
-#
 main_info1 = 它可以帮助你学习和理解外语，从{$htmlDocuments}或{$pdfDocuments}中选中的文本获取{$textTranslation}，甚至实现{$fullPageTranslation}。
 main_info1_textTranslation = 实时文本原位翻译
 main_info1_pdfDocuments = PDF文档
@@ -42,23 +34,13 @@ vendor_apis_is_free = 免费
 vendor_apis_is_paid = 付费
 vendor_deepl_limitatiion = API 密钥每月限制 500,000 个字符
 
-#
-# Footer
-#
 footer_info = 由热爱与开源项目打造。
 
-#
-# Other
-#
-supported_localization_header = 支持的本地化语言
 
 total_ratings = （来自 {$count} {$ratingsLink}）
 total_ratings_ratingsLink = 条评分
 total_rating_users = {$usersCount} 用户 {$fromStores}
 total_rating_users_fromStores = （来自 Chrome 和 Edge 商店）
 
-#
-# Early access
-#
 early_access_button_label = 全页面 AI 翻译
 early_access_button_label_extra = 抢先注册享受折扣 🚀
