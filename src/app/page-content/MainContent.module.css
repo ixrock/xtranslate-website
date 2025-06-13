@@ -14,19 +14,6 @@
   text-align: justify;
 }
 
-.fluidColumns {
-  columns: 2;
-  column-gap: 50px;
-
-  .breakCol {
-    break-before: column;
-  }
-
-  > * {
-    break-inside: avoid;
-  }
-}
-
 .ratingsWrapper {
   display: flex;
   align-items: center;

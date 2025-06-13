@@ -17,8 +17,7 @@ export interface Props extends React.PropsWithChildren {
 
 export async function Header({ className, locale = defaultLocale }: Props) {
   const session = await auth();
-
-  const __ = (id: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId: id, locale, placeholders });
+  const t = (id: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId: id, locale, placeholders });
 
   return (
     <header className={classNames("Header flex gaps", className)}>
@@ -30,8 +29,8 @@ export async function Header({ className, locale = defaultLocale }: Props) {
       <div className="box grow flex gaps align-center justify-center">
         <GithubButton/>
         <Button href={`/early-access?lang=${locale}`} className="earlyAccessBtn">
-          <b className="label">{__("early_access_button_label")}</b>
-          <span className="extraInfo">{__("early_access_button_label_extra")}</span>
+          <b className="label">{t("early_access_button_label")}</b>
+          <span className="extraInfo">{t("early_access_button_label_extra")}</span>
         </Button>
       </div>
 

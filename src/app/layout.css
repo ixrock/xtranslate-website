@@ -57,3 +57,16 @@ footer {
     text-decoration-color: currentColor;
   }
 }
+
+.fluidColumns {
+  columns: 2;
+  column-gap: 50px;
+
+  .breakCol {
+    break-before: column;
+  }
+
+  > * {
+    break-inside: avoid;
+  }
+}

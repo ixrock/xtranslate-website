@@ -3,9 +3,9 @@
 // TODO: maybe switch to https://next-intl.dev/
 import fs from 'fs';
 import path from 'path';
-import type { ReactNode } from "react";
-import type { PatternElement } from "@fluent/bundle/esm/ast"
+import React, { ReactNode } from "react";
 import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
+import type { PatternElement } from "@fluent/bundle/esm/ast"
 import { defaultLocale, Locale } from "@/app/config";
 
 export function loadFluentResource(locale: Locale = defaultLocale) {
@@ -30,7 +30,7 @@ export interface Message {
 export type MessagePlaceholders = Record<string, FluentVariable>;
 
 export function getMessage(payload: Required<Message>): string;
-export function getMessage(payload: Message): ReactNode {
+export function getMessage(payload: Message): React.ReactNode {
   const {
     msgId,
     placeholders = {},
@@ -57,7 +57,7 @@ export function getMessage(payload: Message): ReactNode {
         return msgChunk;
       } else if (msgChunk.type === "var") {
         const paramName = msgChunk.name;
-        return placeholders[paramName] as string; // ReactNode | React.Fragment
+        return placeholders[paramName] as ReactNode;
       }
     })
   }

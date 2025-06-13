@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { MainPage } from "@/app/pages/MainPage";
+import { MainContent } from "@/app/page-content/MainContent";
 import { defaultLocale, Locale, Locales } from "@/app/config";
 import { Header } from "@/app/components/Header";
 
@@ -25,7 +25,7 @@ export default async function Home({ searchParams }: Props) {
   return (
     <>
       <Header locale={lang}/>
-      <MainPage locale={lang}/>
+      <MainContent locale={lang}/>
     </>
   );
 }
