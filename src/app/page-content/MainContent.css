@@ -1,0 +1,29 @@
+.MainContent {
+  .mainInfo {
+    text-align: justify;
+  }
+
+  .ratingsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacingHalf);
+  }
+
+  .ratings {
+    display: flex;
+    gap: 4px;
+
+    @media (width <= 800px) {
+      flex-direction: column;
+    }
+  }
+
+  .ratingTotalUsers img {
+    filter: var(--themedInverseFilter);
+  }
+
+  .ratingAmountFrom {
+    font-size: medium;
+  }
+}

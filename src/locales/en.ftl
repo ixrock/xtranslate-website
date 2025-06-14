@@ -43,9 +43,6 @@ total_ratings_ratingsLink = ratings
 total_rating_users = {$usersCount} users {$fromStores}
 total_rating_users_fromStores = (from both Chrome & Edge stores)
 
-early_access_button_label = Full-page AI translation
-early_access_button_label_extra = Early bird discount –20% off 🚀
-
 # Plans
 plans_compare_title = Compare plans
 plans_free_title = FREE (base features)
@@ -100,5 +97,12 @@ security_info_other_recommendations = It's recommended to turn-off your balance 
 
 footer_info = Made with ♥ and open-source projects.
 
-
 # Early-access page
+early_access_button_label = Full-page AI translation
+early_access_button_label_extra = Early bird discount –20% off 🚀
+early_access_header = Early Access to AI-Powered Page Translations
+early_access_header_subheader = Get notified at launch and receive 20% off your first month.
+early_access_button_add = Get Early Access
+early_access_button_adding = Joining...
+early_access_success = You're on the list! We'll notify you by email. 🎉
+early_access_nospam_info = No spam, ever. Just one email when we launch.

@@ -42,9 +42,6 @@ total_ratings_ratingsLink = レビュー
 total_rating_users = {$usersCount} 人のユーザー {$fromStores}
 total_rating_users_fromStores = （Chrome & Edge ストアより）
 
-early_access_button_label = AI 全ページ翻訳
-early_access_button_label_extra = 20% オフで今すぐ入手 🚀
-
 # Plans
 plans_compare_title = プランを比較
 plans_free_title = 無料（基本機能）
@@ -98,3 +95,13 @@ security_info_stay_safe = 拡張設定ページ以外で API キーを入力・�
 security_info_other_recommendations = AI プロバイダーの自動残高チャージは無効化を推奨
 
 footer_info = オープンソースプロジェクトの力で ♥ を込めて作成
+
+# Early-access page
+early_access_button_label = AI 全ページ翻訳
+early_access_button_label_extra = 20% オフで今すぐ入手 🚀
+early_access_header = AI翻訳ページの先行アクセス
+early_access_header_subheader = ローンチのお知らせ＆初月20％オフ特典をゲットしよう。
+early_access_button_add = 参加する
+early_access_button_adding = 送信中…
+early_access_success = リストに登録されました！メールでお知らせします。🎉
+early_access_nospam_info = スパムなし。ローンチ時に一通だけお送りします。

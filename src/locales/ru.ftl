@@ -42,9 +42,6 @@ total_ratings_ratingsLink = отзывов
 total_rating_users = {$usersCount} пользователей {$fromStores}
 total_rating_users_fromStores = (из магазинов Chrome и Edge)
 
-early_access_button_label = AI-перевод всей страницы
-early_access_button_label_extra = Успей купить со скидкой -20% 🚀
-
 # Plans
 plans_compare_title = Сравнить планы
 plans_free_title = БЕСПЛАТНО (базовые возможности)
@@ -100,3 +97,11 @@ security_info_other_recommendations = Рекомендуется отключи�
 footer_info = Сделано с ♥ при помощи проектов с открытым исходным кодом.
 
 # Early-access page
+early_access_button_label = AI-перевод всей страницы
+early_access_button_label_extra = Успей купить со скидкой -20% 🚀
+early_access_header = Ранний доступ к AI-переводам страниц
+early_access_header_subheader = Получите уведомление о запуске и скидку 20% на первый месяц.
+early_access_button_add = Получить доступ
+early_access_button_adding = Добавляем...
+early_access_success = Вы в списке! Уведомим по почте. 🎉
+early_access_nospam_info = Мы не рассылаем спам. Только 1 письмо при запуске.

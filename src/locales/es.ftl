@@ -42,9 +42,6 @@ total_ratings_ratingsLink = reseñas
 total_rating_users = {$usersCount} usuarios {$fromStores}
 total_rating_users_fromStores = (de las tiendas de Chrome y Edge)
 
-early_access_button_label = Traducción IA de página completa
-early_access_button_label_extra = Aprovecha el 20 % de descuento 🚀
-
 # Plans
 plans_compare_title = Comparar planes
 plans_free_title = GRATUITO (funciones básicas)
@@ -98,3 +95,13 @@ security_info_stay_safe = Nunca introduzcas ni compartas tus claves de API fuera
 security_info_other_recommendations = Se recomienda desactivar la recarga automática de saldo en la plataforma del proveedor de IA.
 
 footer_info = Hecho con ♥ gracias a proyectos de código abierto.
+
+# Early-access page
+early_access_button_label = Traducción IA de página completa
+early_access_button_label_extra = Aprovecha el 20 % de descuento 🚀
+early_access_header = Acceso anticipado a traducciones IA de páginas
+early_access_header_subheader = Sé el primero en enterarte del lanzamiento y obtén un 20 % de descuento el primer mes.
+early_access_button_add = Solicitar acceso
+early_access_button_adding = Enviando…
+early_access_success = ¡Estás en la lista! Te avisaremos por email. 🎉
+early_access_nospam_info = Cero spam, solo un email cuando lancemos.

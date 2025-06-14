@@ -8,15 +8,20 @@ import { GithubButton } from "@/app/components/GithubButton";
 import { UserMenu } from "@/app/components/UserMenu";
 import { Button } from "@/app/components/Button";
 import { getLocalization } from "@/app/i18n";
-import { getUserLang } from "@/actions/get-set-lang";
 
 export interface Props extends React.PropsWithChildren {
   className?: string;
+  showGithubBtn?: boolean;
+  showEarlyAccessBtn?: boolean;
 }
 
-export async function Header({ className }: Props) {
+export async function Header(
+  {
+    className, children,
+    showGithubBtn = false,
+    showEarlyAccessBtn = false,
+  }: Props) {
   const session = await auth();
-  const locale = await getUserLang();
   const t = await getLocalization();
 
   return (
@@ -26,15 +31,18 @@ export async function Header({ className }: Props) {
         <SelectLanguage/>
       </div>
 
-      <div className="box grow flex gaps align-center justify-center">
-        <GithubButton/>
-        <Button href={`/early-access?lang=${locale}`} className="earlyAccessBtn">
-          <b className="label">{t("early_access_button_label")}</b>
-          <span className="extraInfo">{t("early_access_button_label_extra")}</span>
-        </Button>
+      <div className="headerContent box grow flex gaps align-center justify-center">
+        {showGithubBtn && <GithubButton/>}
+        {showEarlyAccessBtn && (
+          <Button href="/early-access" className="earlyAccessBtn">
+            <b className="label">{t("early_access_button_label")}</b>
+            <span className="extraInfo">{t("early_access_button_label_extra")}</span>
+          </Button>
+        )}
+        {children}
       </div>
 
-      <UserMenu user={session?.user}/>
+      <UserMenu className="headerMenu" user={session?.user}/>
     </header>
   )
 }

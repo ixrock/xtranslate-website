@@ -1,0 +1,24 @@
+.ComparePlans {
+  > * {
+    border: 2px solid;
+    border-radius: var(--borderRadius);
+  }
+
+  h4 {
+    border-bottom: inherit;
+    color: var(--themedTextColorInverse);
+    background: var(--themedBgcInverse);
+    padding: var(--spacingHalf);
+  }
+
+  ul {
+    padding: var(--spacing) var(--spacingDouble);
+    list-style-type: circle;
+  }
+}
+
+.proPlanFinalThought {
+  text-align: center;
+  font-size: small;
+  color: gray;
+}

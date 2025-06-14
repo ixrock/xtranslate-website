@@ -3,7 +3,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: var(--spacingHalf);
+  padding: var(--spacing) var(--spacingHalf);
   background: var(--themedSemiTransparentBgc);
   border-bottom: 1px solid silver;
   z-index: 100;

@@ -1,54 +1,51 @@
-"use client";
-
 import "./early-access.css"
-import { useState } from "react";
-import { EarlyAccessSource, joinEarlyAccess } from "@/actions/early-access";
-import { useSession } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+
+import React from "react";
+import { getLocalization } from "@/app/i18n";
+import { Header } from "@/app/components/Header";
 import { Button } from "@/app/components/Button";
+import { ComparePlans } from "@/app/page-content/ComparePlans";
+import { Logo } from "@/app/page-content/Logo";
+import HomeSvg from "@/assets/home.svg";
+import { Icon } from "@/app/components/Icon";
 
-export default function EarlyAccessPage() {
-  const { data: session } = useSession();
-  const [joining, setJoining] = useState(false);
-  const [joined, setJoined] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-  const source = searchParams.get("source") as EarlyAccessSource;
+export default async function EarlyAccessPage() {
+  const t = await getLocalization();
 
-  const handleJoin = async () => {
-    setJoining(true);
-    setError(null);
-    try {
-      await joinEarlyAccess(source);
-      setJoined(true);
-    } catch {
-      setError("Произошла ошибка. Попробуйте позже.");
-    } finally {
-      setJoining(false);
-    }
+  const texts = {
+    header: t("early_access_header"),
+    subHeader: t("early_access_header_subheader"),
+    buttonLabel: t("early_access_button_add"),
+    buttonLabelJoining: t("early_access_button_adding"),
+    successInfo: t("early_access_success"),
+    noSpamInfo: t("early_access_nospam_info")
   };
 
   return (
-    <div className="EarlyAccess flex column gaps align-center">
-      <h1>Ранний доступ к AI-переводам страниц</h1>
-      <h2>
-        Получите уведомление о запуске и скидку 20% на первый месяц.
-      </h2>
+    <>
+      <Header>
+        <Button flat href="/">
+          <Icon small svgFill><HomeSvg/></Icon>
+        </Button>
+      </Header>
+      <main>
+        <div className="EarlyAccess flex column gaps align-center">
+          <div className={`headline flex gaps`}>
+            <Logo/>
+            <div className={`flex column align-center`}>
+              <h1>{texts.header}</h1>
+              <h2>{texts.subHeader}</h2>
+            </div>
+          </div>
 
-      <div className="flex column gaps">
-        {joined ? (
-          <p className="success">Вы в списке! Уведомим по почте. 🎉</p>
-        ) : (
-          <Button themed onClick={handleJoin} disabled={!session || joining}>
-            {joining ? "Добавляем..." : "Получить доступ"}
-          </Button>
-        )}
-        {error && <p className="error">{error}</p>}
-      </div>
+          <div className="flex column gaps">
+            <Button themed>{texts.buttonLabel}</Button>
+          </div>
+          <p className="noSpamInfo">{texts.noSpamInfo}</p>
 
-      <p className="footerNote">
-        Мы не рассылаем спам. Только 1 письмо при запуске.
-      </p>
-    </div>
+          <ComparePlans/>
+        </div>
+      </main>
+    </>
   );
 }

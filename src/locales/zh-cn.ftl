@@ -42,9 +42,6 @@ total_ratings_ratingsLink = 评价
 total_rating_users = {$usersCount} 位用户 {$fromStores}
 total_rating_users_fromStores = （来自 Chrome 与 Edge 商店）
 
-early_access_button_label = 整页 AI 翻译
-early_access_button_label_extra = 立享 8 折优惠 🚀
-
 # Plans
 plans_compare_title = 比较方案
 plans_free_title = 免费（基础功能）
@@ -98,3 +95,13 @@ security_info_stay_safe = 请勿在扩展设置页面之外输入或分享你的
 security_info_other_recommendations = 建议关闭 AI 提供商的平台自动充值功能
 
 footer_info = 由 ♥ 与开源项目驱动
+
+# Early-access page
+early_access_button_label = 整页 AI 翻译
+early_access_button_label_extra = 立享 8 折优惠 🚀
+early_access_header = AI 页面翻译抢先体验
+early_access_header_subheader = 获取上线提醒，并享受首月 8 折优惠。
+early_access_button_add = 申请体验
+early_access_button_adding = 正在提交…
+early_access_success = 你已在名单中！上线时我们会邮件通知。🎉
+early_access_nospam_info = 我们不发垃圾邮件，仅上线时发送一封。

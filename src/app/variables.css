@@ -12,7 +12,7 @@
   --spacing: 12px;
   --spacingHalf: calc(var(--spacing) / 2);
   --spacingDouble: calc(var(--spacing) * 2);
-  --iconSizeSmall: 25px;
+  --iconSizeSmall: 20px;
   --iconSize: 35px;
   --iconSizeBig: 50px;
 

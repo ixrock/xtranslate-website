@@ -19,6 +19,7 @@ body {
 
 h1 {
   line-height: 100%;
+  text-align: center;
 }
 
 h2 {
@@ -52,6 +53,13 @@ footer {
   &:hover {
     text-decoration-color: currentColor;
   }
+}
+
+main {
+  --flexGap: 20px;
+  max-width: var(--contentMaxWidth);
+  padding: 60px clamp(20px, 10vw, 100px);
+  margin: auto;
 }
 
 .fluidColumns {

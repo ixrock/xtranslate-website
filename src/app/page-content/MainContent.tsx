@@ -1,32 +1,33 @@
-import styles from "./MainContent.module.css";
+import "./MainContent.css"
+
 import React from "react";
-import { chromeStoreUrl, edgeStoreUrl, githubRepoUrl } from "@/app/config";
+import { chromeStoreUrl, githubRepoUrl } from "@/app/config";
 import { formatNumber, getLocalization } from "@/app/i18n";
 import { getUserLang } from "@/actions/get-set-lang";
 import { PhotoPreviews, Rating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
-import { Button } from "@/app/components/Button";
+import { Logo } from "@/app/page-content/Logo";
+import { InstallExtension } from "@/app/page-content/InstallExtension";
+import { ComparePlans } from "@/app/page-content/ComparePlans";
 
 export async function MainContent() {
   const locale = await getUserLang();
   const t = await getLocalization();
 
   return (
-    <main className={`${styles.mainPage} flex column gaps`}>
-      <div className={`${styles.headline} flex gaps`}>
-        <a href="/">
-          <img src="/xtranslate-logo.svg" className={styles.logo} alt="XTranslate"/>
-        </a>
+    <main className={`MainContent flex column gaps`}>
+      <div className={`headline flex gaps`}>
+        <Logo/>
         <div className={`flex column align-center`}>
           <h1>{t("header")}</h1>
           <h2>{t("subheader")}</h2>
         </div>
       </div>
 
-      <div className={styles.ratingsWrapper}>
-        <div className={styles.ratings}>
+      <div className="ratingsWrapper">
+        <div className="ratings">
           <Rating rateValue={4.5}/>
-          <div className={styles.ratingAmountFrom}>
+          <div className="ratingAmountFrom">
             {t("total_ratings", {
               count: <b key="count">{formatNumber({ value: 1600 })}+</b>,
               ratingsLink: <a key="reviews" href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">
@@ -35,7 +36,7 @@ export async function MainContent() {
             })}
           </div>
         </div>
-        <div className={`${styles.ratingTotalUsers} flex gaps align-center`}>
+        <div className={`ratingTotalUsers flex gaps align-center`}>
           <Icon small>
             <img src="/users.svg" alt="Total users"/>
           </Icon>
@@ -48,34 +49,9 @@ export async function MainContent() {
         </div>
       </div>
 
-      <section className={`${styles.installButtons} flex gaps justify-center`}>
-        <Button
-          flat
-          href={`${chromeStoreUrl}?hl=${locale}`}
-          className="flex gaps align-center"
-          title={t("install_from_chrome_store")}
-          target="_blank"
-        >
-          <Icon>
-            <img src="/chrome.svg" alt={t("chrome_store_short")}/>
-          </Icon>
-          <span>{t("install_from_chrome_store")}</span>
-        </Button>
-        <Button
-          flat
-          href={edgeStoreUrl}
-          className="flex gaps align-center"
-          title={t("install_from_ms_edge_store")}
-          target="_blank"
-        >
-          <Icon>
-            <img src="/edge.svg" alt={t("ms_edge_store_short")}/>
-          </Icon>
-          <span>{t("install_from_ms_edge_store")}</span>
-        </Button>
-      </section>
+      <InstallExtension/>
 
-      <div className={styles.mainInfo}>
+      <div className="mainInfo">
         <p>
           {t("main_info1", {
             textTranslation: <b key="text">{t("main_info1_textTranslation")}</b>,
@@ -126,39 +102,9 @@ export async function MainContent() {
         </ul>
       </div>
 
-      <h3 id="plans">{t("plans_compare_title")}</h3>
-      <div className={`${styles.comparePlans} flex gaps auto`}>
-        <div>
-          <h4>{t("plans_free_title")}</h4>
-          <ul>
-            <li>{t("free_plan_inplace")}</li>
-            <li>{t("free_plan_fullpage")}</li>
-            <li>{t("free_plan_tts")}</li>
-            <li>{t("free_plan_ownkey_limit", { pagesCount: 10 })}</li>
-            <li>{t("free_plan_pdf")}</li>
-            <li>{t("free_plan_history")}</li>
-          </ul>
-        </div>
-        <div>
-          <h4>{t("plans_pro_title")}</h4>
-          <ul>
-            <li>{t("pro_plan_freeplus")}</li>
-            <li>
-              {t("pro_plan_tokens", {
-                tokens_value: <b key="v">{t("pro_plan_tokens_value")}</b>,
-                tokens_note: <em key="n">{t("pro_plan_tokens_note")}</em>,
-              })}
-            </li>
-            <li>{t("pro_plan_voice")}</li>
-            <li>{t("pro_plan_ownkey")}</li>
-            <li>{t("pro_plan_support")}</li>
-            <li>{t("pro_plan_noads")}</li>
-          </ul>
-          <p className={styles.proPlanFinalThought}>{t("pro_footnote")}</p>
-        </div>
-      </div>
+      <ComparePlans/>
 
-      <h3 id="features">{t("features_header")}</h3>
+      <h3>{t("features_header")}</h3>
       <p>{t("features_intro")}</p>
       <ul className="fluidColumns">
         <li>
