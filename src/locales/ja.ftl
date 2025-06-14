@@ -1,6 +1,10 @@
 header = XTranslate — AI翻訳ウェブページ & ドキュメント
 subheader = サイト・PDF・選択テキストをページを離れず瞬時に翻訳
 
+user_menu_login = ログイン
+user_menu_logout = ログアウト
+user_menu_link_account = アカウントを連携
+
 install_from_chrome_store = Google Chrome に追加
 chrome_store_short = Chrome ウェブストア
 install_from_ms_edge_store = Microsoft Edge に追加
@@ -104,4 +108,6 @@ early_access_header_subheader = ローンチのお知らせ＆初月20％オフ�
 early_access_button_add = 参加する
 early_access_button_adding = 送信中…
 early_access_success = リストに登録されました！メールでお知らせします。🎉
+early_access_error = おっと！うまくいきませんでした。少し後でもう一度お試しください。
 early_access_nospam_info = スパムなし。ローンチ時に一通だけお送りします。
+early_access_login_first = リクエストするにはログインしてください

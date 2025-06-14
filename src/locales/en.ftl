@@ -1,6 +1,10 @@
 header = XTranslate — AI-powered translator for websites & PDFs
 subheader = Instantly translate full pages, documents or any selected text right where you read
 
+user_menu_login = Login
+user_menu_logout = Logout
+user_menu_link_account = Link Account
+
 install_from_chrome_store = Add to Google Chrome
 chrome_store_short = Chrome Extensions Store
 install_from_ms_edge_store = Add to Microsoft Edge
@@ -105,4 +109,6 @@ early_access_header_subheader = Get notified at launch and receive 20% off your 
 early_access_button_add = Get Early Access
 early_access_button_adding = Joining...
 early_access_success = You're on the list! We'll notify you by email. 🎉
+early_access_error = Oops! That didn’t work. Try again soon.
 early_access_nospam_info = No spam, ever. Just one email when we launch.
+early_access_login_first = Login to leave a request

@@ -10,6 +10,11 @@
   transition: background-color 250ms ease-out;
   cursor: pointer;
 
+  &:disabled {
+    pointer-events: none;
+    filter: grayscale(100%);
+  }
+
   &:focus, &:hover {
     transform: scale(1.02);
   }

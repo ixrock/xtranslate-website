@@ -1,6 +1,10 @@
 header = XTranslate — AI网页与文档翻译器
 subheader = 无需离开页面即可即时翻译网站、PDF 和选中文本
 
+user_menu_login = 登录
+user_menu_logout = 登出
+user_menu_link_account = 关联账号
+
 install_from_chrome_store = 安装到 Google Chrome
 chrome_store_short = Chrome 应用商店
 install_from_ms_edge_store = 安装到 Microsoft Edge
@@ -104,4 +108,6 @@ early_access_header_subheader = 获取上线提醒，并享受首月 8 折优惠
 early_access_button_add = 申请体验
 early_access_button_adding = 正在提交…
 early_access_success = 你已在名单中！上线时我们会邮件通知。🎉
+early_access_error = 哎呀！出问题了。请稍后再试。
 early_access_nospam_info = 我们不发垃圾邮件，仅上线时发送一封。
+early_access_login_first = 请登录后再提交申请

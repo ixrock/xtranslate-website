@@ -123,12 +123,13 @@ model VerificationToken {
 model EarlyAccess {
   id           String   @id @default(cuid())
   userId       String   @unique
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  source       String // e.g. 'early-access-page', 'extension'
+  source String // e.g. 'extension'
   createdAt    DateTime @default(now())
   notified     Boolean  @default(false)
   discountCode String?
   prefLang     String? // e.g. 'ru', 'en'
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@schema("private")
 }

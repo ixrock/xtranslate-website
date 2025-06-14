@@ -1,6 +1,10 @@
 header = XTranslate — Traductor web y de documentos con IA
 subheader = Traduce sitios, PDF y texto seleccionado al instante sin salir de la página
 
+user_menu_login = Iniciar sesión
+user_menu_logout = Cerrar sesión
+user_menu_link_account = Vincular cuenta
+
 install_from_chrome_store = Instalar para Google Chrome
 chrome_store_short = Chrome Web Store
 install_from_ms_edge_store = Instalar para Microsoft Edge
@@ -104,4 +108,6 @@ early_access_header_subheader = Sé el primero en enterarte del lanzamiento y ob
 early_access_button_add = Solicitar acceso
 early_access_button_adding = Enviando…
 early_access_success = ¡Estás en la lista! Te avisaremos por email. 🎉
+early_access_error = ¡Ups! Algo salió mal. Inténtalo de nuevo en un momento.
 early_access_nospam_info = Cero spam, solo un email cuando lancemos.
+early_access_login_first = Inicia sesión para dejar tu solicitud

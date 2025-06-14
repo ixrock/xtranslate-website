@@ -16,7 +16,7 @@ export async function MainContent() {
 
   return (
     <main className={`MainContent flex column gaps`}>
-      <div className={`headline flex gaps`}>
+      <div className="flex gaps">
         <Logo/>
         <div className={`flex column align-center`}>
           <h1>{t("header")}</h1>

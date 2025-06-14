@@ -9,9 +9,14 @@ import { AuthUser } from "@/auth";
 export interface UserMenuProps {
   className?: string;
   user: AuthUser | undefined;
+  i18n: {
+    login: string;
+    logout: string;
+    linkAccount: string;
+  }
 }
 
-export function UserMenu({ className, user }: UserMenuProps) {
+export function UserMenu({ className, user, i18n }: UserMenuProps) {
   const { name: userName, image: avatarUrl, email } = user ?? {};
 
   return (
@@ -27,7 +32,7 @@ export function UserMenu({ className, user }: UserMenuProps) {
         )}
         {!userName && (
           <div className="flex gaps align-center" onClick={() => signIn()}>
-            <span>Login</span>
+            <span>{i18n.login}</span>
             <Icon className={styles.avatar}/>
           </div>
         )}
@@ -35,8 +40,8 @@ export function UserMenu({ className, user }: UserMenuProps) {
       {email && (
         <ul className={styles.userDropdown}>
           {/*<li>Billing</li>*/}
-          <li onClick={() => signIn()}>Link Account</li>
-          <li onClick={() => signOut()}><small>({obfuscateEmail(email)})</small> Logout</li>
+          <li onClick={() => signIn()}>{i18n.linkAccount}</li>
+          <li onClick={() => signOut()}><small>({obfuscateEmail(email)})</small> {i18n.logout}</li>
         </ul>
       )}
     </div>

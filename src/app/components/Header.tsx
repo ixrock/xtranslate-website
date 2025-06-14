@@ -24,25 +24,33 @@ export async function Header(
   const session = await auth();
   const t = await getLocalization();
 
+  const i18n = {
+    login: t("user_menu_login"),
+    logout: t("user_menu_logout"),
+    linkAccount: t("user_menu_link_account"),
+    earlyAccessLabel: t("early_access_button_label"),
+    earlyAccessLabelExtra: t("early_access_button_label_extra"),
+  };
+
   return (
-    <header className={classNames("Header flex gaps", className)}>
+    <header className={classNames("Header flex gaps align-center", className)}>
       <div className="headerIcons flex gaps align-center">
         <LightDarkIconSwitcher/>
         <SelectLanguage/>
       </div>
 
-      <div className="headerContent box grow flex gaps align-center justify-center">
-        {showGithubBtn && <GithubButton/>}
+      <div className="headerButtons box grow flex gaps align-center justify-center">
+        {showGithubBtn && <GithubButton className="githubBtn"/>}
         {showEarlyAccessBtn && (
           <Button href="/early-access" className="earlyAccessBtn">
-            <b className="label">{t("early_access_button_label")}</b>
-            <span className="extraInfo">{t("early_access_button_label_extra")}</span>
+            <b className="label">{i18n.earlyAccessLabel}</b>
+            <span className="extraInfo">{i18n.earlyAccessLabelExtra}</span>
           </Button>
         )}
         {children}
       </div>
 
-      <UserMenu className="headerMenu" user={session?.user}/>
+      <UserMenu className="headerMenu" user={session?.user} i18n={i18n}/>
     </header>
   )
 }

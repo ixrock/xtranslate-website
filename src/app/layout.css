@@ -58,7 +58,7 @@ footer {
 main {
   --flexGap: 20px;
   max-width: var(--contentMaxWidth);
-  padding: 60px clamp(20px, 10vw, 100px);
+  padding: 60px clamp(20px, 8vw, 100px);
   margin: auto;
 }
 

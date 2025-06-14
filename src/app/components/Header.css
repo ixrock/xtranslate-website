@@ -3,7 +3,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: var(--spacing) var(--spacingHalf);
+  padding: var(--spacing);
   background: var(--themedSemiTransparentBgc);
   border-bottom: 1px solid silver;
   z-index: 100;
@@ -25,22 +25,30 @@ header {
   }
 }
 
-.earlyAccessBtn {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  white-space: nowrap;
-  text-align: center;
-  line-height: 75%;
-  padding: var(--spacingHalf) var(--spacingDouble);
-
-  .label {
-    font-weight: 500;
+.headerButtons {
+  @media (width <= 600px) {
+    .githubBtn {
+      display: none;
+    }
   }
 
-  .extraInfo {
-    color: var(--subHeaderColor);
-    font-size: small;
-    font-style: italic;
+  .earlyAccessBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 75%;
+    padding: var(--spacingHalf) var(--spacing);
+
+    .label {
+      font-weight: 500;
+    }
+
+    .extraInfo {
+      color: var(--subHeaderColor);
+      font-size: small;
+      font-style: italic;
+    }
   }
 }

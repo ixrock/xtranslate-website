@@ -2,12 +2,14 @@
 
 import { auth } from "@/auth";
 import { prisma } from "@/prisma";
+import { getUserLang } from "@/actions/get-set-lang";
 
 export type EarlyAccessSource = "website" | "extension";
 
-export async function joinEarlyAccess(source: EarlyAccessSource = "website") {
+export async function joinEarlyAccess(source: EarlyAccessSource) {
   const session = await auth();
   const userId = session?.user?.id;
+  const prefLang = await getUserLang();
 
   if (!userId) {
     throw new Error("Not authenticated");
@@ -15,10 +17,12 @@ export async function joinEarlyAccess(source: EarlyAccessSource = "website") {
 
   await prisma.earlyAccess.upsert({
     where: { userId },
-    update: { source },
+    update: { source, prefLang },
     create: {
-      userId,
-      source,
+      source, prefLang,
+      user: {
+        connect: { id: userId },
+      },
     },
   });
 
