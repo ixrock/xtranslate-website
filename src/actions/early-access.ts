@@ -3,7 +3,9 @@
 import { auth } from "@/auth";
 import { prisma } from "@/prisma";
 
-export async function joinEarlyAccess(source: string) {
+export type EarlyAccessSource = "website" | "extension";
+
+export async function joinEarlyAccess(source: EarlyAccessSource = "website") {
   const session = await auth();
   const userId = session?.user?.id;
 

@@ -99,3 +99,6 @@ security_info_stay_safe = Don't enter or share your API-keys anywhere except ext
 security_info_other_recommendations = It's recommended to turn-off your balance auto top-up at selected AI-provider platform
 
 footer_info = Made with ♥ and open-source projects.
+
+
+# Early-access page

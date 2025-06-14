@@ -1,13 +1,15 @@
 import styles from "./MainContent.module.css";
 import React from "react";
-import { chromeStoreUrl, edgeStoreUrl, githubRepoUrl, Locale } from "@/app/config";
-import { formatNumber, getMessage, MessagePlaceholders } from "@/app/i18n";
+import { chromeStoreUrl, edgeStoreUrl, githubRepoUrl } from "@/app/config";
+import { formatNumber, getLocalization } from "@/app/i18n";
+import { getUserLang } from "@/actions/get-set-lang";
 import { PhotoPreviews, Rating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
 import { Button } from "@/app/components/Button";
 
-export function MainContent({ locale }: { locale: Locale }) {
-  const t = (id: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId: id, locale, placeholders });
+export async function MainContent() {
+  const locale = await getUserLang();
+  const t = await getLocalization();
 
   return (
     <main className={`${styles.mainPage} flex column gaps`}>

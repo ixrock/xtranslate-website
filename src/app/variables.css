@@ -1,7 +1,12 @@
 :root {
+  /* Colors */
   --background: #ffffff;
   --foreground: #171717;
   --subHeaderColor: #666;
+  --successColor: #16A34A;
+  --errorColor: #DC2626;
+
+  /* Dimensions */
   --contentMaxWidth: 1200px;
   --borderRadius: 5px;
   --spacing: 12px;
@@ -11,7 +16,7 @@
   --iconSize: 35px;
   --iconSizeBig: 50px;
 
-  /* theme setup with light-dark() or custom variables */
+  /* Theme setup with light-dark() or custom variables */
   color-scheme: light dark;
 
   --themedTextColor: light-dark(var(--foreground), var(--background));
@@ -20,7 +25,7 @@
   --themedTransparentBgc: light-dark(#ffffff55, #000000aa);
   --themedSemiTransparentBgc: light-dark(#ffffffee, #000000cc);
 
-  /* inversed colors/values s*/
+  /* Inverse */
   --themedTextColorInverse: light-dark(var(--background), var(--foreground));
   --themedBgcInverse: light-dark(var(--foreground), var(--background));
 

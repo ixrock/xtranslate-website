@@ -2,28 +2,28 @@ import './Header.css';
 import React from 'react';
 import classNames from "classnames";
 import { auth } from "@/auth";
-import { defaultLocale, Locale } from "@/app/config";
 import { LightDarkIconSwitcher } from "@/app/components/LightDarkModeIcon";
 import { SelectLanguage } from "@/app/components/SelectLangIcon";
 import { GithubButton } from "@/app/components/GithubButton";
 import { UserMenu } from "@/app/components/UserMenu";
 import { Button } from "@/app/components/Button";
-import { getMessage, MessagePlaceholders } from "@/app/i18n";
+import { getLocalization } from "@/app/i18n";
+import { getUserLang } from "@/actions/get-set-lang";
 
 export interface Props extends React.PropsWithChildren {
   className?: string;
-  locale: Locale;
 }
 
-export async function Header({ className, locale = defaultLocale }: Props) {
+export async function Header({ className }: Props) {
   const session = await auth();
-  const t = (id: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId: id, locale, placeholders });
+  const locale = await getUserLang();
+  const t = await getLocalization();
 
   return (
     <header className={classNames("Header flex gaps", className)}>
       <div className="headerIcons flex gaps align-center">
         <LightDarkIconSwitcher/>
-        <SelectLanguage locale={locale}/>
+        <SelectLanguage/>
       </div>
 
       <div className="box grow flex gaps align-center justify-center">

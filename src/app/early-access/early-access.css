@@ -1,0 +1,9 @@
+.EarlyAccess {
+  padding: var(--spacingDouble);
+
+  .footerNote {
+    font-size: small;
+    text-align: center;
+    color: var(--subHeaderColor);
+  }
+}

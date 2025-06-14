@@ -7,6 +7,7 @@ import React, { ReactNode } from "react";
 import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
 import type { PatternElement } from "@fluent/bundle/esm/ast"
 import { defaultLocale, Locale } from "@/app/config";
+import { getUserLang } from "@/actions/get-set-lang";
 
 export function loadFluentResource(locale: Locale = defaultLocale) {
   const filePath = path.join(process.cwd(), `src/locales/${locale}.ftl`);
@@ -24,19 +25,19 @@ export function getFluentBundle(locale: Locale) {
 export interface Message {
   msgId: string
   placeholders?: MessagePlaceholders;
-  locale?: Locale
+  locale: Locale
 }
 
 export type MessagePlaceholders = Record<string, FluentVariable>;
 
+export async function getLocalization() {
+  const locale = await getUserLang();
+  return (msgId: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId, placeholders, locale })
+}
+
 export function getMessage(payload: Required<Message>): string;
 export function getMessage(payload: Message): React.ReactNode {
-  const {
-    msgId,
-    placeholders = {},
-    locale = defaultLocale,
-  } = payload;
-
+  const { msgId, placeholders = {}, locale } = payload;
   const errors: Error[] = [];
   const bundle = getFluentBundle(locale);
   const msgKey = bundle.getMessage(msgId)?.value ?? "";

@@ -11,11 +11,14 @@ export interface ButtonProps extends React.PropsWithChildren, React.HTMLAttribut
   href?: string; // create a link <a> instead of <button>
   target?: HTMLAttributeAnchorTarget;
   flat?: boolean;
+  disabled?: boolean;
+  themed?: boolean;
 }
 
-export function Button({ className, flat, ...props }: ButtonProps) {
+export function Button({ className, flat, themed, ...props }: ButtonProps) {
   const classes = classNames(styles.Button, className, {
     [styles.flat]: flat,
+    [styles.themed]: themed,
   });
 
   if (props.href) {

@@ -1,11 +1,12 @@
 import "./layout.css";
 import type React from "react";
 import type { Metadata } from "next";
+import { Locales, websiteUrl } from "@/app/config";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Roboto_Flex } from "next/font/google";
-import { ClientProviders } from "@/app/providers";
-import { Locales, websiteUrl } from "@/app/config";
+import ClientProviders from "@/app/context/ClientProviders";
+import { getUserLang } from "@/actions/get-set-lang";
 
 const robotoFlex = Roboto_Flex({
   variable: "--font-roboto",
@@ -26,11 +27,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default async function RootLayout({ children }: React.PropsWithChildren) {
+  const lang = await getUserLang();
   return (
     <html>
     <body className={`${robotoFlex.variable}`}>
-    <ClientProviders>
+    <ClientProviders lang={lang}>
       {children}
     </ClientProviders>
     </body>

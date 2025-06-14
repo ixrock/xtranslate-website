@@ -14,6 +14,11 @@
     transform: scale(1.02);
   }
 
+  &.themed {
+    background-color: var(--themedBgc);
+    color: var(--themedLinkColor);
+  }
+
   &.flat {
     transition: box-shadow 250ms ease-out, color 250ms;
 

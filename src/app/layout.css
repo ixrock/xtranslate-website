@@ -39,10 +39,6 @@ h4 {
   font-weight: 500;
 }
 
-b {
-  font-weight: 600;
-}
-
 footer {
   text-align: center;
 }
@@ -69,4 +65,12 @@ footer {
   > * {
     break-inside: avoid;
   }
+}
+
+.success {
+  color: var(--successColor);
+}
+
+.error {
+  color: var(--errorColor);
 }
