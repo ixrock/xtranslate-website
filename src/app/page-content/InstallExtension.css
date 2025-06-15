@@ -1,11 +1,11 @@
 .InstallExtension {
   font-size: 110%;
 
-  img {
-    filter: var(--themedInverseFilter);
-  }
-
-  a {
+  .button {
     padding: var(--spacingHalf);
+
+    svg {
+      fill: var(--themedTextColor)
+    }
   }
 }

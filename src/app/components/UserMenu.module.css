@@ -50,8 +50,7 @@
 }
 
 .user {
-  --flexGap: var(--spacingHalf);
-
+  padding: var(--spacingHalf);
   border-radius: var(--borderRadius);
   cursor: pointer;
 

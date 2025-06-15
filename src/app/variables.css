@@ -1,4 +1,14 @@
 :root {
+  color-scheme: light dark;
+
+  &.light {
+    color-scheme: light;
+  }
+
+  &.dark {
+    color-scheme: dark;
+  }
+
   /* Colors */
   --background: #ffffff;
   --foreground: #171717;
@@ -16,9 +26,6 @@
   --iconSize: 35px;
   --iconSizeBig: 50px;
 
-  /* Theme setup with light-dark() or custom variables */
-  color-scheme: light dark;
-
   --themedTextColor: light-dark(var(--foreground), var(--background));
   --themedBgc: light-dark(var(--background), var(--foreground));
   --themedLinkColor: light-dark(#942486aa, rgba(213, 105, 195, 0.8));
@@ -28,13 +35,4 @@
   /* Inverse */
   --themedTextColorInverse: light-dark(var(--background), var(--foreground));
   --themedBgcInverse: light-dark(var(--foreground), var(--background));
-
-  &.light {
-    color-scheme: light;
-  }
-
-  &.dark {
-    color-scheme: dark;
-    --themedInverseFilter: invert(1);
-  }
 }

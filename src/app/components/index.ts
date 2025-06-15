@@ -1,4 +1,3 @@
-export * from "./PhotoPreview"
 export * from "./PhotoPreviews"
 export * from "./LoadingIndicator"
 export * from "./LightDarkModeIcon"

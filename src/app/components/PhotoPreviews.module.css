@@ -7,17 +7,24 @@
   grid-gap: var(--spacingDouble);
 }
 
-.PhotoPreview:hover img {
-  transform: scale(1.3) rotate(1deg);
-  animation: shake .75s ease-in;
-}
+.PhotoPreview {
+  position: relative;
 
-.PhotoPreview img {
-  position: absolute;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  transition: transform .5s ease-in-out;
+  &:hover img {
+    transform: scale(1.3) rotate(1deg);
+    animation: shake .75s ease-in;
+    z-index: 10;
+  }
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    border-radius: var(--borderRadius);
+    border: 3px solid var(--themedLinkColor);
+  }
 }
 
 .PhotoRotateArrow {

@@ -7,7 +7,7 @@ export async function ComparePlans() {
   return (
     <>
       <h3>{t("plans_compare_title")}</h3>
-      <div className="ComparePlans flex gaps auto">
+      <section className="ComparePlans flex gaps auto">
         <div>
           <h4>{t("plans_free_title")}</h4>
           <ul>
@@ -36,7 +36,7 @@ export async function ComparePlans() {
           </ul>
           <p className="proPlanFinalThought">{t("pro_footnote")}</p>
         </div>
-      </div>
+      </section>
     </>
   );
 }

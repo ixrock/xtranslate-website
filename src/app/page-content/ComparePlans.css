@@ -1,4 +1,8 @@
 .ComparePlans {
+  @media (width <= 800px) {
+    flex-direction: column;
+  }
+
   > * {
     border: 2px solid;
     border-radius: var(--borderRadius);

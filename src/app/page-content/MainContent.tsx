@@ -9,6 +9,8 @@ import { Icon } from "@/app/components/Icon";
 import { Logo } from "@/app/page-content/Logo";
 import { InstallExtension } from "@/app/page-content/InstallExtension";
 import { ComparePlans } from "@/app/page-content/ComparePlans";
+import { Features } from "@/app/page-content/Features";
+import UsersIconSvg from "@/assets/users.svg";
 
 export async function MainContent() {
   const locale = await getUserLang();
@@ -24,7 +26,7 @@ export async function MainContent() {
         </div>
       </div>
 
-      <div className="ratingsWrapper">
+      <section className="ratingsWrapper">
         <div className="ratings">
           <Rating rateValue={4.5}/>
           <div className="ratingAmountFrom">
@@ -36,9 +38,9 @@ export async function MainContent() {
             })}
           </div>
         </div>
-        <div className={`ratingTotalUsers flex gaps align-center`}>
-          <Icon small>
-            <img src="/users.svg" alt="Total users"/>
+        <div className="flex gaps align-center">
+          <Icon small svgFill className="usersIcon">
+            <UsersIconSvg/>
           </Icon>
           <span>
             {t("total_rating_users", {
@@ -47,11 +49,11 @@ export async function MainContent() {
             })}
           </span>
         </div>
-      </div>
+      </section>
 
       <InstallExtension/>
 
-      <div className="mainInfo">
+      <section className="mainInfo">
         <p>
           {t("main_info1", {
             textTranslation: <b key="text">{t("main_info1_textTranslation")}</b>,
@@ -65,7 +67,7 @@ export async function MainContent() {
             textTranslation: <b key="text">{t("main_info2_textTranslation")}</b>
           })}
         </p>
-      </div>
+      </section>
 
       <PhotoPreviews images={[
         { src: "/sshots/website_popup.jpg", title: t("gallery_website_popup") },
@@ -82,7 +84,7 @@ export async function MainContent() {
       ]}
       />
 
-      <div className="fluidColumns">
+      <section className="availableProviders">
         <h3>{t("install_extension_header")}</h3>
         <ul>
           <li><a href={`https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`} target="_blank">{t("install_chrome_store")}</a></li>
@@ -91,7 +93,7 @@ export async function MainContent() {
           <li><a href={githubRepoUrl} target="_blank">Github</a> <em>({t("install_from_sources")})</em></li>
         </ul>
 
-        <h3 className="breakCol">{t("vendors_available_header")}</h3>
+        <h3>{t("vendors_available_header")}</h3>
         <ul>
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({t("vendor_apis_is_free")})</li>
           <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({t("vendor_apis_is_free")})</li>
@@ -100,76 +102,31 @@ export async function MainContent() {
           <li><a href="https://console.x.ai" target="_blank">Grok</a> ({t("vendor_ai_bring_your_key")})</li>
           <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({t("vendor_ai_bring_your_key")})</li>
         </ul>
-      </div>
+      </section>
 
       <ComparePlans/>
-
-      <h3>{t("features_header")}</h3>
-      <p>{t("features_intro")}</p>
-      <ul className="fluidColumns">
-        <li>
-          {t("features_fullpage", {
-            fullpage_text_translation: <b key="t">{t("features_fullpage_text_translation")}</b>,
-            fullpage_text_notes: <em key="n">{t("features_fullpage_text_notes")}</em>,
-          })}
-        </li>
-        <li>{t("features_dblclick")}</li>
-        <li>{t("features_icon")}</li>
-        <li>
-          {t("features_click_selected", {
-            turned_off_by_default: <em key="o">{t("features_turned_off_by_default")}</em>
-          })}
-        </li>
-        <li>
-          {t("features_after_selection", {
-            turned_off_by_default: <em key="o">{t("features_turned_off_by_default")}</em>
-          })}
-        </li>
-        <li>
-          {t("features_hotkey", {
-            hotkey_default: <em key={1}>{t("features_hotkey_default")}</em>
-          })}
-        </li>
-        <li>
-          {t("features_pdf", {
-            pdf_translation: <b key={1}>{t("features_pdf_translation")}</b>,
-            pdf_requirements: <em key={2}>{t("features_pdf_requirements")}</em>
-          })}
-        </li>
-        <li>
-          {t("features_input_tab", {
-            shortcuts_url: <code key={1}>chrome://extensions/shortcuts</code>
-          })}
-        </li>
-        <li>
-          {t("features_tts", {
-            tts_listen: <b key={1}>{t("features_tts_listen")}</b>,
-            tts_providers: <em key={2}>Google, OpenAI</em>
-          })}
-        </li>
-        <li>{t("features_bookmark")}</li>
-        <li>{t("features_customize")}</li>
-        <li>{t("features_history")}</li>
-      </ul>
+      <Features/>
 
       <h3>{t("security_info_header")}</h3>
-      <ul>
-        <li>
-          {t("security_info_api_key_store", {
-            providersList: <em key={1}>OpenAI, Grok</em>,
-            apiKeyStorage: <a key={2} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
-            authHeader: <code key={3}>Authorization</code>,
-            webRequestApi: <a key={4} href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a>,
-          })}
-        </li>
-        <li>
-          {t("security_info_anti_xss", {
-            aiConnectionProvider: <a key={1} href="https://github.com/openai/openai-node" target="_blank">OpenAI</a>,
-          })}
-        </li>
-        <li>{t("security_info_stay_safe")}</li>
-        <li>{t("security_info_other_recommendations")}</li>
-      </ul>
+      <section>
+        <ul>
+          <li>
+            {t("security_info_api_key_store", {
+              providersList: <em key={1}>OpenAI, Grok</em>,
+              apiKeyStorage: <a key={2} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
+              authHeader: <code key={3}>Authorization</code>,
+              webRequestApi: <a key={4} href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a>,
+            })}
+          </li>
+          <li>
+            {t("security_info_anti_xss", {
+              aiConnectionProvider: <a key={1} href="https://github.com/openai/openai-node" target="_blank">OpenAI</a>,
+            })}
+          </li>
+          <li>{t("security_info_stay_safe")}</li>
+          <li>{t("security_info_other_recommendations")}</li>
+        </ul>
+      </section>
       <hr/>
       <footer>
         {t("footer_info")}

@@ -2,12 +2,12 @@
 
 import styles from "./PhotoPreviews.module.css"
 import React, { useState } from "react";
-import Image from "next/image";
-import { Dialog, LoadingIndicator, PhotoPreview, PhotoPreviewProps } from "@/app/components";
+import { Dialog, LoadingIndicator } from "@/app/components";
+import Link from "next/link";
 
 export interface PhotoPreviewsProps {
   className?: string;
-  images: PhotoPreviewProps[];
+  images: { src: string, title: string }[];
 }
 
 // TODO: maybe use parallel routes
@@ -39,14 +39,11 @@ export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
 
   return (
     <div className={`${styles.PhotoPreviews} ${className ?? ""}`}>
-      {images.map((props, index) => {
+      {images.map(({ src, title }, index) => {
         return (
-          <PhotoPreview
-            {...props}
-            key={props.src}
-            className={styles.PhotoPreview}
-            onClick={evt => onImageClick(evt, index)}
-          />
+          <Link key={src} className={styles.PhotoPreview} href={src} onClick={evt => onImageClick(evt, index)}>
+            <img src={src} title={title} alt={title}/>
+          </Link>
         )
       })}
       {photo && (
@@ -61,7 +58,7 @@ export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
             <>
               <div className={styles.PhotoPreviewImageBig}>
                 <i className={`${styles.PhotoRotateArrow} ${styles.left}`} onClick={showPrevImage}/>
-                <Image fill src={photo.src} alt={photo.title ?? ""}/>
+                <img src={photo.src} alt={photo.title}/>
                 <i className={`${styles.PhotoRotateArrow} ${styles.right}`} onClick={showNextImage}/>
               </div>
               <div className={styles.PhotoPreviewTitle}>

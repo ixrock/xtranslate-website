@@ -1,10 +1,11 @@
 import "./Logo.css"
 import React from "react";
+import XTranslateLogoUrl from "@/assets/xtranslate-logo.svg?url"
 
 export function Logo() {
   return (
-    <a href="/">
-      <img src="/xtranslate-logo.svg" className="Logo" alt="XTranslate"/>
+    <a href="/" className="Logo">
+      <img src={XTranslateLogoUrl} alt="XTranslate"/>
     </a>
   )
 }

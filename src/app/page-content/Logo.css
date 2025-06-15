@@ -1,4 +1,6 @@
 .Logo {
-  width: var(--iconSizeBig);
-  height: var(--iconSizeBig);
+  img {
+    width: var(--iconSizeBig);
+    height: var(--iconSizeBig);
+  }
 }

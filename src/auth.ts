@@ -2,6 +2,7 @@ import NextAuth, { User } from "next-auth"
 import Google, { GoogleProfile } from "next-auth/providers/google";
 import Yandex, { YandexProfile } from "next-auth/providers/yandex";
 import Github, { GitHubProfile } from "next-auth/providers/github";
+import XTranslateLogoUrl from "@/assets/xtranslate-logo.svg?url"
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma";
 
@@ -9,7 +10,7 @@ export const { handlers: handlers, auth: auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma), // not supported in "edge" runtime (e.g. within `middleware`)
 
     theme: {
-      logo: "/xtranslate-logo.svg",
+      logo: XTranslateLogoUrl,
     },
 
     session: {

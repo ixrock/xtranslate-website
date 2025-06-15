@@ -11,6 +11,10 @@
 
   &.gaps {
     gap: var(--flexGap, var(--spacing));
+
+    .flex.gaps {
+      --flexGap: initial; /* reset for children */
+    }
   }
 
   &.auto > * {
