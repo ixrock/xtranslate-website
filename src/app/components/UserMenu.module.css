@@ -3,21 +3,21 @@
   z-index: 100;
 
   &:hover .userDropdown,
-  .user:has(:checked) + .userDropdown,
+  .user:has(:active) + .userDropdown,
   .user:focus + .userDropdown {
-    display: flex; /* show menu on :hover, :focus and click (via :checked) */
+    display: flex;
   }
 
   .user:focus .userName,
-  .user:has(:checked) .userName {
+  .user:has(:active) .userName {
     border-bottom-color: currentColor;
   }
 }
 
 .avatar, .userPhoto {
   position: relative;
-  width: var(--iconSize);
-  height: var(--iconSize);
+  width: var(--iconSizeNormal);
+  height: var(--iconSizeNormal);
   border-radius: 50%;
   border: 2px solid;
 }
@@ -53,10 +53,6 @@
   padding: var(--spacingHalf);
   border-radius: var(--borderRadius);
   cursor: pointer;
-
-  input[type='checkbox'] {
-    display: none;
-  }
 
   .userName {
     font-weight: 500;

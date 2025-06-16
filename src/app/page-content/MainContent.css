@@ -1,4 +1,6 @@
 .MainContent {
+  --iconSize: 27px;
+
   .mainInfo {
     text-align: justify;
   }
@@ -21,22 +23,19 @@
     .ratingAmountFrom {
       font-size: medium;
     }
-
-    .usersIcon {
-      --size: 27px;
-    }
   }
 
-  .availableProviders {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--flexGap);
-    align-items: center;
+  .earlyAccessBtn {
+    line-height: 100%;
 
-    @media (width <= 800px) {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+    .label {
+      font-weight: 500;
+    }
+
+    .extraInfo {
+      color: var(--subHeaderColor);
+      font-size: small;
+      font-style: italic;
     }
   }
 }

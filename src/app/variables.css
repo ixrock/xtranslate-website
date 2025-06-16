@@ -23,7 +23,7 @@
   --spacingHalf: calc(var(--spacing) / 2);
   --spacingDouble: calc(var(--spacing) * 2);
   --iconSizeSmall: 20px;
-  --iconSize: 35px;
+  --iconSizeNormal: 35px;
   --iconSizeBig: 50px;
 
   --themedTextColor: light-dark(var(--foreground), var(--background));

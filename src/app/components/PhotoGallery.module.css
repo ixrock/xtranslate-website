@@ -1,4 +1,4 @@
-.PhotoPreviews {
+.PhotoGallery {
   --grid-size: 250px;
 
   display: grid;
@@ -81,12 +81,12 @@
 
 .PhotoPreviewTitle {
   display: block;
-  padding: 20px 0;
+  padding: var(--spacing) 0;
   font-size: 20px;
   font-style: italic;
   text-align: center;
-  color: light-dark(white, black);
-  background: light-dark(#00000055, #ffffffee);
+  color: var(--themedTextColorInverse);
+  background: var(--themedBgcInverse);
   border-radius: var(--borderRadius);
 }
 

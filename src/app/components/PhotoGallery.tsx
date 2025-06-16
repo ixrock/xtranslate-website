@@ -1,18 +1,22 @@
 "use client";
 
-import styles from "./PhotoPreviews.module.css"
+import styles from "./PhotoGallery.module.css"
 import React, { useState } from "react";
 import { Dialog, LoadingIndicator } from "@/app/components";
 import Link from "next/link";
 
-export interface PhotoPreviewsProps {
-  className?: string;
-  images: { src: string, title: string }[];
+export interface PhotoPreview {
+  src: string;
+  title: string;
 }
 
-// TODO: maybe use parallel routes
-//  see: https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
-export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
+export interface PhotoPreviewsProps {
+  className?: string;
+  images: PhotoPreview[];
+}
+
+// TODO: maybe use parallel routes, https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
+export function PhotoGallery({ images, className }: PhotoPreviewsProps) {
   const [imageReady, setReady] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(-1);
   const photo = images[photoIndex];
@@ -38,10 +42,10 @@ export function PhotoPreviews({ images, className }: PhotoPreviewsProps) {
   }
 
   return (
-    <div className={`${styles.PhotoPreviews} ${className ?? ""}`}>
+    <div className={`${styles.PhotoGallery} ${className ?? ""}`}>
       {images.map(({ src, title }, index) => {
         return (
-          <Link key={src} className={styles.PhotoPreview} href={src} onClick={evt => onImageClick(evt, index)}>
+          <Link key={src} className={styles.PhotoPreview} href={src} onClick={evt => onImageClick(evt, index)} prefetch={false}>
             <img src={src} title={title} alt={title}/>
           </Link>
         )
@@ -81,4 +85,4 @@ export async function preloadImage(src: string): Promise<HTMLImageElement> {
   });
 }
 
-export default PhotoPreviews;
+export default PhotoGallery;

@@ -1,31 +1,33 @@
 "use client";
 
 import styles from './Button.module.css';
-import React, { HTMLAttributeAnchorTarget } from 'react';
+import React from 'react';
 import classNames from "classnames";
+import Link, { LinkProps } from "next/link";
 
-export type ButtonElement = HTMLButtonElement | HTMLAnchorElement;
-
-export interface ButtonProps extends React.PropsWithChildren, React.HTMLAttributes<ButtonElement> {
+export interface ButtonProps {
   className?: string;
-  href?: string; // create a link <a> instead of <button>
-  target?: HTMLAttributeAnchorTarget;
   flat?: boolean;
-  themed?: boolean;
-  disabled?: boolean;
+  asLink?: boolean;
 }
 
-export function Button({ className, flat, themed, ...props }: ButtonProps) {
-  const classes = classNames(styles.Button, className, {
-    [styles.flat]: flat,
-    [styles.themed]: themed,
-  });
-
-  if (props.href) {
-    return <a {...props} className={classes}/>
-  }
-
+export function Button(props: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  const { className, asLink, flat, ...btnProps } = props
   return (
-    <button {...props} className={classes}/>
+    <button {...btnProps} className={getButtonClass(props)}/>
+  );
+}
+
+export function ButtonLink(props: Omit<ButtonProps, "asLink"> & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const { className, flat, ...linkProps } = props;
+  return (
+    <Link {...linkProps} className={getButtonClass(props)} role="button"/>
   )
+}
+
+export function getButtonClass({ className, flat, asLink }: ButtonProps) {
+  return classNames(styles.Button, className, {
+    [styles.flatTheme]: flat,
+    [styles.linkTheme]: asLink,
+  });
 }

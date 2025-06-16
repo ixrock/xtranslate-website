@@ -1,16 +1,18 @@
 import "./MainContent.css"
 
 import React from "react";
-import { chromeStoreUrl, githubRepoUrl } from "@/app/config";
+import { chromeStoreUrl } from "@/app/config";
 import { formatNumber, getLocalization } from "@/app/i18n";
 import { getUserLang } from "@/actions/get-set-lang";
-import { PhotoPreviews, Rating } from "@/app/components";
+import { PhotoGallery, Rating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
 import { Logo } from "@/app/page-content/Logo";
 import { InstallExtension } from "@/app/page-content/InstallExtension";
 import { ComparePlans } from "@/app/page-content/ComparePlans";
 import { Features } from "@/app/page-content/Features";
+import { ButtonLink } from "@/app/components/Button";
 import UsersIconSvg from "@/assets/users.svg";
+import DiscountLabelSvg from "@/assets/discount.svg";
 
 export async function MainContent() {
   const locale = await getUserLang();
@@ -39,7 +41,7 @@ export async function MainContent() {
           </div>
         </div>
         <div className="flex gaps align-center">
-          <Icon small svgFill className="usersIcon">
+          <Icon svgFill>
             <UsersIconSvg/>
           </Icon>
           <span>
@@ -69,7 +71,7 @@ export async function MainContent() {
         </p>
       </section>
 
-      <PhotoPreviews images={[
+      <PhotoGallery images={[
         { src: "/sshots/website_popup.jpg", title: t("gallery_website_popup") },
         { src: "/sshots/website_select_text.png", title: t("gallery_website_select_text") },
         { src: "/sshots/website_translation_results.png", title: t("gallery_website_translation_results") },
@@ -84,15 +86,7 @@ export async function MainContent() {
       ]}
       />
 
-      <section className="availableProviders">
-        <h3>{t("install_extension_header")}</h3>
-        <ul>
-          <li><a href={`https://chrome.google.com/webstore/detail/xtranslate/gfgpkepllngchpmcippidfhmbhlljhoo?hl=${locale}`} target="_blank">{t("install_chrome_store")}</a></li>
-          <li><a href="https://microsoftedge.microsoft.com/addons/detail/cinfaflgbaachkaamaeglolofeahelkd" target="_blank">{t("install_ms_addons")}</a></li>
-          <li><a href="https://addons.mozilla.org/en-GB/firefox/addon/xtranslate-chrome/" target="_blank">{t("install_firefox")}</a> <em>({t("install_old_version")})</em></li>
-          <li><a href={githubRepoUrl} target="_blank">Github</a> <em>({t("install_from_sources")})</em></li>
-        </ul>
-
+      <section className="availableProviders flex column gaps">
         <h3>{t("vendors_available_header")}</h3>
         <ul>
           <li><a href="https://translate.google.com/" target="_blank">Google</a> ({t("vendor_apis_is_free")})</li>
@@ -105,6 +99,17 @@ export async function MainContent() {
       </section>
 
       <ComparePlans/>
+
+      <ButtonLink href="/early-access" className="earlyAccessBtn flex gaps align-center justify-center">
+        <Icon svgFill>
+          <DiscountLabelSvg/>
+        </Icon>
+        <div className="flex column">
+          <b className="label">{t("early_access_button_label")}</b>
+          <span className="extraInfo">{t("early_access_button_label_extra")}</span>
+        </div>
+      </ButtonLink>
+
       <Features/>
 
       <h3>{t("security_info_header")}</h3>
@@ -113,8 +118,8 @@ export async function MainContent() {
           <li>
             {t("security_info_api_key_store", {
               providersList: <em key={1}>OpenAI, Grok</em>,
-              apiKeyStorage: <a key={2} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
-              authHeader: <code key={3}>Authorization</code>,
+              authHeader: <code key={2}>Authorization</code>,
+              apiKeyStorage: <a key={3} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
               webRequestApi: <a key={4} href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a>,
             })}
           </li>

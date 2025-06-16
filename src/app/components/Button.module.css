@@ -19,24 +19,24 @@
     transform: scale(1.02);
   }
 
-  &.themed {
-    background-color: var(--themedBgc);
-    color: var(--themedLinkColor);
-  }
-
-  &.flat {
-    transition: box-shadow 250ms ease-out, color 250ms;
-
-    &:hover, &:focus {
-      box-shadow: 0 0 0 1px inset;
-      color: inherit;
-    }
-  }
-
-  &:not(.flat) {
+  &:not(.flatTheme) {
     &:hover, &:focus {
       background-color: var(--themedBgcInverse);
       color: var(--themedTextColorInverse);
     }
+  }
+}
+
+.linkTheme {
+  background-color: var(--themedBgc);
+  color: var(--themedLinkColor);
+}
+
+.flatTheme {
+  transition: box-shadow 250ms ease-out, color 250ms;
+
+  &:hover, &:focus {
+    box-shadow: 0 0 0 1px inset;
+    color: inherit;
   }
 }

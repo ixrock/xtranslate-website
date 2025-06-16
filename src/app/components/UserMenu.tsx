@@ -22,7 +22,6 @@ export function UserMenu({ className, user, i18n }: UserMenuProps) {
   return (
     <div className={classNames(styles.UserMenu, className)}>
       <label className={`${styles.user} flex gaps align-center`} tabIndex={0}>
-        <input type="checkbox"/>
         {userName && (
           <>
             <span className={`${styles.userName}`}>{userName}</span>

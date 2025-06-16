@@ -1,5 +1,5 @@
 .Icon {
-  --size: var(--iconSize);
+  --size: var(--iconSize, var(--iconSizeNormal));
 
   display: inline-block;
   width: var(--size);

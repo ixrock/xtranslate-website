@@ -3,12 +3,9 @@ import React from "react";
 import { auth } from "@/auth";
 import { getLocalization } from "@/app/i18n";
 import { Header } from "@/app/components/Header";
-import { Button } from "@/app/components/Button";
 import { ComparePlans } from "@/app/page-content/ComparePlans";
 import { Logo } from "@/app/page-content/Logo";
-import HomeSvg from "@/assets/home.svg";
-import { Icon } from "@/app/components/Icon";
-import EarlyAccessButton from "@/app/early-access/early-access-button";
+import EarlyAccessButton from "@/app/early-access/EarlyAccessButton";
 
 export default async function EarlyAccessPage() {
   const session = await auth();
@@ -27,11 +24,7 @@ export default async function EarlyAccessPage() {
 
   return (
     <>
-      <Header>
-        <Button flat href="/">
-          <Icon small svgFill><HomeSvg/></Icon>
-        </Button>
-      </Header>
+      <Header showHome/>
       <main>
         <div className="EarlyAccess flex column gaps align-center">
           <div className="flex gaps align-center">

@@ -1,4 +1,5 @@
 .InstallExtension {
+  --iconSize: var(--iconSizeNormal);
   font-size: 110%;
 
   .button {

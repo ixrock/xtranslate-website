@@ -6,20 +6,23 @@ import { LightDarkIconSwitcher } from "@/app/components/LightDarkModeIcon";
 import { SelectLanguage } from "@/app/components/SelectLangIcon";
 import { GithubButton } from "@/app/components/GithubButton";
 import { UserMenu } from "@/app/components/UserMenu";
-import { Button } from "@/app/components/Button";
+import { ButtonLink } from "@/app/components/Button";
 import { getLocalization } from "@/app/i18n";
+import { Icon } from "@/app/components/Icon";
+import HomeSvg from "@/assets/home.svg";
 
 export interface Props extends React.PropsWithChildren {
   className?: string;
-  showGithubBtn?: boolean;
-  showEarlyAccessBtn?: boolean;
+  showGithub?: boolean;
+  showHome?: boolean;
 }
 
 export async function Header(
   {
-    className, children,
-    showGithubBtn = false,
-    showEarlyAccessBtn = false,
+    className,
+    showGithub = false,
+    showHome = true,
+    children,
   }: Props) {
   const session = await auth();
   const t = await getLocalization();
@@ -28,8 +31,6 @@ export async function Header(
     login: t("user_menu_login"),
     logout: t("user_menu_logout"),
     linkAccount: t("user_menu_link_account"),
-    earlyAccessLabel: t("early_access_button_label"),
-    earlyAccessLabelExtra: t("early_access_button_label_extra"),
   };
 
   return (
@@ -40,12 +41,11 @@ export async function Header(
       </div>
 
       <div className="headerButtons box grow flex gaps align-center justify-center">
-        {showGithubBtn && <GithubButton className="githubBtn"/>}
-        {showEarlyAccessBtn && (
-          <Button href="/early-access" className="earlyAccessBtn">
-            <b className="label">{i18n.earlyAccessLabel}</b>
-            <span className="extraInfo">{i18n.earlyAccessLabelExtra}</span>
-          </Button>
+        {showGithub && <GithubButton className="githubBtn"/>}
+        {showHome && (
+          <ButtonLink href="/">
+            <Icon small svgFill><HomeSvg/></Icon>
+          </ButtonLink>
         )}
         {children}
       </div>

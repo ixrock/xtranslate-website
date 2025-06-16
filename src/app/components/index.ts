@@ -1,4 +1,4 @@
-export * from "./PhotoPreviews"
+export * from "./PhotoGallery"
 export * from "./LoadingIndicator"
 export * from "./LightDarkModeIcon"
 export * from "./Dialog"

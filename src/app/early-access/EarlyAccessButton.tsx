@@ -41,12 +41,12 @@ export default function EarlyAccessButton({ loggedIn, i18n }: Props) {
   return (
     <div className="EarlyAccessButton flex column gaps align-center">
       {loggedIn && (
-        <Button themed onClick={handleJoin} disabled={joining || joined}>
+        <Button asLink onClick={handleJoin} disabled={joining || joined}>
           {joining ? i18n.buttonLabelJoining : i18n.buttonLabel}
         </Button>
       )}
       {!loggedIn && (
-        <Button themed onClick={() => signIn()}>
+        <Button asLink onClick={() => signIn()}>
           {i18n.loginFirstInfo}
         </Button>
       )}
