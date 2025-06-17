@@ -2,23 +2,24 @@
 
 import styles from "./PhotoGallery.module.css"
 import React, { useState } from "react";
-import { Dialog, LoadingIndicator } from "@/app/components";
 import Link from "next/link";
+import classNames from "classnames";
+import { Dialog, LoadingIndicator } from "@/app/components";
 
-export interface PhotoPreview {
-  src: string;
-  title: string;
-}
-
-export interface PhotoPreviewsProps {
+export interface PhotoPreviewsProps extends React.PropsWithChildren {
   className?: string;
-  images: PhotoPreview[];
 }
 
 // TODO: maybe use parallel routes, https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
-export function PhotoGallery({ images, className }: PhotoPreviewsProps) {
+export function PhotoGallery({ className, children }: PhotoPreviewsProps) {
   const [imageReady, setReady] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(-1);
+
+  const reactElements = React.Children.toArray(children) as React.ReactElement<HTMLImageElement>[];
+  const images = reactElements
+    .filter(img => React.isValidElement(img) && img.type === "img")
+    .map(({ props: { src, alt } }) => ({ src, title: alt }));
+
   const photo = images[photoIndex];
 
   const showPrevImage = () => showImage(photoIndex - 1);
@@ -42,11 +43,11 @@ export function PhotoGallery({ images, className }: PhotoPreviewsProps) {
   }
 
   return (
-    <div className={`${styles.PhotoGallery} ${className ?? ""}`}>
+    <div className={classNames(styles.PhotoGallery, className)}>
       {images.map(({ src, title }, index) => {
         return (
           <Link key={src} className={styles.PhotoPreview} href={src} onClick={evt => onImageClick(evt, index)} prefetch={false}>
-            <img src={src} title={title} alt={title}/>
+            <img src={src} title={title} alt={title} loading="lazy"/>
           </Link>
         )
       })}
@@ -62,7 +63,7 @@ export function PhotoGallery({ images, className }: PhotoPreviewsProps) {
             <>
               <div className={styles.PhotoPreviewImageBig}>
                 <i className={`${styles.PhotoRotateArrow} ${styles.left}`} onClick={showPrevImage}/>
-                <img src={photo.src} alt={photo.title}/>
+                <img src={photo.src} alt={photo.title} loading="lazy"/>
                 <i className={`${styles.PhotoRotateArrow} ${styles.right}`} onClick={showNextImage}/>
               </div>
               <div className={styles.PhotoPreviewTitle}>
