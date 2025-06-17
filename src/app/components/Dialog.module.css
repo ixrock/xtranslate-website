@@ -22,20 +22,7 @@ body:has(.Dialog) {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: var(--spacingDouble);
-
-  &:has(img) {
-    height: 100%;
-  }
-}
-
-.DialogContent img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: var(--borderRadius);
-  background: white;
+  padding: var(--spacing);
 }
 
 .closeBtn {

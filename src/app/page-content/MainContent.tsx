@@ -74,10 +74,8 @@ export async function MainContent() {
       <PhotoGallery>
         <img src="/sshots/website_popup.webp" alt={t("gallery_website_popup")}/>
         <img src="/sshots/website_select_text.webp" alt={t("gallery_website_select_text")}/>
-        <img src="/sshots/website_translation_results.webp" alt={t("gallery_website_translation_results")}/>
         <img src="/sshots/app_settings.webp" alt={t("gallery_app_settings")}/>
         <img src="/sshots/app_popup_customization.webp" alt={t("gallery_app_popup_customization")}/>
-        <img src="/sshots/app_translate_tab.webp" alt={t("gallery_app_translate_tab")}/>
         <img src="/sshots/app_history_tab.webp" alt={t("gallery_app_history_tab")}/>
         <img src="/sshots/pdf_translation.webp" alt={t("gallery_pdf_translation")}/>
         <img src="/sshots/app_theme_dark.webp" alt={t("gallery_app_theme_dark")}/>
