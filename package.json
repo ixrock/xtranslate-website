@@ -23,14 +23,14 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.9.1",
     "@fluent/bundle": "^0.19.1",
-    "@next/third-parties": "^15.3.3",
-    "@prisma/client": "^6.9.0",
+    "@next/third-parties": "^15.3.4",
+    "@prisma/client": "^6.10.1",
     "@vercel/analytics": "^1.5.0",
     "classnames": "^2.5.1",
     "marked": "^15.0.12",
-    "next": "^15.3.3",
+    "next": "^15.3.4",
     "next-auth": "^5.0.0-beta.27",
-    "openai": "^5.1.0",
+    "openai": "^5.5.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "stripe": "^18.2.1",
@@ -38,11 +38,11 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "^22",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "prisma": "^6.9.0",
-    "tsx": "^4.19.4",
+    "prisma": "^6.10.1",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }
