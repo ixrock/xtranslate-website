@@ -1,0 +1,102 @@
+{
+  "header": "XTranslate — Traductor con IA para sitios web y archivos PDF",
+  "subheader": "Traduce páginas, documentos y texto directamente donde estás leyendo",
+  "user_menu": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "link_account": "Vincular cuenta"
+  },
+  "install_from": {
+    "chrome_store": "Instalar en Chrome",
+    "ms_edge_store": "Instalar en Edge"
+  },
+  "main_info1": "Te ayuda a aprender idiomas y traducir texto seleccionado al instante desde {$htmlDocs} o {$pdfDocs = documentos PDF}, incluso hacer {$fullPage = traducción completa de páginas web}.",
+  "main_info2": "Traduce desde más de 100 idiomas directamente en la página o escribe texto en la ventana de la extensión para obtener una {$textTranslation = traducción instantánea}.",
+  "gallery": {
+    "website_popup": "Traducción en contexto de página, tema de ventana emergente predeterminado",
+    "website_select_text": "Formas de traducir texto seleccionado, por ejemplo con ícono cercano",
+    "app_settings": "Configurar ajustes de la aplicación",
+    "app_popup_customization": "Personaliza tema, ventana emergente y localización",
+    "app_history_tab": "Historial de traducciones con importación/exportación JSON",
+    "pdf_translation": "Traduce textos extranjeros en archivos PDF",
+    "app_theme_dark": "Tema oscuro para la ventana de la app",
+    "context_menu_translate": "Opción en menú contextual para traducir toda la página",
+    "context_menu_translated": "Traducción automática habilitada (por dominio)"
+  },
+  "install": {
+    "extension_header": "Instalar extensión",
+    "chrome_store": "Chrome Web Store",
+    "ms_addons": "Complementos para Microsoft Edge",
+    "firefox": "Complementos de Firefox",
+    "old_version": "Versión antigua con soporte limitado",
+    "from_sources": "Instalar desde código fuente"
+  },
+  "providers_available_header": "Proveedores de traducción disponibles",
+  "provider_api": {
+    "is_free": "gratis",
+    "is_paid": "de pago",
+    "bring_own_key": "usa tu propia clave API",
+    "deepl_limit": "Límite de 500,000 caracteres/mes"
+  },
+  "total_ratings": "(basado en {$count} {$link = valoraciones})",
+  "total_rating_users": "{$usersCount} usuarios {$link = (en Chrome y Edge)}",
+  "plans": {
+    "compare_title": "Comparar planes",
+    "free_title": "GRATIS (funciones básicas)",
+    "pro_title": "PRO (suscripción mensual / ⭐ más popular)"
+  },
+  "free_plan": {
+    "inplace": "Traducción ilimitada de texto en el lugar",
+    "fullpage": "Traducción completa de páginas ilimitada usando APIs de Google y Bing",
+    "tts": "Texto a voz usando Google Translate y el motor del navegador",
+    "ownkey_limit": "Traducción con tu clave API propia limitada a { $pagesCount } páginas por día",
+    "pdf": "Traducción de texto seleccionado en archivos PDF",
+    "history": "Historial de traducciones"
+  },
+  "pro_plan": {
+    "freeplus": "Todo lo de Gratis, más:",
+    "tokens": "{$tokens_value = 1M tokens de IA} para traducciones de texto y páginas de alta calidad {$tokens_note = (≈ 750K palabras ≈ 1,000–1,500 páginas ≈ 3,000 webs)}",
+    "voice": "1 hora de voz natural por IA (texto a voz)",
+    "ownkey": "Usa tu proveedor de IA (OpenAI, DeepSeek, Grok) — sin límites",
+    "support": "Soporte por email con respuesta rápida",
+    "noads": "Experiencia 100% sin anuncios",
+    "summarize": "Convierte cualquier texto en un resumen conciso con mejor redacción — gracias a la IA.",
+    "footnote": "La mayoría encuentra todo lo necesario con el plan PRO."
+  },
+  "features": {
+    "header": "Funciones",
+    "intro": "Muchas formas de traducir texto desde páginas web:",
+    "fullpage": "{$fullpage_translation = Traducción completa de página} ({ $fullpage_notes = vía menú contextual, ícono de extensión o ventana de acción })",
+    "dblclick": "Haz doble clic en una palabra para traducir en el lugar",
+    "icon": "Selecciona texto y haz clic en el ícono de traducción cercano",
+    "click_selected": "Haz clic sobre el texto seleccionado ({ $default_off = desactivado por defecto })",
+    "after_selection": "Traducción inmediata al seleccionar texto ({ $default_off = desactivado por defecto })",
+    "hotkey": "Pasa el cursor y presiona la tecla rápida configurada ({ $hotkey_default = Alt+Shift+X })",
+    "pdf": "{$pdf_translation = Archivos PDF son compatibles con traducción en el lugar} ({ $pdf_requirements = requiere activar el visor PDF.js en ajustes })",
+    "input_tab": "Escribe tu texto en la pestaña “Traducir” de la app; recomendamos asignar un atajo en { $shortcuts_url }",
+    "tts": "{$tts_listen = Escucha el texto con TTS} desde proveedores compatibles (ej. { $tts_providers }) o con el motor del navegador",
+    "bookmark": "Guarda traducciones favoritas como marcadores en el historial",
+    "customize": "Personaliza el diseño de la ventana emergente: tamaño de fuente, colores, etc.",
+    "history": "Ver y editar historial de traducciones"
+  },
+  "security_info": {
+    "header": "Seguridad al usar tus propias claves API",
+    "api_key_store": "Tu clave API (ej. { $providersList }) se guarda en { $apiKeyStorage } y se usa solo en la cabecera HTTP { $authHeader } (no se expone ni rastrea, incluso si { $webRequestApi } está habilitado en otra extensión maliciosa).",
+    "anti_xss": "Traducciones IA vía el paquete oficial de NPM de { $aiConnectionProvider }, ejecutado solo en servicio en segundo plano (evita ataques tipo XSS).",
+    "stay_safe": "No introduzcas ni compartas claves API fuera de la configuración de la extensión.",
+    "other_recommendations": "Se recomienda desactivar la recarga automática de saldo en la plataforma del proveedor de IA."
+  },
+  "footer_info": "Hecho con ♥ y proyectos de código abierto",
+  "early_access": {
+    "button_label": "Traducción IA de páginas completas",
+    "button_label_extra": "Descuento del 20% por acceso anticipado 🚀",
+    "header": "Acceso anticipado a traducción IA de páginas",
+    "header_subheader": "Recibe notificación al lanzar y obtén 20% de descuento en tu primer mes.",
+    "button_add": "Obtener acceso anticipado",
+    "button_adding": "Uniendo...",
+    "success": "¡Estás en la lista! Te avisaremos por email. 🎉",
+    "error": "¡Ups! Algo salió mal. Intenta de nuevo.",
+    "nospam_info": "Nada de spam. Solo un email cuando lancemos.",
+    "login_first": "Inicia sesión para enviar solicitud"
+  }
+}

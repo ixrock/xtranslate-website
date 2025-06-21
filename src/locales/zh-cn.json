@@ -1,0 +1,102 @@
+{
+  "header": "XTranslate — 基于AI的网站和PDF翻译器",
+  "subheader": "直接在阅读位置翻译整页、文档或选定文本",
+  "user_menu": {
+    "login": "登录",
+    "logout": "退出",
+    "link_account": "关联账户"
+  },
+  "install_from": {
+    "chrome_store": "添加到 Google Chrome",
+    "ms_edge_store": "添加到 Microsoft Edge"
+  },
+  "main_info1": "它可以帮助你学习并理解外语，实现来自 {$htmlDocs} 或 {$pdfDocs = PDF 文档} 的选中文本 {$translation = 实时原地翻译}，甚至可以实现 {$fullPage = 整个网页的翻译}。",
+  "main_info2": "支持从100多种语言翻译为你的母语，直接在网站上翻译，或在扩展主窗口输入文本获取 {$textTranslation = 即时文本翻译}。",
+  "gallery": {
+    "website_popup": "在网页上下文中获取翻译，默认弹窗主题",
+    "website_select_text": "从页面选中文本获取翻译的不同方式，例如点击旁边的图标",
+    "app_settings": "配置扩展设置",
+    "app_popup_customization": "配置主题，自定义翻译弹窗，选择你的本地化语言",
+    "app_history_tab": "翻译历史记录，支持JSON格式导入/导出",
+    "pdf_translation": "翻译PDF文件中的外语文本",
+    "app_theme_dark": "应用窗口的深色主题",
+    "context_menu_translate": "用于整页翻译的右键菜单项",
+    "context_menu_translated": "已启用自动翻译页面（基于域名）"
+  },
+  "install": {
+    "extension_header": "安装扩展程序",
+    "chrome_store": "Chrome扩展商店",
+    "ms_addons": "Microsoft Edge 附加组件",
+    "firefox": "Firefox 附加组件",
+    "old_version": "安装受限支持的旧版本",
+    "from_sources": "从源代码安装"
+  },
+  "providers_available_header": "可用翻译提供商",
+  "provider_api": {
+    "is_free": "免费",
+    "is_paid": "付费",
+    "bring_own_key": "使用你自己的API密钥",
+    "deepl_limit": "API密钥限制为每月50万字符"
+  },
+  "total_ratings": "（基于 {$count} {$link = 评价}）",
+  "total_rating_users": "{$usersCount} 位用户 {$link = （来自 Chrome 和 Edge 商店）}",
+  "plans": {
+    "compare_title": "比较方案",
+    "free_title": "免费（基础功能）",
+    "pro_title": "专业版（月度订阅 / ⭐ 最受欢迎）"
+  },
+  "free_plan": {
+    "inplace": "无限制的原地文本翻译",
+    "fullpage": "使用 Google 翻译和 Bing 翻译 API 的无限整页翻译",
+    "tts": "使用 Google Translate API 和浏览器语音合成引擎的文本朗读",
+    "ownkey_limit": "使用你自己的API密钥的AI整页翻译每日限制 { $pagesCount } 页",
+    "pdf": "PDF 文件中选中文本的翻译",
+    "history": "翻译历史记录"
+  },
+  "pro_plan": {
+    "freeplus": "包含免费版所有功能，此外：",
+    "tokens": "{$tokens_value = 100万AI令牌}用于高质量原地与整页翻译 {$tokens_note = （约75万词 ≈ 1,000–1,500页图书 ≈ 3,000网页）}",
+    "voice": "1小时自然AI语音（文本转语音）",
+    "ownkey": "使用你自己的AI提供商（OpenAI、DeepSeek、Grok）— 无页面限制",
+    "support": "电子邮件支持，响应迅速",
+    "noads": "100% 无广告体验",
+    "summarize": "将任意文本转为简洁摘要并优化措辞 — 由AI驱动",
+    "footnote": "大多数用户使用专业版就能满足全部需求。"
+  },
+  "features": {
+    "header": "功能",
+    "intro": "多种网页翻译方式：",
+    "fullpage": "{$fullpage_translation = 整页翻译}（{ $fullpage_notes = 通过浏览器右键菜单、扩展工具栏图标或应用窗口）",
+    "dblclick": "双击单词即可原地翻译",
+    "icon": "选中文本后点击旁边的翻译图标",
+    "click_selected": "点击选中文本本身（{ $default_off = 默认关闭 }）",
+    "after_selection": "选中文本后立即翻译（{ $default_off = 默认关闭 }）",
+    "hotkey": "将鼠标悬停在文本上并按下设置好的快捷键（{ $hotkey_default = 默认 Alt+Shift+X }）",
+    "pdf": "{$pdf_translation = 支持PDF文件原地翻译}（{ $pdf_requirements = 需要在设置中启用自定义PDF.js查看器 }）",
+    "input_tab": "在扩展“翻译”标签页中输入文本（建议在 { $shortcuts_url } 设置快捷键）",
+    "tts": "{$tts_listen = 听取文本朗读（TTS）}，支持所有提供商（如 { $tts_providers }）或使用浏览器语音引擎",
+    "bookmark": "将喜欢的翻译保存为书签",
+    "customize": "调整翻译弹窗设计 — 字体大小、颜色等",
+    "history": "查看和编辑翻译历史"
+  },
+  "security_info": {
+    "header": "使用自定义API密钥的安全注意事项",
+    "api_key_store": "你的API密钥（例如 { $providersList }）存储于 { $apiKeyStorage } 中，仅用于 HTTP { $authHeader } 头部签署API请求（即使 { $webRequestApi } 被其他恶意扩展启用也不会泄露或被追踪）。",
+    "anti_xss": "AI翻译的HTTP请求通过 { $aiConnectionProvider } 官方NPM包处理，并仅在后台服务工作线程中运行，能防止XSS类型攻击。",
+    "stay_safe": "请勿在扩展设置页面之外输入或分享你的API密钥。",
+    "other_recommendations": "建议在AI平台关闭余额自动充值功能"
+  },
+  "footer_info": "由 ♥ 与开源项目共同打造",
+  "early_access": {
+    "button_label": "AI整页翻译",
+    "button_label_extra": "早鸟优惠 — 立减20% 🚀",
+    "header": "AI驱动整页翻译抢先体验",
+    "header_subheader": "发布时通知你，并享受首月八折优惠。",
+    "button_add": "获取抢先体验",
+    "button_adding": "正在加入...",
+    "success": "你已加入！我们将通过电子邮件通知你。🎉",
+    "error": "哎呀！出错了，请稍后重试。",
+    "nospam_info": "我们不会发送垃圾邮件，只在上线时发一封邮件。",
+    "login_first": "请登录以提交请求"
+  }
+}

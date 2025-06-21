@@ -1,0 +1,102 @@
+{
+  "header": "XTranslate — AI-powered translator for websites & PDFs",
+  "subheader": "Instantly translate full pages, documents or any selected text right where you read",
+  "user_menu": {
+    "login": "Login",
+    "logout": "Logout",
+    "link_account": "Link Account"
+  },
+  "install_from": {
+    "chrome_store": "Add to Google Chrome",
+    "ms_edge_store": "Add to Microsoft Edge"
+  },
+  "main_info1": "It will help you to learn and understand foreign languages and get {$translation = real-time in-place text translation} of selected text from {$htmlDocs} or {$pdfDocs = PDF documents} and even get {$fullPage = full web-page text translation}.",
+  "main_info2": "Translate from 100+ foreign languages to your native language directly at web-site you're reading or type some text at extension main window to get {$textTranslation = instant text translation}.",
+  "gallery": {
+    "website_popup": "Get translation in web page context, default popup theme",
+    "website_select_text": "Different ways to get translation from selected page text, e.g. clicking by near-by-icon",
+    "app_settings": "Configure extension app settings",
+    "app_popup_customization": "Configure theme, customize translation popup, choose your localization",
+    "app_history_tab": "History of translations with import/export in JSON-format",
+    "pdf_translation": "Translate foreign texts in PDF files",
+    "app_theme_dark": "Dark theme for app window",
+    "context_menu_translate": "Context menu-item for translating full-page",
+    "context_menu_translated": "Auto-translating page enabled (domain-specific)"
+  },
+  "install": {
+    "extension_header": "Install extension",
+    "chrome_store": "Chrome Extensions Web Store",
+    "ms_addons": "Microsoft Edge Add-ons",
+    "firefox": "Firefox Addons",
+    "old_version": "Install old version with limited support",
+    "from_sources": "Install from source code"
+  },
+  "providers_available_header": "Available translation providers",
+  "provider_api": {
+    "is_free": "free",
+    "is_paid": "paid",
+    "bring_own_key": "bring your own API key",
+    "deepl_limit": "API key limited to 500,000 chars/month"
+  },
+  "total_ratings": "(based on {$count} {$link = ratings})",
+  "total_rating_users": "{$usersCount} users {$link = (from both Chrome & Edge stores)}",
+  "plans": {
+    "compare_title": "Compare plans",
+    "free_title": "FREE (base features)",
+    "pro_title": "PRO (monthly subscription / ⭐ most popular)"
+  },
+  "free_plan": {
+    "inplace": "Unlimited in-place text translations",
+    "fullpage": "Unlimited full-page text translations with Google Translate and Bing Translator APIs",
+    "tts": "Text-to-speech with Google Translate API and the browser’s built-in speech-synthesis engine",
+    "ownkey_limit": "Full-page AI translations with your own API key are limited to { $pagesCount } pages per day",
+    "pdf": "Translation of selected text in PDF files",
+    "history": "History of translations"
+  },
+  "pro_plan": {
+    "freeplus": "All Free features, plus:",
+    "tokens": "{$tokens_value = 1M AI tokens} for high-quality in-place and full-page text translations {$tokens_note = (≈ 750K words ≈ 1,000–1,500 book pages ≈ 3,000 web pages)}",
+    "voice": "1 hour of natural AI voice (text-to-speech)",
+    "ownkey": "Use your own AI provider (OpenAI, DeepSeek, Grok) — no page limits",
+    "support": "Email support with short response time",
+    "noads": "100% ad-free experience",
+    "summarize": "Turn any text into a crisp summary and smarter wording—powered by AI.",
+    "footnote": "Most users get everything they need with the PRO plan."
+  },
+  "features": {
+    "header": "Features",
+    "intro": "Many ways to get text translation from web-pages:",
+    "fullpage": "Get {$fullpage_translation = full-page text translation} ({ $fullpage_notes = via browser’s context-menu, extensions toolbar icon or app's action-window })",
+    "dblclick": "Get translation in-place by double-clicking a word",
+    "icon": "Select text and click the translation icon that appears nearby",
+    "click_selected": "Click the selected text itself ({ $default_off = turned off by default })",
+    "after_selection": "Get translation immediately after text selection ({ $default_off = turned off by default })",
+    "hotkey": "Mouse over a block of text and press the predefined hotkey in settings ({ $hotkey_default = Alt+Shift+X by default })",
+    "pdf": "{$pdf_translation = PDF files are supported for in-place translations} ({ $pdf_requirements = requires enabling the custom PDF.js viewer in app settings})",
+    "input_tab": "Type your text in the app’s “Translate” tab (extension action-window); we recommend setting a hotkey at { $shortcuts_url }",
+    "tts": "{$tts_listen = Listen text-to-speech (TTS)} from all supported providers (e.g { $tts_providers }) or with the browser's speech-synthesis engine",
+    "bookmark": "Save favourite translations as quick bookmarks in history",
+    "customize": "Adjust the translation popup design — font size, colors, etc.",
+    "history": "View and edit the history of translations"
+  },
+  "security_info": {
+    "header": "Security considerations when bring your own API-keys",
+    "api_key_store": "Your access API-key (e.g. { $providersList }) stored in { $apiKeyStorage } and used only within HTTP { $authHeader } header to sign API requests (which is not exposed or tracked, even if { $webRequestApi } enabled in some other malicious extension).",
+    "anti_xss": "HTTP-requests for AI-translations processed via official NPM-package from { $aiConnectionProvider } and running only within background service-worker which helps with XSS-kind of attacks.",
+    "stay_safe": "Don't enter or share your API-keys anywhere except extension's settings page.",
+    "other_recommendations": "It's recommended to turn-off your balance auto top-up at selected AI-provider platform"
+  },
+  "footer_info": "Made with ♥ and open-source projects.",
+  "early_access": {
+    "button_label": "Full-page AI translation",
+    "button_label_extra": "Early bird discount –20% off 🚀",
+    "header": "Early Access to AI-Powered Page Translations",
+    "header_subheader": "Get notified at launch and receive 20% off your first month.",
+    "button_add": "Get Early Access",
+    "button_adding": "Joining...",
+    "success": "You're on the list! We'll notify you by email. 🎉",
+    "error": "Oops! That didn’t work. Try again soon.",
+    "nospam_info": "No spam, ever. Just one email when we launch.",
+    "login_first": "Login to leave a request"
+  }
+}

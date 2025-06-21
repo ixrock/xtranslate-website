@@ -1,0 +1,102 @@
+{
+  "header": "XTranslate — AI搭載のウェブサイト & PDF翻訳ツール",
+  "subheader": "読んでいるその場でページ全体、ドキュメント、選択したテキストを即翻訳",
+  "user_menu": {
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "link_account": "アカウントをリンク"
+  },
+  "install_from": {
+    "chrome_store": "Google Chrome に追加",
+    "ms_edge_store": "Microsoft Edge に追加"
+  },
+  "main_info1": "外国語の学習と理解をサポートし、{$htmlDocs} や {$pdfDocs = PDFドキュメント} から選択したテキストの {$translation = リアルタイム翻訳} や、{$fullPage = ページ全体の翻訳} を提供します。",
+  "main_info2": "100以上の外国語からあなたの母語へ、閲覧中のウェブサイト上で直接翻訳。拡張機能のメイン画面に入力して {$textTranslation = 即時翻訳} を取得することも可能です。",
+  "gallery": {
+    "website_popup": "ウェブページの文脈内で翻訳、デフォルトのポップアップテーマ",
+    "website_select_text": "ページ上の選択テキストを翻訳するさまざまな方法（近くのアイコンをクリックなど）",
+    "app_settings": "拡張機能の設定を構成",
+    "app_popup_customization": "テーマ、翻訳ポップアップ、ローカライズのカスタマイズ",
+    "app_history_tab": "翻訳履歴（JSON形式でのインポート/エクスポート対応）",
+    "pdf_translation": "PDFファイル内の外国語テキストを翻訳",
+    "app_theme_dark": "アプリウィンドウのダークテーマ",
+    "context_menu_translate": "ページ全体を翻訳する右クリックメニュー項目",
+    "context_menu_translated": "自動ページ翻訳が有効（ドメイン単位）"
+  },
+  "install": {
+    "extension_header": "拡張機能のインストール",
+    "chrome_store": "Chrome ウェブストア",
+    "ms_addons": "Microsoft Edge アドオン",
+    "firefox": "Firefox アドオン",
+    "old_version": "制限付きの旧バージョンをインストール",
+    "from_sources": "ソースコードからインストール"
+  },
+  "providers_available_header": "利用可能な翻訳プロバイダー",
+  "provider_api": {
+    "is_free": "無料",
+    "is_paid": "有料",
+    "bring_own_key": "独自のAPIキーを使用",
+    "deepl_limit": "APIキーは月50万文字まで制限あり"
+  },
+  "total_ratings": "（{$count} 件の {$link = レビュー} に基づく）",
+  "total_rating_users": "{$usersCount}人のユーザー {$link = （ChromeとEdgeストアより）}",
+  "plans": {
+    "compare_title": "プランを比較",
+    "free_title": "無料（基本機能）",
+    "pro_title": "PRO（月額サブスクリプション / ⭐ 人気）"
+  },
+  "free_plan": {
+    "inplace": "無制限の原位置テキスト翻訳",
+    "fullpage": "Google翻訳とBing翻訳APIによる無制限のページ全体翻訳",
+    "tts": "Google翻訳APIとブラウザの音声合成エンジンによる読み上げ",
+    "ownkey_limit": "独自APIキーでのAI翻訳は1日 { $pagesCount } ページまで",
+    "pdf": "PDF内の選択テキストの翻訳",
+    "history": "翻訳履歴"
+  },
+  "pro_plan": {
+    "freeplus": "無料版のすべての機能に加えて：",
+    "tokens": "{$tokens_value = 100万AIトークン} による高品質な原位置＆ページ翻訳 {$tokens_note = （約75万語 ≈ 書籍1,000〜1,500ページ ≈ ウェブページ3,000件）}",
+    "voice": "1時間分の自然なAI音声（TTS）",
+    "ownkey": "OpenAI、DeepSeek、Grokなどのプロバイダーが利用可能 — 制限なし",
+    "support": "迅速な対応のメールサポート",
+    "noads": "完全広告なしの体験",
+    "summarize": "任意のテキストを要約し、よりスマートな言い回しに — AIによる処理",
+    "footnote": "ほとんどのユーザーはPROプランで満足しています。"
+  },
+  "features": {
+    "header": "機能",
+    "intro": "ウェブページからテキストを翻訳する多様な方法：",
+    "fullpage": "{$fullpage_translation = ページ全体翻訳}（{ $fullpage_notes = ブラウザの右クリックメニュー、拡張ツールバーアイコン、またはアクションウィンドウ経由で実行）",
+    "dblclick": "単語をダブルクリックして原位置翻訳",
+    "icon": "テキストを選択し、近くに表示される翻訳アイコンをクリック",
+    "click_selected": "選択したテキストをクリックして翻訳（{ $default_off = デフォルトは無効 }）",
+    "after_selection": "選択直後に自動翻訳（{ $default_off = デフォルトは無効 }）",
+    "hotkey": "テキスト上にカーソルを置いてホットキーを押下（{ $hotkey_default = デフォルトは Alt+Shift+X }）",
+    "pdf": "{$pdf_translation = PDFファイルも原位置翻訳に対応}（{ $pdf_requirements = 設定でカスタムPDF.jsビューアを有効にする必要あり }）",
+    "input_tab": "拡張の「翻訳」タブにテキストを入力（ショートカットは { $shortcuts_url } に設定可能）",
+    "tts": "{$tts_listen = TTSでテキストを読み上げ}（{ $tts_providers } など対応プロバイダーまたはブラウザエンジン使用）",
+    "bookmark": "お気に入りの翻訳をブックマークに保存",
+    "customize": "翻訳ポップアップのデザインを調整（フォントサイズ、色など）",
+    "history": "翻訳履歴を表示・編集"
+  },
+  "security_info": {
+    "header": "APIキー使用時のセキュリティに関する注意",
+    "api_key_store": "あなたのAPIキー（例: { $providersList }）は { $apiKeyStorage } に保存され、HTTPの { $authHeader } ヘッダー内でのみ使用されます（{ $webRequestApi } が悪質な他の拡張で有効になっていても、キーは公開も追跡もされません）。",
+    "anti_xss": "AI翻訳のHTTPリクエストは { $aiConnectionProvider } の公式NPMパッケージを通じて処理され、バックグラウンドサービスワーカー内のみで動作します（XSS攻撃を防ぎます）。",
+    "stay_safe": "APIキーは拡張の設定画面以外では絶対に入力・共有しないでください。",
+    "other_recommendations": "AIプロバイダーの自動チャージは無効化することを推奨します"
+  },
+  "footer_info": "♥ とオープンソースで作られました",
+  "early_access": {
+    "button_label": "AIによるページ全体翻訳",
+    "button_label_extra": "先行割引 20%オフ 🚀",
+    "header": "AI駆動のページ翻訳先行アクセス",
+    "header_subheader": "リリース時に通知し、初月20%割引をゲット",
+    "button_add": "先行アクセスを申し込む",
+    "button_adding": "参加中...",
+    "success": "リストに追加されました！リリース時にメールでお知らせします 🎉",
+    "error": "エラーが発生しました。しばらくしてから再試行してください。",
+    "nospam_info": "スパムは一切ありません。リリース時の1通のみ送信します。",
+    "login_first": "申し込むにはログインしてください"
+  }
+}
