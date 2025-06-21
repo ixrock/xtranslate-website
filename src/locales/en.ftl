@@ -18,7 +18,7 @@ main_info2 = Translate from 100+ foreign languages to your native language direc
 main_info2_textTranslation = instant text translation
 
 gallery_website_popup = Get translation in web page context, default popup theme
-gallery_website_select_text = Different ways to get translation from selected page text, e.g. clicking by near-by ⓧ-icon
+gallery_website_select_text = Different ways to get translation from selected page text, e.g. clicking by near-by-icon
 gallery_app_settings = Configure extension app settings
 gallery_app_popup_customization = Configure theme, customize translation popup, choose your localization
 gallery_app_history_tab = History of translations with import/export in JSON-format
@@ -65,6 +65,7 @@ pro_plan_voice = 1 hour of natural AI voice (text-to-speech)
 pro_plan_ownkey = Use your own AI provider (OpenAI, DeepSeek, Grok) — no page limits
 pro_plan_support = Email support with short response time
 pro_plan_noads = 100% ad-free experience
+pro_plan_summarize = Turn any text into a crisp summary and smarter wording—powered by AI.
 pro_plan_footnote = Most users get everything they need with the PRO plan.
 
 # Features
@@ -74,7 +75,7 @@ features_fullpage = Get { $fullpage_text_translation } ({ $fullpage_text_notes }
 features_fullpage_text_translation = full-page text translation
 features_fullpage_text_notes = via browser’s context-menu, extensions toolbar icon or app's action-window
 features_dblclick = Get translation in-place by double-clicking a word
-features_icon = Select text and click the translation icon that appears nearby ⓧ
+features_icon = Select text and click the translation icon that appears nearby
 features_click_selected = Click the selected text itself ({ $turned_off_by_default })
 features_after_selection = Get translation immediately after text selection ({ $turned_off_by_default })
 features_turned_off_by_default = turned off by default

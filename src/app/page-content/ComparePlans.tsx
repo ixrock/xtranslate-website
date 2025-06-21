@@ -29,6 +29,7 @@ export async function ComparePlans() {
                 tokens_note: <em key="n">{t("pro_plan_tokens_note")}</em>,
               })}
             </li>
+            <li>{t("pro_plan_summarize")}</li>
             <li>{t("pro_plan_voice")}</li>
             <li>{t("pro_plan_ownkey")}</li>
             <li>{t("pro_plan_support")}</li>

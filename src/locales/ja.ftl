@@ -64,6 +64,7 @@ pro_plan_voice = AI リアル音声 1 時間
 pro_plan_ownkey = 独自 AI プロバイダー（OpenAI・DeepSeek・Grok など）を使用 ― 1 日のページ数無制限
 pro_plan_support = 迅速回答のメールサポート
 pro_plan_noads = 広告 100 % なし
+pro_plan_summarize = AIの力で、どんなテキストもキレのある要約と賢い言い回しに変換。
 pro_plan_footnote = 多くのユーザーは PRO プランで十分です。
 
 # Features
@@ -73,7 +74,7 @@ features_fullpage = { $fullpage_text_translation } を取得 ({ $fullpage_text_n
 features_fullpage_text_translation = ページ全体の翻訳
 features_fullpage_text_notes = ブラウザのコンテキストメニュー・拡張アイコン・アプリメインウィンドウから
 features_dblclick = 単語をダブルクリックしてページ内で翻訳
-features_icon = テキストを選択して出現する翻訳アイコン ⓧ をクリック
+features_icon = テキストを選択して出現する翻訳アイコン をクリック
 features_click_selected = 選択テキストをクリックして翻訳 ({ $turned_off_by_default })
 features_after_selection = テキスト選択後に自動翻訳 ({ $turned_off_by_default })
 features_turned_off_by_default = 既定で無効

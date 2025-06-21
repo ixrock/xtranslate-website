@@ -18,7 +18,7 @@ main_info2 = 直接在正在阅读的网站上，从 100 多种语言进行翻�
 main_info2_textTranslation = 即时文本翻译
 
 gallery_website_popup = 在页面上下文中显示翻译（默认主题）
-gallery_website_select_text = 获取选中文本翻译的多种方式，例如点击 ⓧ 图标
+gallery_website_select_text = 获取选中文本翻译的多种方式，例如点击 图标
 gallery_app_settings = 应用基础设置
 gallery_app_popup_customization = 自定义主题、翻译弹窗及界面语言
 gallery_app_history_tab = 翻译历史，可导入/导出 JSON
@@ -64,6 +64,7 @@ pro_plan_voice = 1 小时逼真 AI 语音
 pro_plan_ownkey = 使用自选 AI 提供商（OpenAI、DeepSeek、Grok）— 无日翻页限制
 pro_plan_support = 快速响应的电子邮件支持
 pro_plan_noads = 100% 无广告
+pro_plan_summarize = 将任何文本转化为简洁摘要和更智能的措辞——由 AI 赋能。
 pro_plan_footnote = PRO 方案已满足绝大多数用户需求。
 
 # Features
@@ -73,7 +74,7 @@ features_fullpage = 获取 { $fullpage_text_translation } ({ $fullpage_text_note
 features_fullpage_text_translation = 整页翻译
 features_fullpage_text_notes = 通过浏览器右键菜单、扩展栏图标或应用主窗口
 features_dblclick = 双击单词即可在页面内翻译
-features_icon = 选中文本后点击旁边出现的翻译图标 ⓧ
+features_icon = 选中文本后点击旁边出现的翻译图标
 features_click_selected = 点击已选中文本 ({ $turned_off_by_default })
 features_after_selection = 选中文本后立即显示翻译 ({ $turned_off_by_default })
 features_turned_off_by_default = 默认关闭

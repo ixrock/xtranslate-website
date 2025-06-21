@@ -18,7 +18,7 @@ main_info2 = Traduce desde más de 100 idiomas directamente en el sitio que est�
 main_info2_textTranslation = traducción instantánea de texto
 
 gallery_website_popup = Obtén la traducción en el contexto de la página, tema por defecto
-gallery_website_select_text = Distintas formas de traducir texto seleccionado, p. ej. clic en el icono ⓧ
+gallery_website_select_text = Distintas formas de traducir texto seleccionado, p. ej. clic en el icono
 gallery_app_settings = Configuración básica de la aplicación
 gallery_app_popup_customization = Personalización del tema, del pop-up de traducción y selección de idioma
 gallery_app_history_tab = Historial de traducciones guardadas con opción de importar/exportar en formato JSON
@@ -64,6 +64,7 @@ pro_plan_voice = 1 hora de locución IA realista
 pro_plan_ownkey = Usa tu propio proveedor de IA (OpenAI, DeepSeek, Grok) — sin límite de páginas diarias
 pro_plan_support = Soporte por correo electrónico con respuesta rápida
 pro_plan_noads = 100 % sin publicidad
+pro_plan_summarize = Convierte cualquier texto en un resumen claro y una redacción más inteligente, impulsado por IA.
 pro_plan_footnote = La mayoría de los usuarios encuentran suficientes las funciones del plan PRO.
 
 # Features
@@ -73,7 +74,7 @@ features_fullpage = Obtén { $fullpage_text_translation } ({ $fullpage_text_note
 features_fullpage_text_translation = la traducción de la página completa
 features_fullpage_text_notes = a través del menú contextual del navegador, el icono en la barra de extensiones o la ventana principal de la aplicación
 features_dblclick = Traducción directa en la página al hacer doble clic en una palabra
-features_icon = Selecciona texto y pulsa el icono de traducción ⓧ que aparece
+features_icon = Selecciona texto y pulsa el icono de traducción que aparece
 features_click_selected = Haz clic en el texto seleccionado ({ $turned_off_by_default })
 features_after_selection = Obtén la traducción automáticamente tras seleccionar texto ({ $turned_off_by_default })
 features_turned_off_by_default = desactivado por defecto

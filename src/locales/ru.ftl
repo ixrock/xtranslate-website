@@ -18,7 +18,7 @@ main_info2 = Переводите с более чем 100 языков прям
 main_info2_textTranslation = мгновенный перевод текста
 
 gallery_website_popup = Получите перевод в контексте страницы, тема по умолчанию
-gallery_website_select_text = Разные способы получить перевод выделенного текста, напр. клик по иконке ⓧ
+gallery_website_select_text = Разные способы получить перевод выделенного текста, напр. клик по иконке
 gallery_app_settings = Конфигурация основных настроек приложения
 gallery_app_popup_customization = Настройка темы, всплывающего блока с переводом и выбор локализации
 gallery_app_history_tab = История сохраненных переводов и возможность импорта/экспорта в JSON-формате
@@ -64,6 +64,7 @@ pro_plan_voice = 1 час реалистичной AI-озвучки
 pro_plan_ownkey = Используйте собственного AI-провайдера (OpenAI, DeepSeek, Grok) — без лимитов по страницам в сутки
 pro_plan_support = Поддержка по e-mail с быстрым ответом
 pro_plan_noads = 100 % без рекламы
+pro_plan_summarize = AI-функция для сокращения и улучшения текста
 pro_plan_footnote = Большинству пользователей достаточно возможностей плана PRO.
 
 # Features
@@ -73,7 +74,7 @@ features_fullpage = Получайте { $fullpage_text_translation } ({ $fullpa
 features_fullpage_text_translation = перевод всей страницы
 features_fullpage_text_notes = через контекстное меню браузера, значок на панели расширений или основное окно приложения
 features_dblclick = Перевод прямо на странице по двойному клику по слову
-features_icon = Выделите текст и нажмите на появившуюся рядом иконку перевода ⓧ
+features_icon = Выделите текст и нажмите на появившуюся рядом иконку перевода
 features_click_selected = Кликните по выделенному тексту ({ $turned_off_by_default })
 features_after_selection = Получайте перевод сразу после выделения текста ({ $turned_off_by_default })
 features_turned_off_by_default = по умолчанию выключено
