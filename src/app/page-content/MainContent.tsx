@@ -33,10 +33,8 @@ export async function MainContent() {
           <Rating rateValue={4.5}/>
           <div className="ratingAmountFrom">
             {t("total_ratings", {
-              count: <b key="count">{formatNumber({ value: 1600 })}+</b>,
-              ratingsLink: <a key="reviews" href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">
-                {t("total_ratings_ratingsLink")}
-              </a>
+              count: <b key="count">{formatNumber({ value: 1600, locale })}+</b>,
+              link: v => <a key="reviews" href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">{v}</a>
             })}
           </div>
         </div>
@@ -47,7 +45,7 @@ export async function MainContent() {
           <span>
             {t("total_rating_users", {
               usersCount: <b key="count">100K</b>,
-              fromStores: <em key="origins">{t("total_rating_users_fromStores")}</em>,
+              storeInfo: v => <em key="origins">{v}</em>,
             })}
           </span>
         </div>
@@ -58,40 +56,38 @@ export async function MainContent() {
       <section className="mainInfo">
         <p>
           {t("main_info1", {
-            textTranslation: <b key="text">{t("main_info1_textTranslation")}</b>,
-            htmlDocuments: <b key="html">HTML</b>,
-            pdfDocuments: <b key="pdf">{t("main_info1_pdfDocuments")}</b>,
-            fullPageTranslation: <b key="page">{t("main_info1_fullPageTranslation")}</b>,
+            textTranslation: v => <b key="text">{v}</b>,
+            htmlDocs: <b key="html">HTML</b>,
+            pdfDocs: v => <b key="pdf">{v}</b>,
+            fullPageTranslation: v => <b key="page">{v}</b>,
           })}
         </p>
         <p>
-          {t("main_info2", {
-            textTranslation: <b key="text">{t("main_info2_textTranslation")}</b>
-          })}
+          {t("main_info2", { textTranslation: v => <b key="text">{v}</b> })}
         </p>
       </section>
 
       <PhotoGallery>
-        <img src="/sshots/website_popup.webp" alt={t("gallery_website_popup")}/>
-        <img src="/sshots/website_select_text.webp" alt={t("gallery_website_select_text")}/>
-        <img src="/sshots/app_settings.webp" alt={t("gallery_app_settings")}/>
-        <img src="/sshots/app_popup_customization.webp" alt={t("gallery_app_popup_customization")}/>
-        <img src="/sshots/app_history_tab.webp" alt={t("gallery_app_history_tab")}/>
-        <img src="/sshots/pdf_translation.webp" alt={t("gallery_pdf_translation")}/>
-        <img src="/sshots/app_theme_dark.webp" alt={t("gallery_app_theme_dark")}/>
-        <img src="/sshots/page_translation_context_menu_translate.webp" alt={t("gallery_context_menu_page_translate")}/>
-        <img src="/sshots/page_translation_context_menu_translated.webp" alt={t("gallery_context_menu_page_translated")}/>
+        <img src="/sshots/website_popup.webp" alt={t("gallery.website_popup")}/>
+        <img src="/sshots/website_select_text.webp" alt={t("gallery.website_select_text")}/>
+        <img src="/sshots/app_settings.webp" alt={t("gallery.app_settings")}/>
+        <img src="/sshots/app_popup_customization.webp" alt={t("gallery.app_popup_customization")}/>
+        <img src="/sshots/app_history_tab.webp" alt={t("gallery.app_history_tab")}/>
+        <img src="/sshots/pdf_translation.webp" alt={t("gallery.pdf_translation")}/>
+        <img src="/sshots/app_theme_dark.webp" alt={t("gallery.app_theme_dark")}/>
+        <img src="/sshots/page_translation_context_menu_translate.webp" alt={t("gallery.context_menu_translate")}/>
+        <img src="/sshots/page_translation_context_menu_translated.webp" alt={t("gallery.context_menu_translated")}/>
       </PhotoGallery>
 
       <section className="availableProviders flex column gaps">
-        <h3>{t("vendors_available_header")}</h3>
+        <h3>{t("providers_available_header")}</h3>
         <ul>
-          <li><a href="https://translate.google.com/" target="_blank">Google</a> ({t("vendor_apis_is_free")})</li>
-          <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({t("vendor_apis_is_free")})</li>
-          <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({t("vendor_apis_is_free")}: {t("vendor_deepl_limitatiion")} + {t("vendor_ai_bring_your_key")})</li>
-          <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({t("vendor_ai_bring_your_key")})</li>
-          <li><a href="https://console.x.ai" target="_blank">Grok</a> ({t("vendor_ai_bring_your_key")})</li>
-          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({t("vendor_ai_bring_your_key")})</li>
+          <li><a href="https://translate.google.com/" target="_blank">Google</a> ({t("provider_api.is_free")})</li>
+          <li><a href="https://www.bing.com/translator" target="_blank">Bing</a> ({t("provider_api.is_free")})</li>
+          <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({t("provider_api.is_free")}: {t("provider_api.deepl_limit")} + {t("provider_api.bring_own_key")})</li>
+          <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({t("provider_api.bring_own_key")})</li>
+          <li><a href="https://console.x.ai" target="_blank">Grok</a> ({t("provider_api.bring_own_key")})</li>
+          <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({t("provider_api.bring_own_key")})</li>
         </ul>
       </section>
 
@@ -102,18 +98,18 @@ export async function MainContent() {
           <DiscountLabelSvg/>
         </Icon>
         <div className="flex column">
-          <b className="label">{t("early_access_button_label")}</b>
-          <span className="extraInfo">{t("early_access_button_label_extra")}</span>
+          <b className="label">{t("early_access.button_label")}</b>
+          <span className="extraInfo">{t("early_access.button_label_extra")}</span>
         </div>
       </ButtonLink>
 
       <Features/>
 
-      <h3>{t("security_info_header")}</h3>
+      <h3>{t("security_info.header")}</h3>
       <section>
         <ul>
           <li>
-            {t("security_info_api_key_store", {
+            {t("security_info.api_key_store", {
               providersList: <em key={1}>OpenAI, Grok</em>,
               authHeader: <code key={2}>Authorization</code>,
               apiKeyStorage: <a key={3} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
@@ -121,12 +117,12 @@ export async function MainContent() {
             })}
           </li>
           <li>
-            {t("security_info_anti_xss", {
+            {t("security_info.anti_xss", {
               aiConnectionProvider: <a key={1} href="https://github.com/openai/openai-node" target="_blank">OpenAI</a>,
             })}
           </li>
-          <li>{t("security_info_stay_safe")}</li>
-          <li>{t("security_info_other_recommendations")}</li>
+          <li>{t("security_info.stay_safe")}</li>
+          <li>{t("security_info.other_recommendations")}</li>
         </ul>
       </section>
       <hr/>

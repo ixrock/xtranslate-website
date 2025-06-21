@@ -1,7 +1,7 @@
 "use server";
 
 import { headers, cookies } from "next/headers";
-import { defaultLocale, Locale, Locales } from "@/app/config";
+import { defaultLocale, Locale, Locales } from "@/app/i18n";
 
 export async function getUserLang() {
   const cookieLang = await getCookieLang();

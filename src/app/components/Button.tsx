@@ -21,7 +21,12 @@ export function Button(props: ButtonProps & React.ButtonHTMLAttributes<HTMLButto
 export function ButtonLink(props: Omit<ButtonProps, "asLink"> & LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { className, flat, ...linkProps } = props;
   return (
-    <Link {...linkProps} className={getButtonClass(props)} role="button"/>
+    <Link
+      scroll={false}
+      {...linkProps}
+      className={getButtonClass(props)}
+      role="button"
+    />
   )
 }
 

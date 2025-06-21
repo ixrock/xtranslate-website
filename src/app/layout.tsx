@@ -1,7 +1,8 @@
 import "./layout.css";
 import type React from "react";
 import type { Metadata } from "next";
-import { Locales, websiteUrl } from "@/app/config";
+import { websiteUrl } from "@/app/config";
+import { Locales } from "@/app/i18n";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Roboto_Flex } from "next/font/google";

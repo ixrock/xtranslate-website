@@ -18,25 +18,23 @@ export async function InstallExtension() {
         flat
         href={`${chromeStoreUrl}?hl=${locale}`}
         className="button flex gaps align-center"
-        title={t("install_from_chrome_store")}
         target="_blank"
       >
         <Icon>
           <ChromeSvg/>
         </Icon>
-        <span>{t("install_from_chrome_store")}</span>
+        <span>{t("install_from.chrome_store")}</span>
       </ButtonLink>
       <ButtonLink
         flat
         href={edgeStoreUrl}
         className="button flex gaps align-center"
-        title={t("install_from_ms_edge_store")}
         target="_blank"
       >
         <Icon>
           <EdgeSvg/>
         </Icon>
-        <span>{t("install_from_ms_edge_store")}</span>
+        <span>{t("install_from.ms_edge_store")}</span>
       </ButtonLink>
     </section>
   );

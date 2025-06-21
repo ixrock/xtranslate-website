@@ -10,7 +10,7 @@
     "chrome_store": "Add to Google Chrome",
     "ms_edge_store": "Add to Microsoft Edge"
   },
-  "main_info1": "It will help you to learn and understand foreign languages and get {$translation = real-time in-place text translation} of selected text from {$htmlDocs} or {$pdfDocs = PDF documents} and even get {$fullPage = full web-page text translation}.",
+  "main_info1": "It will help you to learn and understand foreign languages and get {$textTranslation = real-time in-place text translation} of selected text from {$htmlDocs} or {$pdfDocs = PDF documents} and even get {$fullPageTranslation = full web-page text translation}.",
   "main_info2": "Translate from 100+ foreign languages to your native language directly at web-site you're reading or type some text at extension main window to get {$textTranslation = instant text translation}.",
   "gallery": {
     "website_popup": "Get translation in web page context, default popup theme",
@@ -39,7 +39,7 @@
     "deepl_limit": "API key limited to 500,000 chars/month"
   },
   "total_ratings": "(based on {$count} {$link = ratings})",
-  "total_rating_users": "{$usersCount} users {$link = (from both Chrome & Edge stores)}",
+  "total_rating_users": "{$usersCount} users {$storeInfo = (from both Chrome & Edge stores)}",
   "plans": {
     "compare_title": "Compare plans",
     "free_title": "FREE (base features)",
@@ -49,7 +49,7 @@
     "inplace": "Unlimited in-place text translations",
     "fullpage": "Unlimited full-page text translations with Google Translate and Bing Translator APIs",
     "tts": "Text-to-speech with Google Translate API and the browser’s built-in speech-synthesis engine",
-    "ownkey_limit": "Full-page AI translations with your own API key are limited to { $pagesCount } pages per day",
+    "ownkey_limit": "Full-page AI translations with your own API key are limited to { $pagesPerDay } pages per day",
     "pdf": "Translation of selected text in PDF files",
     "history": "History of translations"
   },
@@ -60,8 +60,7 @@
     "ownkey": "Use your own AI provider (OpenAI, DeepSeek, Grok) — no page limits",
     "support": "Email support with short response time",
     "noads": "100% ad-free experience",
-    "summarize": "Turn any text into a crisp summary and smarter wording—powered by AI.",
-    "footnote": "Most users get everything they need with the PRO plan."
+    "summarize": "Turn any text into a crisp summary and smarter wording—powered by AI."
   },
   "features": {
     "header": "Features",
@@ -69,8 +68,8 @@
     "fullpage": "Get {$fullpage_translation = full-page text translation} ({ $fullpage_notes = via browser’s context-menu, extensions toolbar icon or app's action-window })",
     "dblclick": "Get translation in-place by double-clicking a word",
     "icon": "Select text and click the translation icon that appears nearby",
-    "click_selected": "Click the selected text itself ({ $default_off = turned off by default })",
-    "after_selection": "Get translation immediately after text selection ({ $default_off = turned off by default })",
+    "click_selected": "Click the selected text itself ({ $by_default = turned off by default })",
+    "after_selection": "Get translation immediately after text selection ({ $by_default = turned off by default })",
     "hotkey": "Mouse over a block of text and press the predefined hotkey in settings ({ $hotkey_default = Alt+Shift+X by default })",
     "pdf": "{$pdf_translation = PDF files are supported for in-place translations} ({ $pdf_requirements = requires enabling the custom PDF.js viewer in app settings})",
     "input_tab": "Type your text in the app’s “Translate” tab (extension action-window); we recommend setting a hotkey at { $shortcuts_url }",
@@ -91,7 +90,7 @@
     "button_label": "Full-page AI translation",
     "button_label_extra": "Early bird discount –20% off 🚀",
     "header": "Early Access to AI-Powered Page Translations",
-    "header_subheader": "Get notified at launch and receive 20% off your first month.",
+    "subheader": "Get notified at launch and receive 20% off your first month.",
     "button_add": "Get Early Access",
     "button_adding": "Joining...",
     "success": "You're on the list! We'll notify you by email. 🎉",

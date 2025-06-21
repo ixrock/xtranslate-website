@@ -10,7 +10,7 @@
     "chrome_store": "Google Chrome に追加",
     "ms_edge_store": "Microsoft Edge に追加"
   },
-  "main_info1": "外国語の学習と理解をサポートし、{$htmlDocs} や {$pdfDocs = PDFドキュメント} から選択したテキストの {$translation = リアルタイム翻訳} や、{$fullPage = ページ全体の翻訳} を提供します。",
+  "main_info1": "外国語の学習と理解をサポートし、{$htmlDocs} や {$pdfDocs = PDFドキュメント} から選択したテキストの {$translation = リアルタイム翻訳} や、{$fullPageTranslation = ページ全体の翻訳} を提供します。",
   "main_info2": "100以上の外国語からあなたの母語へ、閲覧中のウェブサイト上で直接翻訳。拡張機能のメイン画面に入力して {$textTranslation = 即時翻訳} を取得することも可能です。",
   "gallery": {
     "website_popup": "ウェブページの文脈内で翻訳、デフォルトのポップアップテーマ",
@@ -39,7 +39,7 @@
     "deepl_limit": "APIキーは月50万文字まで制限あり"
   },
   "total_ratings": "（{$count} 件の {$link = レビュー} に基づく）",
-  "total_rating_users": "{$usersCount}人のユーザー {$link = （ChromeとEdgeストアより）}",
+  "total_rating_users": "{$usersCount}人のユーザー {$storeInfo = （ChromeとEdgeストアより）}",
   "plans": {
     "compare_title": "プランを比較",
     "free_title": "無料（基本機能）",
@@ -49,7 +49,7 @@
     "inplace": "無制限の原位置テキスト翻訳",
     "fullpage": "Google翻訳とBing翻訳APIによる無制限のページ全体翻訳",
     "tts": "Google翻訳APIとブラウザの音声合成エンジンによる読み上げ",
-    "ownkey_limit": "独自APIキーでのAI翻訳は1日 { $pagesCount } ページまで",
+    "ownkey_limit": "独自APIキーでのAI翻訳は1日 { $pagesPerDay } ページまで",
     "pdf": "PDF内の選択テキストの翻訳",
     "history": "翻訳履歴"
   },
@@ -60,8 +60,7 @@
     "ownkey": "OpenAI、DeepSeek、Grokなどのプロバイダーが利用可能 — 制限なし",
     "support": "迅速な対応のメールサポート",
     "noads": "完全広告なしの体験",
-    "summarize": "任意のテキストを要約し、よりスマートな言い回しに — AIによる処理",
-    "footnote": "ほとんどのユーザーはPROプランで満足しています。"
+    "summarize": "任意のテキストを要約し、よりスマートな言い回しに — AIによる処理"
   },
   "features": {
     "header": "機能",
@@ -69,8 +68,8 @@
     "fullpage": "{$fullpage_translation = ページ全体翻訳}（{ $fullpage_notes = ブラウザの右クリックメニュー、拡張ツールバーアイコン、またはアクションウィンドウ経由で実行）",
     "dblclick": "単語をダブルクリックして原位置翻訳",
     "icon": "テキストを選択し、近くに表示される翻訳アイコンをクリック",
-    "click_selected": "選択したテキストをクリックして翻訳（{ $default_off = デフォルトは無効 }）",
-    "after_selection": "選択直後に自動翻訳（{ $default_off = デフォルトは無効 }）",
+    "click_selected": "選択したテキストをクリックして翻訳（{ $by_default = デフォルトは無効 }）",
+    "after_selection": "選択直後に自動翻訳（{ $by_default = デフォルトは無効 }）",
     "hotkey": "テキスト上にカーソルを置いてホットキーを押下（{ $hotkey_default = デフォルトは Alt+Shift+X }）",
     "pdf": "{$pdf_translation = PDFファイルも原位置翻訳に対応}（{ $pdf_requirements = 設定でカスタムPDF.jsビューアを有効にする必要あり }）",
     "input_tab": "拡張の「翻訳」タブにテキストを入力（ショートカットは { $shortcuts_url } に設定可能）",
@@ -91,7 +90,7 @@
     "button_label": "AIによるページ全体翻訳",
     "button_label_extra": "先行割引 20%オフ 🚀",
     "header": "AI駆動のページ翻訳先行アクセス",
-    "header_subheader": "リリース時に通知し、初月20%割引をゲット",
+    "subheader": "リリース時に通知し、初月20%割引をゲット",
     "button_add": "先行アクセスを申し込む",
     "button_adding": "参加中...",
     "success": "リストに追加されました！リリース時にメールでお知らせします 🎉",

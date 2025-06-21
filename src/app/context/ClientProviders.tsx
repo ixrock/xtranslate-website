@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { SessionProvider } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { Cookies } from "typescript-cookie";
-import { defaultLocale, type Locale, Locales } from "@/app/config";
+import { defaultLocale, Locale, Locales } from "@/app/i18n";
 import { PageContextProvider } from "./PageContextProvider";
 import { setCookieLang } from "@/actions/get-set-lang";
 

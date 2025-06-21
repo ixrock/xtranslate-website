@@ -10,7 +10,7 @@
     "chrome_store": "Instalar en Chrome",
     "ms_edge_store": "Instalar en Edge"
   },
-  "main_info1": "Te ayuda a aprender idiomas y traducir texto seleccionado al instante desde {$htmlDocs} o {$pdfDocs = documentos PDF}, incluso hacer {$fullPage = traducción completa de páginas web}.",
+  "main_info1": "Te ayuda a aprender idiomas y traducir texto seleccionado al instante desde {$htmlDocs} o {$pdfDocs = documentos PDF}, incluso hacer {$fullPageTranslation = traducción completa de páginas web}.",
   "main_info2": "Traduce desde más de 100 idiomas directamente en la página o escribe texto en la ventana de la extensión para obtener una {$textTranslation = traducción instantánea}.",
   "gallery": {
     "website_popup": "Traducción en contexto de página, tema de ventana emergente predeterminado",
@@ -39,7 +39,7 @@
     "deepl_limit": "Límite de 500,000 caracteres/mes"
   },
   "total_ratings": "(basado en {$count} {$link = valoraciones})",
-  "total_rating_users": "{$usersCount} usuarios {$link = (en Chrome y Edge)}",
+  "total_rating_users": "{$usersCount} usuarios {$storeInfo = (en Chrome y Edge)}",
   "plans": {
     "compare_title": "Comparar planes",
     "free_title": "GRATIS (funciones básicas)",
@@ -49,7 +49,7 @@
     "inplace": "Traducción ilimitada de texto en el lugar",
     "fullpage": "Traducción completa de páginas ilimitada usando APIs de Google y Bing",
     "tts": "Texto a voz usando Google Translate y el motor del navegador",
-    "ownkey_limit": "Traducción con tu clave API propia limitada a { $pagesCount } páginas por día",
+    "ownkey_limit": "Traducción con tu clave API propia limitada a { $pagesPerDay } páginas por día",
     "pdf": "Traducción de texto seleccionado en archivos PDF",
     "history": "Historial de traducciones"
   },
@@ -60,8 +60,7 @@
     "ownkey": "Usa tu proveedor de IA (OpenAI, DeepSeek, Grok) — sin límites",
     "support": "Soporte por email con respuesta rápida",
     "noads": "Experiencia 100% sin anuncios",
-    "summarize": "Convierte cualquier texto en un resumen conciso con mejor redacción — gracias a la IA.",
-    "footnote": "La mayoría encuentra todo lo necesario con el plan PRO."
+    "summarize": "Convierte cualquier texto en un resumen conciso con mejor redacción — gracias a la IA."
   },
   "features": {
     "header": "Funciones",
@@ -69,8 +68,8 @@
     "fullpage": "{$fullpage_translation = Traducción completa de página} ({ $fullpage_notes = vía menú contextual, ícono de extensión o ventana de acción })",
     "dblclick": "Haz doble clic en una palabra para traducir en el lugar",
     "icon": "Selecciona texto y haz clic en el ícono de traducción cercano",
-    "click_selected": "Haz clic sobre el texto seleccionado ({ $default_off = desactivado por defecto })",
-    "after_selection": "Traducción inmediata al seleccionar texto ({ $default_off = desactivado por defecto })",
+    "click_selected": "Haz clic sobre el texto seleccionado ({ $by_default = desactivado por defecto })",
+    "after_selection": "Traducción inmediata al seleccionar texto ({ $by_default = desactivado por defecto })",
     "hotkey": "Pasa el cursor y presiona la tecla rápida configurada ({ $hotkey_default = Alt+Shift+X })",
     "pdf": "{$pdf_translation = Archivos PDF son compatibles con traducción en el lugar} ({ $pdf_requirements = requiere activar el visor PDF.js en ajustes })",
     "input_tab": "Escribe tu texto en la pestaña “Traducir” de la app; recomendamos asignar un atajo en { $shortcuts_url }",
@@ -91,7 +90,7 @@
     "button_label": "Traducción IA de páginas completas",
     "button_label_extra": "Descuento del 20% por acceso anticipado 🚀",
     "header": "Acceso anticipado a traducción IA de páginas",
-    "header_subheader": "Recibe notificación al lanzar y obtén 20% de descuento en tu primer mes.",
+    "subheader": "Recibe notificación al lanzar y obtén 20% de descuento en tu primer mes.",
     "button_add": "Obtener acceso anticipado",
     "button_adding": "Uniendo...",
     "success": "¡Estás en la lista! Te avisaremos por email. 🎉",

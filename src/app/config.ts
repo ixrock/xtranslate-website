@@ -1,3 +1,4 @@
+// Common configuration
 
 export const websiteUrl = "https://www.xtranslate.dev/";
 export const githubRepoUrl = "https://github.com/ixrock/XTranslate";
@@ -11,14 +12,3 @@ export const subscriptionPlan = {
   FREE_PLAN_TEXT_TOKENS: 10_000, // 10k
   FREE_PLAN_TTS_SECONDS: 300, // 5m
 } as const;
-
-export const Locales = {
-  "en": { "english": "English", "native": "English" },
-  "es": { "english": "Spanish", "native": "Español" },
-  "ru": { "english": "Russian", "native": "Русский" },
-  "zh-cn": { "english": "Chinese", "native": "简体中文" },
-  "ja": { "english": "Japanese", "native": "日本語" }
-};
-
-export const defaultLocale: Locale = "en";
-export type Locale = keyof typeof Locales;

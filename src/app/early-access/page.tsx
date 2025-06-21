@@ -12,14 +12,14 @@ export default async function EarlyAccessPage() {
   const t = await getLocalization();
 
   const i18n = {
-    header: t("early_access_header"),
-    subHeader: t("early_access_header_subheader"),
-    buttonLabel: t("early_access_button_add"),
-    buttonLabelJoining: t("early_access_button_adding"),
-    loginFirstInfo: t("early_access_login_first"),
-    noSpamInfo: t("early_access_nospam_info"),
-    successInfo: t("early_access_success"),
-    errorInfo: t("early_access_error"),
+    header: t("early_access.header"),
+    subHeader: t("early_access.subheader"),
+    buttonLabel: t("early_access.button_add"),
+    buttonLabelJoining: t("early_access.button_adding"),
+    loginFirstInfo: t("early_access.login_first"),
+    noSpamInfo: t("early_access.nospam_info"),
+    successInfo: t("early_access.success"),
+    errorInfo: t("early_access.error"),
   };
 
   return (

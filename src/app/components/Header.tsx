@@ -28,9 +28,9 @@ export async function Header(
   const t = await getLocalization();
 
   const i18n = {
-    login: t("user_menu_login"),
-    logout: t("user_menu_logout"),
-    linkAccount: t("user_menu_link_account"),
+    login: t("user_menu.login"),
+    logout: t("user_menu.logout"),
+    linkAccount: t("user_menu.link_account"),
   };
 
   return (

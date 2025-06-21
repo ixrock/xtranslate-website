@@ -4,7 +4,7 @@ import styles from './SelectLangIcon.module.css';
 import React from 'react';
 import { useRouter } from "next/navigation";
 import classNames from "classnames";
-import { Locales } from "@/app/config";
+import { Locales } from "@/app/i18n";
 import { Icon } from "@/app/components/Icon";
 import SelectLangSvg from "@/app/components/SelectLang.svg"
 import { PageContext } from "@/app/context/PageContext";

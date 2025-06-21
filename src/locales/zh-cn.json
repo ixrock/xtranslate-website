@@ -10,7 +10,7 @@
     "chrome_store": "添加到 Google Chrome",
     "ms_edge_store": "添加到 Microsoft Edge"
   },
-  "main_info1": "它可以帮助你学习并理解外语，实现来自 {$htmlDocs} 或 {$pdfDocs = PDF 文档} 的选中文本 {$translation = 实时原地翻译}，甚至可以实现 {$fullPage = 整个网页的翻译}。",
+  "main_info1": "它可以帮助你学习并理解外语，实现来自 {$htmlDocs} 或 {$pdfDocs = PDF 文档} 的选中文本 {$translation = 实时原地翻译}，甚至可以实现 {$fullPageTranslation = 整个网页的翻译}。",
   "main_info2": "支持从100多种语言翻译为你的母语，直接在网站上翻译，或在扩展主窗口输入文本获取 {$textTranslation = 即时文本翻译}。",
   "gallery": {
     "website_popup": "在网页上下文中获取翻译，默认弹窗主题",
@@ -39,7 +39,7 @@
     "deepl_limit": "API密钥限制为每月50万字符"
   },
   "total_ratings": "（基于 {$count} {$link = 评价}）",
-  "total_rating_users": "{$usersCount} 位用户 {$link = （来自 Chrome 和 Edge 商店）}",
+  "total_rating_users": "{$usersCount} 位用户 {$storeInfo = （来自 Chrome 和 Edge 商店）}",
   "plans": {
     "compare_title": "比较方案",
     "free_title": "免费（基础功能）",
@@ -49,7 +49,7 @@
     "inplace": "无限制的原地文本翻译",
     "fullpage": "使用 Google 翻译和 Bing 翻译 API 的无限整页翻译",
     "tts": "使用 Google Translate API 和浏览器语音合成引擎的文本朗读",
-    "ownkey_limit": "使用你自己的API密钥的AI整页翻译每日限制 { $pagesCount } 页",
+    "ownkey_limit": "使用你自己的API密钥的AI整页翻译每日限制 { $pagesPerDay } 页",
     "pdf": "PDF 文件中选中文本的翻译",
     "history": "翻译历史记录"
   },
@@ -60,8 +60,7 @@
     "ownkey": "使用你自己的AI提供商（OpenAI、DeepSeek、Grok）— 无页面限制",
     "support": "电子邮件支持，响应迅速",
     "noads": "100% 无广告体验",
-    "summarize": "将任意文本转为简洁摘要并优化措辞 — 由AI驱动",
-    "footnote": "大多数用户使用专业版就能满足全部需求。"
+    "summarize": "将任意文本转为简洁摘要并优化措辞 — 由AI驱动"
   },
   "features": {
     "header": "功能",
@@ -69,8 +68,8 @@
     "fullpage": "{$fullpage_translation = 整页翻译}（{ $fullpage_notes = 通过浏览器右键菜单、扩展工具栏图标或应用窗口）",
     "dblclick": "双击单词即可原地翻译",
     "icon": "选中文本后点击旁边的翻译图标",
-    "click_selected": "点击选中文本本身（{ $default_off = 默认关闭 }）",
-    "after_selection": "选中文本后立即翻译（{ $default_off = 默认关闭 }）",
+    "click_selected": "点击选中文本本身（{ $by_default = 默认关闭 }）",
+    "after_selection": "选中文本后立即翻译（{ $by_default = 默认关闭 }）",
     "hotkey": "将鼠标悬停在文本上并按下设置好的快捷键（{ $hotkey_default = 默认 Alt+Shift+X }）",
     "pdf": "{$pdf_translation = 支持PDF文件原地翻译}（{ $pdf_requirements = 需要在设置中启用自定义PDF.js查看器 }）",
     "input_tab": "在扩展“翻译”标签页中输入文本（建议在 { $shortcuts_url } 设置快捷键）",
@@ -91,7 +90,7 @@
     "button_label": "AI整页翻译",
     "button_label_extra": "早鸟优惠 — 立减20% 🚀",
     "header": "AI驱动整页翻译抢先体验",
-    "header_subheader": "发布时通知你，并享受首月八折优惠。",
+    "subheader": "发布时通知你，并享受首月八折优惠。",
     "button_add": "获取抢先体验",
     "button_adding": "正在加入...",
     "success": "你已加入！我们将通过电子邮件通知你。🎉",

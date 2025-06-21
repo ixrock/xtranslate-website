@@ -1,87 +1,128 @@
 // Localization (I18n)
-// Docs: https://projectfluent.org/fluent/guide/index.html
-// TODO: maybe switch to https://next-intl.dev/
-import fs from 'fs';
-import path from 'path';
-import React, { ReactNode } from "react";
-import { FluentBundle, FluentResource, FluentVariable } from '@fluent/bundle';
-import type { PatternElement } from "@fluent/bundle/esm/ast"
-import { defaultLocale, Locale } from "@/app/config";
+import type React from "react";
+import DefaultLocale from "../locales/en.json";
 import { getUserLang } from "@/actions/get-set-lang";
 
-export function loadFluentResource(locale: Locale = defaultLocale) {
-  const filePath = path.join(process.cwd(), `src/locales/${locale}.ftl`);
-  const ftlContents = fs.readFileSync(filePath, 'utf8');
-  return new FluentResource(ftlContents);
-}
+export const defaultLocale: Locale = "en";
 
-export function getFluentBundle(locale: Locale) {
-  const bundle = new FluentBundle(locale, { useIsolating: false });
-  const messages = loadFluentResource(locale);
-  bundle.addResource(messages);
-  return bundle;
-}
-
-export interface Message {
-  msgId: string
-  placeholders?: MessagePlaceholders;
-  locale: Locale
-}
-
-export type MessagePlaceholders = Record<string, FluentVariable>;
+export const Locales = {
+  "en": { "english": "English", "native": "English" },
+  "es": { "english": "Spanish", "native": "Español" },
+  "ru": { "english": "Russian", "native": "Русский" },
+  "zh-cn": { "english": "Chinese", "native": "简体中文" },
+  "ja": { "english": "Japanese", "native": "日本語" },
+};
 
 export async function getLocalization() {
   const locale = await getUserLang();
-  return (msgId: string, placeholders: MessagePlaceholders = {}) => getMessage({ msgId, placeholders, locale })
+  await loadLocale(locale);
+  return (key: LocalizationKey, params?: MessageParams) => getMessage(locale, key, params);
 }
 
-export function getMessage(payload: Required<Message>): string;
-export function getMessage(payload: Message): React.ReactNode {
-  const { msgId, placeholders = {}, locale } = payload;
-  const errors: Error[] = [];
-  const bundle = getFluentBundle(locale);
-  const msgKey = bundle.getMessage(msgId)?.value ?? "";
-  const msgValue = bundle.formatPattern(msgKey, placeholders, errors);
-  const hasReactPlaceholders = errors.some(err => String(err).includes("Variable type not supported"));
+export type Locale = keyof typeof Locales;
+export type LocalizationFile = typeof DefaultLocale;
+export type LocalizationKey = LeafPaths<LocalizationFile>;
 
-  if (!msgValue && locale !== defaultLocale) {
-    return getMessage({
-      msgId,
-      placeholders,
-      locale: defaultLocale,
-    } as Required<Message>);
+export type MessagesMap = Record<Locale, Record<LocalizationKey, {
+  value: string,
+  placeholders?: {
+    [paramName: string]: string; // TODO: add type-safety to param names
   }
+}>>;
 
-  if (hasReactPlaceholders) {
-    return Array.from(msgKey).map((msgChunk: PatternElement) => {
-      if (typeof msgChunk == "string") {
-        return msgChunk;
-      } else if (msgChunk.type === "var") {
-        const paramName = msgChunk.name;
-        return placeholders[paramName] as ReactNode;
+export const messagesMap: DeepPartial<MessagesMap> = {};
+export const placeholderRegex = /\{\s*(\$\w+)\s*}/g;
+export const placeholderWithValueRegex = /\{\s*\$(\w+)\s*(?:=\s*([^}]+?)\s*)?}/g;
+
+type MessageParamValue = React.ReactNode;
+type MessageParams = Record<string, MessageParamValue | ((value: string) => MessageParamValue)>;
+type HasNonStringParams<T extends MessageParams> = Exclude<T[keyof T], string> extends never ? false : true;
+
+export function getMessage<K extends LocalizationKey, P extends MessageParams>(
+  locale: Locale,
+  key: K,
+  params: P & (HasNonStringParams<P> extends true ? unknown : never)
+): React.ReactNode;
+
+export function getMessage<K extends LocalizationKey, P extends MessageParams>(
+  locale: Locale,
+  key: K,
+  params?: MessageParams,
+): string;
+
+export function getMessage(
+  locale: Locale,
+  key: LocalizationKey,
+  params?: MessageParams,
+): string | React.ReactNode {
+  const message = messagesMap[locale]?.[key] ?? messagesMap[defaultLocale]?.[key];
+  const template = message?.value ?? "";
+  const placeholders = message?.placeholders;
+  const containsReactNode = params && Object.values(params).some((v) => typeof v !== 'string');
+  const parts = template.split(placeholderRegex);
+
+  if (placeholders) {
+    Object.keys(placeholders).forEach(paramName => {
+      if (!params?.[paramName]) {
+        console.warn(`[I18N]: missing placeholder "${paramName}" in "${key}"`)
       }
     })
   }
 
-  return msgValue;
+  const result = parts.map((part) => {
+    const paramName = part.startsWith("$") ? part.slice(1) : "";
+
+    if (paramName) {
+      const paramValue = placeholders?.[paramName] as string;
+      const processingParam = params?.[paramName];
+      if (typeof processingParam === "function") {
+        return processingParam(paramValue);
+      }
+      return processingParam ?? paramValue;
+    }
+
+    return part;
+  });
+
+  return containsReactNode ? result : result.join('');
 }
 
-export function formatNumber(params: { value: number, locale?: Locale }) {
-  const {
-    value,
-    locale = defaultLocale
-  } = params;
+export async function loadLocale(locale: Locale) {
+  if (locale !== defaultLocale) {
+    await loadLocale(defaultLocale); // fallback-locale must be always available
+  }
+  const rawLocale: LocalizationFile = await import(`../locales/${locale}.json`).then(module => module.default);
+  parseMessages(locale, rawLocale, []);
+}
 
+function parseMessages(locale: Locale, rawData: LocalizationFile | object, parentPrefixPath: string[] = []) {
+  const messages = messagesMap[locale] ??= {};
+
+  Object.entries(rawData).forEach(([key, value]) => {
+    const keyChain = [...parentPrefixPath, key];
+
+    if (typeof value === "string") {
+      const key = keyChain.join(".") as LocalizationKey;
+      const message = messages[key] ??= {};
+      message.value = value.replace(placeholderWithValueRegex, (v, paramName) => `{$${paramName}}`);
+
+      Array.from(value.matchAll(placeholderWithValueRegex)).forEach(([, paramName, paramValue]) => {
+        message.placeholders ??= {};
+        message.placeholders[paramName] = paramValue;
+      });
+    } else if (typeof value === "object") {
+      parseMessages(locale, value, keyChain);
+    }
+  });
+
+  return messages;
+}
+
+export function formatNumber({ value, locale }: { value: number, locale: Locale }) {
   return new Intl.NumberFormat(locale).format(value);
 }
 
-export function formatPrice(params: { value: number, locale?: Locale, currency?: string }): string {
-  const {
-    value,
-    locale = defaultLocale,
-    currency = "USD",
-  } = params;
-
+export function formatPrice({ value, locale, currency = "USD" }: { value: number, locale: Locale, currency?: string }) {
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: currency,

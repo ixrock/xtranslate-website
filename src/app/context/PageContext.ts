@@ -1,5 +1,5 @@
 import React from "react";
-import { defaultLocale, Locale } from "@/app/config";
+import { defaultLocale, Locale } from "@/app/i18n";
 
 export interface PageContextValue {
   lang: Locale;
