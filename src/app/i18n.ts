@@ -1,5 +1,5 @@
 // Localization (I18n)
-import type React from "react";
+import React, { ReactNode } from "react";
 import DefaultLocale from "../locales/en.json";
 import { getUserLang } from "@/actions/get-set-lang";
 
@@ -34,15 +34,14 @@ export const messagesMap: DeepPartial<MessagesMap> = {};
 export const placeholderRegex = /\{\s*(\$\w+)\s*}/g;
 export const placeholderWithValueRegex = /\{\s*\$(\w+)\s*(?:=\s*([^}]+?)\s*)?}/g;
 
-type MessageParamValue = React.ReactNode;
-type MessageParams = Record<string, MessageParamValue | ((value: string) => MessageParamValue)>;
+type MessageParams = Record<string, ReactNode | ((value: string) => ReactNode)>;
 type HasNonStringParams<T extends MessageParams> = Exclude<T[keyof T], string> extends never ? false : true;
 
 export function getMessage<K extends LocalizationKey, P extends MessageParams>(
   locale: Locale,
   key: K,
   params: P & (HasNonStringParams<P> extends true ? unknown : never)
-): React.ReactNode;
+): ReactNode;
 
 export function getMessage<K extends LocalizationKey, P extends MessageParams>(
   locale: Locale,
@@ -54,12 +53,12 @@ export function getMessage(
   locale: Locale,
   key: LocalizationKey,
   params?: MessageParams,
-): string | React.ReactNode {
+): string | ReactNode {
   const message = messagesMap[locale]?.[key] ?? messagesMap[defaultLocale]?.[key];
   const template = message?.value ?? "";
   const placeholders = message?.placeholders;
   const containsReactNode = params && Object.values(params).some((v) => typeof v !== 'string');
-  const parts = template.split(placeholderRegex);
+  const templateParts = template.split(placeholderRegex);
 
   if (placeholders) {
     Object.keys(placeholders).forEach(paramName => {
@@ -69,16 +68,19 @@ export function getMessage(
     })
   }
 
-  const result = parts.map((part) => {
+  const result = templateParts.map((part, index) => {
     const paramName = part.startsWith("$") ? part.slice(1) : "";
 
     if (paramName) {
-      const paramValue = placeholders?.[paramName] as string;
-      const processingParam = params?.[paramName];
-      if (typeof processingParam === "function") {
-        return processingParam(paramValue);
+      const localizedParamValue = placeholders?.[paramName] as string;
+      let paramValue = params?.[paramName];
+      if (typeof paramValue === "function") {
+        paramValue = paramValue(localizedParamValue);
       }
-      return processingParam ?? paramValue;
+      if (React.isValidElement(paramValue)) {
+        paramValue = React.cloneElement(paramValue, { key: index });
+      }
+      return paramValue ?? localizedParamValue;
     }
 
     return part;

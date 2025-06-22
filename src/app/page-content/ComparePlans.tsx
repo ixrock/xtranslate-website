@@ -14,7 +14,7 @@ export async function ComparePlans() {
             <li>{t("free_plan.inplace")}</li>
             <li>{t("free_plan.fullpage")}</li>
             <li>{t("free_plan.tts")}</li>
-            <li>{t("free_plan.ownkey_limit", { pagesPerDay: <b key={0}>10</b> })}</li>
+            <li>{t("free_plan.ownkey_limit", { pagesPerDay: <b>10</b> })}</li>
             <li>{t("free_plan.pdf")}</li>
             <li>{t("free_plan.history")}</li>
           </ul>
@@ -25,8 +25,8 @@ export async function ComparePlans() {
             <li>{t("pro_plan.freeplus")}</li>
             <li>
               {t("pro_plan.tokens", {
-                tokens_value: v => <b key="v">{v}</b>,
-                tokens_note: v => <em key="n">{v}</em>,
+                tokens_value: v => <b>{v}</b>,
+                tokens_note: v => <em>{v}</em>,
               })}
             </li>
             <li>{t("pro_plan.summarize")}</li>

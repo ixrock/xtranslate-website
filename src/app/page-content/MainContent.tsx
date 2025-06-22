@@ -33,8 +33,8 @@ export async function MainContent() {
           <Rating rateValue={4.5}/>
           <div className="ratingAmountFrom">
             {t("total_ratings", {
-              count: <b key="count">{formatNumber({ value: 1600, locale })}+</b>,
-              link: v => <a key="reviews" href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">{v}</a>
+              count: <b>{formatNumber({ value: 1600, locale })}+</b>,
+              link: v => <a href={`${chromeStoreUrl}/reviews?hl=${locale}`} target="_blank">{v}</a>
             })}
           </div>
         </div>
@@ -44,8 +44,8 @@ export async function MainContent() {
           </Icon>
           <span>
             {t("total_rating_users", {
-              usersCount: <b key="count">100K</b>,
-              storeInfo: v => <em key="origins">{v}</em>,
+              usersCount: <b>100K</b>,
+              storeInfo: v => <em>{v}</em>,
             })}
           </span>
         </div>
@@ -56,14 +56,14 @@ export async function MainContent() {
       <section className="mainInfo">
         <p>
           {t("main_info1", {
-            textTranslation: v => <b key="text">{v}</b>,
-            htmlDocs: <b key="html">HTML</b>,
-            pdfDocs: v => <b key="pdf">{v}</b>,
-            fullPageTranslation: v => <b key="page">{v}</b>,
+            textTranslation: v => <b>{v}</b>,
+            htmlDocs: <b>HTML</b>,
+            pdfDocs: v => <b>{v}</b>,
+            fullPageTranslation: v => <b>{v}</b>,
           })}
         </p>
         <p>
-          {t("main_info2", { textTranslation: v => <b key="text">{v}</b> })}
+          {t("main_info2", { textTranslation: v => <b>{v}</b> })}
         </p>
       </section>
 
@@ -110,15 +110,15 @@ export async function MainContent() {
         <ul>
           <li>
             {t("security_info.api_key_store", {
-              providersList: <em key={1}>OpenAI, Grok</em>,
-              authHeader: <code key={2}>Authorization</code>,
-              apiKeyStorage: <a key={3} href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
-              webRequestApi: <a key={4} href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a>,
+              providersList: <em>OpenAI, Grok</em>,
+              authHeader: <code>Authorization</code>,
+              apiKeyStorage: <a href="https://developer.chrome.com/docs/extensions/reference/api/storage" target="_blank">chrome.storage.local</a>,
+              webRequestApi: <a href="https://developer.chrome.com/docs/extensions/reference/api/webRequest" target="_blank">webRequest</a>,
             })}
           </li>
           <li>
             {t("security_info.anti_xss", {
-              aiConnectionProvider: <a key={1} href="https://github.com/openai/openai-node" target="_blank">OpenAI</a>,
+              aiConnectionProvider: <a href="https://github.com/openai/openai-node" target="_blank">OpenAI</a>,
             })}
           </li>
           <li>{t("security_info.stay_safe")}</li>
