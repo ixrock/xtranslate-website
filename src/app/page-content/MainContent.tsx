@@ -2,8 +2,8 @@ import "./MainContent.css"
 
 import React from "react";
 import { chromeStoreUrl } from "@/app/config";
-import { formatNumber, getLocalization } from "@/app/i18n";
-import { getUserLang } from "@/actions/get-set-lang";
+import { formatNumber, getServerLocalization } from "@/app/i18n";
+import { getServerLocale } from "@/actions/get-set-lang";
 import { PhotoGallery, Rating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
 import { Logo } from "@/app/page-content/Logo";
@@ -15,8 +15,8 @@ import UsersIconSvg from "@/assets/users.svg";
 import DiscountLabelSvg from "@/assets/discount.svg";
 
 export async function MainContent() {
-  const locale = await getUserLang();
-  const t = await getLocalization();
+  const locale = await getServerLocale();
+  const t = await getServerLocalization();
 
   return (
     <main className={`MainContent flex column gaps`}>

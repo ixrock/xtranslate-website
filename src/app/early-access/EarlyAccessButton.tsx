@@ -6,24 +6,24 @@ import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { EarlyAccessSource, joinEarlyAccess } from "@/actions/early-access";
 import { Button } from "@/app/components/Button";
+import { useLocalization } from "@/app/hooks/useLocalization";
+import { Locales } from "@/app/i18n";
 
 interface Props {
   loggedIn: boolean;
-  i18n: {
-    buttonLabel: string
-    buttonLabelJoining: string
-    loginFirstInfo: string
-    successInfo: string
-    errorInfo: string;
-  }
 }
 
-export default function EarlyAccessButton({ loggedIn, i18n }: Props) {
+export default function EarlyAccessButton({ loggedIn }: Props) {
   const [joining, setJoining] = useState(false);
   const [joined, setJoined] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { t, isReady, locale } = useLocalization();
   const searchParams = useSearchParams();
   const source = searchParams.get("source") as EarlyAccessSource;
+
+  if (!isReady) {
+    return `Loading ${Locales[locale].english} localization...`;
+  }
 
   const handleJoin = async () => {
     setJoining(true);
@@ -32,7 +32,7 @@ export default function EarlyAccessButton({ loggedIn, i18n }: Props) {
       await joinEarlyAccess(source ?? "website");
       setJoined(true);
     } catch (err) {
-      setError(i18n.errorInfo);
+      setError(t("early_access.error"));
     } finally {
       setJoining(false);
     }
@@ -42,15 +42,15 @@ export default function EarlyAccessButton({ loggedIn, i18n }: Props) {
     <div className="EarlyAccessButton flex column gaps align-center">
       {loggedIn && (
         <Button asLink onClick={handleJoin} disabled={joining || joined}>
-          {joining ? i18n.buttonLabelJoining : i18n.buttonLabel}
+          {joining ? t("early_access.button_adding") : t("early_access.button_add")}
         </Button>
       )}
       {!loggedIn && (
         <Button asLink onClick={() => signIn()}>
-          {i18n.loginFirstInfo}
+          {t("early_access.login_first")}
         </Button>
       )}
-      {joined && <p className="success">{i18n.successInfo}</p>}
+      {joined && <p className="success">{t("early_access.success")}</p>}
       {error && <p className="error">{error}</p>}
     </div>
   );

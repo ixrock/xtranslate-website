@@ -1,9 +1,9 @@
 import "./ComparePlans.css"
 import React from "react";
-import { getLocalization } from "@/app/i18n";
+import { getServerLocalization } from "@/app/i18n";
 
 export async function ComparePlans() {
-  const t = await getLocalization();
+  const t = await getServerLocalization();
   return (
     <>
       <h3>{t("plans.compare_title")}</h3>

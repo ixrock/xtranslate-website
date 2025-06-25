@@ -7,7 +7,7 @@ import { SelectLanguage } from "@/app/components/SelectLangIcon";
 import { GithubButton } from "@/app/components/GithubButton";
 import { UserMenu } from "@/app/components/UserMenu";
 import { ButtonLink } from "@/app/components/Button";
-import { getLocalization } from "@/app/i18n";
+import { getServerLocalization } from "@/app/i18n";
 import { Icon } from "@/app/components/Icon";
 import HomeSvg from "@/assets/home.svg";
 
@@ -25,7 +25,7 @@ export async function Header(
     children,
   }: Props) {
   const session = await auth();
-  const t = await getLocalization();
+  const t = await getServerLocalization();
 
   const i18n = {
     login: t("user_menu.login"),

@@ -3,7 +3,7 @@
 import { headers, cookies } from "next/headers";
 import { defaultLocale, Locale, Locales } from "@/app/i18n";
 
-export async function getUserLang() {
+export async function getServerLocale(): Promise<Locale> {
   const cookieLang = await getCookieLang();
   const acceptLang = await getAcceptLang();
   return cookieLang ?? acceptLang ?? defaultLocale;

@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google"
 import { Roboto_Flex } from "next/font/google";
 import ClientProviders from "@/app/context/ClientProviders";
-import { getUserLang } from "@/actions/get-set-lang";
+import { getServerLocale } from "@/actions/get-set-lang";
 
 const robotoFlex = Roboto_Flex({
   variable: "--font-roboto",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: React.PropsWithChildren) {
-  const lang = await getUserLang();
+  const lang = await getServerLocale();
   return (
     <html>
     <body className={`${robotoFlex.variable}`}>

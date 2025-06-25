@@ -1,8 +1,8 @@
 import React from "react";
-import { getLocalization } from "@/app/i18n";
+import { getServerLocalization } from "@/app/i18n";
 
 export async function Features() {
-  const t = await getLocalization();
+  const t = await getServerLocalization();
   return (
     <>
       <h3>{t("features.header")}</h3>

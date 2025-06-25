@@ -1,7 +1,7 @@
 // Localization (I18n)
 import React, { ReactNode } from "react";
 import DefaultLocale from "../locales/en.json";
-import { getUserLang } from "@/actions/get-set-lang";
+import { getServerLocale } from "@/actions/get-set-lang";
 
 export const defaultLocale: Locale = "en";
 
@@ -13,24 +13,27 @@ export const Locales = {
   "ja": { "english": "Japanese", "native": "日本語" },
 };
 
-export async function getLocalization() {
-  const locale = await getUserLang();
+export async function getServerLocalization() {
+  const locale = await getServerLocale();
   await loadLocale(locale);
-  return (key: LocalizationKey, params?: MessageParams) => getMessage(locale, key, params);
+  const messages = getLocalizedMessages(locale) ?? {};
+  return (key: LocalizationKey, params?: MessageParams) => getMessage(locale, key, messages, params);
 }
 
 export type Locale = keyof typeof Locales;
 export type LocalizationFile = typeof DefaultLocale;
 export type LocalizationKey = LeafPaths<LocalizationFile>;
+export type LocalizedMessages = DeepPartial<MessagesMapAllLocales[Locale]>;
+export type MessagesMapAllLocales = Record<Locale, Record<LocalizationKey, MessageLocalization>>;
 
-export type MessagesMap = Record<Locale, Record<LocalizationKey, {
-  value: string,
+export interface MessageLocalization {
+  value: string;
   placeholders?: {
     [paramName: string]: string; // TODO: add type-safety to param names
   }
-}>>;
+}
 
-export const messagesMap: DeepPartial<MessagesMap> = {};
+export const messagesMap: DeepPartial<MessagesMapAllLocales> = {};
 export const placeholderRegex = /\{\s*(\$\w+)\s*}/g;
 export const placeholderWithValueRegex = /\{\s*\$(\w+)\s*(?:=\s*([^}]+?)\s*)?}/g;
 
@@ -40,21 +43,24 @@ type HasNonStringParams<T extends MessageParams> = Exclude<T[keyof T], string> e
 export function getMessage<K extends LocalizationKey, P extends MessageParams>(
   locale: Locale,
   key: K,
+  storage: LocalizedMessages,
   params: P & (HasNonStringParams<P> extends true ? unknown : never)
 ): ReactNode;
 
 export function getMessage<K extends LocalizationKey, P extends MessageParams>(
   locale: Locale,
   key: K,
+  storage: LocalizedMessages,
   params?: MessageParams,
 ): string;
 
 export function getMessage(
   locale: Locale,
   key: LocalizationKey,
+  storage: LocalizedMessages,
   params?: MessageParams,
 ): string | ReactNode {
-  const message = messagesMap[locale]?.[key] ?? messagesMap[defaultLocale]?.[key];
+  const message = (storage?.[key] ?? messagesMap[locale]?.[key]) ?? messagesMap[defaultLocale]?.[key];
   const template = message?.value ?? "";
   const placeholders = message?.placeholders;
   const containsReactNode = params && Object.values(params).some((v) => typeof v !== 'string');
@@ -89,12 +95,24 @@ export function getMessage(
   return containsReactNode ? result : result.join('');
 }
 
-export async function loadLocale(locale: Locale) {
-  if (locale !== defaultLocale) {
+export function isLocaleLoaded(locale: Locale): boolean {
+  return !!messagesMap[locale];
+}
+
+export function getLocalizedMessages(locale?: Locale): LocalizedMessages | undefined {
+  return messagesMap[locale as Locale] ?? messagesMap[defaultLocale];
+}
+
+export async function loadLocale(locale: Locale): Promise<LocalizedMessages | undefined> {
+  if (locale !== defaultLocale && !isLocaleLoaded(defaultLocale)) {
     await loadLocale(defaultLocale); // fallback-locale must be always available
   }
+  if (isLocaleLoaded(locale)) {
+    return getLocalizedMessages(locale);
+  }
+
   const rawLocale: LocalizationFile = await import(`../locales/${locale}.json`).then(module => module.default);
-  parseMessages(locale, rawLocale, []);
+  return parseMessages(locale, rawLocale, []);
 }
 
 function parseMessages(locale: Locale, rawData: LocalizationFile | object, parentPrefixPath: string[] = []) {
