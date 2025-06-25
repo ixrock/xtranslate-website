@@ -1,23 +1,19 @@
 "use client";
 
 import styles from './UserMenu.module.css';
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Icon } from "@/app/components/Icon";
 import classNames from "classnames";
-import { AuthUser } from "@/auth";
+import { useLocalization } from "@/app/hooks/useLocalization";
 
 export interface UserMenuProps {
   className?: string;
-  user: AuthUser | undefined;
-  i18n: {
-    login: string;
-    logout: string;
-    linkAccount: string;
-  }
 }
 
-export function UserMenu({ className, user, i18n }: UserMenuProps) {
-  const { name: userName, image: avatarUrl, email } = user ?? {};
+export function UserMenu({ className }: UserMenuProps) {
+  const { t } = useLocalization();
+  const { data: session } = useSession();
+  const { name: userName, image: avatarUrl, email } = session?.user ?? {};
 
   return (
     <div className={classNames(styles.UserMenu, className)}>
@@ -31,7 +27,7 @@ export function UserMenu({ className, user, i18n }: UserMenuProps) {
         )}
         {!userName && (
           <div className="flex gaps align-center" onClick={() => signIn()}>
-            <span>{i18n.login}</span>
+            <span>{t("user_menu.login")}</span>
             <Icon className={styles.avatar}/>
           </div>
         )}
@@ -39,8 +35,8 @@ export function UserMenu({ className, user, i18n }: UserMenuProps) {
       {email && (
         <ul className={styles.userDropdown}>
           {/*<li>Billing</li>*/}
-          <li onClick={() => signIn()}>{i18n.linkAccount}</li>
-          <li onClick={() => signOut()}><small>({obfuscateEmail(email)})</small> {i18n.logout}</li>
+          <li onClick={() => signIn()}>{t("user_menu.link_account")}</li>
+          <li onClick={() => signOut()}><small>({obfuscateEmail(email)})</small> {t("user_menu.logout")}</li>
         </ul>
       )}
     </div>
