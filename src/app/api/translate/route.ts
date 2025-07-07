@@ -1,15 +1,5 @@
-import { NextResponse } from "next/server"
 import { auth } from "@/auth"
 import { CycleStatus, prisma } from "@/prisma";
-
-// TODO: remove
-export const GET = auth(async function GET(req) {
-  if (!req.auth) {
-    return NextResponse.json({ message: "Not authenticated" }, { status: 401 })
-  }
-
-  return NextResponse.json(req.auth);
-});
 
 export const POST = auth(async (req) => {
   if (!req.auth) {
