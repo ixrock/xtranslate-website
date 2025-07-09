@@ -22,8 +22,12 @@ export async function GithubButton(props: GithubButtonProps) {
       <Icon className={styles.githubIcon}>
         <GithubIconSvg/>
       </Icon>
-      <span className={styles.star}>★</span>
-      <span>{starsCount}</span>
+      {starsCount && (
+        <>
+          <span className={styles.star}>★</span>
+          <span>{starsCount}</span>
+        </>
+      )}
     </ButtonLink>
   )
 }

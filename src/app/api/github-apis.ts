@@ -12,12 +12,18 @@ export interface GitHubRepoJson {
 
 export async function getGithubRepoJson(userName: string, repoName: string): Promise<GitHubRepoJson> {
   const res = await fetch(`https://api.github.com/repos/${userName}/${repoName}`, {
-    cache: "force-cache", // or use "default"
-    next: { revalidate: 3600 }
+    headers: {
+      Authorization: `token ${process.env.GITHUB_API_TOKEN}`,
+    },
+    next: {
+      revalidate: 3600,
+      tags: ["github-stars"],
+    }
   });
 
   if (!res.ok) {
-    throw new Error(`Getting Github repo stars failed (${res.status}) ${res.statusText}`);
+    console.error(`Getting Github repo stars failed (${res.status}) ${res.statusText}`);
+    return { stargazers_count: 0 } as GitHubRepoJson;
   }
 
   return res.json();
