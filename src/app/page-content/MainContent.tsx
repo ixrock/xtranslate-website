@@ -87,6 +87,7 @@ export async function MainContent() {
           <li><a href="https://www.deepl.com/translator" target="_blank">DeepL</a> ({t("provider_api.is_free")}: {t("provider_api.deepl_limit")} + {t("provider_api.bring_own_key")})</li>
           <li><a href="https://platform.openai.com" target="_blank">OpenAI</a> ({t("provider_api.bring_own_key")})</li>
           <li><a href="https://console.x.ai" target="_blank">Grok</a> ({t("provider_api.bring_own_key")})</li>
+          <li><a href="https://aistudio.google.com/" target="_blank">Gemini</a> ({t("provider_api.bring_own_key")})</li>
           <li><a href="https://platform.deepseek.com" target="_blank">DeepSeek</a> ({t("provider_api.bring_own_key")})</li>
         </ul>
       </section>
