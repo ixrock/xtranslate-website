@@ -7,14 +7,14 @@ import classNames from "classnames";
 import { Locales } from "@/app/i18n";
 import { Icon } from "@/app/components/Icon";
 import SelectLangSvg from "@/app/components/SelectLang.svg"
-import { PageContext } from "@/app/context/PageContext";
+import { LocaleContext } from "@/app/context/LocaleContext";
 
 export interface SelectLanguageProps {
   className?: string;
 }
 
 export function SelectLanguage({ className }: SelectLanguageProps) {
-  const { lang } = React.use(PageContext);
+  const lang = React.use(LocaleContext);
   const router = useRouter();
 
   function onLangChange(evt: React.ChangeEvent<HTMLSelectElement>) {

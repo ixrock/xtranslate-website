@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { Cookies } from "typescript-cookie";
 import { defaultLocale, Locale, Locales } from "@/app/i18n";
-import { PageContextProvider } from "./PageContextProvider";
+import { LocaleContextProvider } from "./LocaleContextProvider";
 import { setCookieLang } from "@/actions/get-set-lang";
 
 export default function ClientProviders({ lang, children }: {
@@ -28,9 +28,9 @@ export default function ClientProviders({ lang, children }: {
 
   return (
     <SessionProvider>
-      <PageContextProvider value={{ lang: userLang }}>
+      <LocaleContextProvider value={userLang}>
         {children}
-      </PageContextProvider>
+      </LocaleContextProvider>
     </SessionProvider>
   );
 }

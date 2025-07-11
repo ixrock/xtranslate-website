@@ -4,10 +4,10 @@
 
 import React, { ReactNode, useEffect } from "react";
 import { getMessage, loadLocale, LocalizationKey, LocalizedMessages } from "@/app/i18n";
-import { PageContext } from "@/app/context/PageContext";
+import { LocaleContext } from "@/app/context/LocaleContext";
 
 export function useLocalization() {
-  const { lang: locale } = React.use(PageContext);
+  const locale = React.use(LocaleContext);
   const [localization, setLocalization] = React.useState<LocalizedMessages>();
 
   useEffect(() => {
