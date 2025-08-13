@@ -13,11 +13,11 @@ export const Locales = {
   "ja": { "english": "Japanese", "native": "日本語" },
 };
 
-export async function getServerLocalization() {
+export async function getServerLocalization<K>() {
   const locale = await getServerLocale();
   await loadLocale(locale);
   const messages = getLocalizedMessages(locale) ?? {};
-  return (key: LocalizationKey, params?: MessageParams) => getMessage(locale, key, messages, params);
+  return <K extends LocalizationKey, P extends MessageParams>(key: K, params?: MessageParams) => getMessage<K, P>(locale, key, messages, params);
 }
 
 export type Locale = keyof typeof Locales;
@@ -29,7 +29,7 @@ export type MessagesMapAllLocales = Record<Locale, Record<LocalizationKey, Messa
 export interface MessageLocalization {
   value: string;
   placeholders?: {
-    [paramName: string]: string; // TODO: add type-safety to param names
+    [paramName: string]: string; // TODO: add type-safety to param names (pregenerate .d.ts file from json)
   }
 }
 

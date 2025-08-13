@@ -57,7 +57,7 @@
     "freeplus": "包含免费版所有功能，此外：",
     "tokens": "{$tokens_value = 100万AI令牌}用于高质量原地与整页翻译 {$tokens_note = （约75万词 ≈ 1,000–1,500页图书 ≈ 3,000网页）}",
     "voice": "1小时自然AI语音（文本转语音）",
-    "ownkey": "使用你自己的AI提供商（OpenAI、DeepSeek、Grok）— 无页面限制",
+    "ownkey": "使用你自己的AI提供商{$providers}— 无页面限制",
     "support": "电子邮件支持，响应迅速",
     "noads": "100% 无广告体验",
     "summarize": "将任意文本转为简洁摘要并优化措辞 — 由AI驱动"

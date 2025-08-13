@@ -57,7 +57,7 @@
     "freeplus": "All Free features, plus:",
     "tokens": "{$tokens_value = 1M AI tokens} for high-quality in-place and full-page text translations {$tokens_note = (≈ 750K words ≈ 1,000–1,500 book pages ≈ 3,000 web pages)}",
     "voice": "1 hour of natural AI voice (text-to-speech)",
-    "ownkey": "Use your own AI provider (OpenAI, DeepSeek, Grok) — no page limits",
+    "ownkey": "Use your own AI provider: {$providers} — no page limits",
     "support": "Email support with short response time",
     "noads": "100% ad-free experience",
     "summarize": "Turn any text into a crisp summary and smarter wording—powered by AI."

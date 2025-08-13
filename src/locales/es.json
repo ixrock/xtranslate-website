@@ -57,7 +57,7 @@
     "freeplus": "Todo lo de Gratis, más:",
     "tokens": "{$tokens_value = 1M tokens de IA} para traducciones de texto y páginas de alta calidad {$tokens_note = (≈ 750K palabras ≈ 1,000–1,500 páginas ≈ 3,000 webs)}",
     "voice": "1 hora de voz natural por IA (texto a voz)",
-    "ownkey": "Usa tu proveedor de IA (OpenAI, DeepSeek, Grok) — sin límites",
+    "ownkey": "Usa tu proveedor de IA: {$providers} — sin límites",
     "support": "Soporte por email con respuesta rápida",
     "noads": "Experiencia 100% sin anuncios",
     "summarize": "Convierte cualquier texto en un resumen conciso con mejor redacción — gracias a la IA."

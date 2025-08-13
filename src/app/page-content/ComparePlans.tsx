@@ -4,6 +4,8 @@ import { getServerLocalization } from "@/app/i18n";
 
 export async function ComparePlans() {
   const t = await getServerLocalization();
+  const supportedAIProviders = ["OpenAI", "DeepSeek", "Grok", "Gemini"];
+
   return (
     <>
       <h3>{t("plans.compare_title")}</h3>
@@ -31,7 +33,7 @@ export async function ComparePlans() {
             </li>
             <li>{t("pro_plan.summarize")}</li>
             <li>{t("pro_plan.voice")}</li>
-            <li>{t("pro_plan.ownkey")}</li>
+            <li>{t("pro_plan.ownkey", { providers: supportedAIProviders.join(", ") })}</li>
             <li>{t("pro_plan.support")}</li>
             <li>{t("pro_plan.noads")}</li>
           </ul>
