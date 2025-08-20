@@ -1,14 +1,18 @@
 import { auth } from "@/auth";
-import { NextResponse } from "next/server";
 
 // TODO: use cache and serve from CDN
 //  e.g https://supabase.com/storage
 //  e.g https://www.cloudflare.com/developer-platform/products/r2/
 
-export const GET = auth(async function GET(req) {
-  if (!req.auth) {
-    return NextResponse.json({ message: "Not authenticated" }, { status: 401 })
+export async function GET(req: Request): Promise<Response> {
+  const session = await auth();
+
+  if (!session) {
+    return Response.json({ message: "Not authenticated" }, { status: 401 });
   }
 
-  return NextResponse.json(req.auth);
-});
+  // TODO: stream audio file from storage
+  return new Response("Audio file streaming not implemented yet", {
+    status: 204
+  });
+}
