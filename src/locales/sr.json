@@ -1,0 +1,101 @@
+{
+  "header": "XTranslate — AI prevodilac za veb-sajtove i PDF-ove",
+  "subheader": "Instant prevodite celokupne stranice, dokumenta ili odabrani tekst koji čitate",
+  "user_menu": {
+    "login": "Uloguj se",
+    "logout": "Izloguj se",
+    "link_account": "Poveži nalog"
+  },
+  "install_from": {
+    "chrome_store": "Dodaj u Google Chrome",
+    "ms_edge_store": "Dodaj u Microsoft Edge"
+  },
+  "main_info1": "Pomoći će vam u učenju i razumevanju stranih jezika i pružiće prevod izabranog teksta {$textTranslation = u realnom vremenu} iz {$htmlDocs}-a ili {$pdfDocs = PDF dokumenata}, pa čak omogućava {$fullPageTranslation = prevod celokupnog teksta na veb-stranici}.",
+  "main_info2": "Prevodite preko 100 stranih jezika na vaš maternji jezik direktno na veb-sajtu koji čitate ili unesite tekst u glavni prozor proširenja da biste dobili {$textTranslation = instant prevod}.",
+  "gallery": {
+    "website_popup": "Dobijate prevod u kontekstu veb-stranice, podrazumevani iskačući prozor",
+    "website_select_text": "Različiti načini za prevođenje izabranog teksta, npr. klikom na ikonicu u blizini",
+    "app_settings": "Podesite proširenje",
+    "app_popup_customization": "Podesite temu, prilagodite iskačući prozor za prevod, izaberite lokalizaciju",
+    "app_history_tab": "Istorija prevoda sa opcijama za import/export u JSON formatu",
+    "pdf_translation": "Prevedite strani tekst iz PDF fajlova",
+    "app_theme_dark": "Tamna tema za prozor aplikacije",
+    "context_menu_translate": "Kontekst meni za prevođenje celokupne stranice",
+    "context_menu_translated": "Omogućeno automatsko prevođenje stranice (specifično za domen)"
+  },
+  "install": {
+    "extension_header": "Instalirajte proširenje",
+    "chrome_store": "Chrome prodavnica proširenja",
+    "ms_addons": "Microsoft Edge dodaci",
+    "firefox": "Firefox dodaci",
+    "old_version": "Instalirajte staru verziju sa ograničenom podrškom",
+    "from_sources": "Instalirajte iz izvornog koda"
+  },
+  "providers_available_header": "Dostupni prevodioci",
+  "provider_api": {
+    "is_free": "besplatno",
+    "is_paid": "plaćeno",
+    "bring_own_key": "donesite svoj API ključ",
+    "deepl_limit": "API ključ je ograničen na 500.000 karaktera mesečno"
+  },
+  "total_ratings": "(zasnovano na {$count} {$link = ocena})",
+  "total_rating_users": "{$usersCount} korisnika {$storeInfo = (iz obe prodavnice, Chrome i Edge)}",
+  "plans": {
+    "compare_title": "Uporedite planove",
+    "free_title": "BESPLATNO (osnovne funkcionalnosti)",
+    "pro_title": "PRO (mesečna pretplata / ⭐ najpopularnije)"
+  },
+  "free_plan": {
+    "inplace": "Neograničen broj prevoda teksta",
+    "fullpage": "Neograničen broj prevoda celokupnih stranica pomoću Google Translate i Bing Translator API-ja",
+    "tts": "Tekst-u-govor uz pomoć Google Translate API-ja i ugrađena sinteza govora u pretraživaču",
+    "ownkey_limit": "AI prevodi celokupnih stranica sa vašim API ključem su ograničeni na { $pagesPerDay } stranica na dan",
+    "pdf": "Prevod odabranog teksta u PDF fajlovima",
+    "history": "Istorija prevoda"
+  },
+  "pro_plan": {
+    "freeplus": "Sve besplatne funkcionalnosti, plus:",
+    "tokens": "{$tokens_value = 1 milion AI tokena} za visoko kvalitetne prevode teksta i celokupnih stranica {$tokens_note = (≈ 750.000 reči ≈ 1.000–1.500 stranica knjige ≈ 3.000 veb-stranica)}",
+    "voice": "1 sat prirodnog AI glasa (tekst-u-govor)",
+    "ownkey": "Upotreba vašeg AI provajdera: {$providers} — nema ograničenja stranica",
+    "support": "Podrška za email-ove sa kratkim vremenom odziva",
+    "noads": "100% bez reklama",
+    "summarize": "Pretvaranje teksta u jasan sažetak i pametnije formulisanje—uz pomoć AI-ja."
+  },
+  "features": {
+    "header": "Funkcionalnosti",
+    "intro": "Mnogo načina za dobijanje prevoda teksta sa veb-stranica:",
+    "fullpage": "Dobijanje {$fullpage_translation = prevoda celokupne stranice} ({ $fullpage_notes = kroz kontekst meni pretraživača, ikonice na traci za proširenja ili iz prozora aplikacije })",
+    "dblclick": "Dobijanje prevoda dvoklikom na reč",
+    "icon": "Odabir teksta i klik na ikonicu za prevod koja se pojavljuje u blizini",
+    "click_selected": "Klik na izabrani tekst ({ $by_default = podrazumevano isključeno })",
+    "after_selection": "Dobijanje prevoda odmah nakon odabira teksta ({ $by_default = podrazumevano isključeno })",
+    "hotkey": "Zadržavanje kursora miša iznad teksta i klik na predefinisanu prečicu u podešavanjima ({ $hotkey_default = podrazumevano Alt+Shift+X })",
+    "pdf": "{$pdf_translation = PDF fajlovi su podržani za prevod teksta} ({ $pdf_requirements = zahteva omogućavanje prilagođenog PDF.js pregledača u podešavanjima})",
+    "input_tab": "Kucanje teksta u tab-u “Prevod” (prozor proširenja); preporučujemo postavljanje prečice u { $shortcuts_url }",
+    "tts": "{$tts_listen = Slušanje teksta-u-govor (TTS)} za sve podržane prevodioce (npr. { $tts_providers }) ili uz pomoć ugrađene sinteze govora u pretraživaču",
+    "bookmark": "Čuvanje omiljenih prevoda u listu favorita",
+    "customize": "Prilagođavanje iskačućeg prozora za prevod — veličina fonta, boje, itd.",
+    "history": "Pregled i izmena istorije prevoda"
+  },
+  "security_info": {
+    "header": "Bezbednosne mere prilikom donošenja vlastitih API ključeva",
+    "api_key_store": "Vaš pristupni ključ za API (npr. { $providersList }) se čuva u { $apiKeyStorage } i koristi se samo u HTTP { $authHeader } zaglavlju za potpisivanje API zahteva (nije otkriven niti praćen, čak i ako neko zlonamerno proširenje omogući { $webRequestApi }).",
+    "anti_xss": "HTTP zahtevi za AI prevode obrađuju se putem zvaničnog NPM paketa ({ $aiConnectionProvider }) i pokreću se samo unutar pozadinskog worker servisa koji pomaže kod XSS vrsta napada.",
+    "stay_safe": "Ne unosite i ne delite svoje API ključeve nigde osim na stranici za podešavanja proširenja.",
+    "other_recommendations": "Preporučeno je da isključite automatsku dopunu novčanih sredstava na odabranoj platformi AI provajdera"
+  },
+  "footer_info": "Napravljeno ♥ i uz pomoć open-source projekata.",
+  "early_access": {
+    "button_label": "AI prevod celokupnih stranica",
+    "button_label_extra": "Rani popust od 20% 🚀",
+    "header": "Rani pristup AI prevodima stranica",
+    "subheader": "Budite obavešteni o pokretanju i uzmite 20% popusta za prvi mesec.",
+    "button_add": "Uzmi rani pristup",
+    "button_adding": "Pridruživanje...",
+    "success": "Na spisku ste! Obavestićemo vas putem email-a. 🎉",
+    "error": "Ups! Nije uspelo. Ubrzo pokušajte ponovo.",
+    "nospam_info": "Bez spam-ovanja. Samo jedan email kada ga pokrenemo.",
+    "login_first": "Ulogujte se da pošaljete zahtev"
+  }
+}
