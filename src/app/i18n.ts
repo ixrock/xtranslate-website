@@ -11,6 +11,8 @@ export const Locales = {
   "ru": { "english": "Russian", "native": "Русский" },
   "zh-cn": { "english": "Chinese", "native": "简体中文" },
   "ja": { "english": "Japanese", "native": "日本語" },
+  "sr-CY": { "english": "Serbian - Cyrillic", "native": "Српски" },
+  "sr": { "english": "Serbian - Latin", "native": "Srpski" },
 };
 
 export async function getServerLocalization<K>() {
