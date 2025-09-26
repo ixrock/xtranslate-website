@@ -1,0 +1,15 @@
+.StarRating {
+  --rate: var(--rateInPercent, 100%);
+  --size: var(--starSize, 30px);
+  --colorActive: #b748b8;
+  --colorInactive: silver;
+
+  &::after {
+    content: '★★★★★';
+    font-size: var(--size);
+    font-family: 'Arial Unicode MS', 'Segoe UI Symbol', Arial, sans-serif; /* firefox: provide fonts list with ★-char support */
+    color: transparent;
+    background: linear-gradient(90deg, var(--colorActive) var(--rate), var(--colorInactive) var(--rate));
+    background-clip: text;
+  }
+}

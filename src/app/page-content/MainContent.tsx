@@ -4,7 +4,7 @@ import React from "react";
 import { chromeStoreUrl } from "@/app/config";
 import { formatNumber, getServerLocalization } from "@/app/i18n";
 import { getServerLocale } from "@/actions/get-set-lang";
-import { PhotoGallery, Rating } from "@/app/components";
+import { PhotoGallery, StarRating } from "@/app/components";
 import { Icon } from "@/app/components/Icon";
 import { Logo } from "@/app/page-content/Logo";
 import { InstallExtension } from "@/app/page-content/InstallExtension";
@@ -29,8 +29,8 @@ export async function MainContent() {
       </div>
 
       <section className="ratingsWrapper">
-        <div className="ratings">
-          <Rating rateValue={4.5}/>
+        <div className="ratings flex gaps align-center">
+          <StarRating value={4.5}/>
           <div className="ratingAmountFrom">
             {t("total_ratings", {
               count: <b>{formatNumber({ value: 1600, locale })}+</b>,
